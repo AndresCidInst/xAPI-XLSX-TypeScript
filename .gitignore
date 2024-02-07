@@ -1,0 +1,8 @@
+#Variables de entorno
+.env
+
+#Statements locales
+data
+
+#Archivo Excel creado localmente
+out
