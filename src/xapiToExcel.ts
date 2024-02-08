@@ -12,7 +12,10 @@ import { Choice } from "./models/ChoicesModels";
 import { DataModelImpl } from "./models/DataModel";
 import { Parent, ParentJson } from "./models/ParentModels";
 import { createExcelFile, saveMainDataInExcel } from "./services/ExcelServices";
-import { correctUriExtensionsFormat } from "./services/FormatCorrector";
+import {
+    correctUriExtensionResultWordSoup,
+    correctUriExtensionsGeneralFormat,
+} from "./services/FormatCorrector";
 import { dataRetriever, getValueByPath } from "./services/ProcessData";
 import { saveCategory as getCategoryFromJson } from "./services/manipulators/CategoryManipulator";
 import { choiceMolder as getChoicesFromJson } from "./services/manipulators/ChoicesManipulators";
@@ -29,10 +32,15 @@ export async function xapiToExcel() {
     const statements: JSON[] = getAllStatements();
     console.log("Corrigiendo formato de extensiones...");
     for (const statement of statements) {
-        correctUriExtensionsFormat(statement as unknown as Statement);
+        correctFormat(statement as unknown as Statement);
     }
     await prepareData(statements);
     await insertData(statements);
+}
+
+function correctFormat(statement: Statement) {
+    correctUriExtensionsGeneralFormat(statement);
+    correctUriExtensionResultWordSoup(statement);
 }
 
 /**

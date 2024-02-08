@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.correctUriExtensionsFormat = void 0;
-function correctUriExtensionsFormat(statement) {
+exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
+function correctUriExtensionsGeneralFormat(statement) {
     var _a, _b;
     if ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions) {
         Object.keys(statement.result.extensions).forEach((uri) => {
@@ -18,4 +18,18 @@ function correctUriExtensionsFormat(statement) {
         });
     }
 }
-exports.correctUriExtensionsFormat = correctUriExtensionsFormat;
+exports.correctUriExtensionsGeneralFormat = correctUriExtensionsGeneralFormat;
+function correctUriExtensionResultWordSoup(statement) {
+    const currentStatement = Object(statement);
+    if (currentStatement["verb"]["id"] ==
+        "https://xapi.tego.iie.cl/verbs/played" &&
+        currentStatement["object"]["id"].includes("sopaDeLetras")) {
+        Object.keys(currentStatement["result"]["extensions"]).forEach((uri) => {
+            const lastSegmentUri = uri.split("/").pop();
+            const value = currentStatement["result"]["extensions"][uri];
+            delete statement.result.extensions[uri];
+            statement.result.extensions[`https://xapi.tego.iie.cl/extensions/word_soup/${lastSegmentUri}`] = value;
+        });
+    }
+}
+exports.correctUriExtensionResultWordSoup = correctUriExtensionResultWordSoup;

@@ -93,6 +93,7 @@ export function getValueByPath(obj: JSON, path: string) {
             return value;
         }
     });
+
     return value;
 }
 

@@ -32,13 +32,17 @@ function xapiToExcel() {
         const statements = (0, FileProvider_1.getAllStatements)();
         console.log("Corrigiendo formato de extensiones...");
         for (const statement of statements) {
-            (0, FormatCorrector_1.correctUriExtensionsFormat)(statement);
+            correctFormat(statement);
         }
         yield prepareData(statements);
         yield insertData(statements);
     });
 }
 exports.xapiToExcel = xapiToExcel;
+function correctFormat(statement) {
+    (0, FormatCorrector_1.correctUriExtensionsGeneralFormat)(statement);
+    (0, FormatCorrector_1.correctUriExtensionResultWordSoup)(statement);
+}
 /**
  * Prepara los datos complementarios y crea un archivo Excel.
  * @param statements - Lista de declaraciones en formato JSON.
