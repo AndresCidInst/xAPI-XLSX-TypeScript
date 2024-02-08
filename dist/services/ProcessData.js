@@ -44,7 +44,7 @@ function statementPathReordenableTransform(extensions) {
     const transformedExtensions = {};
     const newKeys = Object.keys(consts_1.containsReordenableToSave);
     Object.keys(extensions).forEach((key) => {
-        const keyArray = key.split("|");
+        const keyArray = key.split("/");
         const foundKey = newKeys.find((newKey) => keyArray[keyArray.length - 1] == newKey);
         if (foundKey !== undefined && foundKey !== null) {
             if (foundKey.includes("currentOrder")) {
@@ -87,20 +87,20 @@ function ProcessData(value, path, sheetList) {
 function processHeadersMatches(value, path, sheetList) {
     let processedData = "";
     switch (path) {
-        case "object/definition/correctResponsesPattern":
-        case "result/extensions/https://xapi.tego.iie.cl/extensions/word_soup/founded_words":
-        case "result/extensions/https://xapi.tego.iie.cl/extensions/reordenable/currentOrder":
+        case "object|definition|correctResponsesPattern":
+        case "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words":
+        case "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/currentOrder":
             if (Array.isArray(value)) {
                 processedData = value.join(",");
             }
             return processedData;
-        case "object/definition/choices": {
+        case "object|definition|choices": {
             const sheet = sheetList.find((sheet) => sheet.name === "choices");
             return (0, ExcelServices_1.coordinateChoiceRetrieval)(sheet, value);
         }
-        case "context/contextActivities/grouping":
-        case "context/contextActivities/parent":
-        case "context/contextActivities/category": {
+        case "context|contextActivities|grouping":
+        case "context|contextActivities|parent":
+        case "context|contextActivities|category": {
             const nameSheet = path.split("|")[path.split("|").length - 1];
             const sheet = sheetList.find((sheet) => sheet.name === nameSheet);
             return (0, ExcelServices_1.coordinateActivityRetrieval)(sheet, value);

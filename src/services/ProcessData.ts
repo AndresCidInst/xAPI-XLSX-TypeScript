@@ -21,8 +21,8 @@ export function dataRetriever(
     const savedData: DataModelImpl = new DataModelImpl();
     try {
         if (isReordenableStatement(statement) && statement.result?.extensions) {
-            statement.result!.extensions = statementPathReordenableTransform(
-                statement.result!.extensions!,
+            statement.result.extensions = statementPathReordenableTransform(
+                statement.result.extensions,
             );
         }
         keys.forEach((path) => {
@@ -60,7 +60,7 @@ function statementPathReordenableTransform(extensions: Extensions): Extensions {
     const transformedExtensions: Extensions = {};
     const newKeys = Object.keys(containsReordenableToSave);
     Object.keys(extensions).forEach((key) => {
-        const keyArray = key.split("|");
+        const keyArray = key.split("/");
         const foundKey = newKeys.find(
             (newKey) => keyArray[keyArray.length - 1] == newKey,
         );
@@ -124,20 +124,20 @@ function processHeadersMatches(
 ): string {
     let processedData = "";
     switch (path) {
-        case "object/definition/correctResponsesPattern":
-        case "result/extensions/https://xapi.tego.iie.cl/extensions/word_soup/founded_words":
-        case "result/extensions/https://xapi.tego.iie.cl/extensions/reordenable/currentOrder":
+        case "object|definition|correctResponsesPattern":
+        case "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words":
+        case "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/currentOrder":
             if (Array.isArray(value)) {
                 processedData = value.join(",");
             }
             return processedData;
-        case "object/definition/choices": {
+        case "object|definition|choices": {
             const sheet = sheetList.find((sheet) => sheet.name === "choices");
             return coordinateChoiceRetrieval(sheet!, value as ChoiceJson[]);
         }
-        case "context/contextActivities/grouping":
-        case "context/contextActivities/parent":
-        case "context/contextActivities/category": {
+        case "context|contextActivities|grouping":
+        case "context|contextActivities|parent":
+        case "context|contextActivities|category": {
             const nameSheet = path.split("|")[path.split("|").length - 1];
             const sheet = sheetList.find((sheet) => sheet.name === nameSheet);
             return coordinateActivityRetrieval(sheet!, value as ActivityJson[]);

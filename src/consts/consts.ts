@@ -13,14 +13,13 @@ export const reduxContain = [
 ];
 
 export const containsReordenableToSave = {
-    movedPiece:
-        "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece",
+    movedPiece: "https://xapi.tego.iie.cl/extensions/reordenable/movedPiece",
     movedPiecePastPosition:
-        "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition",
+        "https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition",
     movedPiecePosition:
-        "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePosition",
+        "https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePosition",
     currentOrder:
-        "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/currentOrder",
+        "https://xapi.tego.iie.cl/extensions/reordenable/currentOrder",
 };
 
 export const fillHeaders = {

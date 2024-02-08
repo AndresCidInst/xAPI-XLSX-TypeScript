@@ -20,8 +20,8 @@ export class RequestServices {
         const retrievedStatements: Statement[] = [];
         let fromStatements: Statement[] = [];
         console.log("Obteniendo statements...");
+        let lastStatementTimeStamp: string = "";
         do {
-            let lastStatementTimeStamp: string = "";
             if (retrievedStatements.length > 0) {
                 lastStatementTimeStamp =
                     retrievedStatements[retrievedStatements.length - 1][

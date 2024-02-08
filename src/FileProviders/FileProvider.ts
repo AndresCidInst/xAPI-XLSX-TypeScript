@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from "fs";
 import { exit } from "process";
 
 export function getAllStatements(): JSON[] {
-    const file = readFileSync("data/prueba-01-Prueba.json", "utf-8");
+    const file = readFileSync("data/prueba-01-prueba.json", "utf-8");
     return JSON.parse(file);
 }
 

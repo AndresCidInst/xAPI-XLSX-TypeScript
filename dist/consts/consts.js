@@ -14,10 +14,10 @@ exports.reduxContain = [
     "continuationGame",
 ];
 exports.containsReordenableToSave = {
-    movedPiece: "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece",
-    movedPiecePastPosition: "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition",
-    movedPiecePosition: "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePosition",
-    currentOrder: "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/currentOrder",
+    movedPiece: "https://xapi.tego.iie.cl/extensions/reordenable/movedPiece",
+    movedPiecePastPosition: "https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition",
+    movedPiecePosition: "https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePosition",
+    currentOrder: "https://xapi.tego.iie.cl/extensions/reordenable/currentOrder",
 };
 exports.fillHeaders = {
     id: "id_capruta",

@@ -30,8 +30,8 @@ class RequestServices {
             const retrievedStatements = [];
             let fromStatements = [];
             console.log("Obteniendo statements...");
+            let lastStatementTimeStamp = "";
             do {
-                let lastStatementTimeStamp = "";
                 if (retrievedStatements.length > 0) {
                     lastStatementTimeStamp =
                         (_a = retrievedStatements[retrievedStatements.length - 1]["timestamp"]) !== null && _a !== void 0 ? _a : "";
