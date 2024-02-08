@@ -18,23 +18,14 @@ export function correctUriExtensionsGeneralFormat(statement: Statement) {
 }
 
 export function correctUriExtensionResultWordSoup(statement: Statement) {
-    const currentStatement = Object(statement);
-    if (
-        currentStatement["verb"]["id"] ==
-            "https://xapi.tego.iie.cl/verbs/played" &&
-        currentStatement["object"]["id"].includes("sopaDeLetras")
-    ) {
-        Object.keys(currentStatement["result"]["extensions"]).forEach(
-            (uri: string) => {
-                const lastSegmentUri = uri.split("/").pop();
-                const value = currentStatement["result"]["extensions"][uri];
-                delete statement.result!.extensions![uri];
-                statement.result!.extensions![
-                    `https://xapi.tego.iie.cl/extensions/word_soup/${lastSegmentUri}`
-                ] = value;
-            },
-        );
-    }
+    Object.keys(statement["result"]!["extensions"]!).forEach((uri: string) => {
+        const lastSegmentUri = uri.split("/").pop();
+        const value = statement["result"]!["extensions"]![uri];
+        delete statement.result!.extensions![uri];
+        statement.result!.extensions![
+            `https://xapi.tego.iie.cl/extensions/word_soup/${lastSegmentUri}`
+        ] = value;
+    });
 }
 
 export function correctInteractionPointsUriFormat(statement: Statement) {
@@ -54,28 +45,43 @@ export function correctInteractionPointsUriFormat(statement: Statement) {
 }
 
 export function correctAvatarChangeResultExtensionUri(statement: Statement) {
-    if (
-        Object(statement)["object"]["id"] ===
-            "https://xapi.tego.iie.cl/activities/profile/avatars" &&
-        statement.result?.extensions
-    ) {
-        const fromUri: string =
-            Object.keys(statement.result.extensions).find((uri) =>
-                uri.includes("from"),
-            ) ?? "";
-        const toUri: string =
-            Object.keys(statement.result.extensions).find((uri) =>
-                uri.includes("to"),
-            ) ?? "";
-        const fromValue: number = statement.result?.extensions[fromUri];
-        const toValue: number = statement.result?.extensions[toUri];
-        delete statement.result?.extensions[fromUri];
-        delete statement.result?.extensions[toUri];
-        statement.result.extensions[
-            "https://xapi.tego.iie.cl/extensions/profile/avatar/from"
-        ] = fromValue;
-        statement.result.extensions[
-            "https://xapi.tego.iie.cl/extensions/profile/avatar/to"
-        ] = toValue;
-    }
+    const fromUri: string =
+        Object.keys(statement.result!.extensions!).find((uri) =>
+            uri.includes("from"),
+        ) ?? "";
+    const toUri: string =
+        Object.keys(statement.result!.extensions!).find((uri) =>
+            uri.includes("to"),
+        ) ?? "";
+    changeAvatarUrisValue(fromUri, toUri, statement);
+}
+
+function changeAvatarUrisValue(
+    fromUri: string,
+    toUri: string,
+    statement: Statement,
+) {
+    const fromValue: number = statement.result?.extensions![fromUri];
+    const toValue: number = statement.result?.extensions![toUri];
+    delete statement.result?.extensions![fromUri];
+    delete statement.result?.extensions![toUri];
+    statement.result!.extensions![
+        "https://xapi.tego.iie.cl/extensions/profile/avatar/from"
+    ] = fromValue;
+    statement.result!.extensions![
+        "https://xapi.tego.iie.cl/extensions/profile/avatar/to"
+    ] = toValue;
+}
+
+export function correctSkippedVideoExtensions(statement: Statement) {
+    const currentExtensions = Object.entries(statement.result!.extensions!);
+    const fromValue = currentExtensions[0][1]["From"];
+    const toValue = currentExtensions[0][1]["To"];
+    delete statement.result!.extensions![currentExtensions[0][0]];
+    statement.result!.extensions![
+        "https://xapi.tego.iie.cl/extensions/video/time_skipped/From"
+    ] = fromValue;
+    statement.result!.extensions![
+        "https://xapi.tego.iie.cl/extensions/video/time_skipped/To"
+    ] = toValue;
 }

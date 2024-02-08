@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
+exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
 function correctUriExtensionsGeneralFormat(statement) {
     var _a, _b;
     if ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions) {
@@ -20,17 +20,12 @@ function correctUriExtensionsGeneralFormat(statement) {
 }
 exports.correctUriExtensionsGeneralFormat = correctUriExtensionsGeneralFormat;
 function correctUriExtensionResultWordSoup(statement) {
-    const currentStatement = Object(statement);
-    if (currentStatement["verb"]["id"] ==
-        "https://xapi.tego.iie.cl/verbs/played" &&
-        currentStatement["object"]["id"].includes("sopaDeLetras")) {
-        Object.keys(currentStatement["result"]["extensions"]).forEach((uri) => {
-            const lastSegmentUri = uri.split("/").pop();
-            const value = currentStatement["result"]["extensions"][uri];
-            delete statement.result.extensions[uri];
-            statement.result.extensions[`https://xapi.tego.iie.cl/extensions/word_soup/${lastSegmentUri}`] = value;
-        });
-    }
+    Object.keys(statement["result"]["extensions"]).forEach((uri) => {
+        const lastSegmentUri = uri.split("/").pop();
+        const value = statement["result"]["extensions"][uri];
+        delete statement.result.extensions[uri];
+        statement.result.extensions[`https://xapi.tego.iie.cl/extensions/word_soup/${lastSegmentUri}`] = value;
+    });
 }
 exports.correctUriExtensionResultWordSoup = correctUriExtensionResultWordSoup;
 function correctInteractionPointsUriFormat(statement) {
@@ -47,18 +42,27 @@ function correctInteractionPointsUriFormat(statement) {
 }
 exports.correctInteractionPointsUriFormat = correctInteractionPointsUriFormat;
 function correctAvatarChangeResultExtensionUri(statement) {
-    var _a, _b, _c, _d, _e, _f, _g;
-    if (Object(statement)["object"]["id"] ===
-        "https://xapi.tego.iie.cl/activities/profile/avatars" &&
-        ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions)) {
-        const fromUri = (_b = Object.keys(statement.result.extensions).find((uri) => uri.includes("from"))) !== null && _b !== void 0 ? _b : "";
-        const toUri = (_c = Object.keys(statement.result.extensions).find((uri) => uri.includes("to"))) !== null && _c !== void 0 ? _c : "";
-        const fromValue = (_d = statement.result) === null || _d === void 0 ? void 0 : _d.extensions[fromUri];
-        const toValue = (_e = statement.result) === null || _e === void 0 ? void 0 : _e.extensions[toUri];
-        (_f = statement.result) === null || _f === void 0 ? true : delete _f.extensions[fromUri];
-        (_g = statement.result) === null || _g === void 0 ? true : delete _g.extensions[toUri];
-        statement.result.extensions["https://xapi.tego.iie.cl/extensions/profile/avatar/from"] = fromValue;
-        statement.result.extensions["https://xapi.tego.iie.cl/extensions/profile/avatar/to"] = toValue;
-    }
+    var _a, _b;
+    const fromUri = (_a = Object.keys(statement.result.extensions).find((uri) => uri.includes("from"))) !== null && _a !== void 0 ? _a : "";
+    const toUri = (_b = Object.keys(statement.result.extensions).find((uri) => uri.includes("to"))) !== null && _b !== void 0 ? _b : "";
+    changeAvatarUrisValue(fromUri, toUri, statement);
 }
 exports.correctAvatarChangeResultExtensionUri = correctAvatarChangeResultExtensionUri;
+function changeAvatarUrisValue(fromUri, toUri, statement) {
+    var _a, _b, _c, _d;
+    const fromValue = (_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions[fromUri];
+    const toValue = (_b = statement.result) === null || _b === void 0 ? void 0 : _b.extensions[toUri];
+    (_c = statement.result) === null || _c === void 0 ? true : delete _c.extensions[fromUri];
+    (_d = statement.result) === null || _d === void 0 ? true : delete _d.extensions[toUri];
+    statement.result.extensions["https://xapi.tego.iie.cl/extensions/profile/avatar/from"] = fromValue;
+    statement.result.extensions["https://xapi.tego.iie.cl/extensions/profile/avatar/to"] = toValue;
+}
+function correctSkippedVideoExtensions(statement) {
+    const currentExtensions = Object.entries(statement.result.extensions);
+    const fromValue = currentExtensions[0][1]["From"];
+    const toValue = currentExtensions[0][1]["To"];
+    delete statement.result.extensions[currentExtensions[0][0]];
+    statement.result.extensions["https://xapi.tego.iie.cl/extensions/video/time_skipped/From"] = fromValue;
+    statement.result.extensions["https://xapi.tego.iie.cl/extensions/video/time_skipped/To"] = toValue;
+}
+exports.correctSkippedVideoExtensions = correctSkippedVideoExtensions;

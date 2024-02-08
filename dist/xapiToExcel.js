@@ -44,10 +44,26 @@ exports.xapiToExcel = xapiToExcel;
  * @param statement La declaración xAPI a corregir.
  */
 function correctFormat(statement) {
+    var _a;
     (0, FormatCorrector_1.correctUriExtensionsGeneralFormat)(statement);
-    (0, FormatCorrector_1.correctUriExtensionResultWordSoup)(statement);
     (0, FormatCorrector_1.correctInteractionPointsUriFormat)(statement);
-    (0, FormatCorrector_1.correctAvatarChangeResultExtensionUri)(statement);
+    const currentStatement = Object(statement);
+    if (currentStatement["verb"]["id"] ==
+        "https://xapi.tego.iie.cl/verbs/skipped-forward" ||
+        currentStatement["verb"]["id"] ==
+            "https://xapi.tego.iie.cl/verbs/skipped-backward") {
+        (0, FormatCorrector_1.correctSkippedVideoExtensions)(statement);
+    }
+    if (currentStatement["verb"]["id"] ==
+        "https://xapi.tego.iie.cl/verbs/played" &&
+        currentStatement["object"]["id"].includes("sopaDeLetras")) {
+        (0, FormatCorrector_1.correctUriExtensionResultWordSoup)(statement);
+    }
+    if (Object(statement)["object"]["id"] ===
+        "https://xapi.tego.iie.cl/activities/profile/avatars" &&
+        ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions)) {
+        (0, FormatCorrector_1.correctAvatarChangeResultExtensionUri)(statement);
+    }
 }
 /**
  * Prepara los datos complementarios y crea un archivo Excel.
