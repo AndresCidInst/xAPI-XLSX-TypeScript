@@ -32,7 +32,6 @@ export const fillHeaders = {
     "object|definition|name|es-CL": "actividad_nombre",
     "object|definition|description|es-CL": "actividad_descripcion",
     "object|definition|type": "actividad_tipo",
-    "object|definition|interactionType": "actividad_tipo_interaccion",
     "object|definition|correctResponsesPattern":
         "actividad_elemento_u_orden_correcto",
     "object|definition|choices": "actividad_elementos_opciones",

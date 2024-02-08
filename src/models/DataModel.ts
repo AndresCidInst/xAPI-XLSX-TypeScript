@@ -12,7 +12,6 @@ export class DataModelImpl implements DataModel {
     "object|definition|name|es-CL": string;
     "object|definition|description|es-CL": string;
     "object|definition|type": string;
-    "object|definition|interactionType": string;
     "object|definition|correctResponsesPattern": string;
     "object|definition|choices": string;
     "context|platform": string;
