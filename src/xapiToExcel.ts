@@ -13,6 +13,7 @@ import { DataModelImpl } from "./models/DataModel";
 import { Parent, ParentJson } from "./models/ParentModels";
 import { createExcelFile, saveMainDataInExcel } from "./services/ExcelServices";
 import {
+    correctAvatarChangeResultExtensionUri,
     correctInteractionPointsUriFormat,
     correctUriExtensionResultWordSoup,
     correctUriExtensionsGeneralFormat,
@@ -47,6 +48,7 @@ function correctFormat(statement: Statement) {
     correctUriExtensionsGeneralFormat(statement);
     correctUriExtensionResultWordSoup(statement);
     correctInteractionPointsUriFormat(statement);
+    correctAvatarChangeResultExtensionUri(statement);
 }
 
 /**

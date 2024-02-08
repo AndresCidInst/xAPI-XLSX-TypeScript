@@ -52,3 +52,30 @@ export function correctInteractionPointsUriFormat(statement: Statement) {
         }
     }
 }
+
+export function correctAvatarChangeResultExtensionUri(statement: Statement) {
+    if (
+        Object(statement)["object"]["id"] ===
+            "https://xapi.tego.iie.cl/activities/profile/avatars" &&
+        statement.result?.extensions
+    ) {
+        const fromUri: string =
+            Object.keys(statement.result.extensions).find((uri) =>
+                uri.includes("from"),
+            ) ?? "";
+        const toUri: string =
+            Object.keys(statement.result.extensions).find((uri) =>
+                uri.includes("to"),
+            ) ?? "";
+        const fromValue: number = statement.result?.extensions[fromUri];
+        const toValue: number = statement.result?.extensions[toUri];
+        delete statement.result?.extensions[fromUri];
+        delete statement.result?.extensions[toUri];
+        statement.result.extensions[
+            "https://xapi.tego.iie.cl/extensions/profile/avatar/from"
+        ] = fromValue;
+        statement.result.extensions[
+            "https://xapi.tego.iie.cl/extensions/profile/avatar/to"
+        ] = toValue;
+    }
+}

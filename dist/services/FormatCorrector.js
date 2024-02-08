@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
+exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
 function correctUriExtensionsGeneralFormat(statement) {
     var _a, _b;
     if ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions) {
@@ -46,3 +46,19 @@ function correctInteractionPointsUriFormat(statement) {
     }
 }
 exports.correctInteractionPointsUriFormat = correctInteractionPointsUriFormat;
+function correctAvatarChangeResultExtensionUri(statement) {
+    var _a, _b, _c, _d, _e, _f, _g;
+    if (Object(statement)["object"]["id"] ===
+        "https://xapi.tego.iie.cl/activities/profile/avatars" &&
+        ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions)) {
+        const fromUri = (_b = Object.keys(statement.result.extensions).find((uri) => uri.includes("from"))) !== null && _b !== void 0 ? _b : "";
+        const toUri = (_c = Object.keys(statement.result.extensions).find((uri) => uri.includes("to"))) !== null && _c !== void 0 ? _c : "";
+        const fromValue = (_d = statement.result) === null || _d === void 0 ? void 0 : _d.extensions[fromUri];
+        const toValue = (_e = statement.result) === null || _e === void 0 ? void 0 : _e.extensions[toUri];
+        (_f = statement.result) === null || _f === void 0 ? true : delete _f.extensions[fromUri];
+        (_g = statement.result) === null || _g === void 0 ? true : delete _g.extensions[toUri];
+        statement.result.extensions["https://xapi.tego.iie.cl/extensions/profile/avatar/from"] = fromValue;
+        statement.result.extensions["https://xapi.tego.iie.cl/extensions/profile/avatar/to"] = toValue;
+    }
+}
+exports.correctAvatarChangeResultExtensionUri = correctAvatarChangeResultExtensionUri;
