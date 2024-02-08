@@ -36,3 +36,19 @@ export function correctUriExtensionResultWordSoup(statement: Statement) {
         );
     }
 }
+
+export function correctInteractionPointsUriFormat(statement: Statement) {
+    if (statement.result?.extensions) {
+        const uris = Object.keys(statement.result!.extensions!);
+        const position = uris.findIndex((uri) =>
+            uri.includes("is_interaction_points"),
+        );
+        if (position !== -1) {
+            const value = statement.result!.extensions![uris[position]];
+            delete statement.result!.extensions![uris[position]];
+            statement.result!.extensions![
+                "https://xapi.tego.iie.cl/extensions/is_interaction_points"
+            ] = value;
+        }
+    }
+}

@@ -39,9 +39,14 @@ function xapiToExcel() {
     });
 }
 exports.xapiToExcel = xapiToExcel;
+/**
+ * Corrige el formato de una declaración xAPI.
+ * @param statement La declaración xAPI a corregir.
+ */
 function correctFormat(statement) {
     (0, FormatCorrector_1.correctUriExtensionsGeneralFormat)(statement);
     (0, FormatCorrector_1.correctUriExtensionResultWordSoup)(statement);
+    (0, FormatCorrector_1.correctInteractionPointsUriFormat)(statement);
 }
 /**
  * Prepara los datos complementarios y crea un archivo Excel.

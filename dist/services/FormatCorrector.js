@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
+exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
 function correctUriExtensionsGeneralFormat(statement) {
     var _a, _b;
     if ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions) {
@@ -33,3 +33,16 @@ function correctUriExtensionResultWordSoup(statement) {
     }
 }
 exports.correctUriExtensionResultWordSoup = correctUriExtensionResultWordSoup;
+function correctInteractionPointsUriFormat(statement) {
+    var _a;
+    if ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions) {
+        const uris = Object.keys(statement.result.extensions);
+        const position = uris.findIndex((uri) => uri.includes("is_interaction_points"));
+        if (position !== -1) {
+            const value = statement.result.extensions[uris[position]];
+            delete statement.result.extensions[uris[position]];
+            statement.result.extensions["https://xapi.tego.iie.cl/extensions/is_interaction_points"] = value;
+        }
+    }
+}
+exports.correctInteractionPointsUriFormat = correctInteractionPointsUriFormat;

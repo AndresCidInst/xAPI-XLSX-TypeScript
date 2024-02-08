@@ -13,6 +13,7 @@ import { DataModelImpl } from "./models/DataModel";
 import { Parent, ParentJson } from "./models/ParentModels";
 import { createExcelFile, saveMainDataInExcel } from "./services/ExcelServices";
 import {
+    correctInteractionPointsUriFormat,
     correctUriExtensionResultWordSoup,
     correctUriExtensionsGeneralFormat,
 } from "./services/FormatCorrector";
@@ -38,9 +39,14 @@ export async function xapiToExcel() {
     await insertData(statements);
 }
 
+/**
+ * Corrige el formato de una declaración xAPI.
+ * @param statement La declaración xAPI a corregir.
+ */
 function correctFormat(statement: Statement) {
     correctUriExtensionsGeneralFormat(statement);
     correctUriExtensionResultWordSoup(statement);
+    correctInteractionPointsUriFormat(statement);
 }
 
 /**
