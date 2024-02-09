@@ -1,4 +1,4 @@
-import { Statement } from "@xapi/xapi";
+import { ContextActivity, Statement } from "@xapi/xapi";
 
 export function correctUriExtensionsGeneralFormat(statement: Statement) {
     if (statement.result?.extensions) {
@@ -84,4 +84,68 @@ export function correctSkippedVideoExtensions(statement: Statement) {
     statement.result!.extensions![
         "https://xapi.tego.iie.cl/extensions/video/time_skipped/To"
     ] = toValue;
+}
+
+export function removeAllDomainFromUris(statement: Statement) {
+    const domainToExclude = "https://xapi.tego.iie.cl/";
+    statement = deleteUriPrincipalPlaces(statement, domainToExclude);
+    deleteUriContextActivities(statement, domainToExclude);
+}
+
+function deleteUriPrincipalPlaces(
+    statement: Statement,
+    domainToExclude: string,
+) {
+    const currentStatement = Object(statement);
+
+    currentStatement.verb.id = currentStatement.verb.id
+        .split("/")
+        .pop() as string;
+
+    currentStatement.object.id = currentStatement.object.id.replace(
+        domainToExclude,
+        "",
+    );
+
+    if (currentStatement.object.definition.type) {
+        currentStatement.object.definition.type =
+            currentStatement.object.definition.type.split("/").pop() as string;
+    }
+
+    return currentStatement as Statement;
+}
+
+function deleteUriContextActivities(
+    statement: Statement,
+    domainToExclude: string,
+) {
+    if (statement.context?.contextActivities?.parent) {
+        objectUriReplace(
+            statement.context!.contextActivities!.parent!,
+            domainToExclude,
+        );
+    }
+    if (statement.context?.contextActivities?.category) {
+        objectUriReplace(
+            statement.context!.contextActivities!.category,
+            domainToExclude,
+        );
+    }
+    if (statement.context?.contextActivities?.grouping) {
+        objectUriReplace(
+            statement.context!.contextActivities!.grouping,
+            domainToExclude,
+        );
+    }
+}
+
+function objectUriReplace(
+    activities: ContextActivity[],
+    domainToExclude: string,
+) {
+    if (activities) {
+        for (const activity of activities) {
+            activity.id = activity.id.replace(domainToExclude, "");
+        }
+    }
 }

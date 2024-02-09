@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
+exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
 function correctUriExtensionsGeneralFormat(statement) {
     var _a, _b;
     if ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions) {
@@ -66,3 +66,40 @@ function correctSkippedVideoExtensions(statement) {
     statement.result.extensions["https://xapi.tego.iie.cl/extensions/video/time_skipped/To"] = toValue;
 }
 exports.correctSkippedVideoExtensions = correctSkippedVideoExtensions;
+function removeAllDomainFromUris(statement) {
+    const domainToExclude = "https://xapi.tego.iie.cl/";
+    statement = deleteUriPrincipalPlaces(statement, domainToExclude);
+    deleteUriContextActivities(statement, domainToExclude);
+}
+exports.removeAllDomainFromUris = removeAllDomainFromUris;
+function deleteUriPrincipalPlaces(statement, domainToExclude) {
+    const currentStatement = Object(statement);
+    currentStatement.verb.id = currentStatement.verb.id
+        .split("/")
+        .pop();
+    currentStatement.object.id = currentStatement.object.id.replace(domainToExclude, "");
+    if (currentStatement.object.definition.type) {
+        currentStatement.object.definition.type =
+            currentStatement.object.definition.type.split("/").pop();
+    }
+    return currentStatement;
+}
+function deleteUriContextActivities(statement, domainToExclude) {
+    var _a, _b, _c, _d, _e, _f;
+    if ((_b = (_a = statement.context) === null || _a === void 0 ? void 0 : _a.contextActivities) === null || _b === void 0 ? void 0 : _b.parent) {
+        objectUriReplace(statement.context.contextActivities.parent, domainToExclude);
+    }
+    if ((_d = (_c = statement.context) === null || _c === void 0 ? void 0 : _c.contextActivities) === null || _d === void 0 ? void 0 : _d.category) {
+        objectUriReplace(statement.context.contextActivities.category, domainToExclude);
+    }
+    if ((_f = (_e = statement.context) === null || _e === void 0 ? void 0 : _e.contextActivities) === null || _f === void 0 ? void 0 : _f.grouping) {
+        objectUriReplace(statement.context.contextActivities.grouping, domainToExclude);
+    }
+}
+function objectUriReplace(activities, domainToExclude) {
+    if (activities) {
+        for (const activity of activities) {
+            activity.id = activity.id.replace(domainToExclude, "");
+        }
+    }
+}

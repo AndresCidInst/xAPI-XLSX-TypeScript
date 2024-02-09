@@ -47,20 +47,17 @@ function correctFormat(statement) {
     var _a;
     (0, FormatCorrector_1.correctUriExtensionsGeneralFormat)(statement);
     (0, FormatCorrector_1.correctInteractionPointsUriFormat)(statement);
+    (0, FormatCorrector_1.removeAllDomainFromUris)(statement);
     const currentStatement = Object(statement);
-    if (currentStatement["verb"]["id"] ==
-        "https://xapi.tego.iie.cl/verbs/skipped-forward" ||
-        currentStatement["verb"]["id"] ==
-            "https://xapi.tego.iie.cl/verbs/skipped-backward") {
+    if (currentStatement["verb"]["id"] == "skipped-forward" ||
+        currentStatement["verb"]["id"] == "skipped-backward") {
         (0, FormatCorrector_1.correctSkippedVideoExtensions)(statement);
     }
-    if (currentStatement["verb"]["id"] ==
-        "https://xapi.tego.iie.cl/verbs/played" &&
+    if (currentStatement["verb"]["id"] == "played" &&
         currentStatement["object"]["id"].includes("sopaDeLetras")) {
         (0, FormatCorrector_1.correctUriExtensionResultWordSoup)(statement);
     }
-    if (Object(statement)["object"]["id"] ===
-        "https://xapi.tego.iie.cl/activities/profile/avatars" &&
+    if (Object(statement)["object"]["id"] === "activities/profile/avatars" &&
         ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions)) {
         (0, FormatCorrector_1.correctAvatarChangeResultExtensionUri)(statement);
     }

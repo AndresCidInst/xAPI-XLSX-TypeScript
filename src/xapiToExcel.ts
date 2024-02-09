@@ -18,6 +18,7 @@ import {
     correctSkippedVideoExtensions,
     correctUriExtensionResultWordSoup,
     correctUriExtensionsGeneralFormat,
+    removeAllDomainFromUris,
 } from "./services/FormatCorrector";
 import { dataRetriever, getValueByPath } from "./services/ProcessData";
 import { saveCategory as getCategoryFromJson } from "./services/manipulators/CategoryManipulator";
@@ -48,27 +49,24 @@ export async function xapiToExcel() {
 function correctFormat(statement: Statement) {
     correctUriExtensionsGeneralFormat(statement);
     correctInteractionPointsUriFormat(statement);
+    removeAllDomainFromUris(statement);
     const currentStatement = Object(statement);
     if (
-        currentStatement["verb"]["id"] ==
-            "https://xapi.tego.iie.cl/verbs/skipped-forward" ||
-        currentStatement["verb"]["id"] ==
-            "https://xapi.tego.iie.cl/verbs/skipped-backward"
+        currentStatement["verb"]["id"] == "skipped-forward" ||
+        currentStatement["verb"]["id"] == "skipped-backward"
     ) {
         correctSkippedVideoExtensions(statement);
     }
 
     if (
-        currentStatement["verb"]["id"] ==
-            "https://xapi.tego.iie.cl/verbs/played" &&
+        currentStatement["verb"]["id"] == "played" &&
         currentStatement["object"]["id"].includes("sopaDeLetras")
     ) {
         correctUriExtensionResultWordSoup(statement);
     }
 
     if (
-        Object(statement)["object"]["id"] ===
-            "https://xapi.tego.iie.cl/activities/profile/avatars" &&
+        Object(statement)["object"]["id"] === "activities/profile/avatars" &&
         statement.result?.extensions
     ) {
         correctAvatarChangeResultExtensionUri(statement);

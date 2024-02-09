@@ -102,19 +102,22 @@ function coordinateChoiceRetrieval(workSheet, data) {
     workSheet.eachRow((row) => {
         if (data.some((choice) => row.getCell(2).value === choice.id) &&
             data.some((choice) => row.getCell(3).value === choice.description["es-CL"])) {
-            choicesAddress.push(`'${workSheet.name}'!${row.getCell(1).address}`);
+            choicesAddress.push(`${workSheet.name}!${row.getCell(1).address}`);
         }
     });
-    return `=${choicesAddress.join(' & ", " & ')}`;
+    return arrayToCoordinate(choicesAddress);
 }
 exports.coordinateChoiceRetrieval = coordinateChoiceRetrieval;
 function coordinateActivityRetrieval(workSheet, data) {
     const activityAddress = [];
     workSheet.eachRow((row) => {
         if (data.some((activity) => row.getCell(2).value === activity.id)) {
-            activityAddress.push(`'${workSheet.name}'!${row.getCell(1).address}`);
+            activityAddress.push(`${workSheet.name}!${row.getCell(1).address}`);
         }
     });
-    return `=${activityAddress.join(' & ", " & ')}`;
+    return arrayToCoordinate(activityAddress);
 }
 exports.coordinateActivityRetrieval = coordinateActivityRetrieval;
+function arrayToCoordinate(array) {
+    return `=${array.join(' & ", " & ')}`;
+}

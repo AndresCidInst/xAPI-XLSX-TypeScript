@@ -35,8 +35,7 @@ exports.dataRetriever = dataRetriever;
 function isReordenableStatement(statement) {
     if ("id" in statement.object) {
         return (statement.object["id"].includes("reordenable") &&
-            statement["verb"]["id"] ===
-                "http://id.tincanapi.com/verb/changed-order");
+            statement["verb"]["id"] === "changed-order");
     }
     return false;
 }

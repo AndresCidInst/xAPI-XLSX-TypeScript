@@ -49,8 +49,7 @@ function isReordenableStatement(statement: Statement): boolean {
     if ("id" in statement.object) {
         return (
             (statement.object["id"] as string).includes("reordenable") &&
-            statement["verb"]["id"] ===
-                "http://id.tincanapi.com/verb/changed-order"
+            statement["verb"]["id"] === "changed-order"
         );
     }
     return false;

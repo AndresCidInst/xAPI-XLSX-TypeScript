@@ -122,12 +122,10 @@ export function coordinateChoiceRetrieval(
                     row.getCell(3).value === choice.description["es-CL"],
             )
         ) {
-            choicesAddress.push(
-                `'${workSheet.name}'!${row.getCell(1).address}`,
-            );
+            choicesAddress.push(`${workSheet.name}!${row.getCell(1).address}`);
         }
     });
-    return `=${choicesAddress.join(' & ", " & ')}`;
+    return arrayToCoordinate(choicesAddress);
 }
 
 export function coordinateActivityRetrieval(
@@ -137,10 +135,12 @@ export function coordinateActivityRetrieval(
     const activityAddress: string[] = [];
     workSheet.eachRow((row) => {
         if (data.some((activity) => row.getCell(2).value === activity.id)) {
-            activityAddress.push(
-                `'${workSheet.name}'!${row.getCell(1).address}`,
-            );
+            activityAddress.push(`${workSheet.name}!${row.getCell(1).address}`);
         }
     });
-    return `=${activityAddress.join(' & ", " & ')}`;
+    return arrayToCoordinate(activityAddress);
+}
+
+function arrayToCoordinate(array: string[]) {
+    return `=${array.join(' & ", " & ')}`;
 }
