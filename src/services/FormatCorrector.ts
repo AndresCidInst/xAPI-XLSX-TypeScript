@@ -97,10 +97,10 @@ function deleteUriPrincipalPlaces(
     domainToExclude: string,
 ) {
     const currentStatement = Object(statement);
-
     currentStatement.verb.id = currentStatement.verb.id
         .split("/")
-        .pop() as string;
+        .slice(-2)
+        .join("/") as string;
 
     currentStatement.object.id = currentStatement.object.id.replace(
         domainToExclude,

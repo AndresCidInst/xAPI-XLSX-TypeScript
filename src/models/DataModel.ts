@@ -1,5 +1,10 @@
 interface DataModel {
-    [key: string]: string | boolean | number | Date;
+    [key: string]:
+        | string
+        | boolean
+        | number
+        | Date
+        | { formula: string; result: null };
 }
 
 export class DataModelImpl implements DataModel {
@@ -52,5 +57,10 @@ export class DataModelImpl implements DataModel {
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": number;
 
     constructor() {}
-    [key: string]: string | number | boolean | Date;
+    [key: string]:
+        | string
+        | number
+        | boolean
+        | Date
+        | { formula: string; result: null };
 }

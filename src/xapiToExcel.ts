@@ -31,8 +31,8 @@ import { parentDataMolder as getParentFromJson } from "./services/manipulators/P
  * @returns Una promesa que se resuelve cuando se han insertado los datos en el archivo.
  */
 export async function xapiToExcel() {
-    //const requestServices = new RequestServices();
-    //const statements: JSON[] = await requestServices.getAllStatements();
+    // const requestServices = new RequestServices();
+    // const statements: JSON[] = await requestServices.getAllStatements();
     const statements: JSON[] = getAllStatements();
     console.log("Corrigiendo formato de extensiones...");
     for (const statement of statements) {

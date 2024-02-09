@@ -107,7 +107,7 @@ function ProcessData(
     value: unknown,
     path: string,
     sheetList: Worksheet[],
-): string | boolean | number {
+): { formula: string; result: null } | string | boolean | number {
     if (headersMatches.includes(path)) {
         return processHeadersMatches(value, path, sheetList);
     }
@@ -121,7 +121,7 @@ function processHeadersMatches(
     value: unknown | [],
     path: string,
     sheetList: Worksheet[],
-): string {
+) {
     let processedData = "";
     switch (path) {
         case "object|definition|correctResponsesPattern":
@@ -133,14 +133,26 @@ function processHeadersMatches(
             return processedData;
         case "object|definition|choices": {
             const sheet = sheetList.find((sheet) => sheet.name === "choices");
-            return coordinateChoiceRetrieval(sheet!, value as ChoiceJson[]);
+            return {
+                formula: coordinateChoiceRetrieval(
+                    sheet!,
+                    value as ChoiceJson[],
+                ),
+                result: null,
+            };
         }
         case "context|contextActivities|grouping":
         case "context|contextActivities|parent":
         case "context|contextActivities|category": {
             const nameSheet = path.split("|")[path.split("|").length - 1];
             const sheet = sheetList.find((sheet) => sheet.name === nameSheet);
-            return coordinateActivityRetrieval(sheet!, value as ActivityJson[]);
+            return {
+                formula: coordinateActivityRetrieval(
+                    sheet!,
+                    value as ActivityJson[],
+                ),
+                result: null,
+            };
         }
     }
     return "N/A";

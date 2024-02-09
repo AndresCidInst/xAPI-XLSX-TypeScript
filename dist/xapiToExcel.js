@@ -27,8 +27,8 @@ const ParentManipulator_1 = require("./services/manipulators/ParentManipulator")
  */
 function xapiToExcel() {
     return __awaiter(this, void 0, void 0, function* () {
-        //const requestServices = new RequestServices();
-        //const statements: JSON[] = await requestServices.getAllStatements();
+        // const requestServices = new RequestServices();
+        // const statements: JSON[] = await requestServices.getAllStatements();
         const statements = (0, FileProvider_1.getAllStatements)();
         console.log("Corrigiendo formato de extensiones...");
         for (const statement of statements) {

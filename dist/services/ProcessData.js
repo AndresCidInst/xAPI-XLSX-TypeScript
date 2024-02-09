@@ -95,14 +95,20 @@ function processHeadersMatches(value, path, sheetList) {
             return processedData;
         case "object|definition|choices": {
             const sheet = sheetList.find((sheet) => sheet.name === "choices");
-            return (0, ExcelServices_1.coordinateChoiceRetrieval)(sheet, value);
+            return {
+                formula: (0, ExcelServices_1.coordinateChoiceRetrieval)(sheet, value),
+                result: null,
+            };
         }
         case "context|contextActivities|grouping":
         case "context|contextActivities|parent":
         case "context|contextActivities|category": {
             const nameSheet = path.split("|")[path.split("|").length - 1];
             const sheet = sheetList.find((sheet) => sheet.name === nameSheet);
-            return (0, ExcelServices_1.coordinateActivityRetrieval)(sheet, value);
+            return {
+                formula: (0, ExcelServices_1.coordinateActivityRetrieval)(sheet, value),
+                result: null,
+            };
         }
     }
     return "N/A";
