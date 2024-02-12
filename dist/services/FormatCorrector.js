@@ -74,10 +74,13 @@ function removeAllDomainFromUris(statement) {
 exports.removeAllDomainFromUris = removeAllDomainFromUris;
 function deleteUriPrincipalPlaces(statement, domainToExclude) {
     const currentStatement = Object(statement);
-    currentStatement.verb.id = currentStatement.verb.id
+    const statementVerb = currentStatement.verb.id
         .split("/")
         .slice(-2)
         .join("/");
+    currentStatement.verb.id = !statementVerb.includes("verb/")
+        ? statementVerb
+        : statementVerb.replace("verb/", "verbs/");
     currentStatement.object.id = currentStatement.object.id.replace(domainToExclude, "");
     if (currentStatement.object.definition.type) {
         currentStatement.object.definition.type =
