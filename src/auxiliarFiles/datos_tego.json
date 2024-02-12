@@ -3735,7 +3735,7 @@
     "verb|id": "verbs/viewed",
     "object|id": "activities/nutricion/game/trivia/5/feedback-trivia",
     "object|definition|name|es-CL": "Resultados Trivia - 5",
-    "object|definition|description|es-CL": "Resultado de la Trivia -5Con retroalimentación objetiva sobre  nutricion.",
+    "object|definition|description|es-CL": "Resultado de la Trivia - 5. Con retroalimentación objetiva sobre  nutricion.",
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": "N/A",

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
+exports.descriptionFeedbackTriviaCorrect = exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
 function correctUriExtensionsGeneralFormat(statement) {
     var _a, _b;
     if ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions) {
@@ -107,3 +107,10 @@ function objectUriReplace(activities, domainToExclude) {
         }
     }
 }
+function descriptionFeedbackTriviaCorrect(statement) {
+    const currentObject = Object(statement.object);
+    currentObject.definition.description["es-CL"] =
+        currentObject.definition.description["es-CL"].replace("Resultado de la Trivia -5Con retroalimentación objetiva sobre  nutricion.", "Resultado de la Trivia - 5. Con retroalimentación objetiva sobre  nutricion.");
+    statement.object = currentObject;
+}
+exports.descriptionFeedbackTriviaCorrect = descriptionFeedbackTriviaCorrect;

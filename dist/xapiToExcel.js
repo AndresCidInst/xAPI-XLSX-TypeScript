@@ -61,6 +61,10 @@ function correctFormat(statement) {
         ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions)) {
         (0, FormatCorrector_1.correctAvatarChangeResultExtensionUri)(statement);
     }
+    if (currentStatement["verb"]["id"] == "verbs/viewed" &&
+        currentStatement["object"]["id"].includes("feedback-trivia")) {
+        (0, FormatCorrector_1.descriptionFeedbackTriviaCorrect)(statement);
+    }
 }
 /**
  * Prepara los datos complementarios y crea un archivo Excel.

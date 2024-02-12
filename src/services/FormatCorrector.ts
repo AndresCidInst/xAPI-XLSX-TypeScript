@@ -152,3 +152,13 @@ function objectUriReplace(
         }
     }
 }
+
+export function descriptionFeedbackTriviaCorrect(statement: Statement) {
+    const currentObject = Object(statement.object);
+    currentObject.definition.description["es-CL"] =
+        currentObject.definition.description["es-CL"].replace(
+            "Resultado de la Trivia -5Con retroalimentación objetiva sobre  nutricion.",
+            "Resultado de la Trivia - 5. Con retroalimentación objetiva sobre  nutricion.",
+        );
+    statement.object = currentObject;
+}

@@ -18,6 +18,7 @@ import {
     correctSkippedVideoExtensions,
     correctUriExtensionResultWordSoup,
     correctUriExtensionsGeneralFormat,
+    descriptionFeedbackTriviaCorrect,
     removeAllDomainFromUris,
 } from "./services/FormatCorrector";
 import { dataRetriever, getValueByPath } from "./services/ProcessData";
@@ -70,6 +71,13 @@ function correctFormat(statement: Statement) {
         statement.result?.extensions
     ) {
         correctAvatarChangeResultExtensionUri(statement);
+    }
+
+    if (
+        currentStatement["verb"]["id"] == "verbs/viewed" &&
+        currentStatement["object"]["id"].includes("feedback-trivia")
+    ) {
+        descriptionFeedbackTriviaCorrect(statement);
     }
 }
 
