@@ -30,12 +30,16 @@ function xapiToExcel() {
         // const requestServices = new RequestServices();
         // const statements: JSON[] = await requestServices.getAllStatements();
         const statements = (0, FileProvider_1.getAllStatements)();
-        console.log("Corrigiendo formato de extensiones...");
+        console.log("Corrigiendo detalles de las declaraciones...");
         for (const statement of statements) {
             correctFormat(statement);
         }
-        yield prepareData(statements);
-        yield insertData(statements);
+        const newStatements = statements.filter((statement) => {
+            const currentStatement = Object(statement);
+            return !currentStatement["object"]["id"].includes("Topics");
+        });
+        yield prepareData(newStatements);
+        yield insertData(newStatements);
     });
 }
 exports.xapiToExcel = xapiToExcel;

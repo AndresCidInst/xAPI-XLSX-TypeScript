@@ -2454,61 +2454,6 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
   },
   {
-    "id": "01359783-02a4-4e20-83ef-3eacb819dc5d",
-    "actor|name": "PaolaAngélica",
-    "actor|account|name": "11415764-3",
-    "verb|display|es-CL": "fue-a",
-    "verb|id": "verbs/went-to",
-    "object|id": "activities/navigability/module-TopicsPage",
-    "object|definition|name|es-CL": "Vista TopicsPage",
-    "object|definition|description|es-CL": "El usuario se desplazó hasta la vista TopicsPage",
-    "object|definition|type": "navigability",
-    "object|definition|correctResponsesPattern": "N/A",
-    "object|definition|choices": "N/A",
-    "context|platform": "android RP1A.200720.011",
-    "context|contextActivities|parent": {
-      "formula": "=parent!A2",
-      "result": null
-    },
-    "context|contextActivities|grouping": "N/A",
-    "context|contextActivities|category": {
-      "formula": "=category!A7 & \", \" & category!A8 & \", \" & category!A9 & \", \" & category!A10",
-      "result": null
-    },
-    "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
-    "timestamp": "2024-01-26T19:41:15.814Z",
-    "result|completion": "N/A",
-    "result|success": "N/A",
-    "result|score|min": "N/A",
-    "result|score|max": "N/A",
-    "result|score|raw": "N/A",
-    "result|score|scaled": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/length": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/quality": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/videoSpeed": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/fullScreen": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/progress": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/From": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/To": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePosition": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/currentOrder": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/from": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/to": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/from": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/to": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/from": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M58.98S"
-  },
-  {
     "id": "e0708c0f-7ae9-4b45-aa6c-8f54d259de3f",
     "actor|name": "PaolaAngélica",
     "actor|account|name": "11415764-3",
@@ -2851,7 +2796,7 @@
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A11 & \", \" & category!A12 & \", \" & category!A13",
+      "formula": "=category!A7 & \", \" & category!A8 & \", \" & category!A9",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -3019,7 +2964,7 @@
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A11 & \", \" & category!A12 & \", \" & category!A13",
+      "formula": "=category!A7 & \", \" & category!A8 & \", \" & category!A9",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -3459,7 +3404,7 @@
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A11 & \", \" & category!A12 & \", \" & category!A13",
+      "formula": "=category!A7 & \", \" & category!A8 & \", \" & category!A9",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -3517,7 +3462,7 @@
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A11 & \", \" & category!A12 & \", \" & category!A13",
+      "formula": "=category!A7 & \", \" & category!A8 & \", \" & category!A9",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
