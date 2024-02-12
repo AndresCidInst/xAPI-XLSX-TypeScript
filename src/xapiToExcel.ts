@@ -52,14 +52,14 @@ function correctFormat(statement: Statement) {
     removeAllDomainFromUris(statement);
     const currentStatement = Object(statement);
     if (
-        currentStatement["verb"]["id"] == "skipped-forward" ||
-        currentStatement["verb"]["id"] == "skipped-backward"
+        currentStatement["verb"]["id"] == "verbs/skipped-forward" ||
+        currentStatement["verb"]["id"] == "verbs/skipped-backward"
     ) {
         correctSkippedVideoExtensions(statement);
     }
 
     if (
-        currentStatement["verb"]["id"] == "played" &&
+        currentStatement["verb"]["id"] == "verbs/played" &&
         currentStatement["object"]["id"].includes("sopaDeLetras")
     ) {
         correctUriExtensionResultWordSoup(statement);

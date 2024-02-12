@@ -49,11 +49,11 @@ function correctFormat(statement) {
     (0, FormatCorrector_1.correctInteractionPointsUriFormat)(statement);
     (0, FormatCorrector_1.removeAllDomainFromUris)(statement);
     const currentStatement = Object(statement);
-    if (currentStatement["verb"]["id"] == "skipped-forward" ||
-        currentStatement["verb"]["id"] == "skipped-backward") {
+    if (currentStatement["verb"]["id"] == "verbs/skipped-forward" ||
+        currentStatement["verb"]["id"] == "verbs/skipped-backward") {
         (0, FormatCorrector_1.correctSkippedVideoExtensions)(statement);
     }
-    if (currentStatement["verb"]["id"] == "played" &&
+    if (currentStatement["verb"]["id"] == "verbs/played" &&
         currentStatement["object"]["id"].includes("sopaDeLetras")) {
         (0, FormatCorrector_1.correctUriExtensionResultWordSoup)(statement);
     }

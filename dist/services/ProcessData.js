@@ -35,7 +35,7 @@ exports.dataRetriever = dataRetriever;
 function isReordenableStatement(statement) {
     if ("id" in statement.object) {
         return (statement.object["id"].includes("reordenable") &&
-            statement["verb"]["id"] === "changed-order");
+            statement["verb"]["id"] === "verbs/changed-order");
     }
     return false;
 }
