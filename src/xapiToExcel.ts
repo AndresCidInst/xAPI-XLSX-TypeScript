@@ -20,6 +20,7 @@ import {
     correctUriExtensionsGeneralFormat,
     descriptionFeedbackTriviaCorrect,
     removeAllDomainFromUris,
+    rounDecimals,
 } from "./services/FormatCorrector";
 import { dataRetriever, getValueByPath } from "./services/ProcessData";
 import { clearFailedStatements } from "./services/StatetementsCleaners";
@@ -56,6 +57,7 @@ function correctFormat(statement: Statement) {
     correctUriExtensionsGeneralFormat(statement);
     correctInteractionPointsUriFormat(statement);
     removeAllDomainFromUris(statement);
+    rounDecimals(statement);
     const currentStatement = Object(statement);
     if (
         currentStatement["verb"]["id"] == "verbs/skipped-forward" ||

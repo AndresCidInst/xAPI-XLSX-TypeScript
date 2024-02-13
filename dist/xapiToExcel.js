@@ -53,6 +53,7 @@ function correctFormat(statement) {
     (0, FormatCorrector_1.correctUriExtensionsGeneralFormat)(statement);
     (0, FormatCorrector_1.correctInteractionPointsUriFormat)(statement);
     (0, FormatCorrector_1.removeAllDomainFromUris)(statement);
+    (0, FormatCorrector_1.rounDecimals)(statement);
     const currentStatement = Object(statement);
     if (currentStatement["verb"]["id"] == "verbs/skipped-forward" ||
         currentStatement["verb"]["id"] == "verbs/skipped-backward") {

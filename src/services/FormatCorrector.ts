@@ -174,3 +174,20 @@ export function descriptionFeedbackTriviaCorrect(statement: Statement) {
         );
     statement.object = currentObject;
 }
+
+export function rounDecimals(statement: Statement) {
+    const currentProgressVideo =
+        statement.result?.extensions?.[
+            "https://xapi.tego.iie.cl/extensions/video/progress"
+        ];
+    if (currentProgressVideo) {
+        statement.result!.extensions![
+            "https://xapi.tego.iie.cl/extensions/video/progress"
+        ] = Number(currentProgressVideo.toFixed(3));
+    }
+    if (statement.result?.score?.scaled) {
+        statement.result.score.scaled = Number(
+            statement.result.score.scaled.toFixed(3),
+        );
+    }
+}

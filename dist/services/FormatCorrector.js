@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.descriptionFeedbackTriviaCorrect = exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
+exports.rounDecimals = exports.descriptionFeedbackTriviaCorrect = exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
 function correctUriExtensionsGeneralFormat(statement) {
     var _a, _b;
     if ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions) {
@@ -123,3 +123,14 @@ function descriptionFeedbackTriviaCorrect(statement) {
     statement.object = currentObject;
 }
 exports.descriptionFeedbackTriviaCorrect = descriptionFeedbackTriviaCorrect;
+function rounDecimals(statement) {
+    var _a, _b, _c, _d;
+    const currentProgressVideo = (_b = (_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions) === null || _b === void 0 ? void 0 : _b["https://xapi.tego.iie.cl/extensions/video/progress"];
+    if (currentProgressVideo) {
+        statement.result.extensions["https://xapi.tego.iie.cl/extensions/video/progress"] = Number(currentProgressVideo.toFixed(3));
+    }
+    if ((_d = (_c = statement.result) === null || _c === void 0 ? void 0 : _c.score) === null || _d === void 0 ? void 0 : _d.scaled) {
+        statement.result.score.scaled = Number(statement.result.score.scaled.toFixed(3));
+    }
+}
+exports.rounDecimals = rounDecimals;
