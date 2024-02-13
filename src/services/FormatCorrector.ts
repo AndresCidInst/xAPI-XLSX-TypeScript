@@ -191,3 +191,8 @@ export function rounDecimals(statement: Statement) {
         );
     }
 }
+
+export function typeGamePressInWordSoupInsert(statement: Statement) {
+    const activityObject = Object(statement.object);
+    activityObject.definition.type = "game";
+}

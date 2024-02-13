@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.rounDecimals = exports.descriptionFeedbackTriviaCorrect = exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
+exports.typeGamePressInWordSoupInsert = exports.rounDecimals = exports.descriptionFeedbackTriviaCorrect = exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
 function correctUriExtensionsGeneralFormat(statement) {
     var _a, _b;
     if ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions) {
@@ -134,3 +134,8 @@ function rounDecimals(statement) {
     }
 }
 exports.rounDecimals = rounDecimals;
+function typeGamePressInWordSoupInsert(statement) {
+    const activityObject = Object(statement.object);
+    activityObject.definition.type = "game";
+}
+exports.typeGamePressInWordSoupInsert = typeGamePressInWordSoupInsert;

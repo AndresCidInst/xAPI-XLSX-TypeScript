@@ -1,5 +1,6 @@
 import { Statement } from "@xapi/xapi";
 import { Workbook, Worksheet } from "exceljs";
+import { exit } from "process";
 import {
     clearDatFile,
     getAllStatements,
@@ -21,6 +22,7 @@ import {
     descriptionFeedbackTriviaCorrect,
     removeAllDomainFromUris,
     rounDecimals,
+    typeGamePressInWordSoupInsert,
 } from "./services/FormatCorrector";
 import { dataRetriever, getValueByPath } from "./services/ProcessData";
 import { clearFailedStatements } from "./services/StatetementsCleaners";
@@ -68,6 +70,15 @@ function correctFormat(statement: Statement) {
 
     if (wordSoupFormattingCase(statement)) {
         correctUriExtensionResultWordSoup(statement);
+    }
+
+    if (
+        currentStatement.verb.id.includes("pressed") &&
+        currentStatement.object.id.includes("sopaDeLetras")
+    ) {
+        typeGamePressInWordSoupInsert(statement);
+        console.log(statement.object);
+        exit();
     }
 
     if (

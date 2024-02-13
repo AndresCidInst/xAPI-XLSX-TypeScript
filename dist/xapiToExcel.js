@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.xapiToExcel = void 0;
 const exceljs_1 = require("exceljs");
+const process_1 = require("process");
 const FileProvider_1 = require("./FileProviders/FileProvider");
 const consts_1 = require("./consts/consts");
 const AuxiliarFiles_1 = require("./models/AuxiliarFiles");
@@ -61,6 +62,12 @@ function correctFormat(statement) {
     }
     if (wordSoupFormattingCase(statement)) {
         (0, FormatCorrector_1.correctUriExtensionResultWordSoup)(statement);
+    }
+    if (currentStatement.verb.id.includes("pressed") &&
+        currentStatement.object.id.includes("sopaDeLetras")) {
+        (0, FormatCorrector_1.typeGamePressInWordSoupInsert)(statement);
+        console.log(statement.object);
+        (0, process_1.exit)();
     }
     if (Object(statement)["object"]["id"] === "activities/profile/avatars" &&
         ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions)) {
