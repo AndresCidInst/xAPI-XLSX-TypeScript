@@ -175,8 +175,10 @@ function processHeadersMatches(
 }
 
 function processReduxContain(value: unknown, path: string): string | boolean {
-    if (path.includes("founded_words") && Array.isArray(value)) {
-        return (value as []).join(",");
+    if (path.includes("founded_words")) {
+        return Array.isArray(value)
+            ? (value as []).join(",")
+            : (value as string);
     } else if (
         path.includes("is_interaction_points") ||
         path.includes("continuationGame")

@@ -24,6 +24,7 @@ export class DataModelImpl implements DataModel {
     "context|contextActivities|grouping": string;
     "context|contextActivities|category": string;
     "context|extensions/https://xapi.tego.iie.cl/extensions/user/age": number;
+    "context|registration": string;
     "timestamp": Date;
     "result|completion": boolean;
     "result|success": boolean;
@@ -56,6 +57,7 @@ export class DataModelImpl implements DataModel {
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": Date;
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": string;
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": number;
+    "result|duration": string;
 
     constructor() {}
     [key: string]:

@@ -58,8 +58,7 @@ function correctFormat(statement) {
         currentStatement["verb"]["id"] == "verbs/skipped-backward") {
         (0, FormatCorrector_1.correctSkippedVideoExtensions)(statement);
     }
-    if (currentStatement["verb"]["id"] == "verbs/played" &&
-        currentStatement["object"]["id"].includes("sopaDeLetras")) {
+    if (wordSoupFormattingCase(statement)) {
         (0, FormatCorrector_1.correctUriExtensionResultWordSoup)(statement);
     }
     if (Object(statement)["object"]["id"] === "activities/profile/avatars" &&
@@ -70,6 +69,19 @@ function correctFormat(statement) {
         currentStatement["object"]["id"].includes("feedback-trivia")) {
         (0, FormatCorrector_1.descriptionFeedbackTriviaCorrect)(statement);
     }
+}
+/**
+ * Comprueba si una declaración de xAPI corresponde a un caso de formato de sopa de letras.
+ *
+ * @param statement La declaración de xAPI a comprobar.
+ * @returns Devuelve true si la declaración corresponde a un caso de formato de sopa de letras, de lo contrario devuelve false.
+ */
+function wordSoupFormattingCase(statement) {
+    const currentStatement = Object(statement);
+    return ((currentStatement["verb"]["id"] == "verbs/attempted" ||
+        currentStatement["verb"]["id"] == "verbs/found" ||
+        currentStatement["verb"]["id"] == "verbs/played") &&
+        currentStatement["object"]["id"].includes("sopaDeLetras"));
 }
 /**
  * Prepara los datos complementarios y crea un archivo Excel.

@@ -36,6 +36,7 @@ exports.fillHeaders = {
     "context|contextActivities|grouping": "contexto_actividad_parte_grupo_id",
     "context|contextActivities|category": "contexto_actividad_parte_categoria_id",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": "usuario_edad",
+    "context|registration": "contexto_id_flujo_actividades",
     timestamp: "fecha_hora_captura",
     "result|completion": "resultado_completitud",
     "result|success": "resultado_exito",
@@ -53,8 +54,8 @@ exports.fillHeaders = {
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/To": "segundo_posterior_al_salto",
     "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points": "estado_puntos_interaccion",
     "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame": "juego_sera_continuado",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "palabras_totales_encontradas",
-    "result|response": "respuesta",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "palabras_encontradas",
+    "result|response": "retroalimentacion_respuesta",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece": "pieza_movida",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition": "pieza_posicion_pasada",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePosition": "pieza_posicion_actual",
@@ -68,6 +69,7 @@ exports.fillHeaders = {
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "fecha_destinada_cita",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "razon_cancelacion_cita",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "tiempo_entre_vistas",
+    "result|duration": "duracion_actividad",
 };
 exports.headerAvatarChange = [
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/from",

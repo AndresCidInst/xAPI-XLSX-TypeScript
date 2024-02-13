@@ -18,6 +18,18 @@ export function correctUriExtensionsGeneralFormat(statement: Statement) {
 }
 
 export function correctUriExtensionResultWordSoup(statement: Statement) {
+    if (
+        statement.verb.id === "verbs/found" ||
+        statement.verb.id === "verbs/attempted"
+    ) {
+        const attempWord: string = statement
+            .result!.response!.split(" ")
+            .pop()!;
+        statement.result!.extensions = {
+            "https://xapi.tego.iie.cl/extensions/word_soup/founded_words":
+                attempWord,
+        };
+    }
     Object.keys(statement["result"]!["extensions"]!).forEach((uri: string) => {
         const lastSegmentUri = uri.split("/").pop();
         const value = statement["result"]!["extensions"]![uri];

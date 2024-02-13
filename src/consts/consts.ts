@@ -42,6 +42,7 @@ export const fillHeaders = {
         "contexto_actividad_parte_categoria_id",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age":
         "usuario_edad",
+    "context|registration": "contexto_id_flujo_actividades",
     timestamp: "fecha_hora_captura",
     "result|completion": "resultado_completitud",
     "result|success": "resultado_exito",
@@ -70,8 +71,8 @@ export const fillHeaders = {
     "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame":
         "juego_sera_continuado",
     "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words":
-        "palabras_totales_encontradas",
-    "result|response": "respuesta",
+        "palabras_encontradas",
+    "result|response": "retroalimentacion_respuesta",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece":
         "pieza_movida",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition":
@@ -98,6 +99,7 @@ export const fillHeaders = {
         "razon_cancelacion_cita",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages":
         "tiempo_entre_vistas",
+    "result|duration": "duracion_actividad",
 };
 
 export const headerAvatarChange = [

@@ -64,10 +64,7 @@ function correctFormat(statement: Statement) {
         correctSkippedVideoExtensions(statement);
     }
 
-    if (
-        currentStatement["verb"]["id"] == "verbs/played" &&
-        currentStatement["object"]["id"].includes("sopaDeLetras")
-    ) {
+    if (wordSoupFormattingCase(statement)) {
         correctUriExtensionResultWordSoup(statement);
     }
 
@@ -84,6 +81,22 @@ function correctFormat(statement: Statement) {
     ) {
         descriptionFeedbackTriviaCorrect(statement);
     }
+}
+
+/**
+ * Comprueba si una declaración de xAPI corresponde a un caso de formato de sopa de letras.
+ *
+ * @param statement La declaración de xAPI a comprobar.
+ * @returns Devuelve true si la declaración corresponde a un caso de formato de sopa de letras, de lo contrario devuelve false.
+ */
+function wordSoupFormattingCase(statement: Statement): boolean {
+    const currentStatement = Object(statement);
+    return (
+        (currentStatement["verb"]["id"] == "verbs/attempted" ||
+            currentStatement["verb"]["id"] == "verbs/found" ||
+            currentStatement["verb"]["id"] == "verbs/played") &&
+        currentStatement["object"]["id"].includes("sopaDeLetras")
+    );
 }
 
 /**

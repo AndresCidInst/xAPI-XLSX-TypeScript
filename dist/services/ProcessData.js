@@ -123,8 +123,10 @@ function processHeadersMatches(value, path, sheetList) {
     return "N/A";
 }
 function processReduxContain(value, path) {
-    if (path.includes("founded_words") && Array.isArray(value)) {
-        return value.join(",");
+    if (path.includes("founded_words")) {
+        return Array.isArray(value)
+            ? value.join(",")
+            : value;
     }
     else if (path.includes("is_interaction_points") ||
         path.includes("continuationGame")) {

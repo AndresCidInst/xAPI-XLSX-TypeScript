@@ -16,6 +16,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:36:17.391Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -47,7 +48,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "f6df68cf-8683-47aa-9158-4e7bd4a08b39",
@@ -69,6 +71,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "dee12536-6280-4196-868d-f62def909683",
     "timestamp": "2024-01-26T19:36:22.873Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -100,7 +103,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "109ca3f7-5aaa-494a-b3dd-2b8a5346b758",
@@ -122,6 +126,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:36:22.871Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -153,7 +158,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M5.51S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M5.51S",
+    "result|duration": "N/A"
   },
   {
     "id": "5bd96659-0a43-47fa-92ec-d30b60247082",
@@ -175,6 +181,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "dee12536-6280-4196-868d-f62def909683",
     "timestamp": "2024-01-26T19:36:29.703Z",
     "result|completion": true,
     "result|success": true,
@@ -206,7 +213,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "Teo",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M4.19S"
   },
   {
     "id": "2b485fda-cdda-44bd-8009-17ed0296e1e4",
@@ -228,6 +236,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:36:30.877Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -259,7 +268,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M8S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M8S",
+    "result|duration": "N/A"
   },
   {
     "id": "a51ac6a7-6793-47da-97cc-8526c037f9af",
@@ -281,6 +291,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:36:35.927Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -312,7 +323,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M5.05S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M5.05S",
+    "result|duration": "N/A"
   },
   {
     "id": "7f2b915c-97fb-4750-a214-0fc24f5c4f9a",
@@ -337,6 +349,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "dee12536-6280-4196-868d-f62def909683",
     "timestamp": "2024-01-26T19:36:36.276Z",
     "result|completion": true,
     "result|success": true,
@@ -368,7 +381,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M5.05S"
   },
   {
     "id": "f56daac5-2888-4c9b-896e-7ffd94fc9cfa",
@@ -390,6 +404,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:36:38.013Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -421,7 +436,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M2.09S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M2.09S",
+    "result|duration": "N/A"
   },
   {
     "id": "ae9c318b-c6c8-422d-be4e-22b5fcebbed5",
@@ -446,6 +462,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "dee12536-6280-4196-868d-f62def909683",
     "timestamp": "2024-01-26T19:36:40.326Z",
     "result|completion": true,
     "result|success": true,
@@ -477,7 +494,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M4.37S"
   },
   {
     "id": "debbb835-9e49-4f3f-a069-8d704fa5166f",
@@ -499,6 +517,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:36:40.321Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -530,7 +549,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M2.31S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M2.31S",
+    "result|duration": "N/A"
   },
   {
     "id": "d966806d-f8c3-4d4c-aa4e-2a5607e598ac",
@@ -552,6 +572,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:36:45.553Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -583,7 +604,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M5.23S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M5.23S",
+    "result|duration": "N/A"
   },
   {
     "id": "53e7acbe-764e-46b1-8902-2276ebb5029a",
@@ -605,6 +627,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:36:46.475Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -636,7 +659,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M0.92S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M0.92S",
+    "result|duration": "N/A"
   },
   {
     "id": "b058df17-1558-4aee-a8dd-2436dd959e1c",
@@ -658,6 +682,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:36:48.565Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -689,7 +714,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M2.09S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M2.09S",
+    "result|duration": "N/A"
   },
   {
     "id": "6ba7e63f-71ec-4e39-bf5c-f44465c44a82",
@@ -711,6 +737,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:36:50.366Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -742,7 +769,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M1.8S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M1.8S",
+    "result|duration": "N/A"
   },
   {
     "id": "d7340eeb-9742-44df-8741-696d277a3c3c",
@@ -764,6 +792,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:36:51.713Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -795,7 +824,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M1.35S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M1.35S",
+    "result|duration": "N/A"
   },
   {
     "id": "69ba048a-a030-47fe-8d16-ad6961b5ec67",
@@ -820,6 +850,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "39b0defa-1cb6-4690-a629-e9a1876756c7",
     "timestamp": "2024-01-26T19:37:01.978Z",
     "result|completion": false,
     "result|success": "N/A",
@@ -851,7 +882,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "d37cea13-768e-4c5e-94df-665c18a61f5d",
@@ -876,6 +908,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "39b0defa-1cb6-4690-a629-e9a1876756c7",
     "timestamp": "2024-01-26T19:37:03.405Z",
     "result|completion": false,
     "result|success": "N/A",
@@ -907,7 +940,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "96ed1529-540c-4c0c-8bdd-37c7d7ba985a",
@@ -932,6 +966,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "39b0defa-1cb6-4690-a629-e9a1876756c7",
     "timestamp": "2024-01-26T19:37:04.507Z",
     "result|completion": false,
     "result|success": "N/A",
@@ -963,7 +998,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "43516986-0cdf-43d6-a958-55640308ff11",
@@ -988,6 +1024,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "39b0defa-1cb6-4690-a629-e9a1876756c7",
     "timestamp": "2024-01-26T19:37:05.684Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -1019,7 +1056,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "480039a8-4cfa-44fa-af9e-f5efff67cec0",
@@ -1044,6 +1082,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "39b0defa-1cb6-4690-a629-e9a1876756c7",
     "timestamp": "2024-01-26T19:37:12.050Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -1075,7 +1114,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "3acbcef4-2a49-4e10-8e84-499630c92d5c",
@@ -1100,6 +1140,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "39b0defa-1cb6-4690-a629-e9a1876756c7",
     "timestamp": "2024-01-26T19:37:26.772Z",
     "result|completion": false,
     "result|success": "N/A",
@@ -1131,7 +1172,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "d4e47239-5b1c-43b8-89c1-61c12c983482",
@@ -1156,6 +1198,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "39b0defa-1cb6-4690-a629-e9a1876756c7",
     "timestamp": "2024-01-26T19:37:30.995Z",
     "result|completion": false,
     "result|success": "N/A",
@@ -1187,7 +1230,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "00fc1217-d297-4291-a69a-df48764926ff",
@@ -1212,6 +1256,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "39b0defa-1cb6-4690-a629-e9a1876756c7",
     "timestamp": "2024-01-26T19:37:47.636Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -1243,7 +1288,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "dca6eeed-1be2-4693-b7da-e4808366f72f",
@@ -1268,6 +1314,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "39b0defa-1cb6-4690-a629-e9a1876756c7",
     "timestamp": "2024-01-26T19:37:59.540Z",
     "result|completion": true,
     "result|success": true,
@@ -1299,7 +1346,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M56.43S"
   },
   {
     "id": "929d069e-a381-46dd-94b0-76241f95be02",
@@ -1321,6 +1369,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:38:31.051Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -1352,7 +1401,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT1M39.32S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT1M39.32S",
+    "result|duration": "N/A"
   },
   {
     "id": "bf4df1d3-da2b-4df3-84f4-37806426d81f",
@@ -1374,6 +1424,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:38:53.667Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -1405,7 +1456,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M22.61S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M22.61S",
+    "result|duration": "N/A"
   },
   {
     "id": "53c35857-fa0e-4c6a-8ec9-dd918b8557d1",
@@ -1430,6 +1482,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:38:54.279Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -1461,7 +1514,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "6672926b-761a-4bf0-b381-584cedd98470",
@@ -1483,6 +1537,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:39:04.878Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -1514,7 +1569,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M11.2S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M11.2S",
+    "result|duration": "N/A"
   },
   {
     "id": "912abebf-050e-42d8-953e-aeb8ca4b8dd9",
@@ -1542,6 +1598,7 @@
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:39:07.503Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -1573,7 +1630,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "ab9074dd-07ca-4b54-a2d4-8384214fd321",
@@ -1601,6 +1659,7 @@
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:39:43.257Z",
     "result|completion": "N/A",
     "result|success": false,
@@ -1632,7 +1691,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M35.74S"
   },
   {
     "id": "cce01ce6-b2f6-4e74-affb-f959712dde08",
@@ -1660,6 +1720,7 @@
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:39:59.270Z",
     "result|completion": true,
     "result|success": true,
@@ -1691,7 +1752,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M51.79S"
   },
   {
     "id": "152925ad-a102-4c94-9acc-0491a3483d41",
@@ -1719,6 +1781,7 @@
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:39:58.254Z",
     "result|completion": "N/A",
     "result|success": true,
@@ -1750,7 +1813,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M1.35S"
   },
   {
     "id": "4d5fc70c-1bbe-4baa-8349-b4ddf3102357",
@@ -1778,6 +1842,7 @@
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:39:46.961Z",
     "result|completion": "N/A",
     "result|success": true,
@@ -1809,7 +1874,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M1.45S"
   },
   {
     "id": "c981973f-8395-481a-8fa4-518b276ebdeb",
@@ -1837,6 +1903,7 @@
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:39:45.513Z",
     "result|completion": "N/A",
     "result|success": false,
@@ -1868,7 +1935,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M2.25S"
   },
   {
     "id": "16992c43-25d6-47a4-8a14-badb63d56236",
@@ -1896,6 +1964,7 @@
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:39:56.905Z",
     "result|completion": "N/A",
     "result|success": false,
@@ -1927,7 +1996,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M9.94S"
   },
   {
     "id": "4b073a84-7c5e-4f84-81b6-80cc55a47a7c",
@@ -1949,6 +2019,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:40:16.822Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -1980,7 +2051,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT1M11.94S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT1M11.94S",
+    "result|duration": "N/A"
   },
   {
     "id": "adbb869d-b984-4298-b8ba-d162689c090e",
@@ -2008,6 +2080,7 @@
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:41:08.300Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -2039,7 +2112,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M1.25S"
   },
   {
     "id": "649f274f-1e2f-4ac6-845b-debdee4a2db2",
@@ -2067,6 +2141,7 @@
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:40:55.926Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -2098,7 +2173,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "1f44a3f3-186f-4786-bfa5-aa76a1a987e1",
@@ -2123,6 +2199,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:41:04.951Z",
     "result|completion": "N/A",
     "result|success": true,
@@ -2140,7 +2217,7 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/To": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "LENGUA",
     "result|response": "LENGUA",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition": "N/A",
@@ -2154,7 +2231,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M2.18S"
   },
   {
     "id": "efe02a87-7df8-4878-8a84-d9d865232070",
@@ -2179,6 +2257,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:41:00.023Z",
     "result|completion": "N/A",
     "result|success": true,
@@ -2196,7 +2275,7 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/To": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "SALIVA",
     "result|response": "SALIVA",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition": "N/A",
@@ -2210,7 +2289,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M7.74S"
   },
   {
     "id": "b28bca2d-b632-43fa-8a8b-327723eb44fa",
@@ -2235,6 +2315,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:41:02.766Z",
     "result|completion": "N/A",
     "result|success": true,
@@ -2252,7 +2333,7 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/To": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "DIENTES",
     "result|response": "DIENTES",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition": "N/A",
@@ -2266,7 +2347,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M2.74S"
   },
   {
     "id": "8acc5622-0f78-494f-82e2-7afeb1d60d14",
@@ -2291,6 +2373,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:41:07.053Z",
     "result|completion": "N/A",
     "result|success": true,
@@ -2308,7 +2391,7 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/To": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "LABIOS",
     "result|response": "LABIOS",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition": "N/A",
@@ -2322,7 +2405,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M2.11S"
   },
   {
     "id": "d8cc2377-b284-4943-aa9e-da6b95443b6f",
@@ -2347,6 +2431,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:40:52.287Z",
     "result|completion": "N/A",
     "result|success": false,
@@ -2364,7 +2449,7 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/To": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "PDDLNL",
     "result|response": "PDDLNL",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition": "N/A",
@@ -2378,7 +2463,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M53.01S"
   },
   {
     "id": "5de4deb2-df1e-4b45-8af3-2bf3174af6f6",
@@ -2406,6 +2492,7 @@
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:40:38.214Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -2437,7 +2524,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "c7b8607d-0d13-40d5-b442-406adcd3e317",
@@ -2465,6 +2553,7 @@
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "d0b8928d-5bcb-4bdc-82e6-ffa44f511b3d",
     "timestamp": "2024-01-26T19:41:10.232Z",
     "result|completion": true,
     "result|success": true,
@@ -2496,7 +2585,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M32.01S"
   },
   {
     "id": "e0708c0f-7ae9-4b45-aa6c-8f54d259de3f",
@@ -2518,6 +2608,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:41:15.818Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -2549,7 +2640,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M0S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M0S",
+    "result|duration": "N/A"
   },
   {
     "id": "838b0b0b-31a7-4dc7-bbe4-23fe159013ec",
@@ -2571,6 +2663,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:41:17.652Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -2602,7 +2695,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M1.83S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M1.83S",
+    "result|duration": "N/A"
   },
   {
     "id": "821cf2c5-8a77-4918-8e1c-d836fd91d41d",
@@ -2627,6 +2721,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:18.134Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -2658,7 +2753,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "c4b35a93-2e86-4c85-b390-0ee0a2ea9d59",
@@ -2680,6 +2776,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:41:20.866Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -2711,7 +2808,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M3.21S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M3.21S",
+    "result|duration": "N/A"
   },
   {
     "id": "4740eb68-825c-4b94-bfb7-b45116abce0f",
@@ -2736,6 +2834,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:39.648Z",
     "result|completion": false,
     "result|success": true,
@@ -2767,7 +2866,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M0.32S"
   },
   {
     "id": "b41c36c1-8b39-4247-9bc7-0cc3701f303f",
@@ -2792,6 +2892,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:37.941Z",
     "result|completion": false,
     "result|success": true,
@@ -2823,7 +2924,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M0.32S"
   },
   {
     "id": "ba583792-705a-458c-b492-52b3558ab5bf",
@@ -2851,6 +2953,7 @@
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:41.021Z",
     "result|completion": true,
     "result|success": false,
@@ -2882,7 +2985,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M15.57S"
   },
   {
     "id": "3f0c5081-4e99-43f3-9185-a47f55f6bf08",
@@ -2907,6 +3011,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:35.477Z",
     "result|completion": false,
     "result|success": true,
@@ -2938,7 +3043,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M2.21S"
   },
   {
     "id": "11f119ae-70dd-434d-a844-ae96fe3dffa0",
@@ -2963,6 +3069,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:30.765Z",
     "result|completion": false,
     "result|success": false,
@@ -2994,7 +3101,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M5.31S"
   },
   {
     "id": "c80bd904-ea0b-4633-b92f-35224e2dfb71",
@@ -3022,6 +3130,7 @@
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:25.455Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -3053,7 +3162,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "62fd918f-411c-4ba7-8d3f-ea58c2d19676",
@@ -3078,6 +3188,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:37.623Z",
     "result|completion": false,
     "result|success": false,
@@ -3109,7 +3220,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M0.44S"
   },
   {
     "id": "69158e45-ef8b-4b08-8fda-7f5d0caf82dd",
@@ -3134,6 +3246,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:39.322Z",
     "result|completion": false,
     "result|success": false,
@@ -3165,7 +3278,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M1.38S"
   },
   {
     "id": "2a163401-eecf-490a-8c38-ad6ab9a85f24",
@@ -3190,6 +3304,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:36.923Z",
     "result|completion": false,
     "result|success": true,
@@ -3221,7 +3336,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M1.44S"
   },
   {
     "id": "ddc87acd-b6e5-4ce9-8a4f-346ae0b8902c",
@@ -3246,6 +3362,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:40.389Z",
     "result|completion": true,
     "result|success": true,
@@ -3277,7 +3394,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M0.74S"
   },
   {
     "id": "ee344b8a-bbd6-4e49-b03d-9c8e7f7b6f2d",
@@ -3302,6 +3420,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:33.268Z",
     "result|completion": false,
     "result|success": false,
@@ -3333,7 +3452,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M2.5S"
   },
   {
     "id": "b64a3c4c-3a4b-4718-96b1-5f662b21102d",
@@ -3358,6 +3478,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:37.178Z",
     "result|completion": false,
     "result|success": true,
@@ -3389,7 +3510,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M0.25S"
   },
   {
     "id": "4edab1ba-1138-46db-ad55-43f10cc4b3b9",
@@ -3411,6 +3533,7 @@
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "N/A",
     "timestamp": "2024-01-26T19:41:45.369Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -3442,7 +3565,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M24.5S"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "PT0M24.5S",
+    "result|duration": "N/A"
   },
   {
     "id": "6aa6750c-a427-4f57-bb17-bba6a465b51a",
@@ -3470,6 +3594,7 @@
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:47.758Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -3501,7 +3626,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   },
   {
     "id": "c3646541-0389-4789-8dde-0e5c05922603",
@@ -3529,6 +3655,7 @@
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:55.507Z",
     "result|completion": true,
     "result|success": true,
@@ -3560,7 +3687,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M6.12S"
   },
   {
     "id": "5050d8f4-d99c-4bdd-8bb8-7c99db5ee403",
@@ -3588,6 +3716,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:50.167Z",
     "result|completion": "N/A",
     "result|success": true,
@@ -3619,7 +3748,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M2.4S"
   },
   {
     "id": "d7763f2c-4deb-48aa-a060-b4d76407d84c",
@@ -3647,6 +3777,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:52.377Z",
     "result|completion": "N/A",
     "result|success": false,
@@ -3678,7 +3809,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M2.21S"
   },
   {
     "id": "012af4e3-e9f2-4b18-a56f-7cdf3967b44a",
@@ -3706,6 +3838,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:53.869Z",
     "result|completion": "N/A",
     "result|success": true,
@@ -3737,7 +3870,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "PT0M1.49S"
   },
   {
     "id": "062ea82f-7bc3-422c-8268-f8da5b9eca2a",
@@ -3762,6 +3896,7 @@
     },
     "context|contextActivities|category": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
+    "context|registration": "0cdf6b62-492a-42bc-a482-04e56ca4e065",
     "timestamp": "2024-01-26T19:41:56.019Z",
     "result|completion": "N/A",
     "result|success": "N/A",
@@ -3793,6 +3928,7 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|duration": "N/A"
   }
 ]
