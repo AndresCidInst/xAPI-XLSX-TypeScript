@@ -14,8 +14,8 @@ function dataRetriever(statement, keys, sheetList) {
         keys.forEach((path) => {
             const value = getValueByPath(JSON.parse(JSON.stringify(statement)), path);
             if (value !== undefined && value !== null && value !== "") {
-                if (needToBeProcessed(path)) {
-                    savedData[path] = ProcessData(value, path, sheetList);
+                if (needToBeProcessed(path, statement.verb.id)) {
+                    savedData[path] = ProcessData(value, path, sheetList, statement.verb.id);
                 }
                 else {
                     savedData[path] = value;
@@ -70,16 +70,25 @@ function getValueByPath(obj, path) {
     return value;
 }
 exports.getValueByPath = getValueByPath;
-function needToBeProcessed(path) {
+function needToBeProcessed(path, verb) {
     return (consts_1.headersMatches.includes(path) ||
-        consts_1.reduxContain.some((contain) => path.includes(contain)));
+        consts_1.reduxContain.some((contain) => path.includes(contain)) ||
+        isFoundOrAttempSoupWord(verb));
 }
-function ProcessData(value, path, sheetList) {
+function isFoundOrAttempSoupWord(verb) {
+    return verb.includes("verbs/found") || verb.includes("verbs/attempted");
+}
+function ProcessData(value, path, sheetList, verb) {
     if (consts_1.headersMatches.includes(path)) {
         return processHeadersMatches(value, path, sheetList);
     }
     if (consts_1.reduxContain.some((contain) => path.includes(contain))) {
         return processReduxContain(value, path);
+    }
+    if (isFoundOrAttempSoupWord(verb)) {
+        return path.includes("result|response")
+            ? value.split(" ").at(-1)
+            : value;
     }
     return "N/A";
 }

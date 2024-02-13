@@ -42,6 +42,7 @@ export class DataModelImpl implements DataModel {
     "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points": boolean;
     "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame": boolean;
     "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": string;
+    "result|response": string;
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece": number;
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition": number;
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePosition": number;

@@ -31,8 +31,13 @@ export function dataRetriever(
                 path,
             );
             if (value !== undefined && value !== null && value !== "") {
-                if (needToBeProcessed(path)) {
-                    savedData[path] = ProcessData(value, path, sheetList);
+                if (needToBeProcessed(path, statement.verb.id)) {
+                    savedData[path] = ProcessData(
+                        value,
+                        path,
+                        sheetList,
+                        statement.verb.id,
+                    );
                 } else {
                     savedData[path] = value as string | number | boolean | Date;
                 }
@@ -96,23 +101,34 @@ export function getValueByPath(obj: JSON, path: string) {
     return value;
 }
 
-function needToBeProcessed(path: string) {
+function needToBeProcessed(path: string, verb: string): boolean {
     return (
         headersMatches.includes(path) ||
-        reduxContain.some((contain) => path.includes(contain))
+        reduxContain.some((contain) => path.includes(contain)) ||
+        isFoundOrAttempSoupWord(verb)
     );
+}
+
+function isFoundOrAttempSoupWord(verb: string) {
+    return verb.includes("verbs/found") || verb.includes("verbs/attempted");
 }
 
 function ProcessData(
     value: unknown,
     path: string,
     sheetList: Worksheet[],
+    verb: string,
 ): { formula: string; result: null } | string | boolean | number {
     if (headersMatches.includes(path)) {
         return processHeadersMatches(value, path, sheetList);
     }
     if (reduxContain.some((contain) => path.includes(contain))) {
         return processReduxContain(value, path);
+    }
+    if (isFoundOrAttempSoupWord(verb)) {
+        return path.includes("result|response")
+            ? (value as string).split(" ").at(-1)!
+            : (value as string);
     }
     return "N/A";
 }

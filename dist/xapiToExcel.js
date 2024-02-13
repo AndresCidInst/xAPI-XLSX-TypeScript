@@ -17,6 +17,7 @@ const AuxiliarFiles_1 = require("./models/AuxiliarFiles");
 const ExcelServices_1 = require("./services/ExcelServices");
 const FormatCorrector_1 = require("./services/FormatCorrector");
 const ProcessData_1 = require("./services/ProcessData");
+const StatetementsCleaners_1 = require("./services/StatetementsCleaners");
 const CategoryManipulator_1 = require("./services/manipulators/CategoryManipulator");
 const ChoicesManipulators_1 = require("./services/manipulators/ChoicesManipulators");
 const GroupingManipulator_1 = require("./services/manipulators/GroupingManipulator");
@@ -34,10 +35,10 @@ function xapiToExcel() {
         for (const statement of statements) {
             correctFormat(statement);
         }
-        const newStatements = statements.filter((statement) => {
-            const currentStatement = Object(statement);
-            return !currentStatement["object"]["id"].includes("Topics");
-        });
+        console.log("Corrección de detalles de las declaraciones completada ✅.");
+        console.log("Limpiando declaraciones fallidas...");
+        const newStatements = (0, StatetementsCleaners_1.clearFailedStatements)(statements);
+        console.log("Declaraciones fallidas limpiadas ✅.");
         yield prepareData(newStatements);
         yield insertData(newStatements);
     });

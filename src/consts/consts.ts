@@ -70,7 +70,8 @@ export const fillHeaders = {
     "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame":
         "juego_sera_continuado",
     "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words":
-        "palabras_encontradas",
+        "palabras_totales_encontradas",
+    "result|response": "respuesta",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece":
         "pieza_movida",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition":

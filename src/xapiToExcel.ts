@@ -22,6 +22,7 @@ import {
     removeAllDomainFromUris,
 } from "./services/FormatCorrector";
 import { dataRetriever, getValueByPath } from "./services/ProcessData";
+import { clearFailedStatements } from "./services/StatetementsCleaners";
 import { saveCategory as getCategoryFromJson } from "./services/manipulators/CategoryManipulator";
 import { choiceMolder as getChoicesFromJson } from "./services/manipulators/ChoicesManipulators";
 import { getGroupingFromJson } from "./services/manipulators/GroupingManipulator";
@@ -39,10 +40,10 @@ export async function xapiToExcel() {
     for (const statement of statements) {
         correctFormat(statement as unknown as Statement);
     }
-    const newStatements = statements.filter((statement) => {
-        const currentStatement = Object(statement);
-        return !currentStatement["object"]["id"].includes("Topics");
-    });
+    console.log("Corrección de detalles de las declaraciones completada ✅.");
+    console.log("Limpiando declaraciones fallidas...");
+    const newStatements = clearFailedStatements(statements);
+    console.log("Declaraciones fallidas limpiadas ✅.");
     await prepareData(newStatements);
     await insertData(newStatements);
 }
