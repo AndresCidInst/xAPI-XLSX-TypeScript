@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.formatDurationCorrect = exports.typeGamePressInWordSoupInsert = exports.rounDecimals = exports.descriptionFeedbackTriviaCorrect = exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
+exports.typeActivityCmiClear = exports.formatDurationCorrect = exports.typeGamePressInWordSoupInsert = exports.rounDecimals = exports.descriptionFeedbackTriviaCorrect = exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
 const luxon_1 = require("luxon");
 function correctUriExtensionsGeneralFormat(statement) {
     var _a, _b;
@@ -172,3 +172,13 @@ function formatDuration(currentDuration) {
     const milliseconds = duration.milliseconds.toString().padStart(3, "0");
     return `${minutes}:${seconds}:${milliseconds}`;
 }
+function typeActivityCmiClear(statement) {
+    var _a;
+    const currentStatement = Object(statement);
+    if ((_a = currentStatement.object.definition.type) === null || _a === void 0 ? void 0 : _a.includes("cmi.")) {
+        currentStatement.object.definition.type =
+            currentStatement.object.definition.type.replace("cmi.", "");
+        statement = currentStatement;
+    }
+}
+exports.typeActivityCmiClear = typeActivityCmiClear;

@@ -17,7 +17,6 @@ const AuxiliarFiles_1 = require("./models/AuxiliarFiles");
 const ExcelServices_1 = require("./services/ExcelServices");
 const FormatCorrector_1 = require("./services/FormatCorrector");
 const ProcessData_1 = require("./services/ProcessData");
-const RequestServices_1 = require("./services/RequestServices");
 const StatetementsCleaners_1 = require("./services/StatetementsCleaners");
 const CategoryManipulator_1 = require("./services/manipulators/CategoryManipulator");
 const ChoicesManipulators_1 = require("./services/manipulators/ChoicesManipulators");
@@ -29,9 +28,9 @@ const ParentManipulator_1 = require("./services/manipulators/ParentManipulator")
  */
 function xapiToExcel() {
     return __awaiter(this, void 0, void 0, function* () {
-        const requestServices = new RequestServices_1.RequestServices();
-        const statements = yield requestServices.getAllStatements();
-        // const statements: JSON[] = getAllStatements();
+        // const requestServices = new RequestServices();
+        // const statements: JSON[] = await requestServices.getAllStatements();
+        const statements = (0, FileProvider_1.getAllStatements)();
         console.log("Corrigiendo detalles de las declaraciones...");
         for (const statement of statements) {
             correctFormat(statement);
@@ -51,11 +50,6 @@ exports.xapiToExcel = xapiToExcel;
  */
 function correctFormat(statement) {
     var _a;
-    (0, FormatCorrector_1.correctUriExtensionsGeneralFormat)(statement);
-    (0, FormatCorrector_1.correctInteractionPointsUriFormat)(statement);
-    (0, FormatCorrector_1.removeAllDomainFromUris)(statement);
-    (0, FormatCorrector_1.rounDecimals)(statement);
-    (0, FormatCorrector_1.formatDurationCorrect)(statement);
     const currentStatement = Object(statement);
     if (currentStatement["verb"]["id"] == "verbs/skipped-forward" ||
         currentStatement["verb"]["id"] == "verbs/skipped-backward") {
@@ -76,6 +70,12 @@ function correctFormat(statement) {
         currentStatement["object"]["id"].includes("feedback-trivia")) {
         (0, FormatCorrector_1.descriptionFeedbackTriviaCorrect)(statement);
     }
+    (0, FormatCorrector_1.correctUriExtensionsGeneralFormat)(statement);
+    (0, FormatCorrector_1.correctInteractionPointsUriFormat)(statement);
+    (0, FormatCorrector_1.removeAllDomainFromUris)(statement);
+    (0, FormatCorrector_1.rounDecimals)(statement);
+    (0, FormatCorrector_1.formatDurationCorrect)(statement);
+    (0, FormatCorrector_1.typeActivityCmiClear)(statement);
 }
 /**
  * Comprueba si una declaración de xAPI corresponde a un caso de formato de sopa de letras.

@@ -236,3 +236,12 @@ function formatDuration(currentDuration: string): string {
 
     return `${minutes}:${seconds}:${milliseconds}`;
 }
+
+export function typeActivityCmiClear(statement: Statement) {
+    const currentStatement = Object(statement);
+    if (currentStatement.object.definition.type?.includes("cmi.")) {
+        currentStatement.object.definition.type =
+            currentStatement.object.definition.type.replace("cmi.", "");
+        statement = currentStatement as Statement;
+    }
+}

@@ -1,6 +1,10 @@
 import { Statement } from "@xapi/xapi";
 import { Workbook, Worksheet } from "exceljs";
-import { clearDatFile, saveAuxiliarData } from "./FileProviders/FileProvider";
+import {
+    clearDatFile,
+    getAllStatements,
+    saveAuxiliarData,
+} from "./FileProviders/FileProvider";
 import { fillHeaders } from "./consts/consts";
 import { Activity, ActivityJson } from "./models/ActivityModels";
 import { AxiliarFiles } from "./models/AuxiliarFiles";
@@ -18,10 +22,10 @@ import {
     formatDurationCorrect,
     removeAllDomainFromUris,
     rounDecimals,
+    typeActivityCmiClear,
     typeGamePressInWordSoupInsert,
 } from "./services/FormatCorrector";
 import { dataRetriever, getValueByPath } from "./services/ProcessData";
-import { RequestServices } from "./services/RequestServices";
 import { clearFailedStatements } from "./services/StatetementsCleaners";
 import { saveCategory as getCategoryFromJson } from "./services/manipulators/CategoryManipulator";
 import { choiceMolder as getChoicesFromJson } from "./services/manipulators/ChoicesManipulators";
@@ -33,9 +37,9 @@ import { parentDataMolder as getParentFromJson } from "./services/manipulators/P
  * @returns Una promesa que se resuelve cuando se han insertado los datos en el archivo.
  */
 export async function xapiToExcel() {
-    const requestServices = new RequestServices();
-    const statements: JSON[] = await requestServices.getAllStatements();
-    // const statements: JSON[] = getAllStatements();
+    // const requestServices = new RequestServices();
+    // const statements: JSON[] = await requestServices.getAllStatements();
+    const statements: JSON[] = getAllStatements();
     console.log("Corrigiendo detalles de las declaraciones...");
     for (const statement of statements) {
         correctFormat(statement as unknown as Statement);
@@ -53,11 +57,6 @@ export async function xapiToExcel() {
  * @param statement La declaración xAPI a corregir.
  */
 function correctFormat(statement: Statement) {
-    correctUriExtensionsGeneralFormat(statement);
-    correctInteractionPointsUriFormat(statement);
-    removeAllDomainFromUris(statement);
-    rounDecimals(statement);
-    formatDurationCorrect(statement);
     const currentStatement = Object(statement);
     if (
         currentStatement["verb"]["id"] == "verbs/skipped-forward" ||
@@ -90,6 +89,13 @@ function correctFormat(statement: Statement) {
     ) {
         descriptionFeedbackTriviaCorrect(statement);
     }
+
+    correctUriExtensionsGeneralFormat(statement);
+    correctInteractionPointsUriFormat(statement);
+    removeAllDomainFromUris(statement);
+    rounDecimals(statement);
+    formatDurationCorrect(statement);
+    typeActivityCmiClear(statement);
 }
 
 /**
