@@ -1,4 +1,5 @@
 import { ContextActivity, Statement } from "@xapi/xapi";
+import { Duration } from "luxon";
 
 export function correctUriExtensionsGeneralFormat(statement: Statement) {
     if (statement.result?.extensions) {
@@ -195,4 +196,43 @@ export function rounDecimals(statement: Statement) {
 export function typeGamePressInWordSoupInsert(statement: Statement) {
     const activityObject = Object(statement.object);
     activityObject.definition.type = "game";
+}
+
+export function formatDurationCorrect(statement: Statement) {
+    formatGeneralDuration(statement);
+    formatDurationBetweenPages(statement);
+}
+
+function formatGeneralDuration(statement: Statement) {
+    const currentDuration: string | undefined = statement.result?.duration;
+    if (statement.result && currentDuration) {
+        statement.result.duration = formatDuration(currentDuration);
+    }
+}
+
+function formatDurationBetweenPages(statement: Statement) {
+    const currentDuration: string =
+        statement.result?.extensions?.[
+            "https://xapi.tego.iie.cl/extensions/time-between-pages"
+        ];
+    if (statement.result?.extensions && currentDuration) {
+        statement.result.extensions[
+            "https://xapi.tego.iie.cl/extensions/time-between-pages"
+        ] = formatDuration(currentDuration);
+    }
+}
+
+/**
+ * Formatea la duración actual en un formato específico.
+ *
+ * @param currentDuration La duración actual en formato de cadena.
+ * @returns La duración formateada en el formato "mm:ss:ms".
+ */
+function formatDuration(currentDuration: string): string {
+    const duration = Duration.fromISO(currentDuration);
+    const minutes = duration.minutes.toString().padStart(2, "0");
+    const seconds = duration.seconds.toString().padStart(2, "0");
+    const milliseconds = duration.milliseconds.toString().padStart(3, "0");
+
+    return `${minutes}:${seconds}:${milliseconds}`;
 }

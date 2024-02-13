@@ -11,13 +11,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.xapiToExcel = void 0;
 const exceljs_1 = require("exceljs");
-const process_1 = require("process");
 const FileProvider_1 = require("./FileProviders/FileProvider");
 const consts_1 = require("./consts/consts");
 const AuxiliarFiles_1 = require("./models/AuxiliarFiles");
 const ExcelServices_1 = require("./services/ExcelServices");
 const FormatCorrector_1 = require("./services/FormatCorrector");
 const ProcessData_1 = require("./services/ProcessData");
+const RequestServices_1 = require("./services/RequestServices");
 const StatetementsCleaners_1 = require("./services/StatetementsCleaners");
 const CategoryManipulator_1 = require("./services/manipulators/CategoryManipulator");
 const ChoicesManipulators_1 = require("./services/manipulators/ChoicesManipulators");
@@ -29,9 +29,9 @@ const ParentManipulator_1 = require("./services/manipulators/ParentManipulator")
  */
 function xapiToExcel() {
     return __awaiter(this, void 0, void 0, function* () {
-        // const requestServices = new RequestServices();
-        // const statements: JSON[] = await requestServices.getAllStatements();
-        const statements = (0, FileProvider_1.getAllStatements)();
+        const requestServices = new RequestServices_1.RequestServices();
+        const statements = yield requestServices.getAllStatements();
+        // const statements: JSON[] = getAllStatements();
         console.log("Corrigiendo detalles de las declaraciones...");
         for (const statement of statements) {
             correctFormat(statement);
@@ -55,6 +55,7 @@ function correctFormat(statement) {
     (0, FormatCorrector_1.correctInteractionPointsUriFormat)(statement);
     (0, FormatCorrector_1.removeAllDomainFromUris)(statement);
     (0, FormatCorrector_1.rounDecimals)(statement);
+    (0, FormatCorrector_1.formatDurationCorrect)(statement);
     const currentStatement = Object(statement);
     if (currentStatement["verb"]["id"] == "verbs/skipped-forward" ||
         currentStatement["verb"]["id"] == "verbs/skipped-backward") {
@@ -66,8 +67,6 @@ function correctFormat(statement) {
     if (currentStatement.verb.id.includes("pressed") &&
         currentStatement.object.id.includes("sopaDeLetras")) {
         (0, FormatCorrector_1.typeGamePressInWordSoupInsert)(statement);
-        console.log(statement.object);
-        (0, process_1.exit)();
     }
     if (Object(statement)["object"]["id"] === "activities/profile/avatars" &&
         ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions)) {

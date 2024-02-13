@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.typeGamePressInWordSoupInsert = exports.rounDecimals = exports.descriptionFeedbackTriviaCorrect = exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
+exports.formatDurationCorrect = exports.typeGamePressInWordSoupInsert = exports.rounDecimals = exports.descriptionFeedbackTriviaCorrect = exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
+const luxon_1 = require("luxon");
 function correctUriExtensionsGeneralFormat(statement) {
     var _a, _b;
     if ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions) {
@@ -139,3 +140,35 @@ function typeGamePressInWordSoupInsert(statement) {
     activityObject.definition.type = "game";
 }
 exports.typeGamePressInWordSoupInsert = typeGamePressInWordSoupInsert;
+function formatDurationCorrect(statement) {
+    formatGeneralDuration(statement);
+    formatDurationBetweenPages(statement);
+}
+exports.formatDurationCorrect = formatDurationCorrect;
+function formatGeneralDuration(statement) {
+    var _a;
+    const currentDuration = (_a = statement.result) === null || _a === void 0 ? void 0 : _a.duration;
+    if (statement.result && currentDuration) {
+        statement.result.duration = formatDuration(currentDuration);
+    }
+}
+function formatDurationBetweenPages(statement) {
+    var _a, _b, _c;
+    const currentDuration = (_b = (_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions) === null || _b === void 0 ? void 0 : _b["https://xapi.tego.iie.cl/extensions/time-between-pages"];
+    if (((_c = statement.result) === null || _c === void 0 ? void 0 : _c.extensions) && currentDuration) {
+        statement.result.extensions["https://xapi.tego.iie.cl/extensions/time-between-pages"] = formatDuration(currentDuration);
+    }
+}
+/**
+ * Formatea la duración actual en un formato específico.
+ *
+ * @param currentDuration La duración actual en formato de cadena.
+ * @returns La duración formateada en el formato "mm:ss:ms".
+ */
+function formatDuration(currentDuration) {
+    const duration = luxon_1.Duration.fromISO(currentDuration);
+    const minutes = duration.minutes.toString().padStart(2, "0");
+    const seconds = duration.seconds.toString().padStart(2, "0");
+    const milliseconds = duration.milliseconds.toString().padStart(3, "0");
+    return `${minutes}:${seconds}:${milliseconds}`;
+}
