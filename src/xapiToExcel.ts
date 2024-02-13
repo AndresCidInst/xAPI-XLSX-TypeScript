@@ -1,6 +1,5 @@
 import { Statement } from "@xapi/xapi";
 import { Workbook, Worksheet } from "exceljs";
-import { exit } from "process";
 import {
     clearDatFile,
     getAllStatements,
@@ -77,8 +76,6 @@ function correctFormat(statement: Statement) {
         currentStatement.object.id.includes("sopaDeLetras")
     ) {
         typeGamePressInWordSoupInsert(statement);
-        console.log(statement.object);
-        exit();
     }
 
     if (
