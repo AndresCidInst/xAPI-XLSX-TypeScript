@@ -61,28 +61,28 @@ export const fillHeaders = {
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/time":
         "video_posicion_usuario",
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/progress":
-        "progreso_video",
+        "video_progreso",
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/From":
-        "segundo_anterior_al_salto",
+        "video_segundo_anterior_al_salto",
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/To":
-        "segundo_posterior_al_salto",
+        "video_segundo_posterior_al_salto",
     "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points":
         "estado_puntos_interaccion",
     "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame":
         "juego_sera_continuado",
     "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words":
-        "palabras_encontradas",
+        "sopa_de_letras_palabras_encontradas",
     "result|response": "retroalimentacion_respuesta",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece":
-        "pieza_movida",
+        "reordenable_pieza_movida",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition":
-        "pieza_posicion_pasada",
+        "reordenable_pieza_posicion_pasada",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePosition":
-        "pieza_posicion_actual",
+        "reordenable_pieza_posicion_actual",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/currentOrder":
-        "orden_piezas_actual",
+        "reordenable_orden_piezas_actual",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/from":
-        "avatar_cambiado",
+        "reordenable_avatar_cambiado",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/to":
         "avatar_actual",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/from":
@@ -94,12 +94,12 @@ export const fillHeaders = {
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to":
         "nombre_actual",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date":
-        "fecha_destinada_cita",
+        "cita_fecha_destinada",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason":
-        "razon_cancelacion_cita",
+        "cita_razon_cancelacion",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages":
-        "tiempo_entre_vistas",
-    "result|duration": "duracion_actividad",
+        "navegabilidad_tiempo_entre_vistas",
+    "result|duration": "actividad_duracion",
 };
 
 export const headerAvatarChange = [
