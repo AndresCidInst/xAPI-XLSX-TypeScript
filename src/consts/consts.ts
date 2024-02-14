@@ -90,9 +90,9 @@ export const fillHeaders = {
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/to":
         "accesorio_actual",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/from":
-        "nombe_anterior",
+        "avatar_nombe_anterior",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to":
-        "nombre_actual",
+        "avatar_nombre_actual",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date":
         "cita_fecha_destinada",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason":
