@@ -82,7 +82,7 @@ export const fillHeaders = {
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/currentOrder":
         "reordenable_orden_piezas_actual",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/from":
-        "reordenable_avatar_cambiado",
+        "avatar_cambiado",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/to":
         "avatar_actual",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/from":
