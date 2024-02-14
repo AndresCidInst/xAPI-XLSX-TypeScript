@@ -66,7 +66,7 @@
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": "N/A",
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A2 & \", \" & grouping!A3 & \", \" & grouping!A4",
+      "formula": "grouping!A2 & \", \" & grouping!A3 & \", \" & grouping!A4",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -120,7 +120,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -176,7 +176,7 @@
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": "N/A",
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A2 & \", \" & grouping!A3 & \", \" & grouping!A4",
+      "formula": "grouping!A2 & \", \" & grouping!A3 & \", \" & grouping!A4",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -230,7 +230,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -285,7 +285,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -340,11 +340,11 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A3",
+      "formula": "parent!A3",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A2 & \", \" & grouping!A3 & \", \" & grouping!A4",
+      "formula": "grouping!A2 & \", \" & grouping!A3 & \", \" & grouping!A4",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -398,7 +398,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -453,11 +453,11 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A3",
+      "formula": "parent!A3",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A2 & \", \" & grouping!A3 & \", \" & grouping!A4",
+      "formula": "grouping!A2 & \", \" & grouping!A3 & \", \" & grouping!A4",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -511,7 +511,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -566,7 +566,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -621,7 +621,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -676,7 +676,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -731,7 +731,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -786,7 +786,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -841,11 +841,11 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A4",
+      "formula": "parent!A4",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A5",
+      "formula": "grouping!A5",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -899,11 +899,11 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A4",
+      "formula": "parent!A4",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A5",
+      "formula": "grouping!A5",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -957,11 +957,11 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A4",
+      "formula": "parent!A4",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A5",
+      "formula": "grouping!A5",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -1015,11 +1015,11 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A4",
+      "formula": "parent!A4",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A5",
+      "formula": "grouping!A5",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -1073,11 +1073,11 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A4",
+      "formula": "parent!A4",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A5",
+      "formula": "grouping!A5",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -1131,11 +1131,11 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A4",
+      "formula": "parent!A4",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A5",
+      "formula": "grouping!A5",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -1189,11 +1189,11 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A4",
+      "formula": "parent!A4",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A5",
+      "formula": "grouping!A5",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -1247,11 +1247,11 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A4",
+      "formula": "parent!A4",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A5",
+      "formula": "grouping!A5",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -1305,11 +1305,11 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A4",
+      "formula": "parent!A4",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A5",
+      "formula": "grouping!A5",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -1363,7 +1363,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -1418,7 +1418,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -1473,11 +1473,11 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A5",
+      "formula": "parent!A5",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A6",
+      "formula": "grouping!A6",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -1531,7 +1531,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -1584,17 +1584,17 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "1,2,3,4,5,6,7,8",
     "object|definition|choices": {
-      "formula": "=choices!A2 & \", \" & choices!A3 & \", \" & choices!A4 & \", \" & choices!A5 & \", \" & choices!A6 & \", \" & choices!A7 & \", \" & choices!A8 & \", \" & choices!A9",
+      "formula": "choices!A2 & \", \" & choices!A3 & \", \" & choices!A4 & \", \" & choices!A5 & \", \" & choices!A6 & \", \" & choices!A7 & \", \" & choices!A8 & \", \" & choices!A9",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A6",
+      "formula": "parent!A6",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A2 & \", \" & category!A3 & \", \" & category!A4",
+      "formula": "category!A2 & \", \" & category!A3 & \", \" & category!A4",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -1645,17 +1645,17 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "1,2,3,4,5,6,7,8",
     "object|definition|choices": {
-      "formula": "=choices!A2 & \", \" & choices!A3 & \", \" & choices!A4 & \", \" & choices!A5 & \", \" & choices!A6 & \", \" & choices!A7 & \", \" & choices!A8 & \", \" & choices!A9",
+      "formula": "choices!A2 & \", \" & choices!A3 & \", \" & choices!A4 & \", \" & choices!A5 & \", \" & choices!A6 & \", \" & choices!A7 & \", \" & choices!A8 & \", \" & choices!A9",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A6",
+      "formula": "parent!A6",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A2 & \", \" & category!A3 & \", \" & category!A4",
+      "formula": "category!A2 & \", \" & category!A3 & \", \" & category!A4",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -1706,17 +1706,17 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "1,2,3,4,5,6,7,8",
     "object|definition|choices": {
-      "formula": "=choices!A2 & \", \" & choices!A3 & \", \" & choices!A4 & \", \" & choices!A5 & \", \" & choices!A6 & \", \" & choices!A7 & \", \" & choices!A8 & \", \" & choices!A9",
+      "formula": "choices!A2 & \", \" & choices!A3 & \", \" & choices!A4 & \", \" & choices!A5 & \", \" & choices!A6 & \", \" & choices!A7 & \", \" & choices!A8 & \", \" & choices!A9",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A6",
+      "formula": "parent!A6",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A2 & \", \" & category!A3 & \", \" & category!A4",
+      "formula": "category!A2 & \", \" & category!A3 & \", \" & category!A4",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -1767,17 +1767,17 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "1,2,3,4,5,6,7,8",
     "object|definition|choices": {
-      "formula": "=choices!A2 & \", \" & choices!A3 & \", \" & choices!A4 & \", \" & choices!A5 & \", \" & choices!A6 & \", \" & choices!A7 & \", \" & choices!A8 & \", \" & choices!A9",
+      "formula": "choices!A2 & \", \" & choices!A3 & \", \" & choices!A4 & \", \" & choices!A5 & \", \" & choices!A6 & \", \" & choices!A7 & \", \" & choices!A8 & \", \" & choices!A9",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A6",
+      "formula": "parent!A6",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A2 & \", \" & category!A3 & \", \" & category!A4",
+      "formula": "category!A2 & \", \" & category!A3 & \", \" & category!A4",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -1828,17 +1828,17 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "1,2,3,4,5,6,7,8",
     "object|definition|choices": {
-      "formula": "=choices!A2 & \", \" & choices!A3 & \", \" & choices!A4 & \", \" & choices!A5 & \", \" & choices!A6 & \", \" & choices!A7 & \", \" & choices!A8 & \", \" & choices!A9",
+      "formula": "choices!A2 & \", \" & choices!A3 & \", \" & choices!A4 & \", \" & choices!A5 & \", \" & choices!A6 & \", \" & choices!A7 & \", \" & choices!A8 & \", \" & choices!A9",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A6",
+      "formula": "parent!A6",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A2 & \", \" & category!A3 & \", \" & category!A4",
+      "formula": "category!A2 & \", \" & category!A3 & \", \" & category!A4",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -1889,17 +1889,17 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "1,2,3,4,5,6,7,8",
     "object|definition|choices": {
-      "formula": "=choices!A2 & \", \" & choices!A3 & \", \" & choices!A4 & \", \" & choices!A5 & \", \" & choices!A6 & \", \" & choices!A7 & \", \" & choices!A8 & \", \" & choices!A9",
+      "formula": "choices!A2 & \", \" & choices!A3 & \", \" & choices!A4 & \", \" & choices!A5 & \", \" & choices!A6 & \", \" & choices!A7 & \", \" & choices!A8 & \", \" & choices!A9",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A6",
+      "formula": "parent!A6",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A2 & \", \" & category!A3 & \", \" & category!A4",
+      "formula": "category!A2 & \", \" & category!A3 & \", \" & category!A4",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -1950,17 +1950,17 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "1,2,3,4,5,6,7,8",
     "object|definition|choices": {
-      "formula": "=choices!A2 & \", \" & choices!A3 & \", \" & choices!A4 & \", \" & choices!A5 & \", \" & choices!A6 & \", \" & choices!A7 & \", \" & choices!A8 & \", \" & choices!A9",
+      "formula": "choices!A2 & \", \" & choices!A3 & \", \" & choices!A4 & \", \" & choices!A5 & \", \" & choices!A6 & \", \" & choices!A7 & \", \" & choices!A8 & \", \" & choices!A9",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A6",
+      "formula": "parent!A6",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A2 & \", \" & category!A3 & \", \" & category!A4",
+      "formula": "category!A2 & \", \" & category!A3 & \", \" & category!A4",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -2013,7 +2013,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -2068,15 +2068,15 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A7",
+      "formula": "parent!A7",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A7 & \", \" & grouping!A8 & \", \" & grouping!A9 & \", \" & grouping!A10",
+      "formula": "grouping!A7 & \", \" & grouping!A8 & \", \" & grouping!A9 & \", \" & grouping!A10",
       "result": null
     },
     "context|contextActivities|category": {
-      "formula": "=category!A5 & \", \" & category!A6",
+      "formula": "category!A5 & \", \" & category!A6",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -2129,15 +2129,15 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A7",
+      "formula": "parent!A7",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A7 & \", \" & grouping!A8 & \", \" & grouping!A9 & \", \" & grouping!A10",
+      "formula": "grouping!A7 & \", \" & grouping!A8 & \", \" & grouping!A9 & \", \" & grouping!A10",
       "result": null
     },
     "context|contextActivities|category": {
-      "formula": "=category!A5 & \", \" & category!A6",
+      "formula": "category!A5 & \", \" & category!A6",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -2188,12 +2188,12 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A10 & \", \" & choices!A11 & \", \" & choices!A12 & \", \" & choices!A13 & \", \" & choices!A14",
+      "formula": "choices!A10 & \", \" & choices!A11 & \", \" & choices!A12 & \", \" & choices!A13 & \", \" & choices!A14",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A7",
+      "formula": "parent!A7",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -2246,12 +2246,12 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A10 & \", \" & choices!A11 & \", \" & choices!A12 & \", \" & choices!A13 & \", \" & choices!A14",
+      "formula": "choices!A10 & \", \" & choices!A11 & \", \" & choices!A12 & \", \" & choices!A13 & \", \" & choices!A14",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A7",
+      "formula": "parent!A7",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -2304,12 +2304,12 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A10 & \", \" & choices!A11 & \", \" & choices!A12 & \", \" & choices!A13 & \", \" & choices!A14",
+      "formula": "choices!A10 & \", \" & choices!A11 & \", \" & choices!A12 & \", \" & choices!A13 & \", \" & choices!A14",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A7",
+      "formula": "parent!A7",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -2362,12 +2362,12 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A10 & \", \" & choices!A11 & \", \" & choices!A12 & \", \" & choices!A13 & \", \" & choices!A14",
+      "formula": "choices!A10 & \", \" & choices!A11 & \", \" & choices!A12 & \", \" & choices!A13 & \", \" & choices!A14",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A7",
+      "formula": "parent!A7",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -2420,12 +2420,12 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A10 & \", \" & choices!A11 & \", \" & choices!A12 & \", \" & choices!A13 & \", \" & choices!A14",
+      "formula": "choices!A10 & \", \" & choices!A11 & \", \" & choices!A12 & \", \" & choices!A13 & \", \" & choices!A14",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A7",
+      "formula": "parent!A7",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -2478,17 +2478,17 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A10 & \", \" & choices!A11 & \", \" & choices!A12 & \", \" & choices!A13 & \", \" & choices!A14",
+      "formula": "choices!A10 & \", \" & choices!A11 & \", \" & choices!A12 & \", \" & choices!A13 & \", \" & choices!A14",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A6",
+      "formula": "parent!A6",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A2 & \", \" & category!A3 & \", \" & category!A4",
+      "formula": "category!A2 & \", \" & category!A3 & \", \" & category!A4",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -2539,17 +2539,17 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A10 & \", \" & choices!A11 & \", \" & choices!A12 & \", \" & choices!A13 & \", \" & choices!A14",
+      "formula": "choices!A10 & \", \" & choices!A11 & \", \" & choices!A12 & \", \" & choices!A13 & \", \" & choices!A14",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A6",
+      "formula": "parent!A6",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A2 & \", \" & category!A3 & \", \" & category!A4",
+      "formula": "category!A2 & \", \" & category!A3 & \", \" & category!A4",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -2602,7 +2602,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -2657,7 +2657,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -2712,11 +2712,11 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A8",
+      "formula": "parent!A8",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A11",
+      "formula": "grouping!A11",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -2770,7 +2770,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -2823,12 +2823,12 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A15 & \", \" & choices!A16",
+      "formula": "choices!A15 & \", \" & choices!A16",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A9",
+      "formula": "parent!A9",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -2881,12 +2881,12 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A15 & \", \" & choices!A16",
+      "formula": "choices!A15 & \", \" & choices!A16",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A9",
+      "formula": "parent!A9",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -2939,17 +2939,17 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A17 & \", \" & choices!A18 & \", \" & choices!A19 & \", \" & choices!A20 & \", \" & choices!A21 & \", \" & choices!A22 & \", \" & choices!A23 & \", \" & choices!A24 & \", \" & choices!A25 & \", \" & choices!A26",
+      "formula": "choices!A17 & \", \" & choices!A18 & \", \" & choices!A19 & \", \" & choices!A20 & \", \" & choices!A21 & \", \" & choices!A22 & \", \" & choices!A23 & \", \" & choices!A24 & \", \" & choices!A25 & \", \" & choices!A26",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A10",
+      "formula": "parent!A10",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A7 & \", \" & category!A8 & \", \" & category!A9",
+      "formula": "category!A7 & \", \" & category!A8 & \", \" & category!A9",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -3000,12 +3000,12 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A15 & \", \" & choices!A16",
+      "formula": "choices!A15 & \", \" & choices!A16",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A9",
+      "formula": "parent!A9",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -3058,12 +3058,12 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A15 & \", \" & choices!A16",
+      "formula": "choices!A15 & \", \" & choices!A16",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A9",
+      "formula": "parent!A9",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -3116,17 +3116,17 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A17 & \", \" & choices!A18 & \", \" & choices!A19 & \", \" & choices!A20 & \", \" & choices!A21 & \", \" & choices!A22 & \", \" & choices!A23 & \", \" & choices!A24 & \", \" & choices!A25 & \", \" & choices!A26",
+      "formula": "choices!A17 & \", \" & choices!A18 & \", \" & choices!A19 & \", \" & choices!A20 & \", \" & choices!A21 & \", \" & choices!A22 & \", \" & choices!A23 & \", \" & choices!A24 & \", \" & choices!A25 & \", \" & choices!A26",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A10",
+      "formula": "parent!A10",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A7 & \", \" & category!A8 & \", \" & category!A9",
+      "formula": "category!A7 & \", \" & category!A8 & \", \" & category!A9",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -3177,12 +3177,12 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A15 & \", \" & choices!A16",
+      "formula": "choices!A15 & \", \" & choices!A16",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A9",
+      "formula": "parent!A9",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -3235,12 +3235,12 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A15 & \", \" & choices!A16",
+      "formula": "choices!A15 & \", \" & choices!A16",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A9",
+      "formula": "parent!A9",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -3293,12 +3293,12 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A15 & \", \" & choices!A16",
+      "formula": "choices!A15 & \", \" & choices!A16",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A9",
+      "formula": "parent!A9",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -3351,12 +3351,12 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A15 & \", \" & choices!A16",
+      "formula": "choices!A15 & \", \" & choices!A16",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A9",
+      "formula": "parent!A9",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -3409,12 +3409,12 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A15 & \", \" & choices!A16",
+      "formula": "choices!A15 & \", \" & choices!A16",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A9",
+      "formula": "parent!A9",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -3467,12 +3467,12 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A15 & \", \" & choices!A16",
+      "formula": "choices!A15 & \", \" & choices!A16",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A9",
+      "formula": "parent!A9",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -3527,7 +3527,7 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A2",
+      "formula": "parent!A2",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
@@ -3580,17 +3580,17 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A27 & \", \" & choices!A28 & \", \" & choices!A29",
+      "formula": "choices!A27 & \", \" & choices!A28 & \", \" & choices!A29",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A10",
+      "formula": "parent!A10",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A7 & \", \" & category!A8 & \", \" & category!A9",
+      "formula": "category!A7 & \", \" & category!A8 & \", \" & category!A9",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -3641,17 +3641,17 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": {
-      "formula": "=choices!A27 & \", \" & choices!A28 & \", \" & choices!A29",
+      "formula": "choices!A27 & \", \" & choices!A28 & \", \" & choices!A29",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A10",
+      "formula": "parent!A10",
       "result": null
     },
     "context|contextActivities|grouping": "N/A",
     "context|contextActivities|category": {
-      "formula": "=category!A7 & \", \" & category!A8 & \", \" & category!A9",
+      "formula": "category!A7 & \", \" & category!A8 & \", \" & category!A9",
       "result": null
     },
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 54,
@@ -3702,16 +3702,16 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "Consumir abundante agua",
     "object|definition|choices": {
-      "formula": "=choices!A30 & \", \" & choices!A31",
+      "formula": "choices!A30 & \", \" & choices!A31",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A11",
+      "formula": "parent!A11",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A12 & \", \" & grouping!A13 & \", \" & grouping!A14 & \", \" & grouping!A15 & \", \" & grouping!A16",
+      "formula": "grouping!A12 & \", \" & grouping!A13 & \", \" & grouping!A14 & \", \" & grouping!A15 & \", \" & grouping!A16",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -3763,16 +3763,16 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "2.jpg",
     "object|definition|choices": {
-      "formula": "=choices!A32 & \", \" & choices!A33 & \", \" & choices!A34",
+      "formula": "choices!A32 & \", \" & choices!A33 & \", \" & choices!A34",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A11",
+      "formula": "parent!A11",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A12 & \", \" & grouping!A13 & \", \" & grouping!A14 & \", \" & grouping!A15 & \", \" & grouping!A16",
+      "formula": "grouping!A12 & \", \" & grouping!A13 & \", \" & grouping!A14 & \", \" & grouping!A15 & \", \" & grouping!A16",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -3824,16 +3824,16 @@
     "object|definition|type": "game",
     "object|definition|correctResponsesPattern": "50 gramos",
     "object|definition|choices": {
-      "formula": "=choices!A35 & \", \" & choices!A36 & \", \" & choices!A37",
+      "formula": "choices!A35 & \", \" & choices!A36 & \", \" & choices!A37",
       "result": null
     },
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A11",
+      "formula": "parent!A11",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A12 & \", \" & grouping!A13 & \", \" & grouping!A14 & \", \" & grouping!A15 & \", \" & grouping!A16",
+      "formula": "grouping!A12 & \", \" & grouping!A13 & \", \" & grouping!A14 & \", \" & grouping!A15 & \", \" & grouping!A16",
       "result": null
     },
     "context|contextActivities|category": "N/A",
@@ -3887,11 +3887,11 @@
     "object|definition|choices": "N/A",
     "context|platform": "android RP1A.200720.011",
     "context|contextActivities|parent": {
-      "formula": "=parent!A11",
+      "formula": "parent!A11",
       "result": null
     },
     "context|contextActivities|grouping": {
-      "formula": "=grouping!A12 & \", \" & grouping!A13 & \", \" & grouping!A14 & \", \" & grouping!A15 & \", \" & grouping!A16",
+      "formula": "grouping!A12 & \", \" & grouping!A13 & \", \" & grouping!A14 & \", \" & grouping!A15 & \", \" & grouping!A16",
       "result": null
     },
     "context|contextActivities|category": "N/A",

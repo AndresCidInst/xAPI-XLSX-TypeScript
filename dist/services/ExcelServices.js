@@ -119,5 +119,5 @@ function coordinateActivityRetrieval(workSheet, data) {
 }
 exports.coordinateActivityRetrieval = coordinateActivityRetrieval;
 function arrayToCoordinate(array) {
-    return `=${array.join(' & ", " & ')}`;
+    return `${array.join(' & ", " & ')}`;
 }

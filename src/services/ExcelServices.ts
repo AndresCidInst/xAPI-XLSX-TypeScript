@@ -142,5 +142,5 @@ export function coordinateActivityRetrieval(
 }
 
 function arrayToCoordinate(array: string[]) {
-    return `=${array.join(' & ", " & ')}`;
+    return `${array.join(' & ", " & ')}`;
 }
