@@ -168,9 +168,8 @@ function formatDurationBetweenPages(statement) {
 function formatDuration(currentDuration) {
     const duration = luxon_1.Duration.fromISO(currentDuration);
     const minutes = duration.minutes.toString().padStart(2, "0");
-    const seconds = duration.seconds.toString().padStart(2, "0");
-    const milliseconds = duration.milliseconds.toString().padStart(3, "0");
-    return `${minutes}:${seconds}:${milliseconds}`;
+    const seconds = duration.milliseconds >= 500 ? duration.seconds + 1 : duration.seconds;
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }
 function typeActivityCmiClear(statement) {
     var _a;

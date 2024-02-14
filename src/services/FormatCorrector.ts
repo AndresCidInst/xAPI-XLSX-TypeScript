@@ -231,10 +231,10 @@ function formatDurationBetweenPages(statement: Statement) {
 function formatDuration(currentDuration: string): string {
     const duration = Duration.fromISO(currentDuration);
     const minutes = duration.minutes.toString().padStart(2, "0");
-    const seconds = duration.seconds.toString().padStart(2, "0");
-    const milliseconds = duration.milliseconds.toString().padStart(3, "0");
+    const seconds =
+        duration.milliseconds >= 500 ? duration.seconds + 1 : duration.seconds;
 
-    return `${minutes}:${seconds}:${milliseconds}`;
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }
 
 export function typeActivityCmiClear(statement: Statement) {
