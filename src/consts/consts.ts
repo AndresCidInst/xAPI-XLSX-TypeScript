@@ -56,7 +56,7 @@ export const fillHeaders = {
     "context|extensions|https://xapi.tego.iie.cl/extensions/video/quality":
         "video_calidad",
     "context|extensions|https://xapi.tego.iie.cl/extensions/video/videoSpeed":
-        "velocidad_reproduccion",
+        "video_velocidad_reproduccion",
     "context|extensions|https://xapi.tego.iie.cl/extensions/video/fullScreen":
         "video_estado_pantalla_completa",
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/time":

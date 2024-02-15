@@ -47,7 +47,7 @@ exports.fillHeaders = {
     "result|score|scaled": "resultado_porcentaje_exito",
     "context|extensions|https://xapi.tego.iie.cl/extensions/video/length": "video_largo",
     "context|extensions|https://xapi.tego.iie.cl/extensions/video/quality": "video_calidad",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/videoSpeed": "velocidad_reproduccion",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/video/videoSpeed": "video_velocidad_reproduccion",
     "context|extensions|https://xapi.tego.iie.cl/extensions/video/fullScreen": "video_estado_pantalla_completa",
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/time": "video_posicion_usuario",
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/progress": "video_progreso",
