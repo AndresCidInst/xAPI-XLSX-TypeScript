@@ -93,7 +93,7 @@ export function getValueByPath(obj: JSON, path: string) {
     if (path == "timestamp|date" || path == "timestamp|time") {
         return path.includes("date")
             ? (value as Statement).timestamp!.split("T")[0]
-            : (value as Statement).timestamp!.split("T")[1];
+            : (value as Statement).timestamp!.split("T")[1].split(".")[0];
     }
     splittedPath.forEach((path) => {
         if (typeof value === "object" && value !== null) {
