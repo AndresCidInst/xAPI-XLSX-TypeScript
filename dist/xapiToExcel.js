@@ -51,6 +51,16 @@ exports.xapiToExcel = xapiToExcel;
 function correctFormat(statement) {
     var _a;
     const currentStatement = Object(statement);
+    (0, FormatCorrector_1.correctUriExtensionsGeneralFormat)(statement);
+    (0, FormatCorrector_1.removeAllDomainFromUris)(statement);
+    (0, FormatCorrector_1.typeActivityCmiClear)(statement);
+    if ((currentStatement["verb"]["id"] == "verbs/attempted" ||
+        currentStatement["verb"]["id"] == "verbs/found" ||
+        currentStatement["verb"]["id"] == "verbs/played") &&
+        currentStatement["object"]["id"].includes("sopaDeLetras")) {
+        // console.log(statement);
+        console.log("Sopa de letras");
+    }
     if (currentStatement["verb"]["id"] == "verbs/skipped-forward" ||
         currentStatement["verb"]["id"] == "verbs/skipped-backward") {
         (0, FormatCorrector_1.correctSkippedVideoExtensions)(statement);
@@ -70,12 +80,9 @@ function correctFormat(statement) {
         currentStatement["object"]["id"].includes("feedback-trivia")) {
         (0, FormatCorrector_1.descriptionFeedbackTriviaCorrect)(statement);
     }
-    (0, FormatCorrector_1.correctUriExtensionsGeneralFormat)(statement);
     (0, FormatCorrector_1.correctInteractionPointsUriFormat)(statement);
-    (0, FormatCorrector_1.removeAllDomainFromUris)(statement);
     (0, FormatCorrector_1.rounDecimals)(statement);
     (0, FormatCorrector_1.formatDurationCorrect)(statement);
-    (0, FormatCorrector_1.typeActivityCmiClear)(statement);
     (0, FormatCorrector_1.correctDataTimeZone)(statement);
 }
 /**

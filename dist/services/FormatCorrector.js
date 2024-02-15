@@ -36,6 +36,7 @@ function correctUriExtensionResultWordSoup(statement) {
         delete statement.result.extensions[uri];
         statement.result.extensions[`https://xapi.tego.iie.cl/extensions/word_soup/${lastSegmentUri}`] = value;
     });
+    console.log("si pasa por acá");
 }
 exports.correctUriExtensionResultWordSoup = correctUriExtensionResultWordSoup;
 function correctInteractionPointsUriFormat(statement) {

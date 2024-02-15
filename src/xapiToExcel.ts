@@ -59,6 +59,9 @@ export async function xapiToExcel() {
  */
 function correctFormat(statement: Statement) {
     const currentStatement = Object(statement);
+    correctUriExtensionsGeneralFormat(statement);
+    removeAllDomainFromUris(statement);
+    typeActivityCmiClear(statement);
     if (
         currentStatement["verb"]["id"] == "verbs/skipped-forward" ||
         currentStatement["verb"]["id"] == "verbs/skipped-backward"
@@ -91,12 +94,9 @@ function correctFormat(statement: Statement) {
         descriptionFeedbackTriviaCorrect(statement);
     }
 
-    correctUriExtensionsGeneralFormat(statement);
     correctInteractionPointsUriFormat(statement);
-    removeAllDomainFromUris(statement);
     rounDecimals(statement);
     formatDurationCorrect(statement);
-    typeActivityCmiClear(statement);
     correctDataTimeZone(statement);
 }
 
