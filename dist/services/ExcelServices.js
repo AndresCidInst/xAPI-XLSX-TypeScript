@@ -25,7 +25,7 @@ function createExcelFile() {
         saveCategoryInExcel(workbook);
         saveGroupingInExcel(workbook);
         saveParentInExcel(workbook);
-        yield workbook.xlsx.writeFile("out/tego.xlsx");
+        yield workbook.xlsx.writeFile(`out/tego_V${process.env.npm_package_version}.xlsx`);
     });
 }
 exports.createExcelFile = createExcelFile;

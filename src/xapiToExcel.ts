@@ -145,7 +145,9 @@ async function insertData(statements: JSON[]) {
     console.log("Datos principales recopilados con éxito ✅.");
     console.log("Guardando datos principales en el archivo excel...");
     saveMainData(workbook);
-    await workbook.xlsx.writeFile("out/tego.xlsx");
+    await workbook.xlsx.writeFile(
+        `out/tego_V${process.env.npm_package_version}.xlsx`,
+    );
     console.log("Datos principales guardados con éxito ✅.");
 }
 
@@ -183,7 +185,9 @@ function clearAuxiliarFiles() {
  */
 async function recopilateMainData(statements: JSON[]) {
     const workbook = new Workbook();
-    await workbook.xlsx.readFile("out/tego.xlsx");
+    await workbook.xlsx.readFile(
+        `out/tego_V${process.env.npm_package_version}.xlsx`,
+    );
     const sheetList: Worksheet[] = workbook.worksheets;
     const finalData: DataModelImpl[] = [];
     const dataKeys = Object.keys(fillHeaders);

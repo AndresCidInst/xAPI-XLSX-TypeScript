@@ -119,7 +119,7 @@ function insertData(statements) {
         console.log("Datos principales recopilados con éxito ✅.");
         console.log("Guardando datos principales en el archivo excel...");
         saveMainData(workbook);
-        yield workbook.xlsx.writeFile("out/tego.xlsx");
+        yield workbook.xlsx.writeFile(`out/tego_V${process.env.npm_package_version}.xlsx`);
         console.log("Datos principales guardados con éxito ✅.");
     });
 }
@@ -154,7 +154,7 @@ function clearAuxiliarFiles() {
 function recopilateMainData(statements) {
     return __awaiter(this, void 0, void 0, function* () {
         const workbook = new exceljs_1.Workbook();
-        yield workbook.xlsx.readFile("out/tego.xlsx");
+        yield workbook.xlsx.readFile(`out/tego_V${process.env.npm_package_version}.xlsx`);
         const sheetList = workbook.worksheets;
         const finalData = [];
         const dataKeys = Object.keys(consts_1.fillHeaders);

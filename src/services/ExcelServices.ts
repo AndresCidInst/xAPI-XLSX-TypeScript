@@ -14,7 +14,10 @@ export async function createExcelFile() {
     saveCategoryInExcel(workbook);
     saveGroupingInExcel(workbook);
     saveParentInExcel(workbook);
-    await workbook.xlsx.writeFile("out/tego.xlsx");
+
+    await workbook.xlsx.writeFile(
+        `out/tego_V${process.env.npm_package_version}.xlsx`,
+    );
 }
 
 export function saveMainDataInExcel(tegoSheet: Worksheet) {
