@@ -1,7 +1,7 @@
 import { ContextActivity, Statement } from "@xapi/xapi";
-import { Duration } from "luxon";
+import { DateTime, Duration } from "luxon";
 
-export function correctUriExtensionsGeneralFormat(statement: Statement) {
+export function correctUriExtensionsGeneralFormat(statement: Statement): void {
     if (statement.result?.extensions) {
         Object.keys(statement.result.extensions).forEach((uri) => {
             const value = statement.result!.extensions![uri];
@@ -18,7 +18,7 @@ export function correctUriExtensionsGeneralFormat(statement: Statement) {
     }
 }
 
-export function correctUriExtensionResultWordSoup(statement: Statement) {
+export function correctUriExtensionResultWordSoup(statement: Statement): void {
     if (
         statement.verb.id === "verbs/found" ||
         statement.verb.id === "verbs/attempted"
@@ -41,7 +41,7 @@ export function correctUriExtensionResultWordSoup(statement: Statement) {
     });
 }
 
-export function correctInteractionPointsUriFormat(statement: Statement) {
+export function correctInteractionPointsUriFormat(statement: Statement): void {
     if (statement.result?.extensions) {
         const uris = Object.keys(statement.result!.extensions!);
         const position = uris.findIndex((uri) =>
@@ -57,7 +57,9 @@ export function correctInteractionPointsUriFormat(statement: Statement) {
     }
 }
 
-export function correctAvatarChangeResultExtensionUri(statement: Statement) {
+export function correctAvatarChangeResultExtensionUri(
+    statement: Statement,
+): void {
     const fromUri: string =
         Object.keys(statement.result!.extensions!).find((uri) =>
             uri.includes("from"),
@@ -73,7 +75,7 @@ function changeAvatarUrisValue(
     fromUri: string,
     toUri: string,
     statement: Statement,
-) {
+): void {
     const fromValue: number = statement.result?.extensions![fromUri];
     const toValue: number = statement.result?.extensions![toUri];
     delete statement.result?.extensions![fromUri];
@@ -86,7 +88,7 @@ function changeAvatarUrisValue(
     ] = toValue;
 }
 
-export function correctSkippedVideoExtensions(statement: Statement) {
+export function correctSkippedVideoExtensions(statement: Statement): void {
     const currentExtensions = Object.entries(statement.result!.extensions!);
     const fromValue = currentExtensions[0][1]["From"];
     const toValue = currentExtensions[0][1]["To"];
@@ -99,7 +101,7 @@ export function correctSkippedVideoExtensions(statement: Statement) {
     ] = toValue;
 }
 
-export function removeAllDomainFromUris(statement: Statement) {
+export function removeAllDomainFromUris(statement: Statement): void {
     const domainToExclude = "https://xapi.tego.iie.cl/";
     statement = deleteUriPrincipalPlaces(statement, domainToExclude);
     deleteUriContextActivities(statement, domainToExclude);
@@ -108,7 +110,7 @@ export function removeAllDomainFromUris(statement: Statement) {
 function deleteUriPrincipalPlaces(
     statement: Statement,
     domainToExclude: string,
-) {
+): Statement {
     const currentStatement = Object(statement);
     const statementVerb = currentStatement.verb.id
         .split("/")
@@ -134,7 +136,7 @@ function deleteUriPrincipalPlaces(
 function deleteUriContextActivities(
     statement: Statement,
     domainToExclude: string,
-) {
+): void {
     if (statement.context?.contextActivities?.parent) {
         objectUriReplace(
             statement.context!.contextActivities!.parent!,
@@ -158,7 +160,7 @@ function deleteUriContextActivities(
 function objectUriReplace(
     activities: ContextActivity[],
     domainToExclude: string,
-) {
+): void {
     if (activities) {
         for (const activity of activities) {
             activity.id = activity.id.replace(domainToExclude, "");
@@ -166,7 +168,7 @@ function objectUriReplace(
     }
 }
 
-export function descriptionFeedbackTriviaCorrect(statement: Statement) {
+export function descriptionFeedbackTriviaCorrect(statement: Statement): void {
     const currentObject = Object(statement.object);
     currentObject.definition.description["es-CL"] =
         currentObject.definition.description["es-CL"].replace(
@@ -176,7 +178,7 @@ export function descriptionFeedbackTriviaCorrect(statement: Statement) {
     statement.object = currentObject;
 }
 
-export function rounDecimals(statement: Statement) {
+export function rounDecimals(statement: Statement): void {
     const currentProgressVideo =
         statement.result?.extensions?.[
             "https://xapi.tego.iie.cl/extensions/video/progress"
@@ -193,24 +195,24 @@ export function rounDecimals(statement: Statement) {
     }
 }
 
-export function typeGamePressInWordSoupInsert(statement: Statement) {
+export function typeGamePressInWordSoupInsert(statement: Statement): void {
     const activityObject = Object(statement.object);
     activityObject.definition.type = "game";
 }
 
-export function formatDurationCorrect(statement: Statement) {
+export function formatDurationCorrect(statement: Statement): void {
     formatGeneralDuration(statement);
     formatDurationBetweenPages(statement);
 }
 
-function formatGeneralDuration(statement: Statement) {
+function formatGeneralDuration(statement: Statement): void {
     const currentDuration: string | undefined = statement.result?.duration;
     if (statement.result && currentDuration) {
         statement.result.duration = formatDuration(currentDuration);
     }
 }
 
-function formatDurationBetweenPages(statement: Statement) {
+function formatDurationBetweenPages(statement: Statement): void {
     const currentDuration: string =
         statement.result?.extensions?.[
             "https://xapi.tego.iie.cl/extensions/time-between-pages"
@@ -237,11 +239,17 @@ function formatDuration(currentDuration: string): string {
     return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }
 
-export function typeActivityCmiClear(statement: Statement) {
+export function typeActivityCmiClear(statement: Statement): void {
     const currentStatement = Object(statement);
     if (currentStatement.object.definition.type?.includes("cmi.")) {
         currentStatement.object.definition.type =
             currentStatement.object.definition.type.replace("cmi.", "");
         statement = currentStatement as Statement;
     }
+}
+
+export function correctDataTimeZone(statement: Statement): void {
+    const uctDataTime = DateTime.fromISO(statement.timestamp!, { zone: "utc" });
+    const chileanDate = uctDataTime.setZone("America/Santiago").toISO()!;
+    statement.timestamp = chileanDate.replace("-03:00", "");
 }

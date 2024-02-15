@@ -59,6 +59,11 @@ function statementPathReordenableTransform(extensions) {
 function getValueByPath(obj, path) {
     const splittedPath = path.split("|");
     let value = obj;
+    if (path == "timestamp|date" || path == "timestamp|time") {
+        return path.includes("date")
+            ? value.timestamp.split("T")[0]
+            : value.timestamp.split("T")[1];
+    }
     splittedPath.forEach((path) => {
         if (typeof value === "object" && value !== null) {
             value = value[path];

@@ -76,6 +76,7 @@ function correctFormat(statement) {
     (0, FormatCorrector_1.rounDecimals)(statement);
     (0, FormatCorrector_1.formatDurationCorrect)(statement);
     (0, FormatCorrector_1.typeActivityCmiClear)(statement);
+    (0, FormatCorrector_1.correctDataTimeZone)(statement);
 }
 /**
  * Comprueba si una declaración de xAPI corresponde a un caso de formato de sopa de letras.

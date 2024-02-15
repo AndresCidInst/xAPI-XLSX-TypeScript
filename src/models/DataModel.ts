@@ -25,7 +25,8 @@ export class DataModelImpl implements DataModel {
     "context|contextActivities|category": string;
     "context|extensions/https://xapi.tego.iie.cl/extensions/user/age": number;
     "context|registration": string;
-    "timestamp": Date;
+    "timestamp|date": string;
+    "timestamp|time": string;
     "result|completion": boolean;
     "result|success": boolean;
     "result|score|min": number;

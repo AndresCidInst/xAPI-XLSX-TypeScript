@@ -14,6 +14,7 @@ import { Parent, ParentJson } from "./models/ParentModels";
 import { createExcelFile, saveMainDataInExcel } from "./services/ExcelServices";
 import {
     correctAvatarChangeResultExtensionUri,
+    correctDataTimeZone,
     correctInteractionPointsUriFormat,
     correctSkippedVideoExtensions,
     correctUriExtensionResultWordSoup,
@@ -96,6 +97,7 @@ function correctFormat(statement: Statement) {
     rounDecimals(statement);
     formatDurationCorrect(statement);
     typeActivityCmiClear(statement);
+    correctDataTimeZone(statement);
 }
 
 /**

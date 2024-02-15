@@ -23,7 +23,7 @@ export const containsReordenableToSave = {
 };
 
 export const fillHeaders = {
-    id: "id_capruta",
+    id: "capruta_id",
     "actor|name": "nombre_usuario",
     "actor|account|name": "rut_usuario",
     "verb|display|es-CL": "verbo_nombre",
@@ -43,7 +43,8 @@ export const fillHeaders = {
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age":
         "usuario_edad",
     "context|registration": "contexto_id_flujo_actividades",
-    timestamp: "fecha_hora_captura",
+    "timestamp|date": "fecha_captura",
+    "timestamp|time": "hora_captura",
     "result|completion": "resultado_completitud",
     "result|success": "resultado_exito",
     "result|score|min": "resultado_puntaje_minimo",

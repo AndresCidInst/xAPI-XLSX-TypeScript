@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.typeActivityCmiClear = exports.formatDurationCorrect = exports.typeGamePressInWordSoupInsert = exports.rounDecimals = exports.descriptionFeedbackTriviaCorrect = exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
+exports.correctDataTimeZone = exports.typeActivityCmiClear = exports.formatDurationCorrect = exports.typeGamePressInWordSoupInsert = exports.rounDecimals = exports.descriptionFeedbackTriviaCorrect = exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
 const luxon_1 = require("luxon");
 function correctUriExtensionsGeneralFormat(statement) {
     var _a, _b;
@@ -181,3 +181,9 @@ function typeActivityCmiClear(statement) {
     }
 }
 exports.typeActivityCmiClear = typeActivityCmiClear;
+function correctDataTimeZone(statement) {
+    const uctDataTime = luxon_1.DateTime.fromISO(statement.timestamp, { zone: "utc" });
+    const chileanDate = uctDataTime.setZone("America/Santiago").toISO();
+    statement.timestamp = chileanDate.replace("-03:00", "");
+}
+exports.correctDataTimeZone = correctDataTimeZone;

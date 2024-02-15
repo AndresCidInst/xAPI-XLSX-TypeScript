@@ -90,6 +90,11 @@ function statementPathReordenableTransform(extensions: Extensions): Extensions {
 export function getValueByPath(obj: JSON, path: string) {
     const splittedPath = path.split("|");
     let value: unknown = obj;
+    if (path == "timestamp|date" || path == "timestamp|time") {
+        return path.includes("date")
+            ? (value as Statement).timestamp!.split("T")[0]
+            : (value as Statement).timestamp!.split("T")[1];
+    }
     splittedPath.forEach((path) => {
         if (typeof value === "object" && value !== null) {
             value = (value as { [key: string]: unknown })[path];
