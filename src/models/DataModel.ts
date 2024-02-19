@@ -11,6 +11,7 @@ export class DataModelImpl implements DataModel {
     "id": string;
     "actor|name": string;
     "actor|account|name": string;
+    "context|extensions/https://xapi.tego.iie.cl/extensions/user/age": number;
     "verb|display|es-CL": string;
     "verb|id": string;
     "object|id": string;
@@ -23,7 +24,6 @@ export class DataModelImpl implements DataModel {
     "context|contextActivities|parent": string;
     "context|contextActivities|grouping": string;
     "context|contextActivities|category": string;
-    "context|extensions/https://xapi.tego.iie.cl/extensions/user/age": number;
     "context|registration": string;
     "timestamp|date": string;
     "timestamp|time": string;

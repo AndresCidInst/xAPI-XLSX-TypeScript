@@ -26,6 +26,8 @@ export const fillHeaders = {
     id: "capruta_id",
     "actor|name": "nombre_usuario",
     "actor|account|name": "rut_usuario",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/user/age":
+        "usuario_edad",
     "verb|display|es-CL": "verbo_nombre",
     "verb|id": "verbo_id",
     "object|id": "actividad_id",
@@ -40,8 +42,6 @@ export const fillHeaders = {
     "context|contextActivities|grouping": "contexto_actividad_parte_grupo_id",
     "context|contextActivities|category":
         "contexto_actividad_parte_categoria_id",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/user/age":
-        "usuario_edad",
     "context|registration": "contexto_id_flujo_actividades",
     "timestamp|date": "fecha_captura",
     "timestamp|time": "hora_captura",
