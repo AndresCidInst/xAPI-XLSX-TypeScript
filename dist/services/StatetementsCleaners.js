@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.clearFailedStatements = void 0;
+const consts_1 = require("../consts/consts");
 function clearFailedStatements(statements) {
-    // statements = clearTestUsers(statements);
+    statements = clearTestUsers(statements);
     statements = clearDuplicatedStatements(statements);
     statements = clearEntryAndClosingFailedStatements(statements);
     return statements.filter((statement) => {
@@ -30,9 +31,7 @@ function clearTestUsers(statements) {
 function isTestUser(statement) {
     const currentStatement = Object(statement);
     return (currentStatement.actor.account.name.startsWith("40.") ||
-        currentStatement.actor.account.name == "11415764-3" ||
-        currentStatement.actor.account.name == "17421134-7" ||
-        currentStatement.actor.account.name == "7381739-0");
+        consts_1.userTest.includes(currentStatement.actor.account.name));
 }
 function clearDuplicatedStatements(statements) {
     const uniqueStatements = new Map();

@@ -6,3 +6,6 @@ data
 
 #Archivo Excel creado localmente
 out
+
+#Carpeta con el codigo compilado
+dist

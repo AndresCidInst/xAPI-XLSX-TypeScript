@@ -58,7 +58,8 @@ export class DataModelImpl implements DataModel {
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": Date;
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": string;
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": number;
-    "result|duration": string;
+    "result|duration|capturado": string;
+    "result|duration|real": string;
 
     constructor() {}
     [key: string]:

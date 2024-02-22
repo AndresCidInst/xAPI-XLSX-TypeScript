@@ -1,4 +1,5 @@
 import { Statement } from "@xapi/xapi";
+import { userTest } from "../consts/consts";
 
 export function clearFailedStatements(statements: JSON[]): JSON[] {
     statements = clearTestUsers(statements);
@@ -34,9 +35,7 @@ function isTestUser(statement: JSON): boolean {
     const currentStatement = Object(statement);
     return (
         (currentStatement.actor.account.name as string).startsWith("40.") ||
-        currentStatement.actor.account.name == "11415764-3" ||
-        currentStatement.actor.account.name == "17421134-7" ||
-        currentStatement.actor.account.name == "7381739-0"
+        userTest.includes(currentStatement.actor.account.name)
     );
 }
 

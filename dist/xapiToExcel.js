@@ -17,6 +17,7 @@ const AuxiliarFiles_1 = require("./models/AuxiliarFiles");
 const ExcelServices_1 = require("./services/ExcelServices");
 const FormatCorrector_1 = require("./services/FormatCorrector");
 const ProcessData_1 = require("./services/ProcessData");
+const RequestServices_1 = require("./services/RequestServices");
 const StatetementsCleaners_1 = require("./services/StatetementsCleaners");
 const CategoryManipulator_1 = require("./services/manipulators/CategoryManipulator");
 const ChoicesManipulators_1 = require("./services/manipulators/ChoicesManipulators");
@@ -28,9 +29,9 @@ const ParentManipulator_1 = require("./services/manipulators/ParentManipulator")
  */
 function xapiToExcel() {
     return __awaiter(this, void 0, void 0, function* () {
-        // const requestServices = new RequestServices();
-        // const statements: JSON[] = await requestServices.getAllStatements();
-        const statements = (0, FileProvider_1.getAllStatements)();
+        const requestServices = new RequestServices_1.RequestServices();
+        const statements = yield requestServices.getAllStatements();
+        // const statements: JSON[] = getAllStatements();
         console.log("Corrigiendo detalles de las declaraciones...");
         statements.sort(FormatCorrector_1.compareDates);
         for (const statement of statements) {
@@ -39,7 +40,6 @@ function xapiToExcel() {
         console.log("Corrección de detalles de las declaraciones completada ✅.");
         console.log("Limpiando declaraciones fallidas...");
         const newStatements = (0, StatetementsCleaners_1.clearFailedStatements)(statements);
-        console.log(newStatements);
         console.log("Declaraciones fallidas limpiadas ✅.");
         yield prepareData(newStatements);
         yield insertData(newStatements);
