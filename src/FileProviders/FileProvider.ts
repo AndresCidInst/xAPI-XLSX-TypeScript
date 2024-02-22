@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync } from "fs";
 import { exit } from "process";
 
 export function getAllStatements(): JSON[] {
+    console.log("Extrayendo declaraciones del archivo");
     const file = readFileSync("data/prueba-01-prueba.json", "utf-8");
     return JSON.parse(file);
 }

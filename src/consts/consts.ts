@@ -28,6 +28,7 @@ export const fillHeaders = {
     "actor|account|name": "rut_usuario",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age":
         "usuario_edad",
+    "context|platform": "contexto_dispositivo_usado",
     "verb|display|es-CL": "verbo_nombre",
     "verb|id": "verbo_id",
     "object|id": "actividad_id",
@@ -37,7 +38,6 @@ export const fillHeaders = {
     "object|definition|correctResponsesPattern":
         "actividad_elemento_u_orden_correcto",
     "object|definition|choices": "actividad_elementos_opciones",
-    "context|platform": "contexto_dispositivo_usado",
     "context|contextActivities|parent": "contexto_actividad_padre_id",
     "context|contextActivities|grouping": "contexto_actividad_parte_grupo_id",
     "context|contextActivities|category":

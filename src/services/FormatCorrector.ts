@@ -253,3 +253,17 @@ export function correctDataTimeZone(statement: Statement): void {
     const chileanDate = uctDataTime.setZone("America/Santiago").toISO()!;
     statement.timestamp = chileanDate.replace("-03:00", "");
 }
+
+export function compareDates(a: JSON, b: JSON): number {
+    const firstStatement = Object(a);
+    const secondStatement = Object(b);
+    const firstDate = new Date(firstStatement["timestamp"]);
+    const secondDate = new Date(secondStatement["timestamp"]);
+    if (firstDate < secondDate) {
+        return -1;
+    }
+    if (firstDate > secondDate) {
+        return 1;
+    }
+    return 0;
+}

@@ -32,12 +32,14 @@ function xapiToExcel() {
         // const statements: JSON[] = await requestServices.getAllStatements();
         const statements = (0, FileProvider_1.getAllStatements)();
         console.log("Corrigiendo detalles de las declaraciones...");
+        statements.sort(FormatCorrector_1.compareDates);
         for (const statement of statements) {
             correctFormat(statement);
         }
         console.log("Corrección de detalles de las declaraciones completada ✅.");
         console.log("Limpiando declaraciones fallidas...");
         const newStatements = (0, StatetementsCleaners_1.clearFailedStatements)(statements);
+        console.log(newStatements);
         console.log("Declaraciones fallidas limpiadas ✅.");
         yield prepareData(newStatements);
         yield insertData(newStatements);

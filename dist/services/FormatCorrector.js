@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.correctDataTimeZone = exports.typeActivityCmiClear = exports.formatDurationCorrect = exports.typeGamePressInWordSoupInsert = exports.rounDecimals = exports.descriptionFeedbackTriviaCorrect = exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
+exports.compareDates = exports.correctDataTimeZone = exports.typeActivityCmiClear = exports.formatDurationCorrect = exports.typeGamePressInWordSoupInsert = exports.rounDecimals = exports.descriptionFeedbackTriviaCorrect = exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
 const luxon_1 = require("luxon");
 function correctUriExtensionsGeneralFormat(statement) {
     var _a, _b;
@@ -187,3 +187,17 @@ function correctDataTimeZone(statement) {
     statement.timestamp = chileanDate.replace("-03:00", "");
 }
 exports.correctDataTimeZone = correctDataTimeZone;
+function compareDates(a, b) {
+    const firstStatement = Object(a);
+    const secondStatement = Object(b);
+    const firstDate = new Date(firstStatement["timestamp"]);
+    const secondDate = new Date(secondStatement["timestamp"]);
+    if (firstDate < secondDate) {
+        return -1;
+    }
+    if (firstDate > secondDate) {
+        return 1;
+    }
+    return 0;
+}
+exports.compareDates = compareDates;

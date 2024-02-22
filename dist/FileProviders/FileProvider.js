@@ -4,6 +4,7 @@ exports.clearDatFile = exports.readJsonFile = exports.saveAuxiliarData = exports
 const fs_1 = require("fs");
 const process_1 = require("process");
 function getAllStatements() {
+    console.log("Extrayendo declaraciones del archivo");
     const file = (0, fs_1.readFileSync)("data/prueba-01-prueba.json", "utf-8");
     return JSON.parse(file);
 }
