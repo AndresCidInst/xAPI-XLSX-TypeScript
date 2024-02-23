@@ -100,8 +100,10 @@ export const fillHeaders = {
         "cita_razon_cancelacion",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages":
         "navegabilidad_tiempo_entre_vistas",
-    "result|duration|capturado": "tiempo_registrado",
-    "result|duration|real": "tiempo_real_registrado",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/duration":
+        "tiempo_registrado",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration":
+        "tiempo_real_registrado",
 };
 
 export const headerAvatarChange = [

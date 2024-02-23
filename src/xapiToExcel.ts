@@ -1,9 +1,9 @@
 import { Statement } from "@xapi/xapi";
 import { Workbook, Worksheet } from "exceljs";
 import { clearDatFile, saveAuxiliarData } from "./FileProviders/FileProvider";
+import { AxiliarFiles } from "./consts/AuxiliarFiles";
 import { fillHeaders } from "./consts/consts";
 import { Activity, ActivityJson } from "./models/ActivityModels";
-import { AxiliarFiles } from "./models/AuxiliarFiles";
 import { Choice } from "./models/ChoicesModels";
 import { DataModelImpl } from "./models/DataModel";
 import { Parent, ParentJson } from "./models/ParentModels";
@@ -20,6 +20,7 @@ import {
     formatDurationCorrect,
     removeAllDomainFromUris,
     rounDecimals,
+    separeDurationFromRealDuration,
     typeActivityCmiClear,
     typeGamePressInWordSoupInsert,
 } from "./services/FormatCorrector";
@@ -37,19 +38,25 @@ import { parentDataMolder as getParentFromJson } from "./services/manipulators/P
  */
 export async function xapiToExcel() {
     const requestServices = new RequestServices();
-    const statements: JSON[] = await requestServices.getAllStatements();
+    let statements: JSON[] = await requestServices.getAllStatements();
     // const statements: JSON[] = getAllStatements();
     console.log("Corrigiendo detalles de las declaraciones...");
     statements.sort(compareDates);
-    for (const statement of statements) {
-        correctFormat(statement as unknown as Statement);
-    }
+    statements = refactorStatementsFormatsAndData(statements);
     console.log("Corrección de detalles de las declaraciones completada ✅.");
     console.log("Limpiando declaraciones fallidas...");
     const newStatements = clearFailedStatements(statements);
     console.log("Declaraciones fallidas limpiadas ✅.");
     await prepareData(newStatements);
     await insertData(newStatements);
+}
+
+function refactorStatementsFormatsAndData(statements: JSON[]): JSON[] {
+    for (const statement of statements) {
+        correctFormat(statement as unknown as Statement);
+    }
+    separeDurationFromRealDuration(statements);
+    return statements;
 }
 
 /**

@@ -73,7 +73,7 @@ function clearEntryAndClosingFailedStatements(statements: JSON[]) {
     });
 }
 
-function groupingByActor(statements: JSON[]): string[] {
+export function groupingByActor(statements: JSON[]): string[] {
     const actorNames = statements.reduce((names, statement) => {
         const currentStatement = Object(statement);
         names.add(currentStatement.actor.account.name);
@@ -82,7 +82,7 @@ function groupingByActor(statements: JSON[]): string[] {
     return Array.from(actorNames);
 }
 
-function obtainStatementsByActor(
+export function obtainStatementsByActor(
     statements: JSON[],
     actorName: string,
 ): JSON[] {
