@@ -1,9 +1,5 @@
 import { ContextActivity, Statement } from "@xapi/xapi";
 import { DateTime, Duration } from "luxon";
-import {
-    groupingByActor,
-    obtainStatementsByActor,
-} from "./StatetementsCleaners";
 
 export function correctUriExtensionsGeneralFormat(statement: Statement): void {
     if (statement.result?.extensions) {
@@ -270,19 +266,4 @@ export function compareDates(a: JSON, b: JSON): number {
         return 1;
     }
     return 0;
-}
-
-export function separeDurationFromRealDuration(statements: JSON[]) {
-    const users: string[] = groupingByActor(statements);
-    const statementsDurationReformated: JSON[] = [];
-    for (const user in users) {
-        let idStatementInit string = "";
-        const timesOfInectivity: string[] = [];
-        const timesOfRetun: string[] = [];
-        obtainStatementsByActor(statements, user).forEach((statement) => {
-            const statementTypeStatement = statement as unknown as Statement;
-            
-        });
-    }
-    return statements;
 }

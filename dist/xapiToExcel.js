@@ -12,13 +12,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.xapiToExcel = void 0;
 const exceljs_1 = require("exceljs");
 const FileProvider_1 = require("./FileProviders/FileProvider");
+const AuxiliarFiles_1 = require("./consts/AuxiliarFiles");
 const consts_1 = require("./consts/consts");
-const AuxiliarFiles_1 = require("./models/AuxiliarFiles");
 const ExcelServices_1 = require("./services/ExcelServices");
-const FormatCorrector_1 = require("./services/FormatCorrector");
 const ProcessData_1 = require("./services/ProcessData");
-const RequestServices_1 = require("./services/RequestServices");
 const StatetementsCleaners_1 = require("./services/StatetementsCleaners");
+const GeneralCorrector_1 = require("./services/formatCorrectors/GeneralCorrector");
+const RealDurationSeparator_1 = require("./services/formatCorrectors/RealDurationSeparator");
 const CategoryManipulator_1 = require("./services/manipulators/CategoryManipulator");
 const ChoicesManipulators_1 = require("./services/manipulators/ChoicesManipulators");
 const GroupingManipulator_1 = require("./services/manipulators/GroupingManipulator");
@@ -29,23 +29,28 @@ const ParentManipulator_1 = require("./services/manipulators/ParentManipulator")
  */
 function xapiToExcel() {
     return __awaiter(this, void 0, void 0, function* () {
-        const requestServices = new RequestServices_1.RequestServices();
-        const statements = yield requestServices.getAllStatements();
-        // const statements: JSON[] = getAllStatements();
-        console.log("Corrigiendo detalles de las declaraciones...");
-        statements.sort(FormatCorrector_1.compareDates);
-        for (const statement of statements) {
-            correctFormat(statement);
-        }
-        console.log("Corrección de detalles de las declaraciones completada ✅.");
+        // const requestServices = new RequestServices();
+        // let statements: JSON[] = await requestServices.getAllStatements();
+        const statements = (0, FileProvider_1.getAllStatements)();
         console.log("Limpiando declaraciones fallidas...");
-        const newStatements = (0, StatetementsCleaners_1.clearFailedStatements)(statements);
+        let newStatements = (0, StatetementsCleaners_1.clearFailedStatements)(statements);
         console.log("Declaraciones fallidas limpiadas ✅.");
+        console.log("Corrigiendo detalles de las declaraciones...");
+        newStatements.sort(GeneralCorrector_1.compareDates);
+        newStatements = refactorStatementsFormatsAndData(newStatements);
+        console.log("Corrección de detalles de las declaraciones completada ✅.");
         yield prepareData(newStatements);
         yield insertData(newStatements);
     });
 }
 exports.xapiToExcel = xapiToExcel;
+function refactorStatementsFormatsAndData(statements) {
+    for (const statement of statements) {
+        correctFormat(statement);
+    }
+    statements = (0, RealDurationSeparator_1.separeDurationFromRealDuration)(statements);
+    return statements;
+}
 /**
  * Corrige el formato de una declaración xAPI.
  * @param statement La declaración xAPI a corregir.
@@ -53,32 +58,32 @@ exports.xapiToExcel = xapiToExcel;
 function correctFormat(statement) {
     var _a;
     const currentStatement = Object(statement);
-    (0, FormatCorrector_1.correctUriExtensionsGeneralFormat)(statement);
-    (0, FormatCorrector_1.removeAllDomainFromUris)(statement);
-    (0, FormatCorrector_1.typeActivityCmiClear)(statement);
+    (0, GeneralCorrector_1.correctUriExtensionsGeneralFormat)(statement);
+    (0, GeneralCorrector_1.removeAllDomainFromUris)(statement);
+    (0, GeneralCorrector_1.typeActivityCmiClear)(statement);
     if (currentStatement["verb"]["id"] == "verbs/skipped-forward" ||
         currentStatement["verb"]["id"] == "verbs/skipped-backward") {
-        (0, FormatCorrector_1.correctSkippedVideoExtensions)(statement);
+        (0, GeneralCorrector_1.correctSkippedVideoExtensions)(statement);
     }
     if (wordSoupFormattingCase(statement)) {
-        (0, FormatCorrector_1.correctUriExtensionResultWordSoup)(statement);
+        (0, GeneralCorrector_1.correctUriExtensionResultWordSoup)(statement);
     }
     if (currentStatement.verb.id.includes("pressed") &&
         currentStatement.object.id.includes("sopaDeLetras")) {
-        (0, FormatCorrector_1.typeGamePressInWordSoupInsert)(statement);
+        (0, GeneralCorrector_1.typeGamePressInWordSoupInsert)(statement);
     }
     if (Object(statement)["object"]["id"] === "activities/profile/avatars" &&
         ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions)) {
-        (0, FormatCorrector_1.correctAvatarChangeResultExtensionUri)(statement);
+        (0, GeneralCorrector_1.correctAvatarChangeResultExtensionUri)(statement);
     }
     if (currentStatement["verb"]["id"] == "verbs/viewed" &&
         currentStatement["object"]["id"].includes("feedback-trivia")) {
-        (0, FormatCorrector_1.descriptionFeedbackTriviaCorrect)(statement);
+        (0, GeneralCorrector_1.descriptionFeedbackTriviaCorrect)(statement);
     }
-    (0, FormatCorrector_1.correctInteractionPointsUriFormat)(statement);
-    (0, FormatCorrector_1.rounDecimals)(statement);
-    (0, FormatCorrector_1.formatDurationCorrect)(statement);
-    (0, FormatCorrector_1.correctDataTimeZone)(statement);
+    (0, GeneralCorrector_1.correctInteractionPointsUriFormat)(statement);
+    (0, GeneralCorrector_1.rounDecimals)(statement);
+    (0, GeneralCorrector_1.formatDurationCorrect)(statement);
+    (0, GeneralCorrector_1.correctDataTimeZone)(statement);
 }
 /**
  * Comprueba si una declaración de xAPI corresponde a un caso de formato de sopa de letras.

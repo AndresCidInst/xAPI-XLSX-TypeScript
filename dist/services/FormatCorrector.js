@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.compareDates = exports.correctDataTimeZone = exports.typeActivityCmiClear = exports.formatDurationCorrect = exports.typeGamePressInWordSoupInsert = exports.rounDecimals = exports.descriptionFeedbackTriviaCorrect = exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
+exports.separeDurationFromRealDuration = exports.compareDates = exports.correctDataTimeZone = exports.typeActivityCmiClear = exports.formatDurationCorrect = exports.typeGamePressInWordSoupInsert = exports.rounDecimals = exports.descriptionFeedbackTriviaCorrect = exports.removeAllDomainFromUris = exports.correctSkippedVideoExtensions = exports.correctAvatarChangeResultExtensionUri = exports.correctInteractionPointsUriFormat = exports.correctUriExtensionResultWordSoup = exports.correctUriExtensionsGeneralFormat = void 0;
 const luxon_1 = require("luxon");
+const process_1 = require("process");
+const initFinishActions_1 = require("../consts/initFinishActions");
+const StatetementsCleaners_1 = require("./StatetementsCleaners");
 function correctUriExtensionsGeneralFormat(statement) {
     var _a, _b;
     if ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions) {
@@ -201,3 +204,48 @@ function compareDates(a, b) {
     return 0;
 }
 exports.compareDates = compareDates;
+function separeDurationFromRealDuration(statements) {
+    const users = (0, StatetementsCleaners_1.groupingByActor)(statements);
+    const statementsDurationReformated = [];
+    users.forEach((user) => {
+        let idStatementInit = "";
+        const timesOfInectivity = [];
+        const timesOfRetun = [];
+        let timeToSubtract;
+        (0, StatetementsCleaners_1.obtainStatementsByActor)(statements, user).forEach((statement) => {
+            const currentStatement = statement;
+            if (currentStatement.verb.id == initFinishActions_1.InitFinishActions.navegation) {
+                if (timesOfInectivity.length > 0 && timesOfRetun.length > 0) {
+                    timeToSubtract = timeSubstract(timesOfInectivity, timesOfRetun);
+                    console.log("user", user);
+                    console.log(idStatementInit);
+                    console.log(Object(statement).id);
+                    (0, process_1.exit)(0);
+                }
+                idStatementInit = currentStatement.id;
+                return;
+            }
+            if (idStatementInit != "" &&
+                currentStatement.verb.id == initFinishActions_1.InitFinishActions.closeApp) {
+                timesOfInectivity.push(currentStatement.timestamp);
+                return;
+            }
+            if (idStatementInit != "" &&
+                (currentStatement.verb.id == initFinishActions_1.InitFinishActions.entryApp ||
+                    currentStatement.verb.id == initFinishActions_1.InitFinishActions.loginApp)) {
+                timesOfRetun.push(currentStatement.timestamp);
+                return;
+            }
+        });
+    });
+    return statements;
+}
+exports.separeDurationFromRealDuration = separeDurationFromRealDuration;
+function timeSubstract(closeTime, entryTimes) {
+    const resultantTime = closeTime.reduce((resultantTime, time, index) => {
+        const closeFormattedTime = new Date(time).getTime();
+        const entryFormattedTime = new Date(entryTimes[index]).getTime();
+        return resultantTime + (closeFormattedTime - entryFormattedTime);
+    }, "");
+    return luxon_1.Duration.fromObject({ seconds: Number(resultantTime) });
+}

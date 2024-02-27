@@ -1,6 +1,10 @@
 import { Statement } from "@xapi/xapi";
 import { Workbook, Worksheet } from "exceljs";
-import { clearDatFile, saveAuxiliarData } from "./FileProviders/FileProvider";
+import {
+    clearDatFile,
+    getAllStatements,
+    saveAuxiliarData,
+} from "./FileProviders/FileProvider";
 import { AxiliarFiles } from "./consts/AuxiliarFiles";
 import { fillHeaders } from "./consts/consts";
 import { Activity, ActivityJson } from "./models/ActivityModels";
@@ -8,6 +12,8 @@ import { Choice } from "./models/ChoicesModels";
 import { DataModelImpl } from "./models/DataModel";
 import { Parent, ParentJson } from "./models/ParentModels";
 import { createExcelFile, saveMainDataInExcel } from "./services/ExcelServices";
+import { dataRetriever, getValueByPath } from "./services/ProcessData";
+import { clearFailedStatements } from "./services/StatetementsCleaners";
 import {
     compareDates,
     correctAvatarChangeResultExtensionUri,
@@ -20,13 +26,10 @@ import {
     formatDurationCorrect,
     removeAllDomainFromUris,
     rounDecimals,
-    separeDurationFromRealDuration,
     typeActivityCmiClear,
     typeGamePressInWordSoupInsert,
-} from "./services/FormatCorrector";
-import { dataRetriever, getValueByPath } from "./services/ProcessData";
-import { RequestServices } from "./services/RequestServices";
-import { clearFailedStatements } from "./services/StatetementsCleaners";
+} from "./services/formatCorrectors/GeneralCorrector";
+import { separeDurationFromRealDuration } from "./services/formatCorrectors/RealDurationSeparator";
 import { saveCategory as getCategoryFromJson } from "./services/manipulators/CategoryManipulator";
 import { choiceMolder as getChoicesFromJson } from "./services/manipulators/ChoicesManipulators";
 import { getGroupingFromJson } from "./services/manipulators/GroupingManipulator";
@@ -37,16 +40,16 @@ import { parentDataMolder as getParentFromJson } from "./services/manipulators/P
  * @returns Una promesa que se resuelve cuando se han insertado los datos en el archivo.
  */
 export async function xapiToExcel() {
-    const requestServices = new RequestServices();
-    let statements: JSON[] = await requestServices.getAllStatements();
-    // const statements: JSON[] = getAllStatements();
-    console.log("Corrigiendo detalles de las declaraciones...");
-    statements.sort(compareDates);
-    statements = refactorStatementsFormatsAndData(statements);
-    console.log("Corrección de detalles de las declaraciones completada ✅.");
+    // const requestServices = new RequestServices();
+    // let statements: JSON[] = await requestServices.getAllStatements();
+    const statements: JSON[] = getAllStatements();
     console.log("Limpiando declaraciones fallidas...");
-    const newStatements = clearFailedStatements(statements);
+    let newStatements = clearFailedStatements(statements);
     console.log("Declaraciones fallidas limpiadas ✅.");
+    console.log("Corrigiendo detalles de las declaraciones...");
+    newStatements.sort(compareDates);
+    newStatements = refactorStatementsFormatsAndData(newStatements);
+    console.log("Corrección de detalles de las declaraciones completada ✅.");
     await prepareData(newStatements);
     await insertData(newStatements);
 }
@@ -55,7 +58,7 @@ function refactorStatementsFormatsAndData(statements: JSON[]): JSON[] {
     for (const statement of statements) {
         correctFormat(statement as unknown as Statement);
     }
-    separeDurationFromRealDuration(statements);
+    statements = separeDurationFromRealDuration(statements);
     return statements;
 }
 

@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.clearFailedStatements = void 0;
+exports.obtainStatementsByActor = exports.groupingByActor = exports.clearFailedStatements = void 0;
 const consts_1 = require("../consts/consts");
 function clearFailedStatements(statements) {
-    statements = clearTestUsers(statements);
+    // statements = clearTestUsers(statements);
     statements = clearDuplicatedStatements(statements);
     statements = clearEntryAndClosingFailedStatements(statements);
     return statements.filter((statement) => {
@@ -45,7 +45,6 @@ function clearEntryAndClosingFailedStatements(statements) {
     const users = groupingByActor(statements);
     const idsToDelete = [];
     users.forEach((user) => {
-        console.log(user);
         const userStatements = obtainStatementsByActor(statements, user).filter((statement) => {
             const currentStatement = Object(statement);
             return (currentStatement.object.definition.type === "app-lifecycle");
@@ -64,12 +63,14 @@ function groupingByActor(statements) {
     }, new Set());
     return Array.from(actorNames);
 }
+exports.groupingByActor = groupingByActor;
 function obtainStatementsByActor(statements, actorName) {
     return statements.filter((statement) => {
         const currentStatement = Object(statement);
         return currentStatement.actor.account.name == actorName;
     });
 }
+exports.obtainStatementsByActor = obtainStatementsByActor;
 function statementsIdToDelete(statements) {
     let idsToDelete = [];
     let prevStatement = null;
@@ -86,11 +87,9 @@ function compareData(currentId, previusId, previusVerb, currentVerb, idsToDelete
         previusVerb === "verbs/re-entered") &&
         (currentVerb === "verbs/logged-in" ||
             currentVerb === "verbs/re-entered")) {
-        console.log(previusId, currentId, previusVerb, currentVerb);
         idsToDelete.push(currentId);
     }
     if (currentVerb === "verbs/close" && previusVerb === "verbs/close") {
-        console.log(previusId, currentId, previusVerb, currentVerb);
         idsToDelete.push(previusId);
     }
 }

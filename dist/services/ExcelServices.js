@@ -15,8 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.coordinateActivityRetrieval = exports.coordinateChoiceRetrieval = exports.saveMainDataInExcel = exports.createExcelFile = void 0;
 const exceljs_1 = __importDefault(require("exceljs"));
 const FileProvider_1 = require("../FileProviders/FileProvider");
+const AuxiliarFiles_1 = require("../consts/AuxiliarFiles");
 const consts_1 = require("../consts/consts");
-const AuxiliarFiles_1 = require("../models/AuxiliarFiles");
 function createExcelFile() {
     return __awaiter(this, void 0, void 0, function* () {
         const workbook = new exceljs_1.default.Workbook();

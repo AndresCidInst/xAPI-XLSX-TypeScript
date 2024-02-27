@@ -2,7 +2,7 @@ import { Statement } from "@xapi/xapi";
 import { userTest } from "../consts/consts";
 
 export function clearFailedStatements(statements: JSON[]): JSON[] {
-    statements = clearTestUsers(statements);
+    // statements = clearTestUsers(statements);
     statements = clearDuplicatedStatements(statements);
     statements = clearEntryAndClosingFailedStatements(statements);
     return statements.filter((statement) => {
@@ -55,7 +55,6 @@ function clearEntryAndClosingFailedStatements(statements: JSON[]) {
     const users = groupingByActor(statements);
     const idsToDelete: string[] = [];
     users.forEach((user) => {
-        console.log(user);
         const userStatements = obtainStatementsByActor(statements, user).filter(
             (statement) => {
                 const currentStatement = Object(statement);
@@ -126,12 +125,10 @@ function compareData(
         (currentVerb === "verbs/logged-in" ||
             currentVerb === "verbs/re-entered")
     ) {
-        console.log(previusId, currentId, previusVerb, currentVerb);
         idsToDelete.push(currentId);
     }
 
     if (currentVerb === "verbs/close" && previusVerb === "verbs/close") {
-        console.log(previusId, currentId, previusVerb, currentVerb);
         idsToDelete.push(previusId);
     }
 }

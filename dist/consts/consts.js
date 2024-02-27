@@ -70,7 +70,8 @@ exports.fillHeaders = {
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "cita_fecha_destinada",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "cita_razon_cancelacion",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "navegabilidad_tiempo_entre_vistas",
-    "result|duration": "actividad_duracion",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "tiempo_registrado",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "tiempo_real_registrado",
 };
 exports.headerAvatarChange = [
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/from",
