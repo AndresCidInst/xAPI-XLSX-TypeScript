@@ -16,6 +16,7 @@ const AuxiliarFiles_1 = require("./consts/AuxiliarFiles");
 const consts_1 = require("./consts/consts");
 const ExcelServices_1 = require("./services/ExcelServices");
 const ProcessData_1 = require("./services/ProcessData");
+const RequestServices_1 = require("./services/RequestServices");
 const StatetementsCleaners_1 = require("./services/StatetementsCleaners");
 const GeneralCorrector_1 = require("./services/formatCorrectors/GeneralCorrector");
 const RealDurationSeparator_1 = require("./services/formatCorrectors/RealDurationSeparator");
@@ -29,9 +30,10 @@ const ParentManipulator_1 = require("./services/manipulators/ParentManipulator")
  */
 function xapiToExcel() {
     return __awaiter(this, void 0, void 0, function* () {
-        // const requestServices = new RequestServices();
-        // let statements: JSON[] = await requestServices.getAllStatements();
-        const statements = (0, FileProvider_1.getAllStatements)();
+        const requestServices = new RequestServices_1.RequestServices();
+        // eslint-disable-next-line prefer-const
+        let statements = yield requestServices.getAllStatements();
+        // const statements: JSON[] = getAllStatements();
         console.log("Limpiando declaraciones fallidas...");
         let newStatements = (0, StatetementsCleaners_1.clearFailedStatements)(statements);
         console.log("Declaraciones fallidas limpiadas ✅.");

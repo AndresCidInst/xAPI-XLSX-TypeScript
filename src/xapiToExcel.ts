@@ -1,10 +1,6 @@
 import { Statement } from "@xapi/xapi";
 import { Workbook, Worksheet } from "exceljs";
-import {
-    clearDatFile,
-    getAllStatements,
-    saveAuxiliarData,
-} from "./FileProviders/FileProvider";
+import { clearDatFile, saveAuxiliarData } from "./FileProviders/FileProvider";
 import { AxiliarFiles } from "./consts/AuxiliarFiles";
 import { fillHeaders } from "./consts/consts";
 import { Activity, ActivityJson } from "./models/ActivityModels";
@@ -13,6 +9,7 @@ import { DataModelImpl } from "./models/DataModel";
 import { Parent, ParentJson } from "./models/ParentModels";
 import { createExcelFile, saveMainDataInExcel } from "./services/ExcelServices";
 import { dataRetriever, getValueByPath } from "./services/ProcessData";
+import { RequestServices } from "./services/RequestServices";
 import { clearFailedStatements } from "./services/StatetementsCleaners";
 import {
     compareDates,
@@ -40,9 +37,10 @@ import { parentDataMolder as getParentFromJson } from "./services/manipulators/P
  * @returns Una promesa que se resuelve cuando se han insertado los datos en el archivo.
  */
 export async function xapiToExcel() {
-    // const requestServices = new RequestServices();
-    // let statements: JSON[] = await requestServices.getAllStatements();
-    const statements: JSON[] = getAllStatements();
+    const requestServices = new RequestServices();
+    // eslint-disable-next-line prefer-const
+    let statements: JSON[] = await requestServices.getAllStatements();
+    // const statements: JSON[] = getAllStatements();
     console.log("Limpiando declaraciones fallidas...");
     let newStatements = clearFailedStatements(statements);
     console.log("Declaraciones fallidas limpiadas ✅.");

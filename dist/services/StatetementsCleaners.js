@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.obtainStatementsByActor = exports.groupingByActor = exports.clearFailedStatements = void 0;
 const consts_1 = require("../consts/consts");
 function clearFailedStatements(statements) {
-    // statements = clearTestUsers(statements);
+    statements = clearTestUsers(statements);
     statements = clearDuplicatedStatements(statements);
     statements = clearEntryAndClosingFailedStatements(statements);
     return statements.filter((statement) => {
@@ -18,6 +18,9 @@ function clearFailedStatements(statements) {
             const lastWordResponse = currentStatement.result.response.trim().split(/\s+/).pop() ||
                 "";
             return /^[A-Z]+$/.test(lastWordResponse);
+        }
+        if (currentStatement.id == "bd337201-dfdc-4d41-a2a9-56bf311263f4") {
+            return false;
         }
         return true;
     });
@@ -45,11 +48,22 @@ function clearEntryAndClosingFailedStatements(statements) {
     const users = groupingByActor(statements);
     const idsToDelete = [];
     users.forEach((user) => {
-        const userStatements = obtainStatementsByActor(statements, user).filter((statement) => {
+        const userStatements = obtainStatementsByActor(statements, user);
+        const filtredUserStatements = userStatements.filter((statement) => {
             const currentStatement = Object(statement);
-            return (currentStatement.object.definition.type === "app-lifecycle");
+            if (currentStatement.object.definition.type == undefined) {
+                return false;
+            }
+            return currentStatement.object.definition.type.includes("app-lifecycle");
         });
-        idsToDelete.push(...statementsIdToDelete(userStatements));
+        const sortedFiltredUserStatements = filtredUserStatements.sort((first, second) => new Date(Object(first).timestamp).getTime() -
+            new Date(Object(second).timestamp).getTime());
+        sortedFiltredUserStatements.forEach((statement) => {
+            if (Object(statement).id == "d54c5e78-9834-4122-aad7-aedc8a46abee") {
+                console.log("En sortedFiltredUserStatements");
+            }
+        });
+        idsToDelete.push(...statementsIdToDelete(sortedFiltredUserStatements));
     });
     return statements.filter((statement) => {
         return !idsToDelete.includes(Object(statement).id);
@@ -66,13 +80,12 @@ function groupingByActor(statements) {
 exports.groupingByActor = groupingByActor;
 function obtainStatementsByActor(statements, actorName) {
     return statements.filter((statement) => {
-        const currentStatement = Object(statement);
-        return currentStatement.actor.account.name == actorName;
+        return Object(statement).actor.account.name == actorName;
     });
 }
 exports.obtainStatementsByActor = obtainStatementsByActor;
 function statementsIdToDelete(statements) {
-    let idsToDelete = [];
+    const idsToDelete = [];
     let prevStatement = null;
     statements.forEach((currentStatement) => {
         if (prevStatement) {
@@ -82,14 +95,25 @@ function statementsIdToDelete(statements) {
     });
     return idsToDelete;
 }
-function compareData(currentId, previusId, previusVerb, currentVerb, idsToDelete) {
-    if ((previusVerb === "verbs/logged-in" ||
-        previusVerb === "verbs/re-entered") &&
-        (currentVerb === "verbs/logged-in" ||
-            currentVerb === "verbs/re-entered")) {
-        idsToDelete.push(currentId);
+function compareData(currentStatementId, prevStatementId, prevVerbId, currentVerbId, idsToDelete) {
+    // Definir si es una acción de ingreso
+    const isCurrentIngreso = currentVerbId.includes("logged-in") ||
+        currentVerbId.includes("re-entered");
+    const isPreviousIngreso = prevVerbId.includes("logged-in") || prevVerbId.includes("re-entered");
+    // Definir si es una acción de salida
+    const isCurrentSalida = currentVerbId.includes("close");
+    const isPreviousSalida = prevVerbId.includes("close");
+    // Regla 1: Si ambos statements son del mismo tipo (ambos ingreso o ambos salida)
+    if ((isCurrentIngreso && isPreviousIngreso) ||
+        (isCurrentSalida && isPreviousSalida)) {
+        idsToDelete.push(prevStatementId);
     }
-    if (currentVerb === "verbs/close" && previusVerb === "verbs/close") {
-        idsToDelete.push(previusId);
+    // Regla 2: Si el statement previo es de salida y el actual no es de ingreso
+    else if (isPreviousSalida && !isCurrentIngreso) {
+        idsToDelete.push(prevStatementId);
+    }
+    // Regla 3: Si el statement actual es de ingreso y el previo no es de salida
+    else if (isCurrentIngreso && !isPreviousSalida) {
+        idsToDelete.push(currentStatementId);
     }
 }
