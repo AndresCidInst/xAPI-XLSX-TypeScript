@@ -1,5 +1,5 @@
 import { ContextActivity, Statement } from "@xapi/xapi";
-import { DateTime, Duration } from "luxon";
+import { DateTime } from "luxon";
 
 export function correctUriExtensionsGeneralFormat(statement: Statement): void {
     if (statement.result?.extensions) {
@@ -230,13 +230,25 @@ function formatDurationBetweenPages(statement: Statement): void {
  * @param currentDuration La duración actual en formato de cadena.
  * @returns La duración formateada en el formato "mm:ss:ms".
  */
-function formatDuration(currentDuration: string): string {
-    const duration = Duration.fromISO(currentDuration);
-    const minutes = duration.minutes.toString().padStart(2, "0");
-    const seconds =
-        duration.milliseconds >= 500 ? duration.seconds + 1 : duration.seconds;
+function formatDuration(input: string): string {
+    // RegExp para extraer horas, minutos y segundos
+    const pattern = /PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?/;
+    const match = input.match(pattern);
 
-    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+    // Extraer y convertir a números, considerando valores no encontrados como 0
+    const hours = parseInt(match?.[1] ?? "0");
+    const minutes = parseInt(match?.[2] ?? "0");
+    const seconds = parseFloat(match?.[3] ?? "0");
+
+    const totalSeconds = hours * 3600 + minutes * 60 + seconds;
+
+    const outputMinutes = Math.floor(totalSeconds / 60);
+    const outputSeconds = Math.round(totalSeconds % 60);
+
+    const formattedMinutes = outputMinutes.toString().padStart(2, "0");
+    const formattedSeconds = outputSeconds.toString().padStart(2, "0");
+
+    return `${formattedMinutes}:${formattedSeconds}`;
 }
 
 export function typeActivityCmiClear(statement: Statement): void {

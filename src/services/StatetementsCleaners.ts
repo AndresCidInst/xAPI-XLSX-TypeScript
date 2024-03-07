@@ -148,18 +148,19 @@ function compareData(
     const isCurrentSalida = currentVerbId.includes("close");
     const isPreviousSalida = prevVerbId.includes("close");
 
-    // Regla 1: Si ambos statements son del mismo tipo (ambos ingreso o ambos salida)
-    if (
-        (isCurrentIngreso && isPreviousIngreso) ||
-        (isCurrentSalida && isPreviousSalida)
-    ) {
+    // Regla 1: Si ambos statements son de salida, se elimina el statement previo
+    if (isCurrentSalida && isPreviousSalida) {
         idsToDelete.push(prevStatementId);
     }
-    // Regla 2: Si el statement previo es de salida y el actual no es de ingreso
+    //Regla 2: Si ambos statements son de ingreso, se elimina el statement actual
+    else if (isCurrentIngreso && isPreviousIngreso) {
+        idsToDelete.push(currentStatementId);
+    }
+    // Regla 3: Si el statement previo es de salida y el actual no es de ingreso
     else if (isPreviousSalida && !isCurrentIngreso) {
         idsToDelete.push(prevStatementId);
     }
-    // Regla 3: Si el statement actual es de ingreso y el previo no es de salida
+    // Regla 4: Si el statement actual es de ingreso y el previo no es de salida
     else if (isCurrentIngreso && !isPreviousSalida) {
         idsToDelete.push(currentStatementId);
     }

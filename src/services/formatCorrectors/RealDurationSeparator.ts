@@ -21,6 +21,7 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
         .map(([key, value]) => value);
     users.forEach((user) => {
         let statementInitVerb: string = "";
+        let pastVerb: string = "";
         const timesOfInectivity: string[] = [];
         const timesOfRetun: string[] = [];
         const userStatements = obtainStatementsByActor(statements, user).sort(
@@ -28,7 +29,6 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                 new Date(Object(first).timestamp).getTime() -
                 new Date(Object(second).timestamp).getTime(),
         );
-
         userStatements.forEach((statement) => {
             const currentStatement = statement as unknown as Statement;
             // Gestión de acciones de inicio y navegación
@@ -39,6 +39,12 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                 currentStatement.verb.id === InitFinishActions.navegation
             ) {
                 statementInitVerb = currentStatement.verb.id;
+            }
+            if (
+                statementInitVerb == InitFinishActions.navegation &&
+                pastVerb == InitFinishActions.loginApp
+            ) {
+                resetTimesArrays(timesOfInectivity, timesOfRetun);
             }
             // Registro de tiempos de inactividad y retorno si procede
             registerActivityDuration(
@@ -54,12 +60,24 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                 timesOfRetun,
                 currentStatement,
             );
-            if (calculatedTime) {
-                saverNormalModifiedStatements(
-                    calculatedTime,
-                    statementsDurationReformated,
-                    currentStatement,
-                );
+            if (
+                currentStatement.verb.id == InitFinishActions.navegation ||
+                currentStatement.verb.id == InitFinishActions.gameFinish ||
+                currentStatement.verb.id == InitFinishActions.videoFinish
+            ) {
+                if (statementInitVerb == InitFinishActions.navegation) {
+                    navegationModificedStatements(
+                        calculatedTime,
+                        statementsDurationReformated,
+                        currentStatement,
+                    );
+                } else {
+                    saverNormalModifiedStatements(
+                        calculatedTime,
+                        statementsDurationReformated,
+                        currentStatement,
+                    );
+                }
             }
 
             // Revisar si se necesita resetear el caso
@@ -70,21 +88,57 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                     initActions,
                     timesOfInectivity,
                     timesOfRetun,
-                    calculatedTime,
+                    currentStatement.verb.id,
                 )
             ) {
                 statementInitVerb = "";
-                timesOfInectivity.length = 0;
-                timesOfRetun.length = 0;
+                resetTimesArrays(timesOfInectivity, timesOfRetun);
             }
+            pastVerb = currentStatement.verb.id;
         });
     });
-    statementsDurationReformated.forEach((statement) => {
-        if (statement.verb.id == InitFinishActions.navegation) {
-            console.log(statement);
-        }
-    });
-    return replaceStatements(statements, statementsDurationReformated);
+    const newStatements = replaceStatements(
+        statements,
+        statementsDurationReformated,
+    );
+    return newStatements;
+}
+
+function navegationModificedStatements(
+    calculatedTime: Duration<boolean> | undefined,
+    statementsDurationReformated: Statement[],
+    currentStatement: Statement,
+) {
+    if (calculatedTime == undefined || calculatedTime.seconds == 0) {
+        statementsDurationReformated.push(
+            addExtensionToStatement(
+                currentStatement,
+                durationToExtensionNavegation(
+                    currentStatement.result?.extensions![
+                        "https://xapi.tego.iie.cl/extensions/time-between-pages"
+                    ],
+                    currentStatement.result?.extensions![
+                        "https://xapi.tego.iie.cl/extensions/time-between-pages"
+                    ],
+                ),
+            ),
+        );
+    } else {
+        const currentKey = Object.keys(currentStatement.result!.extensions!)[0];
+        const currentDuration: string =
+            currentStatement.result!.extensions![currentKey];
+        const realDuration = subtractTimes(
+            currentDuration,
+            calculatedTime.toFormat("mm:ss"),
+        );
+
+        statementsDurationReformated.push(
+            addExtensionToStatement(
+                currentStatement,
+                durationToExtensionNavegation(realDuration, currentDuration),
+            ),
+        );
+    }
 }
 
 /**
@@ -95,15 +149,15 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
  * @param currentStatement - Declaración actual.
  */
 function saverNormalModifiedStatements(
-    calculatedTime: Duration<boolean>,
+    calculatedTime: Duration<boolean> | undefined,
     statementsDurationReformated: Statement[],
     currentStatement: Statement,
 ) {
-    if (calculatedTime.seconds == 0) {
+    if (calculatedTime == undefined || calculatedTime.seconds == 0) {
         statementsDurationReformated.push(
             addExtensionToStatement(
                 currentStatement,
-                durationToExtensión(
+                durationToExtension(
                     currentStatement.result!.duration!,
                     currentStatement.result!.duration!,
                 ),
@@ -126,7 +180,7 @@ function saverNormalModifiedStatements(
         statementsDurationReformated.push(
             addExtensionToStatement(
                 currentStatement,
-                durationToExtensión(realDuration, currentDuration),
+                durationToExtension(realDuration, currentDuration),
             ),
         );
     }
@@ -244,11 +298,11 @@ function resetCase(
     initActions: string[],
     timesOfInectivity: string[],
     timesOfRetun: string[],
-    calculatedTime: Duration | undefined,
+    currentVerb: string,
 ): boolean {
     if (
         initialAction == InitFinishActions.navegation &&
-        InitFinishActions.loginApp == finalAction
+        InitFinishActions.loginApp == currentVerb
     ) {
         return true;
     }
@@ -304,13 +358,24 @@ function addExtensionToStatement(
  * @param capturedDuration La duración capturada.
  * @returns Las extensiones con las duraciones.
  */
-function durationToExtensión(
+function durationToExtension(
     realDuration: string,
     capturedDuration: string,
 ): Extensions {
     return {
         "https://xapi.tego.iie.cl/extensions/duration": capturedDuration,
         "https://xapi.tego.iie.cl/extensions/real_duration": realDuration,
+    };
+}
+
+function durationToExtensionNavegation(
+    realDuration: string,
+    timeBetweenPages: string,
+): Extensions {
+    return {
+        "https://xapi.tego.iie.cl/extensions/real_duration": realDuration,
+        "https://xapi.tego.iie.cl/extensions/time-between-pages":
+            timeBetweenPages,
     };
 }
 
@@ -357,10 +422,15 @@ function replaceStatements(
 ): JSON[] {
     return statements.map((statement) => {
         const newStatement = statementsDurationReformated.find(
-            (newStmt) => Object(newStmt).id === Object(statement).id,
+            (newStmt) => Object(newStmt).id == Object(statement).id,
         );
         return newStatement
             ? JSON.parse(JSON.stringify(newStatement))
             : statement;
     });
+}
+
+function resetTimesArrays(timesOfInectivity: string[], timesOfRetun: string[]) {
+    timesOfInectivity.splice(0, timesOfInectivity.length);
+    timesOfRetun.splice(0, timesOfRetun.length);
 }

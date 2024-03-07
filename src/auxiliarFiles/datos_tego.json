@@ -216,7 +216,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "8458c2bc-5331-4d10-a778-45ff664bdc11",
@@ -381,7 +381,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "f0c31b92-6230-45dc-9be2-03d8a2311527",
@@ -546,6 +546,60 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
   },
   {
+    "id": "855f6fee-e7c0-4b43-a79e-3660d7fd5a0e",
+    "actor|name": "MARGARITA INES",
+    "actor|account|name": "8755811-8",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 65,
+    "context|platform": "android TP1A.220624.014.A325MUBU5DWF1",
+    "verb|display|es-CL": "inició-sesión",
+    "verb|id": "verbs/logged-in",
+    "object|id": "activities/navigability/LoginAccount",
+    "object|definition|name|es-CL": "Inicio de sesión",
+    "object|definition|description|es-CL": "El usuario inició sesión en la aplicación de Tego APP",
+    "object|definition|type": "app-lifecycle",
+    "object|definition|correctResponsesPattern": "N/A",
+    "object|definition|choices": "N/A",
+    "context|contextActivities|parent": "N/A",
+    "context|contextActivities|grouping": "N/A",
+    "context|contextActivities|category": "N/A",
+    "context|registration": "N/A",
+    "timestamp|date": "2024-01-17",
+    "timestamp|time": "10:48:31",
+    "result|completion": "N/A",
+    "result|success": "N/A",
+    "result|score|min": "N/A",
+    "result|score|max": "N/A",
+    "result|score|raw": "N/A",
+    "result|score|scaled": "N/A",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/video/length": "N/A",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/video/quality": "N/A",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/video/videoSpeed": "N/A",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/video/fullScreen": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/video/progress": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/From": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/To": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "N/A",
+    "result|response": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePosition": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/currentOrder": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/from": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/to": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/from": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/to": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/from": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+  },
+  {
     "id": "9e2e1b23-cdc5-4db3-b598-3c657a9d5833",
     "actor|name": "MARGARITA INES",
     "actor|account|name": "8755811-8",
@@ -657,7 +711,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:14",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:14"
   },
   {
     "id": "2c175eee-f8f0-43fb-95b4-9aab9f0b879c",
@@ -714,7 +768,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:09",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:09"
   },
   {
     "id": "3d10016f-042a-45eb-b5e4-9f5a52778211",
@@ -771,7 +825,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:18",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:18"
   },
   {
     "id": "dde14bc0-b965-4d65-a4df-984fbad0484b",
@@ -888,7 +942,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "fec8c0c9-2889-42dc-b9f5-b3687e00049f",
@@ -945,7 +999,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "00fddcfd-907d-424e-9d46-479b6a0e0659",
@@ -1002,7 +1056,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:09",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:09"
   },
   {
     "id": "38032538-a87a-4af7-b1a2-cfc5d25a2239",
@@ -1419,7 +1473,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "02:06",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "02:06"
   },
   {
     "id": "076b477b-2269-4a59-aa3e-a55b00725171",
@@ -1476,7 +1530,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:31",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:31"
   },
   {
     "id": "0206404c-8cfe-476b-8cff-33f661a0df97",
@@ -1533,7 +1587,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:14",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:14"
   },
   {
     "id": "3ca922f5-0177-4808-95b4-d77076d07bb3",
@@ -1590,7 +1644,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:38",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:38"
   },
   {
     "id": "4fc85bbf-bc2d-40bb-bf0d-3fa656accb2e",
@@ -1710,7 +1764,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:15",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:15"
   },
   {
     "id": "cf52838f-daa7-4019-9eb4-3d08f0ccd71f",
@@ -1767,7 +1821,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "1b15d675-223c-4a86-afd9-f84996d205ec",
@@ -1824,7 +1878,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "104d95e0-868c-4107-a0c2-2778c563eaeb",
@@ -1881,7 +1935,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "ccfe846d-aa0f-4038-b534-3b44b22a419b",
@@ -1938,7 +1992,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "c3a69bd9-fd33-4426-88ce-54497d5d8666",
@@ -1995,7 +2049,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:10",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:10"
   },
   {
     "id": "811770ac-29f2-48dd-ab01-2af6038ed1b1",
@@ -2166,7 +2220,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:10",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:10"
   },
   {
     "id": "3df7c0bd-0e28-4c1c-a19b-34515c73ec2e",
@@ -2223,7 +2277,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "fa412c4a-4142-4ba0-9c2c-1d7f859efaaf",
@@ -2280,7 +2334,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:06",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:06"
   },
   {
     "id": "9e51a069-91bd-423d-a797-1d75b6a1fb38",
@@ -2337,61 +2391,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
-  },
-  {
-    "id": "f1918777-ecf9-4f8b-b80f-62d933449bb0",
-    "actor|name": "MARGARITA INES",
-    "actor|account|name": "8755811-8",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 65,
-    "context|platform": "android TP1A.220624.014.A325MUBU5DWF1",
-    "verb|display|es-CL": "inició-sesión",
-    "verb|id": "verbs/logged-in",
-    "object|id": "activities/navigability/LoginAccount",
-    "object|definition|name|es-CL": "Inicio de sesión",
-    "object|definition|description|es-CL": "El usuario inició sesión en la aplicación de Tego APP",
-    "object|definition|type": "app-lifecycle",
-    "object|definition|correctResponsesPattern": "N/A",
-    "object|definition|choices": "N/A",
-    "context|contextActivities|parent": "N/A",
-    "context|contextActivities|grouping": "N/A",
-    "context|contextActivities|category": "N/A",
-    "context|registration": "N/A",
-    "timestamp|date": "2024-01-17",
-    "timestamp|time": "10:54:53",
-    "result|completion": "N/A",
-    "result|success": "N/A",
-    "result|score|min": "N/A",
-    "result|score|max": "N/A",
-    "result|score|raw": "N/A",
-    "result|score|scaled": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/length": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/quality": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/videoSpeed": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/fullScreen": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/progress": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/From": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/To": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "N/A",
-    "result|response": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePosition": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/currentOrder": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/from": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/to": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/from": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/to": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/from": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "4ee24437-7934-4837-99cb-5d972519ea68",
@@ -2448,7 +2448,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:09",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:09"
   },
   {
     "id": "9b114fc0-4e08-498b-83de-acbabd592bbd",
@@ -2745,7 +2745,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "01:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "01:05"
   },
   {
     "id": "5168f677-ce17-4cd0-b2aa-2697a3f99ffe",
@@ -2802,7 +2802,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "2faf33c0-0a9a-4abf-ae8e-408f517ec20d",
@@ -2965,9 +2965,9 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "34:48",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "-60:-2"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "94:48",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:58"
   },
   {
     "id": "deadf943-3d81-47a6-8182-3be0f9976654",
@@ -3024,7 +3024,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "0b36e3f3-97d2-4092-8f98-c201fe79ba15",
@@ -3081,7 +3081,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "28c27181-49a8-4f40-bee8-d68c68fb536d",
@@ -3303,7 +3303,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "43192592-0db3-4481-a560-d7baefff3098",
@@ -3360,7 +3360,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:25",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:25"
   },
   {
     "id": "c47abd07-1b99-42f2-bc24-42cfb1c0e30e",
@@ -3417,7 +3417,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "601f3896-a8fb-4ba9-8438-cfe8367bcf1d",
@@ -3474,7 +3474,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "1f13b960-2b92-4259-b47d-ef1d3db403ba",
@@ -3531,7 +3531,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "63db9cc3-ce36-4201-a37b-c3d06a1cff78",
@@ -3588,7 +3588,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "bacb73d1-377f-49a2-9119-92eb69fe127b",
@@ -3645,7 +3645,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "0086f3bf-f579-4423-ac61-2ee473c79aa0",
@@ -3702,7 +3702,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "06d32f06-8e8a-47ee-b9b4-72c0fa39d3ad",
@@ -3759,7 +3759,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "78dc265b-b32f-40d0-996d-a1db73a9c165",
@@ -4042,8 +4042,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "15:49",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "15:49",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:12"
   },
   {
@@ -4101,7 +4101,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "7bcf7292-b4a4-4d55-8021-80d9ad4fb263",
@@ -4158,7 +4158,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "44386ded-168f-485d-bbb1-f45ecf215083",
@@ -4215,7 +4215,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "88eb203f-0790-4483-832e-569eb98c7bc6",
@@ -4272,7 +4272,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "596bf519-79de-4c8a-9ad2-0855dfdc90f9",
@@ -4494,7 +4494,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:07",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:07"
   },
   {
     "id": "22fe94e8-19ce-4438-a4f1-7ba9e3adef3b",
@@ -4551,7 +4551,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:09",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:09"
   },
   {
     "id": "1d468abe-703a-481f-aa2d-2c735f8b8939",
@@ -4608,7 +4608,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "83fcb8be-7b44-4a69-a4cc-efa02bd426f6",
@@ -4665,7 +4665,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "f8125fd0-cce8-49cc-b7f8-946c6fa09724",
@@ -4722,7 +4722,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:07",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:07"
   },
   {
     "id": "fd96d3c0-bcb8-4bcd-91a6-b74bfdcbeaf5",
@@ -4902,7 +4902,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:52",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:52"
   },
   {
     "id": "4df7196a-9657-4267-bbda-a06f42e6f6fa",
@@ -4959,7 +4959,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "69edf008-c5f6-45f9-9f16-fbc89d40cc96",
@@ -5181,7 +5181,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "48a79399-9b6b-44fb-8ee4-b88e4bb400c3",
@@ -5238,7 +5238,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "fbc0292d-e351-45fd-8be0-211b94837461",
@@ -5295,7 +5295,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:10",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:10"
   },
   {
     "id": "c5c24b34-9397-41f3-bb27-d47232060e4a",
@@ -5352,7 +5352,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "1fa31632-e62c-4950-a29a-cecf492c2d27",
@@ -5472,7 +5472,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "5fe4e4cb-f8e7-474c-9f24-68ec20e2a5eb",
@@ -5529,7 +5529,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "d96d9949-546b-43d9-8637-b7976fb5791e",
@@ -5586,7 +5586,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "f3949b0b-d28f-4251-8370-859261f705ee",
@@ -5763,7 +5763,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "06:17",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "06:17"
   },
   {
     "id": "500658e9-7a23-47ce-8544-78071e83d517",
@@ -6060,7 +6060,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:15",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:15"
   },
   {
     "id": "017fd1d5-1fad-463b-a479-79f0726fce41",
@@ -6117,7 +6117,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "94968e4c-69c4-4dbf-8d18-c0fa16bdd63f",
@@ -6174,7 +6174,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "a59bae06-2c5e-434f-a817-cc7160173b72",
@@ -6231,7 +6231,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "78f767e0-6bc2-4907-be20-c726126cc5f0",
@@ -6288,7 +6288,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "ce83c580-2e3e-4910-827e-1e3d8ecbffbf",
@@ -6402,7 +6402,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "f3a1ba33-e0cb-47f0-8ceb-7cbf67c9ef17",
@@ -6459,7 +6459,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "08f7d6df-87b5-48f4-9d37-44d9a5b195fd",
@@ -6516,7 +6516,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "de510a31-c76f-4932-a2c8-cce4ad876741",
@@ -6693,7 +6693,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:09",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:09"
   },
   {
     "id": "4a66eaba-5b90-4553-ae83-30ed4567e57b",
@@ -6810,7 +6810,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "712d2812-1b9f-470e-a6c1-d9560bd6c2c3",
@@ -7032,7 +7032,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "3829b957-f984-42de-91ed-eaeeef4be09e",
@@ -7089,7 +7089,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "570a9c44-2b65-49db-a5e2-9bc64bfd25f3",
@@ -7146,7 +7146,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "4f2504fc-7802-4b61-b485-6adb95c8f716",
@@ -7203,7 +7203,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "87e0ce0a-8835-4844-a8c5-6c4110daee98",
@@ -7380,7 +7380,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:09",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:09"
   },
   {
     "id": "a73e5cdf-2aa4-420c-8e30-a03e2cf79b1c",
@@ -7437,7 +7437,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "87d978fd-9cf3-47e6-ba91-8bcca642e368",
@@ -7494,7 +7494,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "e37af4bb-2c4e-4666-b1c2-d1f1aa5e38d9",
@@ -7551,7 +7551,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "24213407-2b7a-48f3-ae56-72968b57704e",
@@ -9396,7 +9396,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "38:39",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "38:39"
   },
   {
     "id": "012075e4-1acb-4bd5-b730-92f775991b1c",
@@ -9453,7 +9453,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "3da2ce2e-b06d-4517-bf40-fc73af958c03",
@@ -9690,7 +9690,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "06:57",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "06:57"
   },
   {
     "id": "8b33229f-7e47-4384-8f76-798b967d5f1b",
@@ -10377,7 +10377,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "03:22",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "03:22"
   },
   {
     "id": "d5e18f9c-1322-45c5-b664-3c6851cb8413",
@@ -10434,7 +10434,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "cdda999d-1de5-4693-82da-c9720b3dfb66",
@@ -10491,7 +10491,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "6c2317e2-e85a-478e-982d-e413cc657b52",
@@ -10548,7 +10548,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "f1ab16b5-b193-4a3d-86af-a6a592a5cf32",
@@ -10605,7 +10605,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "f35ca6e2-e6ee-481c-b5fa-ea01ffa6ef36",
@@ -10662,7 +10662,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "e4d745db-0fd1-4d50-bc97-b9b0ec946ebb",
@@ -10719,7 +10719,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "2b414fdd-0786-466f-a836-62ee4db51c65",
@@ -10776,16 +10776,16 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
   },
   {
-    "id": "444cfb84-ffee-4f56-8102-2802adcdbf0b",
+    "id": "2d94769e-e2e8-4f38-bbc1-e3d7acfa4e67",
     "actor|name": "Pablo",
     "actor|account|name": "16434999-3",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 36,
     "context|platform": "android TP1A.220624.014",
-    "verb|display|es-CL": "volvió-a-entrar",
-    "verb|id": "verbs/re-entered",
-    "object|id": "activities/navigability/minimization-and-re-entered-cycle",
-    "object|definition|name|es-CL": "Ciclo de Minimización y Reingreso",
-    "object|definition|description|es-CL": "El usuario minimizó o reingresó a la aplicación",
+    "verb|display|es-CL": "inició-sesión",
+    "verb|id": "verbs/logged-in",
+    "object|id": "activities/navigability/LoginAccount",
+    "object|definition|name|es-CL": "Inicio de sesión",
+    "object|definition|description|es-CL": "El usuario inició sesión en la aplicación de Tego APP",
     "object|definition|type": "app-lifecycle",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": "N/A",
@@ -11155,9 +11155,9 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "17:43",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "77:43",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "77:43"
   },
   {
     "id": "fdca56da-398b-4ebb-9959-15aeb74d311a",
@@ -11377,8 +11377,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "02:40",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "02:40",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "02:17"
   },
   {
@@ -11436,7 +11436,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:26",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:26"
   },
   {
     "id": "5545ab3b-79c2-4f7a-bcd0-dde2520daa39",
@@ -11707,8 +11707,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "02:19",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "02:19",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "02:13"
   },
   {
@@ -11766,7 +11766,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:12",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:12"
   },
   {
     "id": "dc53d2af-b9a6-419d-9a4e-f164165ada8d",
@@ -11880,7 +11880,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:58",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:58"
   },
   {
     "id": "b45bc871-ee6f-44d1-aebb-ac1b1a0ed459",
@@ -11937,7 +11937,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:10",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:10"
   },
   {
     "id": "64654215-3b66-4ed8-b3ba-197b858f198b",
@@ -12054,6 +12054,60 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
   },
   {
+    "id": "6fdc5c78-26e8-4a30-bf82-952d712154fb",
+    "actor|name": "Pablo",
+    "actor|account|name": "16434999-3",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 36,
+    "context|platform": "android TP1A.220624.014",
+    "verb|display|es-CL": "volvió-a-entrar",
+    "verb|id": "verbs/re-entered",
+    "object|id": "activities/navigability/minimization-and-re-entered-cycle",
+    "object|definition|name|es-CL": "Ciclo de Minimización y Reingreso",
+    "object|definition|description|es-CL": "El usuario minimizó o reingresó a la aplicación",
+    "object|definition|type": "app-lifecycle",
+    "object|definition|correctResponsesPattern": "N/A",
+    "object|definition|choices": "N/A",
+    "context|contextActivities|parent": "N/A",
+    "context|contextActivities|grouping": "N/A",
+    "context|contextActivities|category": "N/A",
+    "context|registration": "N/A",
+    "timestamp|date": "2024-01-23",
+    "timestamp|time": "17:14:07",
+    "result|completion": "N/A",
+    "result|success": "N/A",
+    "result|score|min": "N/A",
+    "result|score|max": "N/A",
+    "result|score|raw": "N/A",
+    "result|score|scaled": "N/A",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/video/length": "N/A",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/video/quality": "N/A",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/video/videoSpeed": "N/A",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/video/fullScreen": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/video/progress": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/From": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/To": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "N/A",
+    "result|response": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePosition": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/currentOrder": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/from": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/to": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/from": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/to": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/from": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+  },
+  {
     "id": "1883cc93-60da-41a1-9f9b-9354a925afb8",
     "actor|name": "Pablo",
     "actor|account|name": "16434999-3",
@@ -12108,7 +12162,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "01:36",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "01:17"
   },
   {
     "id": "aed0e73c-8c1e-4efc-8c25-1cd5a7d88a65",
@@ -12165,7 +12219,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:06",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:06"
   },
   {
     "id": "7ea7bede-11ad-49fe-b72d-7d61559206e7",
@@ -12222,61 +12276,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:43",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
-  },
-  {
-    "id": "eb12d7de-0f3b-4ce3-9c0e-3e4e6818223f",
-    "actor|name": "Pablo",
-    "actor|account|name": "16434999-3",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 36,
-    "context|platform": "android TP1A.220624.014",
-    "verb|display|es-CL": "volvió-a-entrar",
-    "verb|id": "verbs/re-entered",
-    "object|id": "activities/navigability/minimization-and-re-entered-cycle",
-    "object|definition|name|es-CL": "Ciclo de Minimización y Reingreso",
-    "object|definition|description|es-CL": "El usuario minimizó o reingresó a la aplicación",
-    "object|definition|type": "app-lifecycle",
-    "object|definition|correctResponsesPattern": "N/A",
-    "object|definition|choices": "N/A",
-    "context|contextActivities|parent": "N/A",
-    "context|contextActivities|grouping": "N/A",
-    "context|contextActivities|category": "N/A",
-    "context|registration": "N/A",
-    "timestamp|date": "2024-01-23",
-    "timestamp|time": "17:17:11",
-    "result|completion": "N/A",
-    "result|success": "N/A",
-    "result|score|min": "N/A",
-    "result|score|max": "N/A",
-    "result|score|raw": "N/A",
-    "result|score|scaled": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/length": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/quality": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/videoSpeed": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/fullScreen": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/progress": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/From": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/To": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "N/A",
-    "result|response": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePosition": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/currentOrder": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/from": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/to": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/from": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/to": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/from": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:43"
   },
   {
     "id": "363396e3-87f5-4888-baed-0f44bc6573d6",
@@ -12331,9 +12331,9 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "02:14",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "-2:-9"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "02:14",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "02:14"
   },
   {
     "id": "6ea57600-3ffd-4fbe-8939-678752b8d674",
@@ -12498,7 +12498,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "01:38",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "01:31"
   },
   {
     "id": "40008847-a58d-4439-aa7f-3fbb8e7d7ab0",
@@ -12798,7 +12798,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "01:32",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "01:32"
   },
   {
     "id": "6ffb1ef7-a82e-4737-b728-f3ae76a78e49",
@@ -12855,7 +12855,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "c362015a-2d9b-425c-ac44-ad7331e30626",
@@ -12912,7 +12912,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:16",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:16"
   },
   {
     "id": "b94b48b7-e129-4630-8ecd-c05eee49a7c9",
@@ -13029,7 +13029,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "0251d9db-9455-4dda-bb03-dde686ac3384",
@@ -14269,8 +14269,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "09:19",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "09:19",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "09:08"
   },
   {
@@ -14820,7 +14820,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "02:51",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "02:51"
   },
   {
     "id": "bbd6192b-7016-411d-b508-d21c2a44b21a",
@@ -15864,7 +15864,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "05:07",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "05:07"
   },
   {
     "id": "a7066525-f491-478e-9fbc-61c037220518",
@@ -15921,7 +15921,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "049bffc2-154b-4ac5-b07d-804d8e9cc074",
@@ -15978,7 +15978,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "14ce207e-4a13-4a34-8e15-1eaac9913a46",
@@ -16092,7 +16092,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "11468882-2790-4229-9df7-41d36add5708",
@@ -16149,7 +16149,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "9d124ae2-2ee1-4a41-bba4-2e439c7f172a",
@@ -16206,7 +16206,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "ca7a8907-7739-4493-ac76-7f5130e6beb3",
@@ -16263,7 +16263,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "aec2df49-2fb3-422b-8da7-f712c881ca80",
@@ -16320,7 +16320,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "d88275e7-3a48-4c8b-bc14-acd01cd4162a",
@@ -16377,7 +16377,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:07",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:07"
   },
   {
     "id": "d42d87ac-afa6-4ea8-91ee-1929697fa5bc",
@@ -16434,7 +16434,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:06",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:06"
   },
   {
     "id": "e02d3df7-0b3a-4e9f-a4ba-8ddc9abc3e1b",
@@ -16491,7 +16491,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "d159b6a0-3c6a-45b3-aac8-58098fa7f8e4",
@@ -16548,7 +16548,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "c599b3a7-f0be-408e-9131-581819572225",
@@ -16605,7 +16605,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "b76a281b-0742-43e4-82f4-d3dea01890e1",
@@ -16662,7 +16662,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:14",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:14"
   },
   {
     "id": "5cb510b9-a3a1-448e-ba7e-66b4ea99b008",
@@ -16719,7 +16719,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "a0ac8c5d-f2bf-4351-9214-5ad78b0f2eb3",
@@ -16776,7 +16776,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:15",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:15"
   },
   {
     "id": "f99d3ea8-c360-46ed-b6c4-d1ac1e01981b",
@@ -16833,7 +16833,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "3db6c9fb-8731-4672-aa7b-bd6be80c913a",
@@ -16953,7 +16953,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "39261aef-f08d-4925-b969-62addd1f106b",
@@ -17010,7 +17010,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "d2f5e828-c409-4ae1-9a70-7dced4a9c3ca",
@@ -17067,7 +17067,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:18",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:18"
   },
   {
     "id": "ebc71865-f76a-42cf-852f-4e0cd27a8d98",
@@ -17544,7 +17544,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:16",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:16"
   },
   {
     "id": "a4ae8c4f-c36f-4305-8fb4-8ace22ec6e6c",
@@ -17721,7 +17721,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:17",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:17"
   },
   {
     "id": "8e1eb90a-84d3-41be-8912-812a40f0e56d",
@@ -17838,7 +17838,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:07",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:07"
   },
   {
     "id": "fdc436d2-8eb0-4e8e-b660-e152c25ab713",
@@ -18141,7 +18141,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "01:27",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "01:27"
   },
   {
     "id": "2bc99f01-f246-49b5-8b75-5df58dc1a4f6",
@@ -18198,7 +18198,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "05b3c50c-6885-4771-87b2-1c3b2dfd51ff",
@@ -18255,7 +18255,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "1c863b59-b473-4e2a-aecf-0aef6a960171",
@@ -18372,7 +18372,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "26eeb7a9-cf56-4bd2-965f-d2c3814fc099",
@@ -18981,7 +18981,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "01:56",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "01:56"
   },
   {
     "id": "75ae51a2-ffb1-4b57-9172-db60d27b260b",
@@ -19038,7 +19038,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "1430a6e8-7229-4076-802d-a77d06dd6367",
@@ -19095,7 +19095,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:07",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:07"
   },
   {
     "id": "164fdca6-0375-42a1-b36f-3945309ec64c",
@@ -19212,7 +19212,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "f5ae818b-88d8-4660-873b-280b765c1a21",
@@ -19272,7 +19272,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "1922611f-46eb-429c-8e19-623ea45dd748",
@@ -19329,7 +19329,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:06",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:06"
   },
   {
     "id": "575f9e06-76d8-4db5-aa1e-aaeece95b505",
@@ -19446,7 +19446,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "46c60f02-b676-4274-8efa-961e7765f260",
@@ -19878,7 +19878,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:41",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:41"
   },
   {
     "id": "00d8114c-c3d7-4f95-85a0-0ddc4a7f5db4",
@@ -20124,7 +20124,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:11",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:11"
   },
   {
     "id": "cf71d889-41e9-4007-8891-f8a9d8c0a43a",
@@ -20181,7 +20181,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "00ae4ce8-d5a4-4c95-8c60-a6e59773f164",
@@ -20238,7 +20238,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "066dae3a-ad1a-44f7-aaf4-85fa2e009ef5",
@@ -20355,7 +20355,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "5be2b031-d2bd-4910-9184-41c23e846feb",
@@ -20811,7 +20811,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "56e217c2-1f53-43f4-b25e-aba52f877486",
@@ -20925,7 +20925,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:08",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:08"
   },
   {
     "id": "c370a366-3597-4fb9-bd20-4af3318bd0d6",
@@ -20982,7 +20982,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "cfee7adc-7a6c-4c7c-871a-de7c982688a6",
@@ -21039,7 +21039,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:07",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:07"
   },
   {
     "id": "e2c6ae78-1636-4656-baae-8c690590e893",
@@ -22824,7 +22824,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "38:41",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "38:41"
   },
   {
     "id": "14d67141-ce1b-4b13-af16-bafb2500024c",
@@ -22881,7 +22881,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "10f4bef9-eb4f-4ebb-b78f-ab2b7856f4c6",
@@ -22998,7 +22998,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "f5824e0b-9635-49fa-a282-f28d44cdf7e7",
@@ -23055,7 +23055,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "7166cf4b-13f7-46d0-895a-4ab12ceeebf7",
@@ -23112,7 +23112,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "7ab0ad26-98b9-42ec-adea-fb74204a6e52",
@@ -23169,7 +23169,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "4f196109-2a2f-44f4-ae29-b5ad96528a69",
@@ -23332,9 +23332,9 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "00:10",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "-1795:-21"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:10",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:10"
   },
   {
     "id": "28e89f4f-1c34-40d3-a1f9-305848035005",
@@ -23391,7 +23391,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "0556183b-216a-4d1f-a5b5-f3ef4b944e81",
@@ -23508,7 +23508,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "a9de14a2-6d85-4ca8-9da7-0c0d0f7cd4b3",
@@ -23751,7 +23751,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:43",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:43"
   },
   {
     "id": "8d244744-3d15-44ee-898e-2476bb5d738e",
@@ -24840,7 +24840,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "02:26",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "02:26"
   },
   {
     "id": "22714d3d-9f30-4d44-8b2b-9930026f7873",
@@ -24897,7 +24897,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "36f12ea4-6a5a-42c6-95a1-a3f6496fd3a5",
@@ -24954,7 +24954,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "01375f81-17e2-4eb0-acfa-6b8528c7af16",
@@ -25311,7 +25311,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:30",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:30"
   },
   {
     "id": "df79a9e7-9600-4b9f-913c-28b289863d24",
@@ -25557,7 +25557,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "01:22",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "01:22"
   },
   {
     "id": "b6b724e9-e1ae-42a0-bd20-9bf6da7038d5",
@@ -25614,7 +25614,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "cfa5ad99-cf75-4116-b0af-28a010e442c7",
@@ -25671,7 +25671,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:06",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:06"
   },
   {
     "id": "410bc824-870a-444e-b4d4-523c57eaf90e",
@@ -25788,7 +25788,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "67c8e4d7-d050-4351-95bf-5710dd49b2fc",
@@ -26160,7 +26160,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:35",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:35"
   },
   {
     "id": "ee7d399d-4a68-465e-964f-0424b5faacc5",
@@ -26595,7 +26595,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "01:45",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "01:45"
   },
   {
     "id": "3b3c1daa-6d00-4ce8-9491-239d574d5039",
@@ -26652,7 +26652,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "769e9daa-569f-4c57-abb7-f871aca46064",
@@ -26709,7 +26709,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "f502dd89-e09b-4a0c-9039-21eab7324e51",
@@ -27126,7 +27126,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:40",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:40"
   },
   {
     "id": "c8da6bba-016c-45ff-b53f-37f36c6b05fc",
@@ -28269,7 +28269,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "03:33",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "03:33"
   },
   {
     "id": "0d5d1932-662a-451f-8310-7ea586af9097",
@@ -28890,7 +28890,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "01:51",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "01:51"
   },
   {
     "id": "47d20f49-3fbd-4db5-b930-6b9c4ebfb2e7",
@@ -29556,7 +29556,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:53",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:53"
   },
   {
     "id": "a39cd118-a013-4ea9-9c25-9a3216a2e471",
@@ -29613,7 +29613,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "88a06e5e-1903-4ad4-9cf5-bbb92535fb43",
@@ -29670,7 +29670,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "db101beb-1897-4a26-9453-284d746cf60b",
@@ -29727,7 +29727,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "c2870130-18ad-401b-ba97-7e2aa702289a",
@@ -29841,7 +29841,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "8adcc6f0-d701-4268-9e2e-28caf60ce46e",
@@ -29898,7 +29898,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "9ead5d0c-73d1-4fd2-bf15-ec306986b605",
@@ -29955,7 +29955,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "25787425-935f-4446-a5af-33c1c1aaacf9",
@@ -30012,7 +30012,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "4965b66a-7d44-48e0-a0be-88bbabe95427",
@@ -30069,7 +30069,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:06",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:06"
   },
   {
     "id": "e2507122-8c53-4342-bc7a-7367fdfef231",
@@ -30126,7 +30126,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:14",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:14"
   },
   {
     "id": "bf921b32-73ec-4339-8d17-090057dd5f0d",
@@ -30183,7 +30183,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "3952542c-b5b9-48d7-8ce4-2146bc07bb21",
@@ -30297,7 +30297,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "9a22b862-6e86-47c3-864f-5c2ff08b15a0",
@@ -30354,7 +30354,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "0b17d5dd-9e26-4f03-a481-112b8a4577b2",
@@ -30471,7 +30471,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:12",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:12"
   },
   {
     "id": "25a8cfd3-1dac-4686-9fac-98d68a8c99a4",
@@ -30528,7 +30528,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "5a5926f2-7f2b-4d7e-99ed-2d78073f35a2",
@@ -30645,7 +30645,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "189e60fc-d520-4872-8ef9-b56ea901c9ab",
@@ -30702,7 +30702,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "524511d1-0a37-4a58-869b-9c18765e163e",
@@ -30819,7 +30819,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "905cd20c-bf80-4a1c-a2b3-e4fd4743be39",
@@ -30876,7 +30876,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "3d7c4ec2-1ce4-4052-a048-c8b330149ae2",
@@ -30993,7 +30993,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:20",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:20"
   },
   {
     "id": "10361edd-f4f1-4f3d-9657-afc96ad68d94",
@@ -31050,7 +31050,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "62cc8f86-e871-452b-9ede-c55ff732fa85",
@@ -31107,7 +31107,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "74c1bcde-58de-47e8-86c4-b7dba74b50e3",
@@ -31270,8 +31270,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "09:03",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "09:03",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:17"
   },
   {
@@ -31602,7 +31602,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:06",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:06"
   },
   {
     "id": "bb82d075-1a9d-4638-8b95-bbcad1a8ea2c",
@@ -31659,7 +31659,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:06",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:06"
   },
   {
     "id": "f7a1caa7-2cbe-4820-8c9e-62a2a57dc6ef",
@@ -31776,7 +31776,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:07",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:07"
   },
   {
     "id": "aa723c33-fcb4-492b-b4e2-d4f5e30f7bcf",
@@ -32637,7 +32637,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "01:47",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "01:47"
   },
   {
     "id": "a029dfbd-8623-43d4-9af5-5a3c7f9a45be",
@@ -33891,7 +33891,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "3d1c1b01-96d2-4b18-b2b1-3d8200dc1749",
@@ -33951,7 +33951,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "01:29",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "01:29"
   },
   {
     "id": "fb56114a-ecfb-4512-9a08-34b0651d8356",
@@ -34008,7 +34008,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "d24fb593-c04f-4bfb-92cb-e668b9e05881",
@@ -34125,7 +34125,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "f6aa6469-c90e-4960-9b77-c2b54489d1c2",
@@ -34911,7 +34911,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "02:49",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "02:49"
   },
   {
     "id": "e67a234f-3096-4833-b725-377367b63b5a",
@@ -34968,7 +34968,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "b7e90a2d-834a-4369-8d44-bfbf0828fc7c",
@@ -35025,7 +35025,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:09",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:09"
   },
   {
     "id": "537717c7-0edc-4660-95b8-19c5eda4a91d",
@@ -35139,7 +35139,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "bc885ec0-c4e3-4781-8f99-a1dc6f2280a7",
@@ -35196,7 +35196,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "fb93d9b4-0421-4d6a-9586-62283c990742",
@@ -35253,7 +35253,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "209bfe23-2f44-4c68-8f59-31e6e9f52dd6",
@@ -35310,7 +35310,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "2b622f10-b627-4867-824b-eca0df3d2fef",
@@ -35427,7 +35427,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "29e4098f-8054-4dda-8b89-9a3207f9193f",
@@ -35484,7 +35484,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "a909f7af-b590-49fb-b958-6159648d40f3",
@@ -35541,7 +35541,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "a5970684-c536-43a7-aa45-1bc013a15dbf",
@@ -35598,7 +35598,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "f8271ff9-7a51-43fc-aa37-bd49eb57fb4b",
@@ -35655,7 +35655,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "6678ced8-86ee-4348-86ce-434814e2f45c",
@@ -35772,7 +35772,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "2bd411bc-3a4f-4b0d-9a09-1eaa6f0cb0bc",
@@ -35832,7 +35832,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "d062911c-5456-482e-81db-1d0b7db6b691",
@@ -35889,7 +35889,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:08",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:08"
   },
   {
     "id": "492601f1-7688-4eab-b66c-7e2fd3daee6e",
@@ -35946,7 +35946,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "5dd548b7-e8eb-4ba4-abf6-b6f9997763e5",
@@ -36003,7 +36003,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "939897dd-a180-4348-a906-37c9d3ae898b",
@@ -36060,7 +36060,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "85413905-89d7-4439-89ae-35ba3cc10a41",
@@ -36117,7 +36117,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "bb439a22-0559-454a-b42a-e02889ec44e7",
@@ -36174,7 +36174,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "fde1a8a8-d7b5-4a28-902e-695a92df3d39",
@@ -36231,16 +36231,16 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
   },
   {
-    "id": "967754c2-0a83-45fb-8763-e780920acf58",
+    "id": "80283e6f-4318-4161-b1e5-f3a2be569330",
     "actor|name": "MARGARITA INES",
     "actor|account|name": "8755811-8",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 66,
     "context|platform": "android TP1A.220624.014.A325MUBU6DWK2",
-    "verb|display|es-CL": "volvió-a-entrar",
-    "verb|id": "verbs/re-entered",
-    "object|id": "activities/navigability/minimization-and-re-entered-cycle",
-    "object|definition|name|es-CL": "Ciclo de Minimización y Reingreso",
-    "object|definition|description|es-CL": "El usuario minimizó o reingresó a la aplicación",
+    "verb|display|es-CL": "inició-sesión",
+    "verb|id": "verbs/logged-in",
+    "object|id": "activities/navigability/LoginAccount",
+    "object|definition|name|es-CL": "Inicio de sesión",
+    "object|definition|description|es-CL": "El usuario inició sesión en la aplicación de Tego APP",
     "object|definition|type": "app-lifecycle",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": "N/A",
@@ -36249,7 +36249,7 @@
     "context|contextActivities|category": "N/A",
     "context|registration": "N/A",
     "timestamp|date": "2024-01-26",
-    "timestamp|time": "13:48:51",
+    "timestamp|time": "13:48:47",
     "result|completion": "N/A",
     "result|success": "N/A",
     "result|score|min": "N/A",
@@ -36394,9 +36394,9 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "00:05",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "-243:-7"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "0cc866b8-ee6d-4af6-8c31-3c1ed6c82ba8",
@@ -36453,7 +36453,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "cdeb6b4e-611f-437f-97d9-38d95901cc27",
@@ -36510,7 +36510,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "01f3dabc-434d-4be9-b6de-2de1a4df9709",
@@ -36567,7 +36567,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "4ed1c15a-90c6-4263-898d-2b09aee799b2",
@@ -36624,7 +36624,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "100f0899-a8dc-4fd8-9c6a-f3abf3f9f8d5",
@@ -36681,7 +36681,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "014b4a0b-e327-41db-b62b-0e07c4bc8fe4",
@@ -36921,7 +36921,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:26",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:26"
   },
   {
     "id": "3ea991d3-3b0b-42a1-b148-df0c8913345f",
@@ -36978,7 +36978,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "54b65f87-2233-4e44-bb36-e2911f301da6",
@@ -37035,7 +37035,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "e51812ae-4d71-4b13-8bf9-71fa3e70c4c7",
@@ -37152,7 +37152,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:21",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:21"
   },
   {
     "id": "5b8f95e7-62a6-497d-a19a-2fbe4fdd1a07",
@@ -38115,7 +38115,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "05:22",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "05:22"
   },
   {
     "id": "b4aafb7f-e88f-4eb8-8dfd-c2ca183c515d",
@@ -43653,7 +43653,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "17:59",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "17:59"
   },
   {
     "id": "f66eab19-008a-478f-a754-d8f0b3dbcc39",
@@ -43896,7 +43896,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:14",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:14"
   },
   {
     "id": "cc63ea71-998e-4f7a-8502-c2a9083e80ff",
@@ -43953,7 +43953,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "00759305-7586-4fdb-b27d-95dd493db27c",
@@ -44010,7 +44010,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "a629e19e-36f0-4af8-b34e-1c40df18e2ca",
@@ -44067,7 +44067,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "572c1225-0703-4bba-b1bc-94200ff4fab9",
@@ -44232,16 +44232,16 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
   },
   {
-    "id": "7a7f59b0-a3cb-4e7e-b67a-c8a622157f96",
+    "id": "27c8c970-4a17-4dd7-8bc5-601f1566dc11",
     "actor|name": "ALEX JUAN ELOY",
     "actor|account|name": "19306223-7",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": 27,
     "context|platform": "android TP1A.220624.014.A336MUBS7CWL1",
-    "verb|display|es-CL": "volvió-a-entrar",
-    "verb|id": "verbs/re-entered",
-    "object|id": "activities/navigability/minimization-and-re-entered-cycle",
-    "object|definition|name|es-CL": "Ciclo de Minimización y Reingreso",
-    "object|definition|description|es-CL": "El usuario minimizó o reingresó a la aplicación",
+    "verb|display|es-CL": "inició-sesión",
+    "verb|id": "verbs/logged-in",
+    "object|id": "activities/navigability/LoginAccount",
+    "object|definition|name|es-CL": "Inicio de sesión",
+    "object|definition|description|es-CL": "El usuario inició sesión en la aplicación de Tego APP",
     "object|definition|type": "app-lifecycle",
     "object|definition|correctResponsesPattern": "N/A",
     "object|definition|choices": "N/A",
@@ -44340,7 +44340,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "dd11df6c-e82b-45e9-bd11-b513001ab957",
@@ -44397,7 +44397,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "1069f4f7-1595-419f-86b7-108eee600aef",
@@ -44562,7 +44562,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "0e24ece2-6715-49cf-8fab-9ca1cbd97037",
@@ -44725,8 +44725,8 @@
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "N/A",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "03:27",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "03:27",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:39"
   },
   {
@@ -44847,7 +44847,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "1120063b-d696-4c46-ae7d-2649d186e102",
@@ -44904,7 +44904,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "2f01e764-eff5-4148-881a-384794f63b6a",
@@ -44961,7 +44961,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "df2d3e6f-7e38-47fd-beab-e3ce1ccefb4c",
@@ -45078,7 +45078,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:09",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:09"
   },
   {
     "id": "c8d81e62-1875-494b-a68c-87941f96905f",
@@ -45324,7 +45324,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:16",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:16"
   },
   {
     "id": "7a5ae489-5d2a-431f-8505-80a46f25b978",
@@ -45381,7 +45381,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "83dc791c-b9eb-462c-8fc5-4bed774d517a",
@@ -45438,7 +45438,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "40bf6e0c-c476-4c88-9580-74dfc217978f",
@@ -45558,7 +45558,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "e0d876e3-612e-45a7-b55c-1cdb07a9295b",
@@ -45615,7 +45615,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "e001fcdb-cda4-44c8-b78c-32a4e7bd76c8",
@@ -45672,7 +45672,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "7bf837d4-123b-409e-b4e9-3c939210796b",
@@ -45789,7 +45789,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "464cb20f-70c8-4db8-8c27-db5ca093d803",
@@ -46095,7 +46095,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:18",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:18"
   },
   {
     "id": "875050ce-3a8d-44de-a828-0d88c692f049",
@@ -46152,7 +46152,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "110fbe3a-257b-4181-bd7b-74a9ae86427d",
@@ -46209,7 +46209,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "1dfa32c4-d954-43f9-808e-31b55732c95c",
@@ -46326,7 +46326,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "5787d48f-32d9-44b3-8cc0-8946853e1361",
@@ -46632,7 +46632,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:07",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:07"
   },
   {
     "id": "a1303bdd-3b86-4811-8bb0-69bfa00fbbef",
@@ -47358,7 +47358,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "02:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "02:03"
   },
   {
     "id": "eafd2d65-a7ea-4e8e-970c-0f0f4153ffae",
@@ -47415,7 +47415,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "326771aa-2669-411e-9c46-c3f8131b396d",
@@ -47472,7 +47472,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "2151a2ec-f514-42f7-b233-974fb5c3a207",
@@ -47589,7 +47589,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "f42a431b-e0ef-41de-9cf9-1cb60eef1f15",
@@ -48135,7 +48135,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "01:58",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "01:58"
   },
   {
     "id": "6d13baa0-88b2-49fa-9341-98fd058711c5",
@@ -48510,7 +48510,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "01:12",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "01:12"
   },
   {
     "id": "40053fc1-370f-40a2-818e-e88cdeb7586a",
@@ -48567,7 +48567,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "cfdd9a63-353a-451a-b860-6a05dc517ad1",
@@ -48624,7 +48624,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:04",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:04"
   },
   {
     "id": "826cac11-9fb1-4064-b893-98c95e6fddb5",
@@ -48741,7 +48741,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:09",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:09"
   },
   {
     "id": "1972e75e-8418-4a33-a430-cc19b62f6842",
@@ -50184,7 +50184,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "01:54",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "01:54"
   },
   {
     "id": "63504ecc-9ce2-4261-ac4f-c1725dd56470",
@@ -50559,7 +50559,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "01:34",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "01:34"
   },
   {
     "id": "96104e33-b554-4d3c-88ef-2505ce29fa5a",
@@ -50616,7 +50616,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:00",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:00"
   },
   {
     "id": "f9848174-263c-44c8-8d3a-42a828c7599c",
@@ -50673,7 +50673,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "15aefe80-a25a-49a8-b506-39c31f2f3464",
@@ -50790,7 +50790,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "92ab6736-6cb2-4828-beac-eede0ddc8e10",
@@ -53325,7 +53325,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "05:15",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "05:15"
   },
   {
     "id": "77380e2b-9ab5-4ce8-b75d-19807367a1b8",
@@ -53598,7 +53598,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "36b82b1a-38bf-4fd3-bfc8-c44693007e34",
@@ -53655,7 +53655,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "bb1be0cc-4d7a-4f4d-8e7d-d60b08a73df1",
@@ -53769,7 +53769,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:03",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:03"
   },
   {
     "id": "22dc87f5-5064-42cf-8b2c-df4280dba538",
@@ -53826,7 +53826,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:05",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:05"
   },
   {
     "id": "c3735941-dc9f-4066-afe2-84b4e9c9c3cc",
@@ -53943,7 +53943,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:02",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:02"
   },
   {
     "id": "c70ab60b-4b29-4811-a468-e4623c063d67",
@@ -54000,7 +54000,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "e703075c-a73b-43f2-b285-15b84b6fc999",
@@ -54057,7 +54057,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:26",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:26"
   },
   {
     "id": "db225278-177a-40f7-89f6-0d33e466237e",
@@ -54114,7 +54114,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:14",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:14"
   },
   {
     "id": "189c6b21-0187-43b0-8b85-36a9c5897772",
@@ -54339,7 +54339,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "1b3be164-e1fe-4f00-8a32-1457d9365138",
@@ -54396,7 +54396,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:01",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:01"
   },
   {
     "id": "286802ab-c8ba-44ce-aa86-1583ccff91d1",
@@ -54453,7 +54453,7 @@
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "N/A",
     "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages": "00:08",
     "result|extensions|https://xapi.tego.iie.cl/extensions/duration": "N/A",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "N/A"
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration": "00:08"
   },
   {
     "id": "0d874c0d-bbc7-40e9-ba8c-74920e87c2e5",
