@@ -20,7 +20,7 @@ exports.containsReordenableToSave = {
     currentOrder: "https://xapi.tego.iie.cl/extensions/reordenable/currentOrder",
 };
 exports.fillHeaders = {
-    id: "captrta_id",
+    id: "captura_id",
     "actor|name": "nombre_usuario",
     "actor|account|name": "rut_usuario",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": "usuario_edad",
@@ -45,7 +45,7 @@ exports.fillHeaders = {
     "result|score|max": "resultado_puntaje_maximo",
     "result|score|raw": "resultado_puntaje_obtenido",
     "result|score|scaled": "resultado_porcentaje_exito",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/length": "video_largo",
+    "context|extensions|https://xapi.tego.iie.cl/extensions/video/length": "video_duracion",
     "context|extensions|https://xapi.tego.iie.cl/extensions/video/quality": "video_calidad",
     "context|extensions|https://xapi.tego.iie.cl/extensions/video/videoSpeed": "video_velocidad_reproduccion",
     "context|extensions|https://xapi.tego.iie.cl/extensions/video/fullScreen": "video_estado_pantalla_completa",

@@ -23,7 +23,7 @@ export const containsReordenableToSave = {
 };
 
 export const fillHeaders = {
-    id: "captrta_id",
+    id: "captura_id",
     "actor|name": "nombre_usuario",
     "actor|account|name": "rut_usuario",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age":
@@ -52,7 +52,7 @@ export const fillHeaders = {
     "result|score|raw": "resultado_puntaje_obtenido",
     "result|score|scaled": "resultado_porcentaje_exito",
     "context|extensions|https://xapi.tego.iie.cl/extensions/video/length":
-        "video_largo",
+        "video_duracion",
     "context|extensions|https://xapi.tego.iie.cl/extensions/video/quality":
         "video_calidad",
     "context|extensions|https://xapi.tego.iie.cl/extensions/video/videoSpeed":
@@ -91,7 +91,7 @@ export const fillHeaders = {
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/to":
         "accesorio_actual",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/from":
-        "avatar_nombe_anterior",
+        "avatar_nombre_anterior",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to":
         "avatar_nombre_actual",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date":
