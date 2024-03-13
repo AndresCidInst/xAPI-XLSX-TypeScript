@@ -6,7 +6,7 @@ import {
     groupingByActor,
     obtainStatementsByActor,
 } from "../StatetementsCleaners";
-
+let countCalculations: number = 0;
 /**
  * Separa la duración de la duración real de las declaraciones.
  *
@@ -18,9 +18,11 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
     const statementsDurationReformated: Statement[] = [];
     const initActions = Object.entries(InitFinishActions)
         .filter(([key, value]) => key.includes("Init"))
-        .map(([key, value]) => value);
+        .map(([key, value]) => value as string);
     users.forEach((user) => {
         let statementInitVerb: string = "";
+        let statementInitId: string = "";
+        let pastInitialVerb: string = "";
         let pastVerb: string = "";
         const timesOfInectivity: string[] = [];
         const timesOfRetun: string[] = [];
@@ -30,36 +32,51 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                 new Date(Object(second).timestamp).getTime(),
         );
         userStatements.forEach((statement) => {
-            const currentStatement = statement as unknown as Statement;
-            // Gestión de acciones de inicio y navegación
-            if (
-                initActions.includes(
-                    currentStatement.verb.id as InitFinishActions,
-                ) ||
-                currentStatement.verb.id === InitFinishActions.navegation
-            ) {
-                statementInitVerb = currentStatement.verb.id;
+            if (statementInitVerb != "") {
+                pastInitialVerb = statementInitVerb;
             }
+            const currentStatement = statement as unknown as Statement;
             if (
-                statementInitVerb == InitFinishActions.navegation &&
-                pastVerb == InitFinishActions.loginApp
+                initActions.includes(currentStatement.verb.id) ||
+                currentStatement.verb.id == InitFinishActions.navegation
             ) {
+                // Gestión de acciones de inicio y navegación
+                statementInitVerb = currentStatement.verb.id;
+                statementInitId = currentStatement.id!;
+            }
+            if (previusResetCase(statementInitVerb, pastVerb)) {
+                statementInitVerb = "";
+                statementInitId = "";
                 resetTimesArrays(timesOfInectivity, timesOfRetun);
+                return;
             }
             // Registro de tiempos de inactividad y retorno si procede
-            registerActivityDuration(
-                timesOfInectivity,
-                timesOfRetun,
-                currentStatement,
-                statementInitVerb,
-            );
-
-            // Lógica para calcular el tiempo y ajustar la duración de la actividad
-            const calculatedTime = separeDurationCases(
-                timesOfInectivity,
-                timesOfRetun,
-                currentStatement,
-            );
+            if (statementInitVerb != "") {
+                registerActivityDuration(
+                    timesOfInectivity,
+                    timesOfRetun,
+                    currentStatement,
+                    statementInitVerb,
+                );
+            }
+            let calculatedTime: Duration | undefined = undefined;
+            if (
+                casesToCalculate(
+                    statementInitVerb,
+                    currentStatement.verb.id,
+                    initActions,
+                    timesOfInectivity,
+                    timesOfRetun,
+                    statementInitId,
+                    currentStatement.id!,
+                )
+            ) {
+                calculatedTime = separeDurationCases(
+                    timesOfInectivity,
+                    timesOfRetun,
+                    currentStatement,
+                );
+            }
             if (
                 currentStatement.verb.id == InitFinishActions.navegation ||
                 currentStatement.verb.id == InitFinishActions.gameFinish ||
@@ -80,9 +97,8 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                 }
             }
 
-            // Revisar si se necesita resetear el caso
             if (
-                resetCase(
+                finalResetCase(
                     statementInitVerb,
                     currentStatement.verb.id,
                     initActions,
@@ -91,6 +107,7 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                     currentStatement.verb.id,
                 )
             ) {
+                statementInitId = "";
                 statementInitVerb = "";
                 resetTimesArrays(timesOfInectivity, timesOfRetun);
             }
@@ -100,6 +117,10 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
     const newStatements = replaceStatements(
         statements,
         statementsDurationReformated,
+    );
+    console.log(
+        "Cantidad de modificaciones necesarias realizados:",
+        countCalculations,
     );
     return newStatements;
 }
@@ -131,7 +152,7 @@ function navegationModificedStatements(
             currentDuration,
             calculatedTime.toFormat("mm:ss"),
         );
-
+        countCalculations++;
         statementsDurationReformated.push(
             addExtensionToStatement(
                 currentStatement,
@@ -177,6 +198,7 @@ function saverNormalModifiedStatements(
             currentDuration,
             calculatedTime.toFormat("mm:ss"),
         );
+        countCalculations++;
         statementsDurationReformated.push(
             addExtensionToStatement(
                 currentStatement,
@@ -201,7 +223,7 @@ function separeDurationCases(
 ): Duration | undefined {
     if (statement.verb.id == InitFinishActions.navegation) {
         if (timesOfInectivity.length > 0 && timesOfRetun.length > 0) {
-            return timeCalculer(timesOfInectivity, timesOfRetun, statement.id!);
+            return timeCalculer(timesOfInectivity, timesOfRetun);
         }
         return;
     }
@@ -209,7 +231,7 @@ function separeDurationCases(
         statement.verb.id == InitFinishActions.gameFinish ||
         statement.verb.id == InitFinishActions.videoFinish
     ) {
-        return timeCalculer(timesOfInectivity, timesOfRetun, statement.id!);
+        return timeCalculer(timesOfInectivity, timesOfRetun);
     }
 
     return undefined;
@@ -240,18 +262,14 @@ function registerActivityDuration(
         }
     }
 
-    if (
-        statementsInitVerb != "" &&
-        currentStatement.verb.id == InitFinishActions.closeApp
-    ) {
+    if (currentStatement.verb.id == InitFinishActions.closeApp) {
         timesOfInectivity.push(currentStatement.timestamp!);
         return;
     }
 
     if (
-        statementsInitVerb != "" &&
-        (currentStatement.verb.id == InitFinishActions.entryApp ||
-            currentStatement.verb.id == InitFinishActions.loginApp)
+        currentStatement.verb.id == InitFinishActions.entryApp ||
+        currentStatement.verb.id == InitFinishActions.loginApp
     ) {
         timesOfRetun.push(currentStatement.timestamp!);
         return;
@@ -263,38 +281,37 @@ function registerActivityDuration(
  *
  * @param closeTime Los tiempos de cierre en formato de cadena.
  * @param entryTimes Los tiempos de entrada en formato de cadena.
- * @param idStatement El identificador del estado.
  * @returns La duración calculada en segundos.
  */
-function timeCalculer(
-    closeTime: string[],
-    entryTimes: string[],
-    idStatement: string,
-): Duration {
+function timeCalculer(closeTime: string[], entryTimes: string[]): Duration {
     const sumatoryTime = closeTime.reduce((resultantTime, time, index) => {
         const closeFormattedTime = new Date(time).getTime();
         const entryFormattedTime = new Date(entryTimes[index]).getTime();
         return resultantTime + (entryFormattedTime - closeFormattedTime);
     }, 0);
     const sumatoryTimeInSecond = sumatoryTime / 1000;
-    if (Number.isNaN(sumatoryTimeInSecond)) {
-        console.log("Calculo como NaN");
-        console.log(entryTimes);
-        console.log(closeTime);
-    }
     return Duration.fromObject({ seconds: Number(sumatoryTimeInSecond ?? 0) });
 }
+function previusResetCase(initialAction: string, pastVerb: string) {
+    if (
+        initialAction == InitFinishActions.navegation &&
+        pastVerb == InitFinishActions.loginApp
+    ) {
+        return true;
+    }
 
+    return false;
+}
 /**
  * Comprueba si se debe reiniciar el caso.
  * @param initialAction - La acción inicial.
- * @param finalAction - La acción final.
+ * @param currentAction - La acción final.
  * @param initActions - Las acciones iniciales.
  * @returns Devuelve true si se debe reiniciar el caso, de lo contrario devuelve false.
  */
-function resetCase(
+function finalResetCase(
     initialAction: string,
-    finalAction: string,
+    currentAction: string,
     initActions: string[],
     timesOfInectivity: string[],
     timesOfRetun: string[],
@@ -308,7 +325,7 @@ function resetCase(
     }
 
     if (
-        finalAction == InitFinishActions.navegation &&
+        currentAction == InitFinishActions.navegation &&
         timesOfInectivity.length > 0 &&
         timesOfRetun.length > 0
     ) {
@@ -316,16 +333,46 @@ function resetCase(
     }
 
     if (
-        finalAction == InitFinishActions.gameFinish ||
-        finalAction == InitFinishActions.videoFinish
+        currentAction == InitFinishActions.gameFinish ||
+        currentAction == InitFinishActions.videoFinish
     ) {
         return true;
     }
 
     if (
         initialAction == InitFinishActions.navegation &&
-        initActions.some((action) => action == finalAction)
+        initActions.some((action) => action == currentAction)
     ) {
+        return true;
+    }
+
+    return false;
+}
+
+function casesToCalculate(
+    initialAction: string,
+    finalAction: string,
+    initActions: string[],
+    timesOfInectivity: string[],
+    timesOfRetun: string[],
+    currentInitId: string,
+    currentId: string,
+): boolean {
+    const toNavegation =
+        finalAction == InitFinishActions.navegation &&
+        timesOfInectivity.length > 0 &&
+        timesOfRetun.length > 0;
+    const finshedActivity =
+        initActions.some((action) => action == initialAction) &&
+        (finalAction == InitFinishActions.gameFinish ||
+            finalAction == InitFinishActions.videoFinish);
+    //const validRegister = currentId != currentInitId;
+
+    if (toNavegation) {
+        return true;
+    }
+
+    if (finshedActivity) {
         return true;
     }
 

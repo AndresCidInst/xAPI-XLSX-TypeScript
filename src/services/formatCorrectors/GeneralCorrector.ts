@@ -264,6 +264,16 @@ export function correctDataTimeZone(statement: Statement): void {
     const uctDataTime = DateTime.fromISO(statement.timestamp!, { zone: "utc" });
     const chileanDate = uctDataTime.setZone("America/Santiago").toISO()!;
     statement.timestamp = chileanDate.replace("-03:00", "");
+    statement.timestamp = roundMilliseconds(statement.timestamp);
+}
+
+function roundMilliseconds(timestamp: string): string {
+    const date = new Date(timestamp);
+    if (date.getMilliseconds() >= 500) {
+        date.setSeconds(date.getSeconds() + 1);
+    }
+    date.setMilliseconds(0);
+    return date.toISOString().split(".")[0];
 }
 
 export function compareDates(a: JSON, b: JSON): number {

@@ -25,8 +25,8 @@ class RequestServices {
         this.buildHeaders();
     }
     getAllStatements() {
-        var _a;
         return __awaiter(this, void 0, void 0, function* () {
+            var _a;
             const retrievedStatements = [];
             let fromStatements = [];
             console.log("Obteniendo statements...");

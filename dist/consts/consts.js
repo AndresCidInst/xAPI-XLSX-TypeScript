@@ -20,7 +20,7 @@ exports.containsReordenableToSave = {
     currentOrder: "https://xapi.tego.iie.cl/extensions/reordenable/currentOrder",
 };
 exports.fillHeaders = {
-    id: "capruta_id",
+    id: "captrta_id",
     "actor|name": "nombre_usuario",
     "actor|account|name": "rut_usuario",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age": "usuario_edad",

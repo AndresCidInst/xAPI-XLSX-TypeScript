@@ -23,7 +23,7 @@ export const containsReordenableToSave = {
 };
 
 export const fillHeaders = {
-    id: "capruta_id",
+    id: "captrta_id",
     "actor|name": "nombre_usuario",
     "actor|account|name": "rut_usuario",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age":
