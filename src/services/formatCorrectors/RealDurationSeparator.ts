@@ -1,12 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Extensions, Statement } from "@xapi/xapi";
 import { Duration } from "luxon";
-import { InitFinishActions } from "../../consts/initFinishActions";
+import { InActionsVerbs } from "../../consts/ActionsEnums/InActionsVerbs";
+import { InitFinishActions } from "../../consts/ActionsEnums/initFinishActions";
 import {
     groupingByActor,
     obtainStatementsByActor,
 } from "../StatetementsCleaners";
+
 let countCalculations: number = 0;
+const initActions = Object.entries(InitFinishActions)
+    .filter(([key, value]) => key.includes("Init"))
+    .map(([key, value]) => value as string);
+const finalizationActions = Object.entries(InitFinishActions)
+    .filter(([key, value]) => key.includes("Finish"))
+    .map(([key, value]) => value as string);
+const inActions = Object.values(InActionsVerbs);
+let sumOfInactivityTime: number = 0;
+
 /**
  * Separa la duración de la duración real de las declaraciones.
  *
@@ -16,13 +27,9 @@ let countCalculations: number = 0;
 export function separeDurationFromRealDuration(statements: JSON[]) {
     const users: string[] = groupingByActor(statements);
     const statementsDurationReformated: Statement[] = [];
-    const initActions = Object.entries(InitFinishActions)
-        .filter(([key, value]) => key.includes("Init"))
-        .map(([key, value]) => value as string);
+
     users.forEach((user) => {
         let statementInitVerb: string = "";
-        let statementInitId: string = "";
-        let pastInitialVerb: string = "";
         let pastVerb: string = "";
         const timesOfInectivity: string[] = [];
         const timesOfRetun: string[] = [];
@@ -32,23 +39,16 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                 new Date(Object(second).timestamp).getTime(),
         );
         userStatements.forEach((statement) => {
-            if (statementInitVerb != "") {
-                pastInitialVerb = statementInitVerb;
-            }
             const currentStatement = statement as unknown as Statement;
             if (
                 initActions.includes(currentStatement.verb.id) ||
                 currentStatement.verb.id == InitFinishActions.navegation
             ) {
-                // Gestión de acciones de inicio y navegación
                 statementInitVerb = currentStatement.verb.id;
-                statementInitId = currentStatement.id!;
             }
+
             if (previusResetCase(statementInitVerb, pastVerb)) {
-                statementInitVerb = "";
-                statementInitId = "";
                 resetTimesArrays(timesOfInectivity, timesOfRetun);
-                return;
             }
             // Registro de tiempos de inactividad y retorno si procede
             if (statementInitVerb != "") {
@@ -67,8 +67,6 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                     initActions,
                     timesOfInectivity,
                     timesOfRetun,
-                    statementInitId,
-                    currentStatement.id!,
                 )
             ) {
                 calculatedTime = separeDurationCases(
@@ -77,25 +75,11 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                     currentStatement,
                 );
             }
-            if (
-                currentStatement.verb.id == InitFinishActions.navegation ||
-                currentStatement.verb.id == InitFinishActions.gameFinish ||
-                currentStatement.verb.id == InitFinishActions.videoFinish
-            ) {
-                if (statementInitVerb == InitFinishActions.navegation) {
-                    navegationModificedStatements(
-                        calculatedTime,
-                        statementsDurationReformated,
-                        currentStatement,
-                    );
-                } else {
-                    saverNormalModifiedStatements(
-                        calculatedTime,
-                        statementsDurationReformated,
-                        currentStatement,
-                    );
-                }
-            }
+            modifyStatement(
+                calculatedTime,
+                statementsDurationReformated,
+                currentStatement,
+            );
 
             if (
                 finalResetCase(
@@ -107,8 +91,10 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                     currentStatement.verb.id,
                 )
             ) {
-                statementInitId = "";
                 statementInitVerb = "";
+                resetTimesArrays(timesOfInectivity, timesOfRetun);
+                sumOfInactivityTime = 0;
+            } else if (caseToOnlyResetArrays(currentStatement.verb.id)) {
                 resetTimesArrays(timesOfInectivity, timesOfRetun);
             }
             pastVerb = currentStatement.verb.id;
@@ -125,35 +111,80 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
     return newStatements;
 }
 
-function navegationModificedStatements(
+function modifyStatement(
     calculatedTime: Duration<boolean> | undefined,
     statementsDurationReformated: Statement[],
     currentStatement: Statement,
+): void {
+    if (currentStatement.verb.id == InitFinishActions.navegation) {
+        navigationModifiedStatements(
+            calculatedTime,
+            statementsDurationReformated,
+            currentStatement,
+        );
+        return;
+    } else if (inActions.some((action) => action == currentStatement.verb.id)) {
+        saverGameModifiedStatements(
+            calculatedTime,
+            statementsDurationReformated,
+            currentStatement,
+        );
+        sumOfInactivityTime += calculatedTime?.seconds ?? 0;
+        return;
+    } else if (
+        finalizationActions.some((action) => action == currentStatement.verb.id)
+    ) {
+        saverFinalModifiedStatements(
+            statementsDurationReformated,
+            currentStatement,
+        );
+        return;
+    } else if (currentStatement.result?.duration != undefined) {
+        saverOtherModifiedStatements(
+            statementsDurationReformated,
+            currentStatement,
+        );
+    }
+}
+
+function saverOtherModifiedStatements(
+    statementsDurationReformated: Statement[],
+    currentStatement: Statement,
 ) {
-    if (calculatedTime == undefined || calculatedTime.seconds == 0) {
-        statementsDurationReformated.push(
+    const { result } = currentStatement;
+
+    statementsDurationReformated.push(
+        addExtensionToStatement(
+            currentStatement,
+            durationToExtension(result!.duration!, result!.duration!),
+        ),
+    );
+}
+
+function navigationModifiedStatements(
+    calculatedTime: Duration<boolean> | undefined,
+    statementsDurationReformatted: Statement[],
+    currentStatement: Statement,
+) {
+    const timeExtensionKey =
+        "https://xapi.tego.iie.cl/extensions/time-between-pages";
+    const extensions = currentStatement.result?.extensions;
+    const currentDuration = extensions?.[timeExtensionKey];
+
+    if (!calculatedTime?.seconds && currentDuration) {
+        statementsDurationReformatted.push(
             addExtensionToStatement(
                 currentStatement,
-                durationToExtensionNavegation(
-                    currentStatement.result?.extensions![
-                        "https://xapi.tego.iie.cl/extensions/time-between-pages"
-                    ],
-                    currentStatement.result?.extensions![
-                        "https://xapi.tego.iie.cl/extensions/time-between-pages"
-                    ],
-                ),
+                durationToExtensionNavegation(currentDuration, currentDuration),
             ),
         );
-    } else {
-        const currentKey = Object.keys(currentStatement.result!.extensions!)[0];
-        const currentDuration: string =
-            currentStatement.result!.extensions![currentKey];
+    } else if (calculatedTime && currentDuration) {
         const realDuration = subtractTimes(
             currentDuration,
             calculatedTime.toFormat("mm:ss"),
         );
         countCalculations++;
-        statementsDurationReformated.push(
+        statementsDurationReformatted.push(
             addExtensionToStatement(
                 currentStatement,
                 durationToExtensionNavegation(realDuration, currentDuration),
@@ -169,31 +200,32 @@ function navegationModificedStatements(
  * @param statementsDurationReformated - Array de declaraciones con duración reformateada.
  * @param currentStatement - Declaración actual.
  */
-function saverNormalModifiedStatements(
+function saverGameModifiedStatements(
     calculatedTime: Duration<boolean> | undefined,
     statementsDurationReformated: Statement[],
     currentStatement: Statement,
 ) {
-    if (calculatedTime == undefined || calculatedTime.seconds == 0) {
+    const { result } = currentStatement;
+
+    if (!result?.duration) {
+        return;
+    }
+    const { duration, extensions } = result;
+
+    if (!calculatedTime?.seconds && duration) {
         statementsDurationReformated.push(
             addExtensionToStatement(
                 currentStatement,
-                durationToExtension(
-                    currentStatement.result!.duration!,
-                    currentStatement.result!.duration!,
-                ),
+                durationToExtension(duration, duration),
             ),
         );
-    } else {
-        let currentDuration: string = "";
-        if (currentStatement.result!.duration == undefined) {
-            const durationKey = Object.keys(
-                currentStatement.result!.extensions!,
-            )[0];
-            currentDuration = currentStatement.result!.extensions![durationKey];
-        } else {
-            currentDuration = currentStatement.result!.duration!;
-        }
+        return;
+    }
+
+    const currentDuration =
+        duration ?? extensions?.[Object.keys(extensions)[0]];
+
+    if (calculatedTime && currentDuration) {
         const realDuration = subtractTimes(
             currentDuration,
             calculatedTime.toFormat("mm:ss"),
@@ -206,6 +238,34 @@ function saverNormalModifiedStatements(
             ),
         );
     }
+}
+
+function saverFinalModifiedStatements(
+    statementsDurationReformated: Statement[],
+    currentStatement: Statement,
+) {
+    const currentDuration = convertToSeconds(
+        currentStatement.result!.duration!,
+    );
+    const realDuration = currentDuration - sumOfInactivityTime;
+    countCalculations++;
+
+    const realDurationFormatted = Duration.fromObject({
+        seconds: realDuration,
+    }).toFormat("mm:ss");
+
+    const currentDurationFormatted = Duration.fromObject({
+        seconds: currentDuration,
+    }).toFormat("mm:ss");
+    statementsDurationReformated.push(
+        addExtensionToStatement(
+            currentStatement,
+            durationToExtension(
+                realDurationFormatted.toString(),
+                currentDurationFormatted,
+            ),
+        ),
+    );
 }
 
 /**
@@ -234,45 +294,53 @@ function separeDurationCases(
         return timeCalculer(timesOfInectivity, timesOfRetun);
     }
 
+    if (inActions.some((action) => action == statement.verb.id)) {
+        if (timesOfInectivity.length > 0 && timesOfRetun.length > 0) {
+            return timeCalculer(timesOfInectivity, timesOfRetun);
+        }
+        return;
+    }
+
     return undefined;
 }
 
 /**
  * Registra la duración de la actividad en función de los parámetros proporcionados.
  *
- * @param timesOfInectivity - Array que contiene los tiempos de inactividad.
- * @param timesOfRetun - Array que contiene los tiempos de retorno.
+ * @param timesOfInactivity - Array que contiene los tiempos de inactividad.
+ * @param timesOfReturn - Array que contiene los tiempos de retorno.
  * @param currentStatement - Declaración actual.
  * @param statementsInitVerb - Verbo de inicio de las declaraciones.
  */
 function registerActivityDuration(
-    timesOfInectivity: string[],
-    timesOfRetun: string[],
+    timesOfInactivity: string[],
+    timesOfReturn: string[],
     currentStatement: Statement,
     statementsInitVerb: string,
 ) {
+    const { verb, timestamp } = currentStatement;
+
     if (statementsInitVerb == InitFinishActions.navegation) {
-        if (currentStatement.verb.id == InitFinishActions.entryApp) {
-            timesOfRetun.push(currentStatement.timestamp!);
-            return;
+        if (
+            verb.id === InitFinishActions.entryApp ||
+            verb.id === InitFinishActions.closeApp
+        ) {
+            const targetArray =
+                verb.id === InitFinishActions.entryApp
+                    ? timesOfReturn
+                    : timesOfInactivity;
+            targetArray.push(timestamp!);
         }
-        if (currentStatement.verb.id == InitFinishActions.closeApp) {
-            timesOfInectivity.push(currentStatement.timestamp!);
-            return;
-        }
-    }
-
-    if (currentStatement.verb.id == InitFinishActions.closeApp) {
-        timesOfInectivity.push(currentStatement.timestamp!);
         return;
     }
 
-    if (
-        currentStatement.verb.id == InitFinishActions.entryApp ||
-        currentStatement.verb.id == InitFinishActions.loginApp
+    if (verb.id === InitFinishActions.closeApp) {
+        timesOfInactivity.push(timestamp!);
+    } else if (
+        verb.id === InitFinishActions.entryApp ||
+        verb.id === InitFinishActions.loginApp
     ) {
-        timesOfRetun.push(currentStatement.timestamp!);
-        return;
+        timesOfReturn.push(timestamp!);
     }
 }
 
@@ -292,6 +360,7 @@ function timeCalculer(closeTime: string[], entryTimes: string[]): Duration {
     const sumatoryTimeInSecond = sumatoryTime / 1000;
     return Duration.fromObject({ seconds: Number(sumatoryTimeInSecond ?? 0) });
 }
+
 function previusResetCase(initialAction: string, pastVerb: string) {
     if (
         initialAction == InitFinishActions.navegation &&
@@ -349,14 +418,24 @@ function finalResetCase(
     return false;
 }
 
+function caseToOnlyResetArrays(currentVerb: string): boolean {
+    const isInActivityGameAction = Object.values(InActionsVerbs).some(
+        (action) => action == currentVerb,
+    );
+
+    if (isInActivityGameAction) {
+        return true;
+    }
+
+    return false;
+}
+
 function casesToCalculate(
     initialAction: string,
     finalAction: string,
     initActions: string[],
     timesOfInectivity: string[],
     timesOfRetun: string[],
-    currentInitId: string,
-    currentId: string,
 ): boolean {
     const toNavegation =
         finalAction == InitFinishActions.navegation &&
@@ -367,12 +446,17 @@ function casesToCalculate(
         (finalAction == InitFinishActions.gameFinish ||
             finalAction == InitFinishActions.videoFinish);
     //const validRegister = currentId != currentInitId;
+    const inActionActivity = inActions.some((action) => action == finalAction);
 
     if (toNavegation) {
         return true;
     }
 
     if (finshedActivity) {
+        return true;
+    }
+
+    if (inActionActivity) {
         return true;
     }
 

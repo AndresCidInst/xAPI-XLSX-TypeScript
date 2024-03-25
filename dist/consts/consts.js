@@ -65,7 +65,7 @@ exports.fillHeaders = {
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/to": "avatar_actual",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/from": "accesorio_cambiado",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar_acccessory/to": "accesorio_actual",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/from": "avatar_nombe_anterior",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/from": "avatar_nombre_anterior",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/change_name/to": "avatar_nombre_actual",
     "context|extensions|https://xapi.tego.iie.cl/extensions/appointment_date": "cita_fecha_destinada",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason": "cita_razon_cancelacion",

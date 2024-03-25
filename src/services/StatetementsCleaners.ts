@@ -73,13 +73,6 @@ function clearEntryAndClosingFailedStatements(statements: JSON[]) {
                 new Date(Object(first).timestamp).getTime() -
                 new Date(Object(second).timestamp).getTime(),
         );
-        sortedFiltredUserStatements.forEach((statement) => {
-            if (
-                Object(statement).id == "d54c5e78-9834-4122-aad7-aedc8a46abee"
-            ) {
-                console.log("En sortedFiltredUserStatements");
-            }
-        });
         idsToDelete.push(
             ...statementsIdToDelete(
                 sortedFiltredUserStatements as unknown as Statement[],
