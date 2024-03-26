@@ -30,6 +30,9 @@ export function dataRetriever(
                 JSON.parse(JSON.stringify(statement)),
                 path,
             );
+            if (statement.id == "524511d1-0a37-4a58-869b-9c18765e163e") {
+                console.log(path, value, "\n", statement);
+            }
             if (value !== undefined && value !== null && value !== "") {
                 if (needToBeProcessed(path, statement.verb.id)) {
                     savedData[path] = ProcessData(

@@ -152,12 +152,20 @@ function saverOtherModifiedStatements(
     currentStatement: Statement,
 ) {
     const { result } = currentStatement;
+    let newExtension = durationToExtension(
+        result!.duration!,
+        result!.duration!,
+    );
+
+    if (result?.extensions) {
+        newExtension = {
+            ...result.extensions,
+            ...newExtension,
+        };
+    }
 
     statementsDurationReformated.push(
-        addExtensionToStatement(
-            currentStatement,
-            durationToExtension(result!.duration!, result!.duration!),
-        ),
+        addExtensionToStatement(currentStatement, newExtension),
     );
 }
 
@@ -244,6 +252,7 @@ function saverFinalModifiedStatements(
     statementsDurationReformated: Statement[],
     currentStatement: Statement,
 ) {
+    const { result } = currentStatement;
     const currentDuration = convertToSeconds(
         currentStatement.result!.duration!,
     );
@@ -257,14 +266,21 @@ function saverFinalModifiedStatements(
     const currentDurationFormatted = Duration.fromObject({
         seconds: currentDuration,
     }).toFormat("mm:ss");
+
+    let newExtension = durationToExtension(
+        realDurationFormatted.toString(),
+        currentDurationFormatted,
+    );
+
+    if (result?.extensions) {
+        newExtension = {
+            ...result.extensions,
+            ...newExtension,
+        };
+    }
+
     statementsDurationReformated.push(
-        addExtensionToStatement(
-            currentStatement,
-            durationToExtension(
-                realDurationFormatted.toString(),
-                currentDurationFormatted,
-            ),
-        ),
+        addExtensionToStatement(currentStatement, newExtension),
     );
 }
 
