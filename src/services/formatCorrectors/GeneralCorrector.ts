@@ -1,5 +1,6 @@
-import { ContextActivity, Statement } from "@xapi/xapi";
+import { ContextActivity, Extensions, Statement } from "@xapi/xapi";
 import { DateTime } from "luxon";
+import { containsReordenableToSave } from "../../consts/consts";
 
 export function correctUriExtensionsGeneralFormat(statement: Statement): void {
     if (statement.result?.extensions) {
@@ -55,6 +56,45 @@ export function correctInteractionPointsUriFormat(statement: Statement): void {
             ] = value;
         }
     }
+}
+
+export function reorderExtensionsCorrector(statement: Statement) {
+    statement.result!.extensions = statementPathReordenableTransform(
+        statement.result!.extensions!,
+    );
+    return statement;
+}
+
+function statementPathReordenableTransform(extensions: Extensions): Extensions {
+    const transformedExtensions: Extensions = {};
+    const newKeys = Object.keys(containsReordenableToSave);
+
+    Object.keys(extensions).forEach((key) => {
+        const lastKeySegment = getLastKeySegment(key);
+        const foundKey = newKeys.find((newKey) => lastKeySegment === newKey);
+        if (foundKey) {
+            transformedExtensions[getTransformedKey(foundKey)] =
+                getTransformedValue(foundKey, extensions[key]);
+        }
+    });
+    return transformedExtensions;
+}
+
+function getTransformedValue(foundKey: string, value: unknown): unknown {
+    if (foundKey.includes("currentOrder")) {
+        return (value as []).join(",");
+    }
+    return value;
+}
+
+function getTransformedKey(foundKey: string): string {
+    return containsReordenableToSave[
+        foundKey as keyof typeof containsReordenableToSave
+    ];
+}
+
+function getLastKeySegment(key: string): string {
+    return key.split("/").pop() || "";
 }
 
 export function correctAvatarChangeResultExtensionUri(

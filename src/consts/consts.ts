@@ -69,8 +69,6 @@ export const fillHeaders = {
         "video_segundo_posterior_al_salto",
     "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points":
         "estado_puntos_interaccion",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame":
-        "juego_sera_continuado",
     "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words":
         "sopa_de_letras_palabras_encontradas",
     "result|response": "retroalimentacion_respuesta",
@@ -109,6 +107,11 @@ export const fillHeaders = {
 export const headerAvatarChange = [
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/from",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/to",
+];
+
+export const durationExtensions = [
+    "https://xapi.tego.iie.cl/extensions/duration",
+    "https://xapi.tego.iie.cl/extensions/real_duration",
 ];
 
 export const userTest = ["11415764-3", "17421134-7", "7381739-0", "5775798-1"];

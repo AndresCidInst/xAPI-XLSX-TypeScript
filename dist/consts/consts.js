@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.userTest = exports.headerAvatarChange = exports.fillHeaders = exports.containsReordenableToSave = exports.reduxContain = exports.headersMatches = void 0;
+exports.userTest = exports.durationExtensions = exports.headerAvatarChange = exports.fillHeaders = exports.containsReordenableToSave = exports.reduxContain = exports.headersMatches = void 0;
 exports.headersMatches = [
     "object|definition|correctResponsesPattern",
     "object|definition|choices",
@@ -54,7 +54,6 @@ exports.fillHeaders = {
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/From": "video_segundo_anterior_al_salto",
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/To": "video_segundo_posterior_al_salto",
     "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points": "estado_puntos_interaccion",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/continuationGame": "juego_sera_continuado",
     "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words": "sopa_de_letras_palabras_encontradas",
     "result|response": "retroalimentacion_respuesta",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece": "reordenable_pieza_movida",
@@ -76,5 +75,9 @@ exports.fillHeaders = {
 exports.headerAvatarChange = [
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/from",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/to",
+];
+exports.durationExtensions = [
+    "https://xapi.tego.iie.cl/extensions/duration",
+    "https://xapi.tego.iie.cl/extensions/real_duration",
 ];
 exports.userTest = ["11415764-3", "17421134-7", "7381739-0", "5775798-1"];

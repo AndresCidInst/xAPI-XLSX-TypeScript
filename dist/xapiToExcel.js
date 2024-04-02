@@ -82,6 +82,10 @@ function correctFormat(statement) {
         currentStatement["object"]["id"].includes("feedback-trivia")) {
         (0, GeneralCorrector_1.descriptionFeedbackTriviaCorrect)(statement);
     }
+    if (statement.verb.id.includes("verbs/changed-order") &&
+        String(Object(statement).object.id).includes("reordenable")) {
+        statement = (0, GeneralCorrector_1.reorderExtensionsCorrector)(statement);
+    }
     (0, GeneralCorrector_1.correctInteractionPointsUriFormat)(statement);
     (0, GeneralCorrector_1.rounDecimals)(statement);
     (0, GeneralCorrector_1.formatDurationCorrect)(statement);

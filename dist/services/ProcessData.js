@@ -5,18 +5,11 @@ const consts_1 = require("../consts/consts");
 const DataModel_1 = require("../models/DataModel");
 const ExcelServices_1 = require("./ExcelServices");
 function dataRetriever(statement, keys, sheetList) {
-    var _a;
     const savedData = new DataModel_1.DataModelImpl();
     try {
-        if (isReordenableStatement(statement) && ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions)) {
-            statement.result.extensions = statementPathReordenableTransform(statement.result.extensions);
-        }
         keys.forEach((path) => {
             const value = getValueByPath(JSON.parse(JSON.stringify(statement)), path);
-            if (statement.id == "524511d1-0a37-4a58-869b-9c18765e163e") {
-                console.log(path, value, "\n", statement);
-            }
-            if (value !== undefined && value !== null && value !== "") {
+            if (value !== undefined && value !== null) {
                 if (needToBeProcessed(path, statement.verb.id)) {
                     savedData[path] = ProcessData(value, path, sheetList, statement.verb.id);
                 }
@@ -35,30 +28,6 @@ function dataRetriever(statement, keys, sheetList) {
     return savedData;
 }
 exports.dataRetriever = dataRetriever;
-function isReordenableStatement(statement) {
-    if ("id" in statement.object) {
-        return (statement.object["id"].includes("reordenable") &&
-            statement["verb"]["id"] == "verbs/changed-order");
-    }
-    return false;
-}
-function statementPathReordenableTransform(extensions) {
-    const transformedExtensions = {};
-    const newKeys = Object.keys(consts_1.containsReordenableToSave);
-    Object.keys(extensions).forEach((key) => {
-        const keyArray = key.split("/");
-        const foundKey = newKeys.find((newKey) => keyArray[keyArray.length - 1] == newKey);
-        if (foundKey !== undefined && foundKey !== null) {
-            if (foundKey.includes("currentOrder")) {
-                transformedExtensions[consts_1.containsReordenableToSave[foundKey]] = extensions[key].join(",");
-            }
-            else {
-                transformedExtensions[consts_1.containsReordenableToSave[foundKey]] = extensions[key];
-            }
-        }
-    });
-    return transformedExtensions;
-}
 function getValueByPath(obj, path) {
     const splittedPath = path.split("|");
     let value = obj;

@@ -22,6 +22,7 @@ import {
     descriptionFeedbackTriviaCorrect,
     formatDurationCorrect,
     removeAllDomainFromUris,
+    reorderExtensionsCorrector,
     rounDecimals,
     typeActivityCmiClear,
     typeGamePressInWordSoupInsert,
@@ -99,6 +100,13 @@ function correctFormat(statement: Statement) {
         currentStatement["object"]["id"].includes("feedback-trivia")
     ) {
         descriptionFeedbackTriviaCorrect(statement);
+    }
+
+    if (
+        statement.verb.id.includes("verbs/changed-order") &&
+        String(Object(statement).object.id).includes("reordenable")
+    ) {
+        statement = reorderExtensionsCorrector(statement);
     }
 
     correctInteractionPointsUriFormat(statement);

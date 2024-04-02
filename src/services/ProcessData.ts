@@ -1,10 +1,6 @@
-import { Extensions, Statement } from "@xapi/xapi";
+import { Statement } from "@xapi/xapi";
 import { Worksheet } from "exceljs";
-import {
-    containsReordenableToSave,
-    headersMatches,
-    reduxContain,
-} from "../consts/consts";
+import { headersMatches, reduxContain } from "../consts/consts";
 import { ActivityJson } from "../models/ActivityModels";
 import { ChoiceJson } from "../models/ChoicesModels";
 import { DataModelImpl } from "../models/DataModel";
@@ -20,20 +16,12 @@ export function dataRetriever(
 ): DataModelImpl {
     const savedData: DataModelImpl = new DataModelImpl();
     try {
-        if (isReordenableStatement(statement) && statement.result?.extensions) {
-            statement.result.extensions = statementPathReordenableTransform(
-                statement.result.extensions,
-            );
-        }
         keys.forEach((path) => {
             const value = getValueByPath(
                 JSON.parse(JSON.stringify(statement)),
                 path,
             );
-            if (statement.id == "524511d1-0a37-4a58-869b-9c18765e163e") {
-                console.log(path, value, "\n", statement);
-            }
-            if (value !== undefined && value !== null && value !== "") {
+            if (value !== undefined && value !== null) {
                 if (needToBeProcessed(path, statement.verb.id)) {
                     savedData[path] = ProcessData(
                         value,
@@ -52,42 +40,6 @@ export function dataRetriever(
         console.error("Error al procesar los datos");
     }
     return savedData as unknown as DataModelImpl;
-}
-function isReordenableStatement(statement: Statement): boolean {
-    if ("id" in statement.object) {
-        return (
-            (statement.object["id"] as string).includes("reordenable") &&
-            statement["verb"]["id"] == "verbs/changed-order"
-        );
-    }
-    return false;
-}
-
-function statementPathReordenableTransform(extensions: Extensions): Extensions {
-    const transformedExtensions: Extensions = {};
-    const newKeys = Object.keys(containsReordenableToSave);
-    Object.keys(extensions).forEach((key) => {
-        const keyArray = key.split("/");
-        const foundKey = newKeys.find(
-            (newKey) => keyArray[keyArray.length - 1] == newKey,
-        );
-        if (foundKey !== undefined && foundKey !== null) {
-            if (foundKey.includes("currentOrder")) {
-                transformedExtensions[
-                    containsReordenableToSave[
-                        foundKey as keyof typeof containsReordenableToSave
-                    ]
-                ] = (extensions[key] as []).join(",");
-            } else {
-                transformedExtensions[
-                    containsReordenableToSave[
-                        foundKey as keyof typeof containsReordenableToSave
-                    ]
-                ] = extensions[key];
-            }
-        }
-    });
-    return transformedExtensions;
 }
 
 export function getValueByPath(obj: JSON, path: string) {

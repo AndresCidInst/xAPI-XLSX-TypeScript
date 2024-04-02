@@ -9,13 +9,13 @@ import {
 } from "../StatetementsCleaners";
 
 let countCalculations: number = 0;
-const initActions = Object.entries(InitFinishActions)
+const initActions: string[] = Object.entries(InitFinishActions)
     .filter(([key, value]) => key.includes("Init"))
     .map(([key, value]) => value as string);
 const finalizationActions = Object.entries(InitFinishActions)
     .filter(([key, value]) => key.includes("Finish"))
     .map(([key, value]) => value as string);
-const inActions = Object.values(InActionsVerbs);
+const inActions: string[] = Object.values(InActionsVerbs);
 let sumOfInactivityTime: number = 0;
 
 /**
@@ -94,7 +94,12 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                 statementInitVerb = "";
                 resetTimesArrays(timesOfInectivity, timesOfRetun);
                 sumOfInactivityTime = 0;
-            } else if (caseToOnlyResetArrays(currentStatement.verb.id)) {
+            } else if (
+                caseToOnlyResetArrays(
+                    currentStatement.verb.id,
+                    Object(currentStatement).object.id,
+                )
+            ) {
                 resetTimesArrays(timesOfInectivity, timesOfRetun);
             }
             pastVerb = currentStatement.verb.id;
@@ -105,8 +110,9 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
         statementsDurationReformated,
     );
     console.log(
-        "Cantidad de modificaciones necesarias realizados:",
+        "Se han realizado:",
         countCalculations,
+        "cálculos para modificaciones",
     );
     return newStatements;
 }
@@ -137,6 +143,7 @@ function modifyStatement(
         saverFinalModifiedStatements(
             statementsDurationReformated,
             currentStatement,
+            calculatedTime,
         );
         return;
     } else if (currentStatement.result?.duration != undefined) {
@@ -191,7 +198,6 @@ function navigationModifiedStatements(
             currentDuration,
             calculatedTime.toFormat("mm:ss"),
         );
-        countCalculations++;
         statementsDurationReformatted.push(
             addExtensionToStatement(
                 currentStatement,
@@ -221,11 +227,15 @@ function saverGameModifiedStatements(
     const { duration, extensions } = result;
 
     if (!calculatedTime?.seconds && duration) {
+        let newExtension = durationToExtension(duration, duration);
+        if (result?.extensions) {
+            newExtension = {
+                ...result.extensions,
+                ...newExtension,
+            };
+        }
         statementsDurationReformated.push(
-            addExtensionToStatement(
-                currentStatement,
-                durationToExtension(duration, duration),
-            ),
+            addExtensionToStatement(currentStatement, newExtension),
         );
         return;
     }
@@ -238,12 +248,18 @@ function saverGameModifiedStatements(
             currentDuration,
             calculatedTime.toFormat("mm:ss"),
         );
+        let newExtension = durationToExtension(realDuration, currentDuration);
+
+        if (result?.extensions) {
+            newExtension = {
+                ...result.extensions,
+                ...newExtension,
+            };
+        }
         countCalculations++;
+
         statementsDurationReformated.push(
-            addExtensionToStatement(
-                currentStatement,
-                durationToExtension(realDuration, currentDuration),
-            ),
+            addExtensionToStatement(currentStatement, newExtension),
         );
     }
 }
@@ -251,24 +267,33 @@ function saverGameModifiedStatements(
 function saverFinalModifiedStatements(
     statementsDurationReformated: Statement[],
     currentStatement: Statement,
+    calculedTime: Duration<boolean> | undefined,
 ) {
     const { result } = currentStatement;
     const currentDuration = convertToSeconds(
         currentStatement.result!.duration!,
     );
     const realDuration = currentDuration - sumOfInactivityTime;
-    countCalculations++;
 
-    const realDurationFormatted = Duration.fromObject({
-        seconds: realDuration,
-    }).toFormat("mm:ss");
+    let realDurationFormatted: string;
+
+    if (calculedTime == undefined) {
+        realDurationFormatted = Duration.fromObject({
+            seconds: realDuration,
+        }).toFormat("mm:ss");
+    } else {
+        const calculedRealTime = realDuration - calculedTime.seconds;
+        realDurationFormatted = Duration.fromObject({
+            second: calculedRealTime,
+        }).toFormat("mm:ss");
+    }
 
     const currentDurationFormatted = Duration.fromObject({
         seconds: currentDuration,
     }).toFormat("mm:ss");
 
     let newExtension = durationToExtension(
-        realDurationFormatted.toString(),
+        realDurationFormatted,
         currentDurationFormatted,
     );
 
@@ -282,6 +307,10 @@ function saverFinalModifiedStatements(
     statementsDurationReformated.push(
         addExtensionToStatement(currentStatement, newExtension),
     );
+
+    if (sumOfInactivityTime != 0 || calculedTime != undefined) {
+        countCalculations++;
+    }
 }
 
 /**
@@ -434,12 +463,19 @@ function finalResetCase(
     return false;
 }
 
-function caseToOnlyResetArrays(currentVerb: string): boolean {
+function caseToOnlyResetArrays(
+    currentVerb: string,
+    currentActivityId: string,
+): boolean {
     const isInActivityGameAction = Object.values(InActionsVerbs).some(
         (action) => action == currentVerb,
     );
 
-    if (isInActivityGameAction) {
+    const clues_soup_word =
+        currentActivityId.includes("sopaDeLetras") &&
+        currentActivityId.includes("clues");
+
+    if (isInActivityGameAction && !clues_soup_word) {
         return true;
     }
 
