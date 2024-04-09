@@ -109,9 +109,4 @@ export const headerAvatarChange = [
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/to",
 ];
 
-export const durationExtensions = [
-    "https://xapi.tego.iie.cl/extensions/duration",
-    "https://xapi.tego.iie.cl/extensions/real_duration",
-];
-
 export const userTest = ["11415764-3", "17421134-7", "7381739-0", "5775798-1"];

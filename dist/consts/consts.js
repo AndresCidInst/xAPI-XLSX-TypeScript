@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.userTest = exports.durationExtensions = exports.headerAvatarChange = exports.fillHeaders = exports.containsReordenableToSave = exports.reduxContain = exports.headersMatches = void 0;
+exports.userTest = exports.headerAvatarChange = exports.fillHeaders = exports.containsReordenableToSave = exports.reduxContain = exports.headersMatches = void 0;
 exports.headersMatches = [
     "object|definition|correctResponsesPattern",
     "object|definition|choices",
@@ -75,9 +75,5 @@ exports.fillHeaders = {
 exports.headerAvatarChange = [
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/from",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/to",
-];
-exports.durationExtensions = [
-    "https://xapi.tego.iie.cl/extensions/duration",
-    "https://xapi.tego.iie.cl/extensions/real_duration",
 ];
 exports.userTest = ["11415764-3", "17421134-7", "7381739-0", "5775798-1"];

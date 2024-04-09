@@ -27,7 +27,7 @@ import {
     typeActivityCmiClear,
     typeGamePressInWordSoupInsert,
 } from "./services/formatCorrectors/GeneralCorrector";
-import { separeDurationFromRealDuration } from "./services/formatCorrectors/RealDurationSeparator";
+import { separeDurationFromRealDuration } from "./services/formatCorrectors/SeparateRealDurations/RealDurationSeparator";
 import { saveCategory as getCategoryFromJson } from "./services/manipulators/CategoryManipulator";
 import { choiceMolder as getChoicesFromJson } from "./services/manipulators/ChoicesManipulators";
 import { getGroupingFromJson } from "./services/manipulators/GroupingManipulator";
