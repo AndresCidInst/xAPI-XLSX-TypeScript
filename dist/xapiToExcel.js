@@ -14,6 +14,7 @@ const exceljs_1 = require("exceljs");
 const FileProvider_1 = require("./FileProviders/FileProvider");
 const AuxiliarFiles_1 = require("./consts/AuxiliarFiles");
 const consts_1 = require("./consts/consts");
+const CsvToJsonVersionXAPI_1 = require("./services/CsvToJsonVersionXAPI/CsvToJsonVersionXAPI");
 const ExcelServices_1 = require("./services/ExcelServices");
 const ProcessData_1 = require("./services/ProcessData");
 const RequestServices_1 = require("./services/RequestServices");
@@ -28,11 +29,19 @@ const ParentManipulator_1 = require("./services/manipulators/ParentManipulator")
  * Convierte los datos de xAPI a un formato compatible con Excel y los inserta en el archivo.
  * @returns Una promesa que se resuelve cuando se han insertado los datos en el archivo.
  */
-function xapiToExcel() {
+function xapiToExcel(fromLrs, fileName) {
     return __awaiter(this, void 0, void 0, function* () {
-        const requestServices = new RequestServices_1.RequestServices();
-        // eslint-disable-next-line prefer-const
-        let statements = yield requestServices.getAllStatements();
+        let statements = [];
+        if (fromLrs) {
+            const requestServices = new RequestServices_1.RequestServices();
+            // eslint-disable-next-line prefer-const
+            statements = yield requestServices.getAllStatements();
+        }
+        else {
+            console.log("Cargando datos del archivo CSV");
+            const csvXAPI = new CsvToJsonVersionXAPI_1.CsvToJsonVersionXAPI(`data/${fileName}`);
+            statements = yield csvXAPI.getData();
+        }
         // const statements: JSON[] = getAllStatements();
         console.log("Limpiando declaraciones fallidas...");
         let newStatements = (0, StatetementsCleaners_1.clearFailedStatements)(statements);

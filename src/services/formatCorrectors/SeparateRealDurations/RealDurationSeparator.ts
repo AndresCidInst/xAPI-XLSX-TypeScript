@@ -71,7 +71,6 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                 resetTimesArrays(timesOfInectivity, timesOfRetun);
                 sumOfInactivityTime = 0;
             }
-
             if (currentStatement.verb.id != InitFinishActions.loginApp) {
                 registerActivityDuration(
                     timesOfInectivity,
@@ -82,7 +81,33 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
             }
 
             let calculatedTime: Duration | undefined = undefined;
-
+            if (currentStatement.id == "c171991a-3a86-4c5d-a365-124152d94ff5") {
+                const sumatoryTime: number = timesOfInectivity.reduce(
+                    (resultantTime, time, index) => {
+                        let closeFormattedTime: number = new Date(
+                            time,
+                        ).getTime();
+                        let entryFormattedTime: number = new Date(
+                            timesOfRetun[index],
+                        ).getTime();
+                        if (Number.isNaN(entryFormattedTime)) {
+                            entryFormattedTime = 0;
+                        }
+                        if (Number.isNaN(closeFormattedTime)) {
+                            closeFormattedTime = 0;
+                        }
+                        return (
+                            resultantTime +
+                            (entryFormattedTime - closeFormattedTime)
+                        );
+                    },
+                    0,
+                );
+                const sumatoryTimeInSecond = Math.round(sumatoryTime / 1000);
+                return Duration.fromObject({
+                    seconds: Number(sumatoryTimeInSecond ?? 0),
+                });
+            }
             if (
                 casesToCalculate(
                     statementInitVerb,
@@ -129,6 +154,18 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                 sumOfInactivityTime = 0;
                 statementInitVerb = "";
                 resetTimesArrays(timesOfInectivity, timesOfRetun);
+            }
+            if (currentStatement.id == "efd42ebc-7aea-47ef-a589-b19a59d2d01e") {
+                console.log(
+                    "Tiempo calculado",
+                    calculatedTime,
+                    "\n",
+                    "Tiempo inactividad",
+                    timesOfInectivity,
+                    "\n",
+                    "tiempo de retorno",
+                    timesOfRetun,
+                );
             }
             pastVerb = currentStatement.verb.id;
         });

@@ -1,6 +1,6 @@
 {
     "name": "xapi-excel-ts",
-    "version": "0.4.8",
+    "version": "0.4.9",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -27,6 +27,8 @@
     "dependencies": {
         "@xapi/xapi": "^2.2.5",
         "axios": "^1.6.7",
+        "convert-csv-to-json": "^2.46.0",
+        "csv-parser": "^3.0.0",
         "dotenv": "^16.4.1",
         "exceljs": "^4.4.0",
         "luxon": "^3.4.4",

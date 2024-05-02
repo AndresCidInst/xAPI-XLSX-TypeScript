@@ -20,51 +20,73 @@ class RequestServices {
         var _a;
         dotenv_1.default.config();
         this.token = process.env.TOKEN;
+        this.statements_endpoint = process.env.STATEMENTS_ENDPOINT;
         this.endpoint = process.env.ENDPOINT;
         this.version = (_a = process.env.VERSION) !== null && _a !== void 0 ? _a : "";
         this.buildHeaders();
     }
     getAllStatements() {
         return __awaiter(this, void 0, void 0, function* () {
-            var _a;
             const retrievedStatements = [];
+            let lastTimeStampFromLrs = "";
+            const latestStatement = yield this.getLastStatementsId();
+            let lastStatementFromLrs;
             let fromStatements = [];
-            console.log("Obteniendo statements...");
-            let lastStatementTimeStamp = "";
-            do {
-                if (retrievedStatements.length > 0) {
-                    lastStatementTimeStamp =
-                        (_a = retrievedStatements[retrievedStatements.length - 1]["timestamp"]) !== null && _a !== void 0 ? _a : "";
-                }
-                const statements = yield axios_1.default.get(`${this.endpoint}/statements`, {
-                    headers: this.headers,
-                    params: {
-                        ascending: "true",
-                        since: lastStatementTimeStamp,
-                    },
-                });
-                fromStatements = this.responseData(statements);
-                retrievedStatements.push(...fromStatements);
-                process.stdout.write("\r\x1B[K");
-                process.stdout.write("\rSe han obtenido " +
-                    retrievedStatements.length +
-                    " statements");
-            } while (fromStatements.length == 100);
-            this.verificationContainsStatements(retrievedStatements);
+            try {
+                do {
+                    fromStatements =
+                        yield this.fetchStatements(lastTimeStampFromLrs);
+                    retrievedStatements.push(...fromStatements);
+                    //process.stdout.write("\r\x1B[K");
+                    console.log("\rSe han obtenido " +
+                        retrievedStatements.length +
+                        " statements. Comprobando la existencia del ultimo statemnt: " +
+                        retrievedStatements.includes(latestStatement));
+                    lastStatementFromLrs =
+                        retrievedStatements[retrievedStatements.length - 1];
+                    if (new Date(lastStatementFromLrs.timestamp) >
+                        new Date(lastTimeStampFromLrs)) {
+                        console.log(lastStatementFromLrs.timestamp);
+                    }
+                    if (fromStatements.length > 0) {
+                        lastTimeStampFromLrs = lastStatementFromLrs.timestamp;
+                    }
+                } while (fromStatements.length == 100);
+                this.verificationContainsStatements(retrievedStatements);
+            }
+            catch (error) {
+                console.error("Error al obtener los statements:", error);
+                throw error;
+            }
             return JSON.parse(JSON.stringify(retrievedStatements));
         });
     }
-    getSomeStatements(numberOfStatements) {
+    fetchStatements(lastTimeStamp) {
         return __awaiter(this, void 0, void 0, function* () {
-            const statements = yield axios_1.default.get(`${this.endpoint}/statements`, {
+            const response = yield axios_1.default.get(`${this.statements_endpoint}/statements`, {
                 headers: this.headers,
                 params: {
                     ascending: "true",
-                    limit: numberOfStatements,
+                    since: lastTimeStamp,
+                    limit: 100,
                 },
             });
-            return this.responseData(statements);
+            return this.responseData(response);
         });
+    }
+    getLastStatementsId() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const lastStatements = yield axios_1.default.get(`${this.endpoint}/api/connection/statement`, {
+                headers: this.headers,
+                params: {
+                    sort: '{"timestamp": -1}',
+                },
+            });
+            return lastStatements.data.edges["0"].node.statement;
+        });
+    }
+    compareDates(currentTime, lastTimeSaved) {
+        return lastTimeSaved.includes(currentTime);
     }
     buildHeaders() {
         this.headers = {

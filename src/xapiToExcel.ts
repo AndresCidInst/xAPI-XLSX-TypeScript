@@ -7,6 +7,7 @@ import { Activity, ActivityJson } from "./models/ActivityModels";
 import { Choice } from "./models/ChoicesModels";
 import { DataModelImpl } from "./models/DataModel";
 import { Parent, ParentJson } from "./models/ParentModels";
+import { CsvToJsonVersionXAPI } from "./services/CsvToJsonVersionXAPI/CsvToJsonVersionXAPI";
 import { createExcelFile, saveMainDataInExcel } from "./services/ExcelServices";
 import { dataRetriever, getValueByPath } from "./services/ProcessData";
 import { RequestServices } from "./services/RequestServices";
@@ -37,10 +38,20 @@ import { parentDataMolder as getParentFromJson } from "./services/manipulators/P
  * Convierte los datos de xAPI a un formato compatible con Excel y los inserta en el archivo.
  * @returns Una promesa que se resuelve cuando se han insertado los datos en el archivo.
  */
-export async function xapiToExcel() {
-    const requestServices = new RequestServices();
-    // eslint-disable-next-line prefer-const
-    let statements: JSON[] = await requestServices.getAllStatements();
+export async function xapiToExcel(
+    fromLrs: boolean,
+    fileName: string | undefined,
+) {
+    let statements: JSON[] = [];
+    if (fromLrs) {
+        const requestServices = new RequestServices();
+        // eslint-disable-next-line prefer-const
+        statements = await requestServices.getAllStatements();
+    } else {
+        console.log("Cargando datos del archivo CSV");
+        const csvXAPI = new CsvToJsonVersionXAPI(`data/${fileName}`);
+        statements = await csvXAPI.getData();
+    }
     // const statements: JSON[] = getAllStatements();
     console.log("Limpiando declaraciones fallidas...");
     let newStatements = clearFailedStatements(statements);

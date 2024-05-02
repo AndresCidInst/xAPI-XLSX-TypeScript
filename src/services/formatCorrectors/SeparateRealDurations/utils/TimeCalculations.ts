@@ -9,17 +9,26 @@ import { InitFinishActions } from "../../../../consts/ActionsEnums/initFinishAct
  * @param entryTimes Los tiempos de entrada en formato de cadena.
  * @returns La duración calculada en segundos.
  */
-export function timeCalculer(
-    closeTime: string[],
+export function calculateDuration(
+    closeTimes: string[],
     entryTimes: string[],
 ): Duration {
-    const sumatoryTime = closeTime.reduce((resultantTime, time, index) => {
-        const closeFormattedTime = new Date(time).getTime();
-        const entryFormattedTime = new Date(entryTimes[index]).getTime();
-        return resultantTime + (entryFormattedTime - closeFormattedTime);
-    }, 0);
-    const sumatoryTimeInSecond = Math.round(sumatoryTime / 1000);
-    return Duration.fromObject({ seconds: Number(sumatoryTimeInSecond ?? 0) });
+    const totalDurationInMillis = closeTimes.reduce(
+        (total, closeTime, index) => {
+            const closeTimeInMillis = parseTimeToMillis(closeTime);
+            const entryTimeInMillis = parseTimeToMillis(entryTimes[index]);
+            return total + (entryTimeInMillis - closeTimeInMillis);
+        },
+        0,
+    );
+
+    const totalDurationInSeconds = Math.round(totalDurationInMillis / 1000);
+    return Duration.fromObject({ seconds: totalDurationInSeconds });
+}
+
+function parseTimeToMillis(time: string): number {
+    const timeInMillis = new Date(time).getTime();
+    return Number.isNaN(timeInMillis) ? 0 : timeInMillis;
 }
 
 /**
@@ -51,7 +60,7 @@ export function separeDurationCases(
         inactiveTImesRegistrated &&
         (isNavigation || isFinishAction || isGameAction)
     ) {
-        return timeCalculer(timesOfInectivity, timesOfRetun);
+        return calculateDuration(timesOfInectivity, timesOfRetun);
     }
 
     return undefined;
