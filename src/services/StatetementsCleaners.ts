@@ -7,23 +7,26 @@ export function clearFailedStatements(statements: JSON[]): JSON[] {
     statements = clearEntryAndClosingFailedStatements(statements);
     return statements.filter((statement) => {
         const currentStatement = Object(statement);
+        //Verifica que no hayan palabras 'Topics'
         if (currentStatement.verb.id == "verbs/went-to") {
             return !currentStatement["object"]["id"].includes("Topics");
         }
-        // if (
-        //     (currentStatement.verb.id == "verbs/attempted" ||
-        //         currentStatement.verb.id == "verbs/found") &&
-        //     currentStatement.object.id.includes("sopaDeLetras") &&
-        //     currentStatement.result.response
-        // ) {
-        //     const lastWordResponse: string =
-        //         currentStatement.result.response.trim().split(/\s+/).pop() ||
-        //         "";
-        //     if (/^[A-Z]+$/.test(lastWordResponse) == false) {
-        //         console.log(lastWordResponse);
-        //     }
-        //     return /^[A-Z]+$/.test(lastWordResponse);
-        // }
+
+        //Verifricq que en el response de las respuestas hayan letras y no texto vacío
+        if (
+            (currentStatement.verb.id == "verbs/attempted" ||
+                currentStatement.verb.id == "verbs/found") &&
+            currentStatement.object.id.includes("sopaDeLetras") &&
+            currentStatement.result.response
+        ) {
+            const lastWordResponse: string =
+                currentStatement.result.response.trim().split(/\s+/).pop() ||
+                "";
+            if (/^[A-Za-z]+$/.test(lastWordResponse) == false) {
+                console.log(lastWordResponse);
+            }
+            return /^[A-Za-z]+$/.test(lastWordResponse);
+        }
         // if (currentStatement.id == "bd337201-dfdc-4d41-a2a9-56bf311263f4") {
         //     console.log(currentStatement);
         //     return false;

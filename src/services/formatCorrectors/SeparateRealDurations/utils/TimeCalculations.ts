@@ -55,7 +55,6 @@ export function separeDurationCases(
     const isFinishAction: boolean =
         statement.verb.id == InitFinishActions.gameFinish ||
         statement.verb.id == InitFinishActions.videoFinish;
-
     if (
         inactiveTImesRegistrated &&
         (isNavigation || isFinishAction || isGameAction)

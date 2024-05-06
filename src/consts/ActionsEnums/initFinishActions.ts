@@ -7,4 +7,5 @@ export enum InitFinishActions {
     closeApp = "verbs/close",
     entryApp = "verbs/re-entered",
     loginApp = "verbs/logged-in",
+    viewedAction = "verbs/viewed",
 }

@@ -9,6 +9,8 @@ import {
 } from "./DurationUtils";
 import { addExtensionToStatement } from "./StatementReformater";
 
+export let totalMidifications: number = 0;
+
 export function modifyStatement(
     calculatedTime: Duration<boolean> | undefined,
     statementsDurationReformated: Statement[],
@@ -83,8 +85,10 @@ function navigationModifiedStatements(
         "https://xapi.tego.iie.cl/extensions/time-between-pages";
     const extensions = currentStatement.result?.extensions;
     const currentDuration = extensions?.[timeExtensionKey];
-
-    if (!calculatedTime?.seconds && currentDuration) {
+    if (
+        (calculatedTime == undefined || calculatedTime.seconds < 0) &&
+        currentDuration
+    ) {
         statementsDurationReformatted.push(
             addExtensionToStatement(
                 currentStatement,
@@ -92,18 +96,11 @@ function navigationModifiedStatements(
             ),
         );
     } else if (sumOfInactivityTime != 0) {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const realDuration = subtractTimes(
             currentDuration,
             Duration.fromObject({ second: sumOfInactivityTime }).toFormat(
                 "mm:ss",
             ),
-        );
-    }
-    if (calculatedTime && currentDuration) {
-        const realDuration = subtractTimes(
-            currentDuration,
-            calculatedTime.toFormat("mm:ss"),
         );
         statementsDurationReformatted.push(
             addExtensionToStatement(
@@ -111,6 +108,22 @@ function navigationModifiedStatements(
                 durationToExtensionNavegation(realDuration, currentDuration),
             ),
         );
+        totalMidifications++;
+    } else if (calculatedTime && currentDuration) {
+        const realDuration = subtractTimes(
+            currentDuration,
+            calculatedTime.toFormat("mm:ss"),
+        );
+        statementsDurationReformatted.push(
+            addExtensionToStatement(
+                currentStatement,
+                durationToExtensionNavegation(
+                    realDuration.includes("-") ? currentDuration : realDuration,
+                    currentDuration,
+                ),
+            ),
+        );
+        totalMidifications++;
     }
 }
 
@@ -166,6 +179,7 @@ function saverGameModifiedStatements(
         statementsDurationReformated.push(
             addExtensionToStatement(currentStatement, newExtension),
         );
+        totalMidifications++;
     }
 }
 
@@ -192,6 +206,10 @@ function saverFinalModifiedStatements(
         realDurationFormatted = Duration.fromObject({
             second: calculedRealTime,
         }).toFormat("mm:ss");
+    }
+
+    if (calculedTime != undefined || sumOfInactivityTime != 0) {
+        totalMidifications++;
     }
 
     const currentDurationFormatted = Duration.fromObject({
