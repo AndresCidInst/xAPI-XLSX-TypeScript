@@ -7,9 +7,12 @@ export function clearFailedStatements(statements: JSON[]): JSON[] {
     statements = clearEntryAndClosingFailedStatements(statements);
     return statements.filter((statement) => {
         const currentStatement = Object(statement);
+        //Verifica que no hayan palabras 'Topics'
         if (currentStatement.verb.id == "verbs/went-to") {
             return !currentStatement["object"]["id"].includes("Topics");
         }
+
+        //Verifricq que en el response de las respuestas hayan letras y no texto vacío
         if (
             (currentStatement.verb.id == "verbs/attempted" ||
                 currentStatement.verb.id == "verbs/found") &&
@@ -19,11 +22,15 @@ export function clearFailedStatements(statements: JSON[]): JSON[] {
             const lastWordResponse: string =
                 currentStatement.result.response.trim().split(/\s+/).pop() ||
                 "";
-            return /^[A-Z]+$/.test(lastWordResponse);
+            if (/^[A-Za-z]+$/.test(lastWordResponse) == false) {
+                console.log(lastWordResponse);
+            }
+            return /^[A-Za-z]+$/.test(lastWordResponse);
         }
-        if (currentStatement.id == "bd337201-dfdc-4d41-a2a9-56bf311263f4") {
-            return false;
-        }
+        // if (currentStatement.id == "bd337201-dfdc-4d41-a2a9-56bf311263f4") {
+        //     console.log(currentStatement);
+        //     return false;
+        // }
         return true;
     });
 }
@@ -59,16 +66,7 @@ function clearEntryAndClosingFailedStatements(statements: JSON[]) {
     const idsToDelete: string[] = [];
     users.forEach((user) => {
         const userStatements = obtainStatementsByActor(statements, user);
-        const filtredUserStatements = userStatements.filter((statement) => {
-            const currentStatement = Object(statement);
-            if (currentStatement.object.definition.type == undefined) {
-                return false;
-            }
-            return currentStatement.object.definition.type.includes(
-                "app-lifecycle",
-            );
-        });
-        const sortedFiltredUserStatements = filtredUserStatements.sort(
+        const sortedFiltredUserStatements = userStatements.sort(
             (first, second) =>
                 new Date(Object(first).timestamp).getTime() -
                 new Date(Object(second).timestamp).getTime(),
@@ -105,7 +103,6 @@ export function obtainStatementsByActor(
 function statementsIdToDelete(statements: Statement[]): string[] {
     const idsToDelete: string[] = [];
     let prevStatement: Statement | null = null;
-
     statements.forEach((currentStatement) => {
         if (prevStatement) {
             compareData(
@@ -130,19 +127,17 @@ function compareData(
     currentVerbId: string,
     idsToDelete: string[],
 ): void {
-    // Definir si es una acción de ingreso
     const isCurrentIngreso =
         currentVerbId.includes("logged-in") ||
         currentVerbId.includes("re-entered");
     const isPreviousIngreso =
         prevVerbId.includes("logged-in") || prevVerbId.includes("re-entered");
 
-    // Definir si es una acción de salida
     const isCurrentSalida = currentVerbId.includes("close");
     const isPreviousSalida = prevVerbId.includes("close");
 
-    // Regla 1: Si ambos statements son de salida, se elimina el statement previo
     if (isCurrentSalida && isPreviousSalida) {
+        // Regla 1: Si ambos statements son de salida, se elimina el statement previo
         idsToDelete.push(prevStatementId);
     }
     //Regla 2: Si ambos statements son de ingreso, se elimina el statement actual

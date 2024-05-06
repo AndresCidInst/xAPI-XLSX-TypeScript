@@ -43,26 +43,16 @@ export function registerActivityDuration(
 }
 
 export function previusResetCase(
-    initialAction: string,
-    pastVerb: string,
-    finishActions: string[],
     currentVerb: string,
+    inActions: string[],
+    pastVerb: string,
 ) {
     if (
-        (initialAction == InitFinishActions.navigation ||
-            currentVerb == "verbs/viewed") &&
-        pastVerb == InitFinishActions.loginApp
+        currentVerb == InitFinishActions.navigation &&
+        inActions.some((action) => action == pastVerb)
     ) {
         return true;
     }
-
-    if (
-        finishActions.some((action) => action == pastVerb) &&
-        initialAction != InitFinishActions.navigation
-    ) {
-        return true;
-    }
-
     return false;
 }
 
@@ -74,31 +64,35 @@ export function previusResetCase(
  * @returns Devuelve true si se debe reiniciar el caso, de lo contrario devuelve false.
  */
 export function finalResetCase(
-    initialAction: string,
-    currentAction: string,
+    currentVerb: string,
     initActions: string[],
     timesOfInectivity: string[],
     timesOfRetun: string[],
-    currentVerb: string,
+    pastVerb: string,
 ): boolean {
+    if (initActions.some((action) => action == currentVerb)) {
+        return true;
+    }
+
+    if (currentVerb == InitFinishActions.gameFinish) {
+        return true;
+    }
+
+    if (currentVerb == InitFinishActions.loginApp) {
+        return true;
+    }
+
     if (
-        initialAction == InitFinishActions.navigation &&
-        InitFinishActions.loginApp == currentVerb
+        currentVerb == InitFinishActions.navigation &&
+        pastVerb == InitFinishActions.videoFinish
     ) {
         return true;
     }
 
     if (
-        currentAction == InitFinishActions.navigation &&
+        currentVerb == InitFinishActions.navigation &&
         timesOfInectivity.length > 0 &&
         timesOfRetun.length > 0
-    ) {
-        return true;
-    }
-
-    if (
-        initialAction == InitFinishActions.navigation &&
-        initActions.some((action) => action == currentAction)
     ) {
         return true;
     }
@@ -111,6 +105,7 @@ function caseIsntSoupWordClues(currentActivityId: string) {
         currentActivityId.includes("clues")
     );
 }
+
 export function caseToOnlyResetArrays(
     currentVerb: string,
     currentActivityId: string,
@@ -127,36 +122,38 @@ export function caseToOnlyResetArrays(
 }
 
 export function casesToCalculate(
-    initialAction: string,
-    finalAction: string,
-    initActions: string[],
+    currentAction: string,
+    currentObjectId: string,
     timesOfInectivity: string[],
     timesOfRetun: string[],
+    suumOfInactivityTime: number,
     inActions: string[],
 ): boolean {
+    const emptyArrays =
+        timesOfInectivity.length == 0 &&
+        timesOfRetun.length == 0 &&
+        suumOfInactivityTime == 0;
+
+    const isCluesSoupWord = caseIsntSoupWordClues(currentObjectId);
+
     const toNavegation =
-        finalAction == InitFinishActions.navigation &&
+        currentAction == InitFinishActions.navigation &&
         timesOfInectivity.length > 0 &&
         timesOfRetun.length > 0;
     const finshedActivity =
-        initActions.some((action) => action == initialAction) &&
-        (finalAction == InitFinishActions.gameFinish ||
-            finalAction == InitFinishActions.videoFinish);
-    const inActionActivity = inActions.some((action) => action == finalAction);
+        currentAction == InitFinishActions.gameFinish ||
+        currentAction == InitFinishActions.videoFinish;
+    const inActionActivity = inActions.some(
+        (action) => action == currentAction,
+    );
 
-    if (toNavegation) {
-        return true;
-    }
-
-    if (finshedActivity) {
-        return true;
-    }
-
-    if (inActionActivity) {
-        return true;
-    }
-
-    return false;
+    return (
+        toNavegation ||
+        finshedActivity ||
+        inActionActivity ||
+        isCluesSoupWord ||
+        !emptyArrays
+    );
 }
 
 export function caseToAddValueToInitVerb(

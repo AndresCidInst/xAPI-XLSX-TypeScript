@@ -16,7 +16,10 @@ import {
     registerActivityDuration,
 } from "./utils/ActivityDuration";
 import { resetTimesArrays } from "./utils/ArrayHelpers";
-import { modifyStatement } from "./utils/StatementModifiers";
+import {
+    modifyStatement,
+    totalMidifications,
+} from "./utils/StatementModifiers";
 import { replaceStatements } from "./utils/StatementReformater";
 import { separeDurationCases } from "./utils/TimeCalculations";
 
@@ -40,6 +43,7 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
 
     users.forEach((user) => {
         let statementInitVerb: string = "";
+        let pastInicialVerb: string = "";
         let pastVerb: string = "";
         const timesOfInectivity: string[] = [];
         const timesOfRetun: string[] = [];
@@ -58,38 +62,31 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                     inActions,
                 )
             ) {
+                pastInicialVerb = statementInitVerb;
                 statementInitVerb = currentStatement.verb.id;
             }
             if (
-                previusResetCase(
-                    statementInitVerb,
-                    pastVerb,
-                    finishActions,
-                    currentStatement.verb.id,
-                )
+                previusResetCase(currentStatement.verb.id, inActions, pastVerb)
             ) {
                 resetTimesArrays(timesOfInectivity, timesOfRetun);
                 sumOfInactivityTime = 0;
             }
 
-            if (currentStatement.verb.id != InitFinishActions.loginApp) {
-                registerActivityDuration(
-                    timesOfInectivity,
-                    timesOfRetun,
-                    currentStatement,
-                    statementInitVerb,
-                );
-            }
+            registerActivityDuration(
+                timesOfInectivity,
+                timesOfRetun,
+                currentStatement,
+                statementInitVerb,
+            );
 
             let calculatedTime: Duration | undefined = undefined;
-
             if (
                 casesToCalculate(
-                    statementInitVerb,
                     currentStatement.verb.id,
-                    initActions,
+                    Object(currentStatement).object.id,
                     timesOfInectivity,
                     timesOfRetun,
+                    sumOfInactivityTime,
                     inActions,
                 )
             ) {
@@ -100,6 +97,7 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                     inActions,
                 );
             }
+
             sumOfInactivityTime = modifyStatement(
                 calculatedTime,
                 statementsDurationReformated,
@@ -118,12 +116,11 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                 resetTimesArrays(timesOfInectivity, timesOfRetun);
             } else if (
                 finalResetCase(
-                    statementInitVerb,
                     currentStatement.verb.id,
                     initActions,
                     timesOfInectivity,
                     timesOfRetun,
-                    currentStatement.verb.id,
+                    pastVerb,
                 )
             ) {
                 sumOfInactivityTime = 0;
@@ -133,14 +130,16 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
             pastVerb = currentStatement.verb.id;
         });
     });
+
     const newStatements = replaceStatements(
         statements,
         statementsDurationReformated,
     );
     console.log(
         "Se han realizado:",
-        newStatements.countCalculations,
+        totalMidifications,
         "cálculos para modificaciones",
     );
+
     return newStatements.updatedStatements;
 }

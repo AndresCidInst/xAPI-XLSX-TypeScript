@@ -109,4 +109,23 @@ export const headerAvatarChange = [
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/to",
 ];
 
-export const userTest = ["11415764-3", "17421134-7", "7381739-0", "5775798-1"];
+export const obligatoryAttibutesStatements = [
+    "id",
+    "actor",
+    "verb",
+    "object",
+    "context",
+    "result",
+    "timestamp",
+    "stored",
+];
+
+export const attributesToTransform = [
+    "actor",
+    "verb",
+    "object",
+    "context",
+    "result",
+];
+
+export const userTest = ["11415764-3", "17421134-7", "19306223-7"];
