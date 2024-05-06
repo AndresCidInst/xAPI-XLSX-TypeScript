@@ -20,6 +20,7 @@ const ProcessData_1 = require("./services/ProcessData");
 const RequestServices_1 = require("./services/RequestServices");
 const StatetementsCleaners_1 = require("./services/StatetementsCleaners");
 const GeneralCorrector_1 = require("./services/formatCorrectors/GeneralCorrector");
+const RefactorSwipCardsSuccess_1 = require("./services/formatCorrectors/RefactorSwipCardsSuccess/RefactorSwipCardsSuccess");
 const RealDurationSeparator_1 = require("./services/formatCorrectors/SeparateRealDurations/RealDurationSeparator");
 const CategoryManipulator_1 = require("./services/manipulators/CategoryManipulator");
 const ChoicesManipulators_1 = require("./services/manipulators/ChoicesManipulators");
@@ -60,6 +61,7 @@ function refactorStatementsFormatsAndData(statements) {
         correctFormat(statement);
     }
     statements = (0, RealDurationSeparator_1.separeDurationFromRealDuration)(statements);
+    statements = JSON.parse(JSON.stringify((0, RefactorSwipCardsSuccess_1.refactorSwipCardsSuccess)(statements)));
     return statements;
 }
 /**

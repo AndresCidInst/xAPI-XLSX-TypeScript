@@ -28,6 +28,7 @@ import {
     typeActivityCmiClear,
     typeGamePressInWordSoupInsert,
 } from "./services/formatCorrectors/GeneralCorrector";
+import { refactorSwipCardsSuccess } from "./services/formatCorrectors/RefactorSwipCardsSuccess/RefactorSwipCardsSuccess";
 import { separeDurationFromRealDuration } from "./services/formatCorrectors/SeparateRealDurations/RealDurationSeparator";
 import { saveCategory as getCategoryFromJson } from "./services/manipulators/CategoryManipulator";
 import { choiceMolder as getChoicesFromJson } from "./services/manipulators/ChoicesManipulators";
@@ -69,6 +70,11 @@ function refactorStatementsFormatsAndData(statements: JSON[]): JSON[] {
         correctFormat(statement as unknown as Statement);
     }
     statements = separeDurationFromRealDuration(statements);
+    statements = JSON.parse(
+        JSON.stringify(
+            refactorSwipCardsSuccess(statements as unknown[] as Statement[]),
+        ),
+    );
     return statements;
 }
 
