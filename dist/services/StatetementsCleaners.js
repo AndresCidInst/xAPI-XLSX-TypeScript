@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.obtainStatementsByActor = exports.groupingByActor = exports.clearFailedStatements = void 0;
+const initFinishActions_1 = require("../consts/ActionsEnums/initFinishActions");
 const consts_1 = require("../consts/consts");
 function clearFailedStatements(statements) {
     statements = clearTestUsers(statements);
@@ -77,20 +78,29 @@ exports.obtainStatementsByActor = obtainStatementsByActor;
 function statementsIdToDelete(statements) {
     const idsToDelete = [];
     let prevStatement = null;
+    let beforePreviousVerbId = "";
     statements.forEach((currentStatement) => {
+        var _a;
         if (prevStatement) {
-            compareData(currentStatement.id, prevStatement.id, prevStatement.verb.id, currentStatement.verb.id, idsToDelete);
+            compareData(currentStatement.id, prevStatement.id, prevStatement.verb.id, currentStatement.verb.id, idsToDelete, beforePreviousVerbId);
         }
+        beforePreviousVerbId = (_a = prevStatement === null || prevStatement === void 0 ? void 0 : prevStatement.verb.id) !== null && _a !== void 0 ? _a : "";
         prevStatement = currentStatement;
     });
     return idsToDelete;
 }
-function compareData(currentStatementId, prevStatementId, prevVerbId, currentVerbId, idsToDelete) {
+function compareData(currentStatementId, prevStatementId, prevVerbId, currentVerbId, idsToDelete, beforePreviousVerbId) {
     const isCurrentIngreso = currentVerbId.includes("logged-in") ||
         currentVerbId.includes("re-entered");
     const isPreviousIngreso = prevVerbId.includes("logged-in") || prevVerbId.includes("re-entered");
     const isCurrentSalida = currentVerbId.includes("close");
     const isPreviousSalida = prevVerbId.includes("close");
+    const isCloseVideoPattern = isCurrentIngreso &&
+        beforePreviousVerbId == initFinishActions_1.InitFinishActions.closeApp &&
+        currentVerbId.includes("paused");
+    if (isCloseVideoPattern) {
+        console.log("Si estoy aca");
+    }
     if (isCurrentSalida && isPreviousSalida) {
         // Regla 1: Si ambos statements son de salida, se elimina el statement previo
         idsToDelete.push(prevStatementId);
@@ -99,11 +109,18 @@ function compareData(currentStatementId, prevStatementId, prevVerbId, currentVer
     else if (isCurrentIngreso && isPreviousIngreso) {
         idsToDelete.push(currentStatementId);
     }
-    // Regla 3: Si el statement previo es de salida y el actual no es de ingreso
+    //Regla 3: Si no sigue el patron 'Cierre inesperado de un video'
+    //En donde, por funcionamiento de la libreria de video de la app.
+    // Al cerrar inesprada mente la APP en medio de la visualiacion de un video
+    // Este gatilla primero la salida de la APP que la pausa del video
+    else if (!isCloseVideoPattern) {
+        idsToDelete.push(prevStatementId);
+    }
+    // Regla 4: Si el statement previo es de salida y el actual no es de ingreso
     else if (isPreviousSalida && !isCurrentIngreso) {
         idsToDelete.push(prevStatementId);
     }
-    // Regla 4: Si el statement actual es de ingreso y el previo no es de salida
+    // Regla 5: Si el statement actual es de ingreso y el previo no es de salida
     else if (isCurrentIngreso && !isPreviousSalida) {
         idsToDelete.push(currentStatementId);
     }

@@ -2,7 +2,7 @@ import { Statement } from "@xapi/xapi";
 import {
     groupingByActor,
     obtainStatementsByActor,
-} from "../../StatetementsCleaners";
+} from "../../CleanersStatements/utils";
 import { groupingSwipCardsStatements } from "./utils/SwipCardsUtils";
 
 export function refactorSwipCardsSuccess(statements: Statement[]) {
@@ -17,9 +17,14 @@ export function refactorSwipCardsSuccess(statements: Statement[]) {
         ) as unknown[] as Statement[];
         const swipCardsStatements: Statement[] =
             groupingSwipCardsStatements(userStatements);
-        totalReformedStatements.concat(reformatStatements(swipCardsStatements));
+        const newReformatedStatements = reformatStatements(swipCardsStatements);
+        totalReformedStatements.push(...newReformatedStatements);
     }
-    return replaceStatements(statements, totalReformedStatements);
+    const newStatements: Statement[] = replaceStatements(
+        statements,
+        totalReformedStatements,
+    );
+    return newStatements;
 }
 
 function reformatStatements(swipCardsStatements: Statement[]): Statement[] {
@@ -27,7 +32,6 @@ function reformatStatements(swipCardsStatements: Statement[]): Statement[] {
     let beforePoints: number = 0;
     swipCardsStatements.forEach((statement) => {
         switch (statement.verb.id) {
-            case "verbs/played":
             case "verbs/initialized": {
                 beforePoints = 0;
                 break;
@@ -52,10 +56,15 @@ function replaceStatements(
     statements: Statement[],
     reformatedStatements: Statement[],
 ): Statement[] {
-    return statements.map((statement) => {
+    const updatedStatements: Statement[] = statements.map((statement) => {
         const newStatement = reformatedStatements.find(
-            (newStmt) => Object(newStmt).id == Object(statement).id,
+            (reformatedStatement) => reformatedStatement.id == statement.id,
         );
-        return newStatement ? newStatement : statement;
+        if (newStatement) {
+            return newStatement;
+        }
+        return statement;
     });
+
+    return updatedStatements;
 }

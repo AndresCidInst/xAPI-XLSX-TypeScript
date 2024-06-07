@@ -14,11 +14,11 @@ const exceljs_1 = require("exceljs");
 const FileProvider_1 = require("./FileProviders/FileProvider");
 const AuxiliarFiles_1 = require("./consts/AuxiliarFiles");
 const consts_1 = require("./consts/consts");
+const StatetementsCleaners_1 = require("./services/CleanersStatements/StatetementsCleaners");
 const CsvToJsonVersionXAPI_1 = require("./services/CsvToJsonVersionXAPI/CsvToJsonVersionXAPI");
 const ExcelServices_1 = require("./services/ExcelServices");
 const ProcessData_1 = require("./services/ProcessData");
 const RequestServices_1 = require("./services/RequestServices");
-const StatetementsCleaners_1 = require("./services/StatetementsCleaners");
 const GeneralCorrector_1 = require("./services/formatCorrectors/GeneralCorrector");
 const RefactorSwipCardsSuccess_1 = require("./services/formatCorrectors/RefactorSwipCardsSuccess/RefactorSwipCardsSuccess");
 const RealDurationSeparator_1 = require("./services/formatCorrectors/SeparateRealDurations/RealDurationSeparator");
@@ -84,6 +84,9 @@ function correctFormat(statement) {
     if (currentStatement.verb.id.includes("pressed") &&
         currentStatement.object.id.includes("sopaDeLetras")) {
         (0, GeneralCorrector_1.typeGamePressInWordSoupInsert)(statement);
+        if (currentStatement.object.id.includes("unlockWord")) {
+            (0, GeneralCorrector_1.trueSuccessToUnlockWord)(statement);
+        }
     }
     if (Object(statement)["object"]["id"] === "activities/profile/avatars" &&
         ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions)) {

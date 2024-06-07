@@ -9,3 +9,9 @@ out
 
 #Carpeta con el codigo compilado
 dist
+
+#modulos
+node_modules
+
+#configuraciones
+.vscode

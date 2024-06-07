@@ -264,6 +264,10 @@ function formatDurationBetweenPages(statement: Statement): void {
     }
 }
 
+export function trueSuccessToUnlockWord(statement: Statement): void {
+    statement.result!.success = true;
+}
+
 /**
  * Formatea la duración actual en un formato específico.
  *

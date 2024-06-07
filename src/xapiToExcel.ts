@@ -7,11 +7,11 @@ import { Activity, ActivityJson } from "./models/ActivityModels";
 import { Choice } from "./models/ChoicesModels";
 import { DataModelImpl } from "./models/DataModel";
 import { Parent, ParentJson } from "./models/ParentModels";
+import { clearFailedStatements } from "./services/CleanersStatements/StatetementsCleaners";
 import { CsvToJsonVersionXAPI } from "./services/CsvToJsonVersionXAPI/CsvToJsonVersionXAPI";
 import { createExcelFile, saveMainDataInExcel } from "./services/ExcelServices";
 import { dataRetriever, getValueByPath } from "./services/ProcessData";
 import { RequestServices } from "./services/RequestServices";
-import { clearFailedStatements } from "./services/StatetementsCleaners";
 import {
     compareDates,
     correctAvatarChangeResultExtensionUri,
@@ -25,6 +25,7 @@ import {
     removeAllDomainFromUris,
     reorderExtensionsCorrector,
     rounDecimals,
+    trueSuccessToUnlockWord,
     typeActivityCmiClear,
     typeGamePressInWordSoupInsert,
 } from "./services/formatCorrectors/GeneralCorrector";
@@ -103,6 +104,9 @@ function correctFormat(statement: Statement) {
         currentStatement.object.id.includes("sopaDeLetras")
     ) {
         typeGamePressInWordSoupInsert(statement);
+        if (currentStatement.object.id.includes("unlockWord")) {
+            trueSuccessToUnlockWord(statement);
+        }
     }
 
     if (

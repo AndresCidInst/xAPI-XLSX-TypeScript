@@ -6,7 +6,7 @@ import { InitFinishActions } from "../../../consts/ActionsEnums/initFinishAction
 import {
     groupingByActor,
     obtainStatementsByActor,
-} from "../../StatetementsCleaners";
+} from "../../CleanersStatements/utils";
 import {
     caseToAddValueToInitVerb,
     caseToOnlyResetArrays,
