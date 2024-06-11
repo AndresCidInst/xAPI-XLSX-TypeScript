@@ -24,10 +24,6 @@ function clearFailedStatements(statements) {
             }
             return /^[A-Za-z]+$/.test(lastWordResponse);
         }
-        // if (currentStatement.id == "bd337201-dfdc-4d41-a2a9-56bf311263f4") {
-        //     console.log(currentStatement);
-        //     return false;
-        // }
         return true;
     });
 }
