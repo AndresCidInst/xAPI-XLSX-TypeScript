@@ -59,7 +59,6 @@ export async function xapiToExcel(
         const csvXAPI = new CsvToJsonVersionXAPI(`data/${fileName}`);
         statements = await csvXAPI.getData();
     }
-    // const statements: JSON[] = getAllStatements();
     console.log("Limpiando declaraciones fallidas...");
     let newStatements = clearFailedStatements(statements);
     console.log("Declaraciones fallidas limpiadas ✅.");
@@ -272,11 +271,6 @@ function formatDurations(statement: Statement) {
                 "https://xapi.tego.iie.cl/extensions/real_duration"
             ].includes("-")
         ) {
-            console.log(
-                extensiones[
-                    "https://xapi.tego.iie.cl/extensions/real_duration"
-                ],
-            );
             tiempoActual = tiempoActual.replace("-", "");
         }
         let nuevoFormatoDuracion = convertToSeconds(tiempoActual).toString();
@@ -285,11 +279,11 @@ function formatDurations(statement: Statement) {
                 "https://xapi.tego.iie.cl/extensions/real_duration"
             ].includes("-")
         ) {
-            nuevoFormatoDuracion = "-" + nuevoFormatoDuracion;
+            nuevoFormatoDuracion = nuevoFormatoDuracion.replace("-", "");
         }
         statement.result!.extensions![
             "https://xapi.tego.iie.cl/extensions/real_duration"
-        ] = nuevoFormatoDuracion;
+        ] = nuevoFormatoDuracion == "0" ? "1" : nuevoFormatoDuracion;
     }
     return statement;
 }
