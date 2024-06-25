@@ -1,6 +1,6 @@
 {
     "name": "xapi-excel-ts",
-    "version": "0.6.2",
+    "version": "1.0.1",
     "description": "",
     "main": "index.js",
     "scripts": {

@@ -16,12 +16,14 @@ const AuxiliarFiles_1 = require("./consts/AuxiliarFiles");
 const consts_1 = require("./consts/consts");
 const StatetementsCleaners_1 = require("./services/CleanersStatements/StatetementsCleaners");
 const CsvToJsonVersionXAPI_1 = require("./services/CsvToJsonVersionXAPI/CsvToJsonVersionXAPI");
+const ProcessData_1 = require("./services/DataProcessor/ProcessData");
+const extraColumnsAdders_1 = require("./services/DataProcessor/extraColumnsAdders");
 const ExcelServices_1 = require("./services/ExcelServices");
-const ProcessData_1 = require("./services/ProcessData");
 const RequestServices_1 = require("./services/RequestServices");
 const GeneralCorrector_1 = require("./services/formatCorrectors/GeneralCorrector");
 const RefactorSwipCardsSuccess_1 = require("./services/formatCorrectors/RefactorSwipCardsSuccess/RefactorSwipCardsSuccess");
 const RealDurationSeparator_1 = require("./services/formatCorrectors/SeparateRealDurations/RealDurationSeparator");
+const DurationUtils_1 = require("./services/formatCorrectors/SeparateRealDurations/utils/DurationUtils");
 const CategoryManipulator_1 = require("./services/manipulators/CategoryManipulator");
 const ChoicesManipulators_1 = require("./services/manipulators/ChoicesManipulators");
 const GroupingManipulator_1 = require("./services/manipulators/GroupingManipulator");
@@ -73,7 +75,7 @@ function correctFormat(statement) {
     const currentStatement = Object(statement);
     (0, GeneralCorrector_1.correctUriExtensionsGeneralFormat)(statement);
     (0, GeneralCorrector_1.removeAllDomainFromUris)(statement);
-    (0, GeneralCorrector_1.typeActivityCmiClear)(statement);
+    (0, GeneralCorrector_1.typeActivityCorrector)(statement);
     if (currentStatement["verb"]["id"] == "verbs/skipped-forward" ||
         currentStatement["verb"]["id"] == "verbs/skipped-backward") {
         (0, GeneralCorrector_1.correctSkippedVideoExtensions)(statement);
@@ -183,15 +185,43 @@ function recopilateMainData(statements) {
         const workbook = new exceljs_1.Workbook();
         yield workbook.xlsx.readFile(`out/tego_V${process.env.npm_package_version}.xlsx`);
         const sheetList = workbook.worksheets;
-        const finalData = [];
+        const processedData = [];
         const dataKeys = Object.keys(consts_1.fillHeaders);
-        statements.forEach((statementJson) => {
-            const statement = statementJson;
-            finalData.push((0, ProcessData_1.dataRetriever)(statement, dataKeys, sheetList));
+        const keyToProcessStatements = dataKeys.filter((key) => key != "object|definition|name|unity|es-CL" &&
+            key != "object|definition|name|subname|es-CL");
+        const statementsObject = statements;
+        const reformatedRealTimeStatements = [];
+        statementsObject.forEach((statement) => {
+            reformatedRealTimeStatements.push(formatDurations(statement));
         });
+        reformatedRealTimeStatements.forEach((statement) => {
+            processedData.push((0, ProcessData_1.dataRetriever)(statement, keyToProcessStatements, sheetList));
+        });
+        const finalData = (0, extraColumnsAdders_1.addUnityAndSubActivityColumn)(statementsObject, processedData);
         (0, FileProvider_1.saveAuxiliarData)(finalData, AuxiliarFiles_1.AxiliarFiles.datos_tego);
         return workbook;
     });
+}
+function formatDurations(statement) {
+    var _a;
+    let extensiones = undefined;
+    if ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions) {
+        extensiones = statement.result.extensions;
+    }
+    if (extensiones &&
+        extensiones["https://xapi.tego.iie.cl/extensions/real_duration"]) {
+        let tiempoActual = extensiones["https://xapi.tego.iie.cl/extensions/real_duration"];
+        if (extensiones["https://xapi.tego.iie.cl/extensions/real_duration"].includes("-")) {
+            console.log(extensiones["https://xapi.tego.iie.cl/extensions/real_duration"]);
+            tiempoActual = tiempoActual.replace("-", "");
+        }
+        let nuevoFormatoDuracion = (0, DurationUtils_1.convertToSeconds)(tiempoActual).toString();
+        if (extensiones["https://xapi.tego.iie.cl/extensions/real_duration"].includes("-")) {
+            nuevoFormatoDuracion = "-" + nuevoFormatoDuracion;
+        }
+        statement.result.extensions["https://xapi.tego.iie.cl/extensions/real_duration"] = nuevoFormatoDuracion;
+    }
+    return statement;
 }
 /**
  * Recopila datos complementarios de una lista de declaraciones xAPI.

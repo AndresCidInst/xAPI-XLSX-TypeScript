@@ -28,47 +28,30 @@ export const fillHeaders = {
     "actor|account|name": "rut_usuario",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age":
         "usuario_edad",
-    "context|platform": "contexto_dispositivo_usado",
     "verb|display|es-CL": "verbo_nombre",
-    "verb|id": "verbo_id",
-    "object|id": "actividad_id",
-    "object|definition|name|es-CL": "actividad_nombre",
+    "object|definition|name|unity|es-CL": "unidad",
+    "object|definition|name|es-CL": "actividad",
+    "object|definition|name|subname|es-CL": "subactividad",
     "object|definition|description|es-CL": "actividad_descripcion",
     "object|definition|type": "actividad_tipo",
     "object|definition|correctResponsesPattern":
         "actividad_elemento_u_orden_correcto",
     "object|definition|choices": "actividad_elementos_opciones",
-    "context|contextActivities|parent": "contexto_actividad_padre_id",
-    "context|contextActivities|grouping": "contexto_actividad_parte_grupo_id",
-    "context|contextActivities|category":
-        "contexto_actividad_parte_categoria_id",
-    "context|registration": "contexto_id_flujo_actividades",
     "timestamp|date": "fecha_captura",
     "timestamp|time": "hora_captura",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration":
+        "tiempo_real_registrado",
     "result|completion": "resultado_completitud",
     "result|success": "resultado_exito",
-    "result|score|min": "resultado_puntaje_minimo",
-    "result|score|max": "resultado_puntaje_maximo",
-    "result|score|raw": "resultado_puntaje_obtenido",
-    "result|score|scaled": "resultado_porcentaje_exito",
+    "result|score|max": "puntaje_maximo_actividad",
+    "result|score|raw": "puntaje_obtenido",
+    "result|score|scaled": "porcentaje_exito",
     "context|extensions|https://xapi.tego.iie.cl/extensions/video/length":
         "video_duracion",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/quality":
-        "video_calidad",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/videoSpeed":
-        "video_velocidad_reproduccion",
     "context|extensions|https://xapi.tego.iie.cl/extensions/video/fullScreen":
         "video_estado_pantalla_completa",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time":
-        "video_posicion_usuario",
     "result|extensions|https://xapi.tego.iie.cl/extensions/video/progress":
         "video_progreso",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/From":
-        "video_segundo_anterior_al_salto",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/time_skipped/To":
-        "video_segundo_posterior_al_salto",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/is_interaction_points":
-        "estado_puntos_interaccion",
     "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words":
         "sopa_de_letras_palabras_encontradas",
     "result|response": "retroalimentacion_respuesta",
@@ -96,12 +79,6 @@ export const fillHeaders = {
         "cita_fecha_destinada",
     "context|extensions|https://xapi.tego.iie.cl/extensions/cancel_reason":
         "cita_razon_cancelacion",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/time-between-pages":
-        "navegabilidad_tiempo_entre_vistas",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/duration":
-        "tiempo_registrado",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration":
-        "tiempo_real_registrado",
 };
 
 export const headerAvatarChange = [
@@ -128,4 +105,29 @@ export const attributesToTransform = [
     "result",
 ];
 
-export const userTest = ["11415764-3", "17421134-7", "19306223-7"];
+export const typesToChange: { [key: string]: string } = {
+    educational: "video",
+};
+
+export const juegosActuales = [
+    "trivia",
+    "sopaDeLetras",
+    "swip_cards",
+    "reordenable",
+];
+
+export const unidadesActuales: { [key: string]: string } = {
+    "activities/higiene_dental": "Higiene Dental",
+    "activities/nutricion": "Nutricion",
+    "activities/higiene_de_protesis_dental": "Higiene De Protesis Dental",
+    "activities/prevencion_del_cancer_oral": "Cancer Oral",
+    "activities/complementario": "Material complementario",
+};
+
+export const userTest = [
+    "11415764-3",
+    "17421134-7",
+    "19306223-7",
+    "8315916-2",
+    "99999990-8",
+];

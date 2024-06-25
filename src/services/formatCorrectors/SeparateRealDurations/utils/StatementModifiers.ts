@@ -65,7 +65,7 @@ function saverOtherModifiedStatements(
 
     if (result?.extensions) {
         newExtension = {
-            ...result.extensions,
+            ...result?.extensions,
             ...newExtension,
         };
     }
@@ -194,7 +194,6 @@ function saverFinalModifiedStatements(
         currentStatement.result!.duration!,
     );
     const realDuration = currentDuration - sumOfInactivityTime;
-
     let realDurationFormatted: string;
 
     if (calculedTime == undefined) {

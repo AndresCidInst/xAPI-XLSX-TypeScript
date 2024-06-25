@@ -12,7 +12,6 @@ import { InitFinishActions } from "../../../../consts/ActionsEnums/initFinishAct
 export function calculateDuration(
     closeTimes: string[],
     entryTimes: string[],
-    idStatement: string,
 ): Duration {
     const totalDurationInMillis = closeTimes.reduce(
         (total, closeTime, index) => {
@@ -61,11 +60,7 @@ export function separeDurationCases(
         inactiveTImesRegistrated &&
         (isNavigation || isFinishAction || isGameAction)
     ) {
-        return calculateDuration(
-            timesOfInectivity,
-            timesOfRetun,
-            statement.id!,
-        );
+        return calculateDuration(timesOfInectivity, timesOfRetun);
     }
 
     return undefined;

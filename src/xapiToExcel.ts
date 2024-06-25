@@ -9,8 +9,12 @@ import { DataModelImpl } from "./models/DataModel";
 import { Parent, ParentJson } from "./models/ParentModels";
 import { clearFailedStatements } from "./services/CleanersStatements/StatetementsCleaners";
 import { CsvToJsonVersionXAPI } from "./services/CsvToJsonVersionXAPI/CsvToJsonVersionXAPI";
+import {
+    dataRetriever,
+    getValueByPath,
+} from "./services/DataProcessor/ProcessData";
+import { addUnityAndSubActivityColumn } from "./services/DataProcessor/extraColumnsAdders";
 import { createExcelFile, saveMainDataInExcel } from "./services/ExcelServices";
-import { dataRetriever, getValueByPath } from "./services/ProcessData";
 import { RequestServices } from "./services/RequestServices";
 import {
     compareDates,
@@ -26,11 +30,12 @@ import {
     reorderExtensionsCorrector,
     rounDecimals,
     trueSuccessToUnlockWord,
-    typeActivityCmiClear,
+    typeActivityCorrector,
     typeGamePressInWordSoupInsert,
 } from "./services/formatCorrectors/GeneralCorrector";
 import { refactorSwipCardsSuccess } from "./services/formatCorrectors/RefactorSwipCardsSuccess/RefactorSwipCardsSuccess";
 import { separeDurationFromRealDuration } from "./services/formatCorrectors/SeparateRealDurations/RealDurationSeparator";
+import { convertToSeconds } from "./services/formatCorrectors/SeparateRealDurations/utils/DurationUtils";
 import { saveCategory as getCategoryFromJson } from "./services/manipulators/CategoryManipulator";
 import { choiceMolder as getChoicesFromJson } from "./services/manipulators/ChoicesManipulators";
 import { getGroupingFromJson } from "./services/manipulators/GroupingManipulator";
@@ -87,7 +92,7 @@ function correctFormat(statement: Statement) {
     const currentStatement = Object(statement);
     correctUriExtensionsGeneralFormat(statement);
     removeAllDomainFromUris(statement);
-    typeActivityCmiClear(statement);
+    typeActivityCorrector(statement);
     if (
         currentStatement["verb"]["id"] == "verbs/skipped-forward" ||
         currentStatement["verb"]["id"] == "verbs/skipped-backward"
@@ -225,14 +230,68 @@ async function recopilateMainData(statements: JSON[]) {
         `out/tego_V${process.env.npm_package_version}.xlsx`,
     );
     const sheetList: Worksheet[] = workbook.worksheets;
-    const finalData: DataModelImpl[] = [];
+    const processedData: DataModelImpl[] = [];
     const dataKeys = Object.keys(fillHeaders);
-    statements.forEach((statementJson) => {
-        const statement: Statement = statementJson as unknown as Statement;
-        finalData.push(dataRetriever(statement, dataKeys, sheetList));
+    const keyToProcessStatements = dataKeys.filter(
+        (key) =>
+            key != "object|definition|name|unity|es-CL" &&
+            key != "object|definition|name|subname|es-CL",
+    );
+    const statementsObject: Statement[] = statements as unknown as Statement[];
+    const reformatedRealTimeStatements: Statement[] = [];
+    statementsObject.forEach((statement) => {
+        reformatedRealTimeStatements.push(formatDurations(statement));
     });
+    reformatedRealTimeStatements.forEach((statement) => {
+        processedData.push(
+            dataRetriever(statement, keyToProcessStatements, sheetList),
+        );
+    });
+    const finalData = addUnityAndSubActivityColumn(
+        statementsObject,
+        processedData,
+    );
     saveAuxiliarData(finalData, AxiliarFiles.datos_tego);
     return workbook;
+}
+
+function formatDurations(statement: Statement) {
+    let extensiones = undefined;
+    if (statement.result?.extensions) {
+        extensiones = statement.result.extensions;
+    }
+
+    if (
+        extensiones &&
+        extensiones["https://xapi.tego.iie.cl/extensions/real_duration"]
+    ) {
+        let tiempoActual: string =
+            extensiones["https://xapi.tego.iie.cl/extensions/real_duration"];
+        if (
+            extensiones[
+                "https://xapi.tego.iie.cl/extensions/real_duration"
+            ].includes("-")
+        ) {
+            console.log(
+                extensiones[
+                    "https://xapi.tego.iie.cl/extensions/real_duration"
+                ],
+            );
+            tiempoActual = tiempoActual.replace("-", "");
+        }
+        let nuevoFormatoDuracion = convertToSeconds(tiempoActual).toString();
+        if (
+            extensiones[
+                "https://xapi.tego.iie.cl/extensions/real_duration"
+            ].includes("-")
+        ) {
+            nuevoFormatoDuracion = "-" + nuevoFormatoDuracion;
+        }
+        statement.result!.extensions![
+            "https://xapi.tego.iie.cl/extensions/real_duration"
+        ] = nuevoFormatoDuracion;
+    }
+    return statement;
 }
 
 /**

@@ -1,6 +1,6 @@
 import { ContextActivity, Extensions, Statement } from "@xapi/xapi";
 import { DateTime } from "luxon";
-import { containsReordenableToSave } from "../../consts/consts";
+import { containsReordenableToSave, typesToChange } from "../../consts/consts";
 
 export function correctUriExtensionsGeneralFormat(statement: Statement): void {
     if (statement.result?.extensions) {
@@ -295,11 +295,22 @@ function formatDuration(input: string): string {
     return `${formattedMinutes}:${formattedSeconds}`;
 }
 
-export function typeActivityCmiClear(statement: Statement): void {
+export function typeActivityCorrector(statement: Statement): void {
     const currentStatement = Object(statement);
-    if (currentStatement.object.definition.type?.includes("cmi.")) {
+    const currentType: string = currentStatement.object.definition.type ?? "";
+    if (currentType.includes("cmi.")) {
         currentStatement.object.definition.type =
             currentStatement.object.definition.type.replace("cmi.", "");
+        statement = currentStatement as Statement;
+    }
+    if (currentType in typesToChange) {
+        currentStatement.object.definition.type = typesToChange[currentType];
+        statement = currentStatement as Statement;
+    }
+    const nombreActividad: string =
+        currentStatement["object"]["definition"]["name"]["es-CL"];
+    if (nombreActividad.includes("Juegos -")) {
+        currentStatement.object.definition.type = "interaction";
         statement = currentStatement as Statement;
     }
 }
