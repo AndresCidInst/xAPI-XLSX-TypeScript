@@ -90,7 +90,7 @@ function ProcessData(
             ? (value as string).split(" ").at(-1)!
             : (value as string);
     }
-    return "N/A";
+    return "";
 }
 
 function processHeadersMatches(
@@ -131,7 +131,7 @@ function processHeadersMatches(
             };
         }
     }
-    return "N/A";
+    return "";
 }
 
 function processReduxContain(value: unknown, path: string): string | boolean {
@@ -145,5 +145,5 @@ function processReduxContain(value: unknown, path: string): string | boolean {
     ) {
         return value as unknown as boolean;
     }
-    return "N/A";
+    return "";
 }

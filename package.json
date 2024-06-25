@@ -25,7 +25,7 @@
         "typescript": "^5.3.3"
     },
     "dependencies": {
-        "@xapi/xapi": "^2.2.5",
+        "@xapi/xapi": "^2.2.7",
         "axios": "^1.6.7",
         "convert-csv-to-json": "^2.46.0",
         "csv-parser": "^3.0.0",
