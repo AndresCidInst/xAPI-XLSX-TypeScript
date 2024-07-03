@@ -2,12 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.parentDataMolder = void 0;
 function parentDataMolder(parent, parentList) {
-    var _a, _b;
     if (!verificationParentExist(parent, parentList)) {
-        const name = ((_a = parent.definition) === null || _a === void 0 ? void 0 : _a.name)
+        const name = parent.definition?.name
             ? parent.definition.name["es-CL"]
             : "N/A";
-        const description = ((_b = parent.definition) === null || _b === void 0 ? void 0 : _b.description)
+        const description = parent.definition?.description
             ? parent.definition.description["es-CL"]
             : "N/A";
         parentList.push({

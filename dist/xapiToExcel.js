@@ -1,13 +1,4 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.xapiToExcel = void 0;
 const exceljs_1 = require("exceljs");
@@ -32,30 +23,27 @@ const ParentManipulator_1 = require("./services/manipulators/ParentManipulator")
  * Convierte los datos de xAPI a un formato compatible con Excel y los inserta en el archivo.
  * @returns Una promesa que se resuelve cuando se han insertado los datos en el archivo.
  */
-function xapiToExcel(fromLrs, fileName) {
-    return __awaiter(this, void 0, void 0, function* () {
-        let statements = [];
-        if (fromLrs) {
-            const requestServices = new RequestServices_1.RequestServices();
-            // eslint-disable-next-line prefer-const
-            statements = yield requestServices.getAllStatements();
-        }
-        else {
-            console.log("Cargando datos del archivo CSV");
-            const csvXAPI = new CsvToJsonVersionXAPI_1.CsvToJsonVersionXAPI(`data/${fileName}`);
-            statements = yield csvXAPI.getData();
-        }
-        // const statements: JSON[] = getAllStatements();
-        console.log("Limpiando declaraciones fallidas...");
-        let newStatements = (0, StatetementsCleaners_1.clearFailedStatements)(statements);
-        console.log("Declaraciones fallidas limpiadas ✅.");
-        console.log("Corrigiendo detalles de las declaraciones...");
-        newStatements.sort(GeneralCorrector_1.compareDates);
-        newStatements = refactorStatementsFormatsAndData(newStatements);
-        console.log("Corrección de detalles de las declaraciones completada ✅.");
-        yield prepareData(newStatements);
-        yield insertData(newStatements);
-    });
+async function xapiToExcel(fromLrs, fileName) {
+    let statements = [];
+    if (fromLrs) {
+        const requestServices = new RequestServices_1.RequestServices();
+        // eslint-disable-next-line prefer-const
+        statements = await requestServices.getAllStatements();
+    }
+    else {
+        console.log("Cargando datos del archivo CSV");
+        const csvXAPI = new CsvToJsonVersionXAPI_1.CsvToJsonVersionXAPI(`data/${fileName}`);
+        statements = await csvXAPI.getData();
+    }
+    console.log("Limpiando declaraciones fallidas...");
+    let newStatements = (0, StatetementsCleaners_1.clearFailedStatements)(statements);
+    console.log("Declaraciones fallidas limpiadas ✅.");
+    console.log("Corrigiendo detalles de las declaraciones...");
+    newStatements.sort(GeneralCorrector_1.compareDates);
+    newStatements = refactorStatementsFormatsAndData(newStatements);
+    console.log("Corrección de detalles de las declaraciones completada ✅.");
+    await prepareData(newStatements);
+    await insertData(newStatements);
 }
 exports.xapiToExcel = xapiToExcel;
 function refactorStatementsFormatsAndData(statements) {
@@ -71,7 +59,6 @@ function refactorStatementsFormatsAndData(statements) {
  * @param statement La declaración xAPI a corregir.
  */
 function correctFormat(statement) {
-    var _a;
     const currentStatement = Object(statement);
     (0, GeneralCorrector_1.correctUriExtensionsGeneralFormat)(statement);
     (0, GeneralCorrector_1.removeAllDomainFromUris)(statement);
@@ -91,7 +78,7 @@ function correctFormat(statement) {
         }
     }
     if (Object(statement)["object"]["id"] === "activities/profile/avatars" &&
-        ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions)) {
+        statement.result?.extensions) {
         (0, GeneralCorrector_1.correctAvatarChangeResultExtensionUri)(statement);
     }
     if (currentStatement["verb"]["id"] == "verbs/viewed" &&
@@ -125,15 +112,13 @@ function wordSoupFormattingCase(statement) {
  * @param statements - Lista de declaraciones en formato JSON.
  * @returns Una promesa que se resuelve cuando se ha creado el archivo Excel.
  */
-function prepareData(statements) {
-    return __awaiter(this, void 0, void 0, function* () {
-        console.log("Preparando datos complementarios...");
-        recopilateComplementData(statements);
-        console.log("Creando archivo excel...");
-        yield (0, ExcelServices_1.createExcelFile)();
-        clearAuxiliarFiles();
-        console.log("Archivo Excel creado con exito. Datos complementarios almacenados con éxito ✅.");
-    });
+async function prepareData(statements) {
+    console.log("Preparando datos complementarios...");
+    recopilateComplementData(statements);
+    console.log("Creando archivo excel...");
+    await (0, ExcelServices_1.createExcelFile)();
+    clearAuxiliarFiles();
+    console.log("Archivo Excel creado con exito. Datos complementarios almacenados con éxito ✅.");
 }
 /**
  * Realiza el proceso de darle forma a los datos principales e Insertlos en el archivo Excel.
@@ -141,16 +126,14 @@ function prepareData(statements) {
  * @param statements - Los statements que contienen los datos a insertar.
  * @returns Una promesa que se resuelve cuando los datos se han insertado correctamente.
  */
-function insertData(statements) {
-    return __awaiter(this, void 0, void 0, function* () {
-        console.log("Recopilando datos principales de los statements...");
-        const workbook = yield recopilateMainData(statements);
-        console.log("Datos principales recopilados con éxito ✅.");
-        console.log("Guardando datos principales en el archivo excel...");
-        saveMainData(workbook);
-        yield workbook.xlsx.writeFile(`out/tego_V${process.env.npm_package_version}.xlsx`);
-        console.log("Datos principales guardados con éxito ✅.");
-    });
+async function insertData(statements) {
+    console.log("Recopilando datos principales de los statements...");
+    const workbook = await recopilateMainData(statements);
+    console.log("Datos principales recopilados con éxito ✅.");
+    console.log("Guardando datos principales en el archivo excel...");
+    saveMainData(workbook);
+    await workbook.xlsx.writeFile(`out/tego_V${process.env.npm_package_version}.xlsx`);
+    console.log("Datos principales guardados con éxito ✅.");
 }
 /**
  * Guarda los datos principales en el libro de Excel.
@@ -180,46 +163,42 @@ function clearAuxiliarFiles() {
  * @param statements - Lista de declaraciones xAPI.
  * @returns El objeto Workbook que representa el archivo Excel modificado.
  */
-function recopilateMainData(statements) {
-    return __awaiter(this, void 0, void 0, function* () {
-        const workbook = new exceljs_1.Workbook();
-        yield workbook.xlsx.readFile(`out/tego_V${process.env.npm_package_version}.xlsx`);
-        const sheetList = workbook.worksheets;
-        const processedData = [];
-        const dataKeys = Object.keys(consts_1.fillHeaders);
-        const keyToProcessStatements = dataKeys.filter((key) => key != "object|definition|name|unity|es-CL" &&
-            key != "object|definition|name|subname|es-CL");
-        const statementsObject = statements;
-        const reformatedRealTimeStatements = [];
-        statementsObject.forEach((statement) => {
-            reformatedRealTimeStatements.push(formatDurations(statement));
-        });
-        reformatedRealTimeStatements.forEach((statement) => {
-            processedData.push((0, ProcessData_1.dataRetriever)(statement, keyToProcessStatements, sheetList));
-        });
-        const finalData = (0, extraColumnsAdders_1.addUnityAndSubActivityColumn)(statementsObject, processedData);
-        (0, FileProvider_1.saveAuxiliarData)(finalData, AuxiliarFiles_1.AxiliarFiles.datos_tego);
-        return workbook;
+async function recopilateMainData(statements) {
+    const workbook = new exceljs_1.Workbook();
+    await workbook.xlsx.readFile(`out/tego_V${process.env.npm_package_version}.xlsx`);
+    const sheetList = workbook.worksheets;
+    const processedData = [];
+    const dataKeys = Object.keys(consts_1.fillHeaders);
+    const keyToProcessStatements = dataKeys.filter((key) => key != "object|definition|name|unity|es-CL" &&
+        key != "object|definition|name|subname|es-CL");
+    const statementsObject = statements;
+    const reformatedRealTimeStatements = [];
+    statementsObject.forEach((statement) => {
+        reformatedRealTimeStatements.push(formatDurations(statement));
     });
+    reformatedRealTimeStatements.forEach((statement) => {
+        processedData.push((0, ProcessData_1.dataRetriever)(statement, keyToProcessStatements, sheetList));
+    });
+    const finalData = (0, extraColumnsAdders_1.addUnityAndSubActivityColumn)(statementsObject, processedData);
+    (0, FileProvider_1.saveAuxiliarData)(finalData, AuxiliarFiles_1.AxiliarFiles.datos_tego);
+    return workbook;
 }
 function formatDurations(statement) {
-    var _a;
     let extensiones = undefined;
-    if ((_a = statement.result) === null || _a === void 0 ? void 0 : _a.extensions) {
+    if (statement.result?.extensions) {
         extensiones = statement.result.extensions;
     }
     if (extensiones &&
         extensiones["https://xapi.tego.iie.cl/extensions/real_duration"]) {
         let tiempoActual = extensiones["https://xapi.tego.iie.cl/extensions/real_duration"];
         if (extensiones["https://xapi.tego.iie.cl/extensions/real_duration"].includes("-")) {
-            console.log(extensiones["https://xapi.tego.iie.cl/extensions/real_duration"]);
             tiempoActual = tiempoActual.replace("-", "");
         }
         let nuevoFormatoDuracion = (0, DurationUtils_1.convertToSeconds)(tiempoActual).toString();
         if (extensiones["https://xapi.tego.iie.cl/extensions/real_duration"].includes("-")) {
-            nuevoFormatoDuracion = "-" + nuevoFormatoDuracion;
+            nuevoFormatoDuracion = nuevoFormatoDuracion.replace("-", "");
         }
-        statement.result.extensions["https://xapi.tego.iie.cl/extensions/real_duration"] = nuevoFormatoDuracion;
+        statement.result.extensions["https://xapi.tego.iie.cl/extensions/real_duration"] = nuevoFormatoDuracion == "0" ? "1" : nuevoFormatoDuracion;
     }
     return statement;
 }

@@ -37,24 +37,11 @@ export const fillHeaders = {
     "object|definition|correctResponsesPattern":
         "actividad_elemento_u_orden_correcto",
     "object|definition|choices": "actividad_elementos_opciones",
-    "timestamp|date": "fecha_captura",
-    "timestamp|time": "hora_captura",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration":
-        "tiempo_real_registrado",
-    "result|completion": "resultado_completitud",
-    "result|success": "resultado_exito",
-    "result|score|max": "puntaje_maximo_actividad",
-    "result|score|raw": "puntaje_obtenido",
-    "result|score|scaled": "porcentaje_exito",
-    "context|extensions|https://xapi.tego.iie.cl/extensions/video/length":
-        "video_duracion",
+    "result|response": "retroalimentacion_respuesta",
     "context|extensions|https://xapi.tego.iie.cl/extensions/video/fullScreen":
         "video_estado_pantalla_completa",
-    "result|extensions|https://xapi.tego.iie.cl/extensions/video/progress":
-        "video_progreso",
     "result|extensions|https://xapi.tego.iie.cl/extensions/word_soup/founded_words":
         "sopa_de_letras_palabras_encontradas",
-    "result|response": "retroalimentacion_respuesta",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiece":
         "reordenable_pieza_movida",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/movedPiecePastPosition":
@@ -63,6 +50,14 @@ export const fillHeaders = {
         "reordenable_pieza_posicion_actual",
     "result|extensions|https://xapi.tego.iie.cl/extensions/reordenable/currentOrder":
         "reordenable_orden_piezas_actual",
+    "timestamp|date": "fecha_captura",
+    "timestamp|time": "hora_captura",
+    "result|extensions|https://xapi.tego.iie.cl/extensions/real_duration":
+        "tiempo_real_registrado",
+    "result|completion": "resultado_completitud",
+    "result|success": "resultado_exito",
+    "result|score|raw": "puntaje_obtenido",
+    "result|score|scaled": "porcentaje_exito",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/from":
         "avatar_cambiado",
     "result|extensions|https://xapi.tego.iie.cl/extensions/profile/avatar/to":
