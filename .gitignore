@@ -11,7 +11,7 @@ out
 dist
 
 #moduulos de npm
-node_modules
+**/node_modules
 
 #configuracion del VSCode
 .vscode
