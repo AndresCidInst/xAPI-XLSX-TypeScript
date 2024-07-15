@@ -16,6 +16,12 @@ export function dataRetriever(
 ): DataModelImpl {
     const savedData: DataModelImpl = new DataModelImpl();
     try {
+        if (
+            statement.result?.response != undefined &&
+            evaluateEarlyExit(statement.result?.response)
+        ) {
+            statement = clearScore(statement);
+        }
         keys.forEach((path) => {
             const value = getValueByPath(
                 JSON.parse(JSON.stringify(statement)),
@@ -59,6 +65,19 @@ export function getValueByPath(obj: JSON, path: string) {
     });
 
     return value;
+}
+
+function evaluateEarlyExit(statementFeedBack: string): boolean {
+    const containsSuddenDepartue: boolean =
+        statementFeedBack.includes("Salida repentina");
+    const containsEarlyExit: boolean =
+        statementFeedBack.includes("Salida anticipada");
+    return containsSuddenDepartue || containsEarlyExit;
+}
+
+function clearScore(statement: Statement) {
+    statement.result!.score!.raw = 0;
+    return statement;
 }
 
 function needToBeProcessed(path: string, verb: string): boolean {

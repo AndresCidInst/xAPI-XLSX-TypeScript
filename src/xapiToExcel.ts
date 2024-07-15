@@ -66,7 +66,7 @@ export async function xapiToExcel(
     newStatements.sort(compareDates);
     newStatements = refactorStatementsFormatsAndData(newStatements);
     console.log("Corrección de detalles de las declaraciones completada ✅.");
-    await prepareData(newStatements);
+    await prepareComplementData(newStatements);
     await insertData(newStatements);
 }
 
@@ -161,7 +161,7 @@ function wordSoupFormattingCase(statement: Statement): boolean {
  * @param statements - Lista de declaraciones en formato JSON.
  * @returns Una promesa que se resuelve cuando se ha creado el archivo Excel.
  */
-async function prepareData(statements: JSON[]) {
+async function prepareComplementData(statements: JSON[]) {
     console.log("Preparando datos complementarios...");
     recopilateComplementData(statements);
 
