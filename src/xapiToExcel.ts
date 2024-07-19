@@ -40,6 +40,7 @@ import { saveCategory as getCategoryFromJson } from "./services/manipulators/Cat
 import { choiceMolder as getChoicesFromJson } from "./services/manipulators/ChoicesManipulators";
 import { getGroupingFromJson } from "./services/manipulators/GroupingManipulator";
 import { parentDataMolder as getParentFromJson } from "./services/manipulators/ParentManipulator";
+import { projectAllocator } from "./services/projectAllocator/projectAllocator";
 
 /**
  * Convierte los datos de xAPI a un formato compatible con Excel y los inserta en el archivo.
@@ -65,6 +66,7 @@ export async function xapiToExcel(
     console.log("Corrigiendo detalles de las declaraciones...");
     newStatements.sort(compareDates);
     newStatements = refactorStatementsFormatsAndData(newStatements);
+    newStatements = await projectAllocator(newStatements);
     console.log("Corrección de detalles de las declaraciones completada ✅.");
     await prepareComplementData(newStatements);
     await insertData(newStatements);
@@ -164,7 +166,6 @@ function wordSoupFormattingCase(statement: Statement): boolean {
 async function prepareComplementData(statements: JSON[]) {
     console.log("Preparando datos complementarios...");
     recopilateComplementData(statements);
-
     console.log("Creando archivo excel...");
     await createExcelFile();
     clearAuxiliarFiles();

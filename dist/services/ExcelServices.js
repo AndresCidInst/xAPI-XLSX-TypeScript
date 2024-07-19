@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.coordinateActivityRetrieval = exports.coordinateChoiceRetrieval = exports.saveMainDataInExcel = exports.createExcelFile = void 0;
+exports.coordinateActivityRetrieval = exports.coordinateChoiceRetrieval = exports.saveMainDataInExcel = exports.getExcelSheetFromPath = exports.createExcelFile = void 0;
 const exceljs_1 = __importDefault(require("exceljs"));
 const FileProvider_1 = require("../FileProviders/FileProvider");
 const AuxiliarFiles_1 = require("../consts/AuxiliarFiles");
@@ -18,6 +18,12 @@ async function createExcelFile() {
     await workbook.xlsx.writeFile(`out/tego_V${process.env.npm_package_version}.xlsx`);
 }
 exports.createExcelFile = createExcelFile;
+async function getExcelSheetFromPath(sheetName, filePath) {
+    const workbook = new exceljs_1.default.Workbook();
+    await workbook.xlsx.readFile(filePath);
+    return workbook.getWorksheet(sheetName);
+}
+exports.getExcelSheetFromPath = getExcelSheetFromPath;
 function saveMainDataInExcel(tegoSheet) {
     const tegoData = (0, FileProvider_1.readJsonFile)(AuxiliarFiles_1.AxiliarFiles.datos_tego);
     const headers = getSheetHeaders(tegoSheet);

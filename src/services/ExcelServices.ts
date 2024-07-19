@@ -20,6 +20,15 @@ export async function createExcelFile() {
     );
 }
 
+export async function getExcelSheetFromPath(
+    sheetName: string,
+    filePath: string,
+): Promise<Excel.Worksheet | undefined> {
+    const workbook = new Excel.Workbook();
+    await workbook.xlsx.readFile(filePath);
+    return workbook.getWorksheet(sheetName);
+}
+
 export function saveMainDataInExcel(tegoSheet: Worksheet) {
     const tegoData: DataModelImpl[] = readJsonFile(
         AxiliarFiles.datos_tego,

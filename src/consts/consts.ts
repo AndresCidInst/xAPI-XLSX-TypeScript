@@ -28,6 +28,7 @@ export const fillHeaders = {
     "actor|account|name": "rut_usuario",
     "context|extensions|https://xapi.tego.iie.cl/extensions/user/age":
         "usuario_edad",
+    "context|extensions|project": "proyecto",
     "verb|display|es-CL": "verbo_nombre",
     "object|definition|name|unity|es-CL": "unidad",
     "object|definition|name|es-CL": "actividad",

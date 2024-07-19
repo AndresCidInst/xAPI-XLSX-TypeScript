@@ -19,6 +19,7 @@ const CategoryManipulator_1 = require("./services/manipulators/CategoryManipulat
 const ChoicesManipulators_1 = require("./services/manipulators/ChoicesManipulators");
 const GroupingManipulator_1 = require("./services/manipulators/GroupingManipulator");
 const ParentManipulator_1 = require("./services/manipulators/ParentManipulator");
+const projectAllocator_1 = require("./services/projectAllocator/projectAllocator");
 /**
  * Convierte los datos de xAPI a un formato compatible con Excel y los inserta en el archivo.
  * @returns Una promesa que se resuelve cuando se han insertado los datos en el archivo.
@@ -41,6 +42,7 @@ async function xapiToExcel(fromLrs, fileName) {
     console.log("Corrigiendo detalles de las declaraciones...");
     newStatements.sort(GeneralCorrector_1.compareDates);
     newStatements = refactorStatementsFormatsAndData(newStatements);
+    newStatements = await (0, projectAllocator_1.projectAllocator)(newStatements);
     console.log("Corrección de detalles de las declaraciones completada ✅.");
     await prepareComplementData(newStatements);
     await insertData(newStatements);
