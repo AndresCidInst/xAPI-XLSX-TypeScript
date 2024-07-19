@@ -13,7 +13,6 @@ export async function createExcelFile() {
     saveChoicesInExcel(workbook);
     saveCategoryInExcel(workbook);
     saveGroupingInExcel(workbook);
-    saveParentInExcel(workbook);
 
     await workbook.xlsx.writeFile(
         `out/tego_V${process.env.npm_package_version}.xlsx`,
@@ -63,13 +62,13 @@ function getSheetHeaders(workSheet: Worksheet) {
 }
 
 function addMainSheet(workbook: Excel.Workbook) {
-    const tegoSheet = workbook.addWorksheet("datos_tego");
+    const tegoSheet = workbook.addWorksheet("DATOS-TEGO");
     const headersToAdd: string[] = Object.values(fillHeaders);
     tegoSheet.addRow(headersToAdd);
 }
 
 function saveChoicesInExcel(workbook: Excel.Workbook) {
-    const choicesSheet = workbook.addWorksheet(AxiliarFiles.choices);
+    const choicesSheet = workbook.addWorksheet("opciones_de_respuesta");
     choicesSheet.addRow(["id", "idChoice", "description"]);
 
     const choices: Choice[] = readJsonFile(
@@ -81,7 +80,7 @@ function saveChoicesInExcel(workbook: Excel.Workbook) {
 }
 
 function saveCategoryInExcel(workbook: Excel.Workbook) {
-    const categorySheet = workbook.addWorksheet(AxiliarFiles.category);
+    const categorySheet = workbook.addWorksheet("categorias_de_actividad");
     categorySheet.addRow(["id", "idActividad"]);
 
     const category: Activity[] = readJsonFile(
@@ -93,7 +92,7 @@ function saveCategoryInExcel(workbook: Excel.Workbook) {
 }
 
 function saveGroupingInExcel(workbook: Excel.Workbook) {
-    const groupingSheet = workbook.addWorksheet(AxiliarFiles.grouping);
+    const groupingSheet = workbook.addWorksheet("grupos_de_actividad");
     groupingSheet.addRow(["id", "idActividad"]);
 
     const grouping: Activity[] = readJsonFile(
