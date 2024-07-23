@@ -8,6 +8,8 @@ import {
     coordinateActivityRetrieval,
     coordinateChoiceRetrieval,
 } from "../ExcelServices";
+import { exit } from "process";
+import { AuxiliarFiles } from "../../consts/AuxiliarFiles";
 
 export function dataRetriever(
     statement: Statement,
@@ -44,6 +46,8 @@ export function dataRetriever(
         });
     } catch (error) {
         console.error("Error al procesar los datos");
+        console.log(error);
+        exit();
     }
     return savedData as unknown as DataModelImpl;
 }
@@ -127,7 +131,9 @@ function processHeadersMatches(
             }
             return processedData;
         case "object|definition|choices": {
-            const sheet = sheetList.find((sheet) => sheet.name === "choices");
+            const sheet = sheetList.find(
+                (sheet) => sheet.name === AuxiliarFiles.choices,
+            );
             return {
                 formula: coordinateChoiceRetrieval(
                     sheet!,
@@ -136,8 +142,20 @@ function processHeadersMatches(
                 result: null,
             };
         }
-        case "context|contextActivities|grouping":
+        case "context|contextActivities|grouping": {
+            const sheet = sheetList.find(
+                (sheet) => sheet.name === AuxiliarFiles.grouping,
+            );
+            return {
+                formula: coordinateActivityRetrieval(
+                    sheet!,
+                    value as ActivityJson[],
+                ),
+                result: null,
+            };
+        }
         case "context|contextActivities|parent":
+            break;
         case "context|contextActivities|category": {
             const nameSheet = path.split("|")[path.split("|").length - 1];
             const sheet = sheetList.find((sheet) => sheet.name === nameSheet);

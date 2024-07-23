@@ -1,11 +1,10 @@
-import Excel, { Worksheet } from "exceljs";
+import Excel, { Workbook, Worksheet } from "exceljs";
 import { readJsonFile } from "../FileProviders/FileProvider";
-import { AxiliarFiles } from "../consts/AuxiliarFiles";
+import { AuxiliarFiles } from "../consts/AuxiliarFiles";
 import { fillHeaders } from "../consts/consts";
 import { Activity, ActivityJson } from "../models/ActivityModels";
 import { Choice, ChoiceJson } from "../models/ChoicesModels";
 import { DataModelImpl } from "../models/DataModel";
-import { Parent } from "../models/ParentModels";
 
 export async function createExcelFile() {
     const workbook = new Excel.Workbook();
@@ -13,10 +12,51 @@ export async function createExcelFile() {
     saveChoicesInExcel(workbook);
     saveCategoryInExcel(workbook);
     saveGroupingInExcel(workbook);
-
+    await addExplicativeDataToNewExcel(workbook);
     await workbook.xlsx.writeFile(
         `out/tego_V${process.env.npm_package_version}.xlsx`,
     );
+}
+
+async function addExplicativeDataToNewExcel(newWorkbook: Workbook) {
+    const complementaryData = new Workbook();
+    await complementaryData.xlsx.readFile(
+        "data/DiccionarioDatosYComplementos.xlsx",
+    );
+
+    complementaryData.eachSheet((sheet) => {
+        const createdSheet = newWorkbook.addWorksheet(sheet.name);
+        copyCells(createdSheet, sheet);
+        combinateCells(createdSheet, sheet);
+        // Comitear las filas para guardar cambios
+        createdSheet.commit;
+    });
+}
+
+function copyCells(createdSheet: Worksheet, originalSheet: Worksheet) {
+    originalSheet.columns.forEach((col, index) => {
+        const newCol = createdSheet.getColumn(index + 1);
+        newCol.width = col.width;
+        newCol.style = col.style!;
+
+        col.eachCell!({ includeEmpty: true }, (cell, rowNumber) => {
+            const newCell = createdSheet.getRow(rowNumber).getCell(index + 1);
+            newCell.value = cell.value;
+
+            newCell.style = cell.style;
+            newCell.numFmt = cell.numFmt;
+            newCell.font = cell.font;
+            newCell.alignment = cell.alignment;
+            newCell.border = cell.border;
+            newCell.fill = cell.fill;
+        });
+    });
+}
+
+function combinateCells(createdSheet: Worksheet, originalSheet: Worksheet) {
+    originalSheet.model.merges.forEach((merge) => {
+        createdSheet.mergeCells(merge);
+    });
 }
 
 export async function getExcelSheetFromPath(
@@ -30,7 +70,7 @@ export async function getExcelSheetFromPath(
 
 export function saveMainDataInExcel(tegoSheet: Worksheet) {
     const tegoData: DataModelImpl[] = readJsonFile(
-        AxiliarFiles.datos_tego,
+        AuxiliarFiles.datos_tego,
     ) as unknown as DataModelImpl[];
     const headers = getSheetHeaders(tegoSheet);
     const formatedData: unknown[] = formatingData(tegoData, headers);
@@ -56,23 +96,23 @@ function formatingData(dataList: DataModelImpl[], headers: string[]) {
 function getSheetHeaders(workSheet: Worksheet) {
     const headers: string[] = [];
     workSheet.getRow(1).eachCell((cell) => {
-        headers.push(cell.value!.toString());
+        headers.push(cell.value?.toString() ?? "");
     });
     return headers;
 }
 
 function addMainSheet(workbook: Excel.Workbook) {
-    const tegoSheet = workbook.addWorksheet("DATOS-TEGO");
+    const tegoSheet = workbook.addWorksheet(AuxiliarFiles.datos_tego);
     const headersToAdd: string[] = Object.values(fillHeaders);
     tegoSheet.addRow(headersToAdd);
 }
 
 function saveChoicesInExcel(workbook: Excel.Workbook) {
-    const choicesSheet = workbook.addWorksheet("opciones_de_respuesta");
+    const choicesSheet = workbook.addWorksheet(AuxiliarFiles.choices);
     choicesSheet.addRow(["id", "idChoice", "description"]);
 
     const choices: Choice[] = readJsonFile(
-        AxiliarFiles.choices,
+        AuxiliarFiles.choices,
     ) as unknown as Choice[];
     choices.forEach((choice, index) => {
         choicesSheet.addRow([index + 1, choice.idChoice, choice.description]);
@@ -80,11 +120,11 @@ function saveChoicesInExcel(workbook: Excel.Workbook) {
 }
 
 function saveCategoryInExcel(workbook: Excel.Workbook) {
-    const categorySheet = workbook.addWorksheet("categorias_de_actividad");
+    const categorySheet = workbook.addWorksheet(AuxiliarFiles.category);
     categorySheet.addRow(["id", "idActividad"]);
 
     const category: Activity[] = readJsonFile(
-        AxiliarFiles.category,
+        AuxiliarFiles.category,
     ) as unknown as Activity[];
     category.forEach((category, index) => {
         categorySheet.addRow([index + 1, category.idActivity]);
@@ -92,17 +132,17 @@ function saveCategoryInExcel(workbook: Excel.Workbook) {
 }
 
 function saveGroupingInExcel(workbook: Excel.Workbook) {
-    const groupingSheet = workbook.addWorksheet("grupos_de_actividad");
+    const groupingSheet = workbook.addWorksheet(AuxiliarFiles.grouping);
     groupingSheet.addRow(["id", "idActividad"]);
 
     const grouping: Activity[] = readJsonFile(
-        AxiliarFiles.grouping,
+        AuxiliarFiles.grouping,
     ) as unknown as Activity[];
     grouping.forEach((grouping, index) => {
         groupingSheet.addRow([index + 1, grouping.idActivity]);
     });
 }
-
+/*
 function saveParentInExcel(workbook: Excel.Workbook) {
     const parentSheet = workbook.addWorksheet(AxiliarFiles.parent);
     parentSheet.addRow(["id", "idActividad", "nombre", "descripcion"]);
@@ -119,7 +159,7 @@ function saveParentInExcel(workbook: Excel.Workbook) {
         ]);
     });
 }
-
+*/
 export function coordinateChoiceRetrieval(
     workSheet: Worksheet,
     data: ChoiceJson[],

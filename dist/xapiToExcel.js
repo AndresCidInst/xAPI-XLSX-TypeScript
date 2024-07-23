@@ -143,7 +143,7 @@ async function insertData(statements) {
  * @param workbook El libro de Excel donde se guardarán los datos.
  */
 function saveMainData(workbook) {
-    const tegoSheet = workbook.getWorksheet(AuxiliarFiles_1.AxiliarFiles.datos_tego);
+    const tegoSheet = workbook.getWorksheet(AuxiliarFiles_1.AuxiliarFiles.datos_tego);
     if (tegoSheet === undefined) {
         console.error("No se encontró la hoja de datos del Tego ❌.");
         return;
@@ -154,10 +154,10 @@ function saveMainData(workbook) {
  * Limpia los archivos auxiliares.
  */
 function clearAuxiliarFiles() {
-    (0, FileProvider_1.clearDatFile)(AuxiliarFiles_1.AxiliarFiles.choices);
-    (0, FileProvider_1.clearDatFile)(AuxiliarFiles_1.AxiliarFiles.category);
-    (0, FileProvider_1.clearDatFile)(AuxiliarFiles_1.AxiliarFiles.grouping);
-    (0, FileProvider_1.clearDatFile)(AuxiliarFiles_1.AxiliarFiles.parent);
+    (0, FileProvider_1.clearDatFile)(AuxiliarFiles_1.AuxiliarFiles.choices);
+    (0, FileProvider_1.clearDatFile)(AuxiliarFiles_1.AuxiliarFiles.category);
+    (0, FileProvider_1.clearDatFile)(AuxiliarFiles_1.AuxiliarFiles.grouping);
+    (0, FileProvider_1.clearDatFile)(AuxiliarFiles_1.AuxiliarFiles.parent);
 }
 /**
  * Recopila los datos principales a partir de una lista de declaraciones xAPI y los guarda en un archivo Excel.
@@ -182,7 +182,7 @@ async function recopilateMainData(statements) {
         processedData.push((0, ProcessData_1.dataRetriever)(statement, keyToProcessStatements, sheetList));
     });
     const finalData = (0, extraColumnsAdders_1.addUnityAndSubActivityColumn)(statementsObject, processedData);
-    (0, FileProvider_1.saveAuxiliarData)(finalData, AuxiliarFiles_1.AxiliarFiles.datos_tego);
+    (0, FileProvider_1.saveAuxiliarData)(finalData, AuxiliarFiles_1.AuxiliarFiles.datos_tego);
     return workbook;
 }
 function formatDurations(statement) {
@@ -232,16 +232,16 @@ function recopilateComplementData(statements) {
  */
 function validationAdditionData(choicesToSave, parentToSave, categoryToSave, groupingToSave) {
     if (choicesToSave.length > 0) {
-        (0, FileProvider_1.saveAuxiliarData)(choicesToSave, AuxiliarFiles_1.AxiliarFiles.choices);
+        (0, FileProvider_1.saveAuxiliarData)(choicesToSave, AuxiliarFiles_1.AuxiliarFiles.choices);
     }
     if (parentToSave.length > 0) {
-        (0, FileProvider_1.saveAuxiliarData)(parentToSave, AuxiliarFiles_1.AxiliarFiles.parent);
+        (0, FileProvider_1.saveAuxiliarData)(parentToSave, AuxiliarFiles_1.AuxiliarFiles.parent);
     }
     if (categoryToSave.length > 0) {
-        (0, FileProvider_1.saveAuxiliarData)(categoryToSave, AuxiliarFiles_1.AxiliarFiles.category);
+        (0, FileProvider_1.saveAuxiliarData)(categoryToSave, AuxiliarFiles_1.AuxiliarFiles.category);
     }
     if (groupingToSave.length > 0) {
-        (0, FileProvider_1.saveAuxiliarData)(groupingToSave, AuxiliarFiles_1.AxiliarFiles.grouping);
+        (0, FileProvider_1.saveAuxiliarData)(groupingToSave, AuxiliarFiles_1.AuxiliarFiles.grouping);
     }
 }
 /**

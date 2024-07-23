@@ -1,7 +1,7 @@
-export enum AxiliarFiles {
-    category = "category",
+export enum AuxiliarFiles {
+    category = "categorias_de_actividad",
     parent = "parent",
-    choices = "choices",
-    grouping = "grouping",
-    datos_tego = "datos_tego",
+    choices = "opciones_de_respuesta",
+    grouping = "grupos_de_actividad",
+    datos_tego = "DATOS-TEGO",
 }

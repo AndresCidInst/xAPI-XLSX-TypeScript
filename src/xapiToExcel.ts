@@ -1,7 +1,7 @@
 import { Statement } from "@xapi/xapi";
 import { Workbook, Worksheet } from "exceljs";
 import { clearDatFile, saveAuxiliarData } from "./FileProviders/FileProvider";
-import { AxiliarFiles } from "./consts/AuxiliarFiles";
+import { AuxiliarFiles } from "./consts/AuxiliarFiles";
 import { fillHeaders } from "./consts/consts";
 import { Activity, ActivityJson } from "./models/ActivityModels";
 import { Choice } from "./models/ChoicesModels";
@@ -199,7 +199,7 @@ async function insertData(statements: JSON[]) {
  */
 function saveMainData(workbook: Workbook) {
     const tegoSheet: Worksheet | undefined = workbook.getWorksheet(
-        AxiliarFiles.datos_tego,
+        AuxiliarFiles.datos_tego,
     );
     if (tegoSheet === undefined) {
         console.error("No se encontró la hoja de datos del Tego ❌.");
@@ -212,10 +212,10 @@ function saveMainData(workbook: Workbook) {
  * Limpia los archivos auxiliares.
  */
 function clearAuxiliarFiles() {
-    clearDatFile(AxiliarFiles.choices);
-    clearDatFile(AxiliarFiles.category);
-    clearDatFile(AxiliarFiles.grouping);
-    clearDatFile(AxiliarFiles.parent);
+    clearDatFile(AuxiliarFiles.choices);
+    clearDatFile(AuxiliarFiles.category);
+    clearDatFile(AuxiliarFiles.grouping);
+    clearDatFile(AuxiliarFiles.parent);
 }
 
 /**
@@ -251,7 +251,7 @@ async function recopilateMainData(statements: JSON[]) {
         statementsObject,
         processedData,
     );
-    saveAuxiliarData(finalData, AxiliarFiles.datos_tego);
+    saveAuxiliarData(finalData, AuxiliarFiles.datos_tego);
     return workbook;
 }
 
@@ -328,16 +328,16 @@ function validationAdditionData(
     groupingToSave: Activity[],
 ) {
     if (choicesToSave.length > 0) {
-        saveAuxiliarData(choicesToSave, AxiliarFiles.choices);
+        saveAuxiliarData(choicesToSave, AuxiliarFiles.choices);
     }
     if (parentToSave.length > 0) {
-        saveAuxiliarData(parentToSave, AxiliarFiles.parent);
+        saveAuxiliarData(parentToSave, AuxiliarFiles.parent);
     }
     if (categoryToSave.length > 0) {
-        saveAuxiliarData(categoryToSave, AxiliarFiles.category);
+        saveAuxiliarData(categoryToSave, AuxiliarFiles.category);
     }
     if (groupingToSave.length > 0) {
-        saveAuxiliarData(groupingToSave, AxiliarFiles.grouping);
+        saveAuxiliarData(groupingToSave, AuxiliarFiles.grouping);
     }
 }
 
