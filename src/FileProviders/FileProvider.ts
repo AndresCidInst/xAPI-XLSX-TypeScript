@@ -1,5 +1,4 @@
 import { readFileSync, writeFileSync } from "fs";
-import { exit } from "process";
 
 export function getAllStatements(): JSON[] {
     console.log("Extrayendo declaraciones del archivo");
@@ -22,7 +21,6 @@ export function readJsonFile(fileName: string): JSON[] {
     } catch (e) {
         console.error("Ha ocurrido un error al leer el archivo", e);
         console.log("Contenido del archivo", file, fileName);
-        exit(1);
         return [];
     }
 }

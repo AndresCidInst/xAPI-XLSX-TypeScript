@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.clearDatFile = exports.readJsonFile = exports.saveAuxiliarData = exports.getAllStatements = void 0;
 const fs_1 = require("fs");
-const process_1 = require("process");
 function getAllStatements() {
     console.log("Extrayendo declaraciones del archivo");
     const file = (0, fs_1.readFileSync)("data/prueba-01-prueba.json", "utf-8");
@@ -21,7 +20,6 @@ function readJsonFile(fileName) {
     catch (e) {
         console.error("Ha ocurrido un error al leer el archivo", e);
         console.log("Contenido del archivo", file, fileName);
-        (0, process_1.exit)(1);
         return [];
     }
 }

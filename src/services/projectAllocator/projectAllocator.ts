@@ -4,11 +4,12 @@ import { Statement } from "@xapi/xapi";
 
 export async function projectAllocator(jsonStatements: JSON[]) {
     const usersSheet = await getExcelSheetFromPath(
-        "Usuarios",
-        "data/Datos Usabilidad TEGO DB.xlsx",
+        "Usuarios-TEGO-con-proyecto",
+        "data/Usuarios-TEGO-con-proyecto.xlsx",
     );
+
     if (usersSheet) {
-        const data = extractData(usersSheet);
+        const data = extractData(usersSheet!);
         return injectProjectsToUsers(jsonStatements, data);
     }
 

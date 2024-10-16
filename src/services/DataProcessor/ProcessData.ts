@@ -18,12 +18,12 @@ export function dataRetriever(
 ): DataModelImpl {
     const savedData: DataModelImpl = new DataModelImpl();
     try {
-        if (
-            statement.result?.response != undefined &&
-            evaluateEarlyExit(statement.result?.response)
-        ) {
-            statement = clearScore(statement);
-        }
+        // if (
+        //     statement.result?.response != undefined &&
+        //     evaluateSavedGame(statement.result?.response)
+        // ) {
+        //     statement = clearScore(statement);
+        // }
         keys.forEach((path) => {
             const value = getValueByPath(
                 JSON.parse(JSON.stringify(statement)),
@@ -70,13 +70,15 @@ export function getValueByPath(obj: JSON, path: string) {
 
     return value;
 }
+//Salida anticipada. Puntaje basado en el progreso actual, no se acumula al total hasta completar el juego
+//Puntaje basado en el progreso actual, no se acumula al total hasta completar el juego
+//Salida anticipada. Puntaje basado en el progreso actual, no se acumula al total hasta completar el juego
+//Salida repentina. Puntaje basado en el progreso actual, no se acumula al total hasta completar el juego
 
-function evaluateEarlyExit(statementFeedBack: string): boolean {
-    const containsSuddenDepartue: boolean =
-        statementFeedBack.includes("Salida repentina");
-    const containsEarlyExit: boolean =
-        statementFeedBack.includes("Salida anticipada");
-    return containsSuddenDepartue || containsEarlyExit;
+function evaluateSavedGame(statementFeedBack: string): boolean {
+    return statementFeedBack.includes(
+        "Puntaje basado en el progreso actual, no se acumula al total hasta completar el juego",
+    );
 }
 
 function clearScore(statement: Statement) {

@@ -117,7 +117,9 @@ export const unidadesActuales: { [key: string]: string } = {
     "activities/nutricion": "Nutricion",
     "activities/higiene_de_protesis_dental": "Higiene De Protesis Dental",
     "activities/prevencion_del_cancer_oral": "Cancer Oral",
+    "activities/cancer_oral": "Cancer Oral",
     "activities/complementario": "Material complementario",
+    "activities/deglucion": "Material complementario",
 };
 
 export const userTest = [
@@ -126,4 +128,6 @@ export const userTest = [
     "19306223-7",
     "8315916-2",
     "99999990-8",
+    "9645473-3",
+    "15095046-5",
 ];

@@ -22,6 +22,7 @@ import {
 } from "./utils/StatementModifiers";
 import { replaceStatements } from "./utils/StatementReformater";
 import { separeDurationCases } from "./utils/TimeCalculations";
+import { exit } from "process";
 
 const initActions: string[] = Object.entries(InitFinishActions)
     .filter(([key, value]) => key.includes("Init"))
@@ -70,6 +71,18 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
             ) {
                 resetTimesArrays(timesOfInectivity, timesOfRetun);
                 sumOfInactivityTime = 0;
+            }
+            console.log(statementInitVerb);
+            if (
+                pastInicialVerb == InitFinishActions.navigation &&
+                Object(currentStatement).verb.id ==
+                    InitFinishActions.videoFinish
+            ) {
+                console.log(
+                    `Si pasa wey, statement actual ${pastInicialVerb} y ${Object(currentStatement).verb.id} y ${statementInitVerb} \n`,
+                    currentStatement,
+                );
+                exit(0);
             }
 
             registerActivityDuration(
@@ -123,6 +136,9 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
                     pastVerb,
                 )
             ) {
+                if (currentStatement.verb.id == "verbs/reproduced") {
+                    console.log("a");
+                }
                 sumOfInactivityTime = 0;
                 statementInitVerb = "";
                 resetTimesArrays(timesOfInectivity, timesOfRetun);

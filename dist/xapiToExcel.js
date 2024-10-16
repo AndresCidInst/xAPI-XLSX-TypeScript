@@ -231,6 +231,7 @@ function recopilateComplementData(statements) {
  * @param groupingToSave - Arreglo de objetos Activity a guardar.
  */
 function validationAdditionData(choicesToSave, parentToSave, categoryToSave, groupingToSave) {
+    console.log(choicesToSave.length);
     if (choicesToSave.length > 0) {
         (0, FileProvider_1.saveAuxiliarData)(choicesToSave, AuxiliarFiles_1.AuxiliarFiles.choices);
     }

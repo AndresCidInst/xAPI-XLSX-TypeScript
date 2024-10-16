@@ -32,6 +32,9 @@ function reformatStatements(swipCardsStatements: Statement[]): Statement[] {
     let beforePoints: number = 0;
     swipCardsStatements.forEach((statement) => {
         switch (statement.verb.id) {
+            case "verbs/played": {
+                break;
+            }
             case "verbs/initialized": {
                 beforePoints = 0;
                 break;

@@ -70,7 +70,10 @@ export function finalResetCase(
     timesOfRetun: string[],
     pastVerb: string,
 ): boolean {
-    if (initActions.some((action) => action == currentVerb)) {
+    if (
+        initActions.some((action) => action == currentVerb) &&
+        currentVerb != InitFinishActions.videoInit
+    ) {
         return true;
     }
 
@@ -169,4 +172,26 @@ export function caseToAddValueToInitVerb(
         caseIsntSoupWordClues(Object(currentStatement).object.id);
 
     return isInitAction || isNavigationAction || isResolutiveGameAction;
+}
+
+export function isViewedAfterNavigationWithoutInit(
+    currentStatementVerb: string,
+    statementsInitVerb: string,
+    pastInitVerb: string,
+): boolean {
+    if (currentStatementVerb != InitFinishActions.videoFinish) return false;
+
+    //Valida que la acción actual es de navegación o no
+    const isCurrentInitVerbNevigation: boolean =
+        statementsInitVerb == InitFinishActions.navigation;
+
+    if (!isCurrentInitVerbNevigation) return false;
+
+    //Valida que el video tenga inicio
+    const isViewedWithInit: boolean =
+        pastInitVerb == InitFinishActions.videoInit;
+
+    if (isViewedWithInit) return false;
+
+    return true;
 }
