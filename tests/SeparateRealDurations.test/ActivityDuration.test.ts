@@ -1,5 +1,8 @@
 import { InitFinishActions } from "../../src/consts/ActionsEnums/initFinishActions";
-import { isViewedAfterNavigationWithoutInit } from "./../../src/services/formatCorrectors/SeparateRealDurations/utils/ActivityDuration";
+import {
+    isViewedAfterNavigationWithoutInit,
+    isViewedWithoutReproduced,
+} from "./../../src/services/formatCorrectors/SeparateRealDurations/utils/ActivityDuration";
 
 describe("Tests unitarios para los métodos del archivo 'ActivityDurations'", () => {
     describe("Validación del método de verificación de navegación antes de miró sin inicio de video", () => {
@@ -7,7 +10,7 @@ describe("Tests unitarios para los métodos del archivo 'ActivityDurations'", ()
         let statementsInitVerb = "";
         let pastInitVerb = "";
 
-        beforeAll(() => {
+        beforeEach(() => {
             currentStatementVerb = "";
             statementsInitVerb = "";
             pastInitVerb = "";
@@ -39,7 +42,7 @@ describe("Tests unitarios para los métodos del archivo 'ActivityDurations'", ()
             expect(isViewedWitoutInit).toBe(false);
         });
 
-        test("Sin verbo de finnalización de video como verbo actual, debería ser false", () => {
+        test("Sin verbo de finalización de video como verbo actual, debería ser false", () => {
             currentStatementVerb = InitFinishActions.videoFinish;
             statementsInitVerb = "";
             pastInitVerb = InitFinishActions.videoInit;
@@ -50,6 +53,48 @@ describe("Tests unitarios para los métodos del archivo 'ActivityDurations'", ()
                 pastInitVerb,
             );
             expect(isViewedWitoutInit).toBe(false);
+        });
+    });
+    describe("Identificador de termino de video sin inicio de video", () => {
+        let currentStatementVerb = "";
+        let currentInitVerb = "";
+
+        beforeEach(() => {
+            currentStatementVerb = "";
+            currentInitVerb = "";
+        });
+
+        test("Termino de video con inicio de video, debe dar false", () => {
+            currentStatementVerb = InitFinishActions.videoFinish;
+            currentInitVerb = InitFinishActions.videoInit;
+            const wasVideoInit = isViewedWithoutReproduced(
+                currentStatementVerb,
+                currentInitVerb,
+            );
+
+            expect(wasVideoInit).toBe(false);
+        });
+
+        test("Termino de video sin inicio de video, debe dar true", () => {
+            currentStatementVerb = InitFinishActions.videoFinish;
+            currentInitVerb = "";
+            const wasVideoInit = isViewedWithoutReproduced(
+                currentStatementVerb,
+                currentInitVerb,
+            );
+
+            expect(wasVideoInit).toBe(true);
+        });
+
+        test("Sin termino de video con inicio de video, debe dar false", () => {
+            currentStatementVerb = "";
+            currentInitVerb = InitFinishActions.videoInit;
+            const wasVideoInit = isViewedWithoutReproduced(
+                currentStatementVerb,
+                currentInitVerb,
+            );
+
+            expect(wasVideoInit).toBe(false);
         });
     });
 });

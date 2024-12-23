@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.clearDatFile = exports.readJsonFile = exports.saveAuxiliarData = exports.getAllStatements = void 0;
+exports.deleteAuxiliarFiles = exports.deleteFile = exports.clearDatFile = exports.readJsonFile = exports.saveAuxiliarData = exports.getAllStatements = void 0;
 const fs_1 = require("fs");
 function getAllStatements() {
     console.log("Extrayendo declaraciones del archivo");
-    const file = (0, fs_1.readFileSync)("data/prueba-01-prueba.json", "utf-8");
+    const file = (0, fs_1.readFileSync)("data/LRSPruebasTiemposInactivos.json", "utf-8");
     return JSON.parse(file);
 }
 exports.getAllStatements = getAllStatements;
@@ -28,3 +28,27 @@ function clearDatFile(fileName) {
     (0, fs_1.writeFileSync)(`src/auxiliarFiles/${fileName}.json`, "", "utf8");
 }
 exports.clearDatFile = clearDatFile;
+function deleteFile(filePath) {
+    if ((0, fs_1.existsSync)(filePath)) {
+        (0, fs_1.unlinkSync)(filePath);
+        console.log(`Archivo eliminado: ${filePath}`);
+    }
+}
+exports.deleteFile = deleteFile;
+function deleteAuxiliarFiles() {
+    const auxiliarFiles = [
+        "./../auxiliarFiles/parent.json",
+        "./../auxiliarFiles/opciones_de_respuesta.json",
+        "./../auxiliarFiles/grupos_de_actividad.json",
+        "./../auxiliarFiles/grouping.json",
+        "./../auxiliarFiles/DATOS-TEGO.json",
+        "./../auxiliarFiles/datos_tego.json",
+        "./../auxiliarFiles/choices.json",
+        "./../auxiliarFiles/category.json",
+        "./../auxiliarFiles/categorias_de_actividad.json",
+    ];
+    for (const fileName in auxiliarFiles) {
+        deleteFile(fileName);
+    }
+}
+exports.deleteAuxiliarFiles = deleteAuxiliarFiles;

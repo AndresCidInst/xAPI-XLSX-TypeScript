@@ -151,7 +151,8 @@ function deleteUriPrincipalPlaces(
     statement: Statement,
     domainToExclude: string,
 ): Statement {
-    const currentStatement = Object(statement);
+    const convertedStatement: Statement = statement as Statement;
+    const currentStatement = Object(convertedStatement);
     const statementVerb = currentStatement.verb.id
         .split("/")
         .slice(-2)
