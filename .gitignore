@@ -15,3 +15,5 @@ dist
 
 #configuracion del VSCode
 .vscode
+
+./src/auxiliarFiles/*

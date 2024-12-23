@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.xapiToExcel = void 0;
+exports.correctFormat = exports.refactorStatementsFormatsAndData = exports.xapiToExcel = void 0;
 const exceljs_1 = require("exceljs");
 const FileProvider_1 = require("./FileProviders/FileProvider");
 const AuxiliarFiles_1 = require("./consts/AuxiliarFiles");
@@ -26,6 +26,7 @@ const projectAllocator_1 = require("./services/projectAllocator/projectAllocator
  */
 async function xapiToExcel(fromLrs, fileName) {
     let statements = [];
+    // let statements: JSON[] = getAllStatements();
     if (fromLrs) {
         const requestServices = new RequestServices_1.RequestServices();
         // eslint-disable-next-line prefer-const
@@ -46,6 +47,9 @@ async function xapiToExcel(fromLrs, fileName) {
     console.log("Corrección de detalles de las declaraciones completada ✅.");
     await prepareComplementData(newStatements);
     await insertData(newStatements);
+    console.log("Declaraciones insertadas en el Excel ✅.");
+    console.log("Eliminando datos auxiliares");
+    (0, FileProvider_1.deleteAuxiliarFiles)();
 }
 exports.xapiToExcel = xapiToExcel;
 function refactorStatementsFormatsAndData(statements) {
@@ -56,6 +60,7 @@ function refactorStatementsFormatsAndData(statements) {
     statements = JSON.parse(JSON.stringify((0, RefactorSwipCardsSuccess_1.refactorSwipCardsSuccess)(statements)));
     return statements;
 }
+exports.refactorStatementsFormatsAndData = refactorStatementsFormatsAndData;
 /**
  * Corrige el formato de una declaración xAPI.
  * @param statement La declaración xAPI a corregir.
@@ -96,6 +101,7 @@ function correctFormat(statement) {
     (0, GeneralCorrector_1.formatDurationCorrect)(statement);
     (0, GeneralCorrector_1.correctDataTimeZone)(statement);
 }
+exports.correctFormat = correctFormat;
 /**
  * Comprueba si una declaración de xAPI corresponde a un caso de formato de sopa de letras.
  *
@@ -231,7 +237,6 @@ function recopilateComplementData(statements) {
  * @param groupingToSave - Arreglo de objetos Activity a guardar.
  */
 function validationAdditionData(choicesToSave, parentToSave, categoryToSave, groupingToSave) {
-    console.log(choicesToSave.length);
     if (choicesToSave.length > 0) {
         (0, FileProvider_1.saveAuxiliarData)(choicesToSave, AuxiliarFiles_1.AuxiliarFiles.choices);
     }

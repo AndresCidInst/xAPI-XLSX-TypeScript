@@ -1,6 +1,11 @@
 import { Statement } from "@xapi/xapi";
 import { Workbook, Worksheet } from "exceljs";
-import { clearDatFile, saveAuxiliarData } from "./FileProviders/FileProvider";
+import {
+    clearDatFile,
+    deleteAuxiliarFiles,
+    getAllStatements,
+    saveAuxiliarData,
+} from "./FileProviders/FileProvider";
 import { AuxiliarFiles } from "./consts/AuxiliarFiles";
 import { fillHeaders } from "./consts/consts";
 import { Activity, ActivityJson } from "./models/ActivityModels";
@@ -51,6 +56,7 @@ export async function xapiToExcel(
     fileName: string | undefined,
 ) {
     let statements: JSON[] = [];
+    // let statements: JSON[] = getAllStatements();
     if (fromLrs) {
         const requestServices = new RequestServices();
         // eslint-disable-next-line prefer-const
@@ -70,9 +76,12 @@ export async function xapiToExcel(
     console.log("Corrección de detalles de las declaraciones completada ✅.");
     await prepareComplementData(newStatements);
     await insertData(newStatements);
+    console.log("Declaraciones insertadas en el Excel ✅.");
+    console.log("Eliminando datos auxiliares");
+    deleteAuxiliarFiles();
 }
 
-function refactorStatementsFormatsAndData(statements: JSON[]): JSON[] {
+export function refactorStatementsFormatsAndData(statements: JSON[]): JSON[] {
     for (const statement of statements) {
         correctFormat(statement as unknown as Statement);
     }
@@ -89,7 +98,7 @@ function refactorStatementsFormatsAndData(statements: JSON[]): JSON[] {
  * Corrige el formato de una declaración xAPI.
  * @param statement La declaración xAPI a corregir.
  */
-function correctFormat(statement: Statement) {
+export function correctFormat(statement: Statement) {
     const currentStatement = Object(statement);
     correctUriExtensionsGeneralFormat(statement);
     removeAllDomainFromUris(statement);

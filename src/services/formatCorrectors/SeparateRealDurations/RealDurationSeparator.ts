@@ -12,6 +12,7 @@ import {
     caseToOnlyResetArrays,
     casesToCalculate,
     finalResetCase,
+    isCaseToUsePastInitVerb,
     previusResetCase,
     registerActivityDuration,
 } from "./utils/ActivityDuration";
@@ -57,32 +58,37 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
         userStatements.forEach((statement) => {
             const currentStatement = statement as unknown as Statement;
             if (
+                isCaseToUsePastInitVerb(
+                    currentStatement,
+                    statementInitVerb,
+                    pastVerb,
+                )
+            ) {
+                statementInitVerb = pastInicialVerb;
+            }
+            if (
                 caseToAddValueToInitVerb(
                     initActions,
                     currentStatement,
                     inActions,
+                    statementInitVerb,
+                    pastVerb,
                 )
             ) {
                 pastInicialVerb = statementInitVerb;
                 statementInitVerb = currentStatement.verb.id;
             }
+
             if (
-                previusResetCase(currentStatement.verb.id, inActions, pastVerb)
+                previusResetCase(
+                    currentStatement.verb.id,
+                    inActions,
+                    pastVerb,
+                    initActions,
+                )
             ) {
                 resetTimesArrays(timesOfInectivity, timesOfRetun);
                 sumOfInactivityTime = 0;
-            }
-            console.log(statementInitVerb);
-            if (
-                pastInicialVerb == InitFinishActions.navigation &&
-                Object(currentStatement).verb.id ==
-                    InitFinishActions.videoFinish
-            ) {
-                console.log(
-                    `Si pasa wey, statement actual ${pastInicialVerb} y ${Object(currentStatement).verb.id} y ${statementInitVerb} \n`,
-                    currentStatement,
-                );
-                exit(0);
             }
 
             registerActivityDuration(
@@ -130,16 +136,14 @@ export function separeDurationFromRealDuration(statements: JSON[]) {
             } else if (
                 finalResetCase(
                     currentStatement.verb.id,
-                    initActions,
                     timesOfInectivity,
                     timesOfRetun,
                     pastVerb,
+                    statementInitVerb,
                 )
             ) {
-                if (currentStatement.verb.id == "verbs/reproduced") {
-                    console.log("a");
-                }
                 sumOfInactivityTime = 0;
+                pastInicialVerb = statementInitVerb;
                 statementInitVerb = "";
                 resetTimesArrays(timesOfInectivity, timesOfRetun);
             }
