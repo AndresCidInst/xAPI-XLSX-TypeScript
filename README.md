@@ -13,7 +13,7 @@ npm install
 
 ## Antes de la ejecución
 El script necesita de archivos para su ejecución, estos son un **diccionario de datos** y uno perteneciente a los **poryecto asociados a los usuarios**
-Estos se pueden encontrar dentro de la carpeta [https://drive.google.com/drive/u/0/folders/10KdBUqV56IZ7Z7_moHHieND6Kcjfj1Pq](Documentación de la interacción de usuario)
+Estos se pueden encontrar dentro de la carpeta [Documentación de la interacción de usuario](https://drive.google.com/drive/u/0/folders/10KdBUqV56IZ7Z7_moHHieND6Kcjfj1Pq)
 
 Estos archivos deben estar en la carpeta **Data** y tener los respectivos nombres:
 1. DiccionarioDatosYComplementos
