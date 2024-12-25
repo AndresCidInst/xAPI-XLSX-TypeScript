@@ -26,8 +26,6 @@ Este último debe contar con 2 columnas obligatorias:
 > [!IMPORTANT]
 > Ambos archivos deben estar en formato excel, es decir **.xlsx**
 
-El archivo 
-
 ## Ejecución
 1. Ingresar la data extraída del LRS en formato CSV en la carpeta data
 2. Ejecutar el comando
