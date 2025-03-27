@@ -7,7 +7,7 @@
 npm install
 ```
 
-2. Después crear las carpeta **Data** y **Out** en la dirección raíz del proyecto
+2. Después crear las carpeta **data** y **out** en la dirección raíz del proyecto
 3. Crear un archivo **.env**
 4. Crear en el archivo de variables de entorno la variable *LRS_ID* e ingresar el ID del LRS del cual desea extraer las interacciones xAPI
 
