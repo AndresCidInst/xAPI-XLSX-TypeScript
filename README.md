@@ -27,8 +27,8 @@ Este último debe contar con 2 columnas obligatorias:
 > Ambos archivos deben estar en formato excel, es decir **.xlsx**
 
 ## Ejecución
-1. Ingresar la data extraída del LRS en formato CSV en la carpeta data
-2. Ejecutar el comando
+1. Ingresar la data extraída del LRS en formato CSV en la carpeta data y renombrarlo como "TegoData.csv"
+3. Ejecutar el comando
 ```
 npm run dev
 ```
